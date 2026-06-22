@@ -39,8 +39,12 @@ const uniqueSets = [...new Set(rolesData.map(role => role.set))].filter(set => s
   <main class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8 relative z-20">
     <div class="max-w-[1400px] mx-auto">
       
+      <p id="noResults" class="hidden text-center text-zinc-500 py-16 text-lg">
+        No roles match your search.
+      </p>
+
       <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4" id="rolesGrid">
-        
+
         {rolesData.map((role) => {
           // UPDATE: Changed .team to .faction, and updated the default alignments
           // You can add more factions here (e.g., 'Villain', 'Gods', etc.)
@@ -54,6 +58,7 @@ const uniqueSets = [...new Set(rolesData.map(role => role.set))].filter(set => s
               href={`/roles/${role.id}`} 
               class={`role-card group relative block aspect-[2/3] bg-zinc-900 rounded border border-zinc-800 overflow-hidden transition-all duration-300 hover:scale-110 hover:z-30 hover:shadow-[0_0_20px_rgba(0,0,0,0.8)] ${borderGlow}`}
               data-set={role.set}
+              data-name={role.name.toLowerCase()}
             >
               <img 
                 src={role.portraitUrl || '/images/roles/default_portrait.png'} 
@@ -80,32 +85,38 @@ const uniqueSets = [...new Set(rolesData.map(role => role.set))].filter(set => s
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const setFilter = document.getElementById('setFilter');
-    const searchInput = document.getElementById('searchInput');
-    const roleCards = document.querySelectorAll('.role-card');
+    const roleCards = document.querySelectorAll<HTMLAnchorElement>('.role-card');
 
     function filterRoles() {
+      const setFilter = document.getElementById('setFilter');
+      const searchInput = document.getElementById('searchInput');
+      const noResults = document.getElementById('noResults');
+
+      if (!(setFilter instanceof HTMLSelectElement) || !(searchInput instanceof HTMLInputElement) || !noResults) {
+        return;
+      }
+
       const selectedSet = setFilter.value;
-      const searchTerm = searchInput.value.toLowerCase();
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
 
       roleCards.forEach(card => {
-        const roleName = card.querySelector('.truncate').textContent.toLowerCase();
-        // Since we removed 'All', we strictly match the set
-        const matchesSet = card.getAttribute('data-set') === selectedSet;
+        const roleName = card.dataset.name ?? '';
+        const matchesSet = card.dataset.set === selectedSet;
         const matchesSearch = roleName.includes(searchTerm);
+        const isVisible = matchesSet && matchesSearch;
 
-        if (matchesSet && matchesSearch) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = isVisible ? 'block' : 'none';
+        if (isVisible) visibleCount++;
       });
+
+      noResults.classList.toggle('hidden', visibleCount > 0);
     }
 
     // Initialize filter on load to ensure "Standard" is shown immediately
     filterRoles();
 
-    setFilter.addEventListener('change', filterRoles);
-    searchInput.addEventListener('input', filterRoles);
+    document.getElementById('setFilter')?.addEventListener('change', filterRoles);
+    document.getElementById('searchInput')?.addEventListener('input', filterRoles);
   });
 </script>

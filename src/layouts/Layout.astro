@@ -1,6 +1,13 @@
 ---
 // src/layouts/Layout.astro
 import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Werewolves Revenge" } = Astro.props;
+const path = new URL(Astro.request.url).pathname;
 ---
 
 <!doctype html>
@@ -11,25 +18,28 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<nav class="main-nav">
-			<a href="/">Home</a>
-			<a href="/play">Play</a>
-			<a href="/roles">Roles</a>
+			<a href="/" class={`brand ${path === '/' ? 'active' : ''}`} aria-label="Werewolves Revenge home">
+				<span class="brand-logo"></span>
+			</a>
+			<div class="nav-links">
+				<a href="/play" class={path === '/play' ? 'active' : ''}>Play</a>
+				<a href="/roles" class={path.startsWith('/roles') ? 'active' : ''}>Roles</a>
+			</div>
 		</nav>
 
 		<slot />
 	</body>
 </html>
 
-<style is:global> /* Added 'is:global' so this font rules applies to all sub-pages too! */
+<style is:global> 
 	
-	/* 1. DEFINE YOUR CUSTOM FONT */
 	@font-face {
-		font-family: 'MyCustomGameFont';
-		src: url('/fonts/MyGameFont.ttf') format('truetype');
+		font-family: 'Beaufort';
+		src: url('/fonts/BeaufortMedium.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
@@ -40,35 +50,70 @@ import '../styles/global.css';
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		
-		/* 2. USE YOUR CUSTOM FONT */
-		font-family: 'MyCustomGameFont', sans-serif;
-		background: #181411;
+		font-family: 'Inter', system-ui, sans-serif;
+		background: #09090b;
 		color: #ffffff;
 	}
 
-    html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: sans-serif; /* Optional: Makes the text look clean */
+	.main-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+		padding: 1.1rem 2rem;
+		background: rgba(9, 9, 11, 0.7);
+		backdrop-filter: blur(12px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	}
 
-	/* Optional styling to make your navigation look clean and spaced out */
-	.main-nav {
-		padding: 1rem;
+	.main-nav .brand {
 		display: flex;
-		gap: 1.5rem;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	.main-nav .brand-logo {
+		display: block;
+		width: 44px;
+		height: 44px;
+		background-color: #fff;
+		-webkit-mask: url('/images/WW.png') no-repeat center / contain;
+		mask: url('/images/WW.png') no-repeat center / contain;
+		transition: background-color 0.2s ease;
+	}
+
+	.main-nav .brand:hover .brand-logo {
+		background-color: #d1d1d1;
+	}
+
+	.main-nav .brand.active .brand-logo {
+		background-color: #ef4444;
+	}
+
+	.main-nav .nav-links {
+		display: flex;
+		gap: 2rem;
 	}
 
 	.main-nav a {
-		color: white;
+		color: #a1a1aa;
 		text-decoration: none;
-		font-weight: bold;
+		font-weight: 600;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		transition: color 0.2s ease;
 	}
 
 	.main-nav a:hover {
-		color: #d1d1d1; /* Turns red on hover to match your game vibe */
+		color: #ffffff;
+	}
+
+	.main-nav a.active {
+		color: #ef4444;
 	}
 </style>
