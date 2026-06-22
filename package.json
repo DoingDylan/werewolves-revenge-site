@@ -14,8 +14,14 @@
     "optimize-images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
+    "@astrojs/react": "^6.0.0",
+    "@fullcalendar/core": "^6.1.21",
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/interaction": "^6.1.21",
+    "@fullcalendar/react": "^6.1.21",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
+    "pg": "^8.22.0",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
