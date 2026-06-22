@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+/*
+ * Faction color system.
+ * Elements set their faction's hex via inline `style="--faction: #..."`
+ * (see src/data/factions.ts). These rules consume that variable so any
+ * hex code works without needing a matching Tailwind utility class.
+ */
+
+.faction-text {
+  color: var(--faction);
+}
+
+.faction-border {
+  border-color: var(--faction);
+}
+
+.faction-card:hover {
+  border-color: var(--faction);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--faction) 55%, transparent),
+    0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.faction-tile:hover {
+  border-color: color-mix(in srgb, var(--faction) 60%, transparent);
+  box-shadow: 0 10px 40px color-mix(in srgb, var(--faction) 25%, transparent);
+}
+
+.faction-tile-tint {
+  background: linear-gradient(to bottom right, color-mix(in srgb, var(--faction) 12%, transparent), transparent);
+}
+
+.faction-page-glow {
+  background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--faction) 25%, transparent) 0%, #09090b 60%, #09090b 100%);
+}
+
+.faction-image-glow {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--faction) 18%, transparent), transparent);
+}
+
+/*
+ * Class color system.
+ * Elements set their class's hex via inline `style="--class: #..."`
+ * (see src/data/classes.ts).
+ */
+
+.class-text {
+  color: var(--class);
+}
+
+.class-border {
+  border-color: var(--class);
+}

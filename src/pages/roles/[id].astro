@@ -2,6 +2,8 @@
 // src/pages/roles/[id].astro
 import Layout from '../../layouts/Layout.astro';
 import rolesData from '../../data/roles.json';
+import { getFactionTheme } from '../../data/factions';
+import { getClassTheme } from '../../data/classes';
 
 export async function getStaticPaths() {
   return rolesData.map((role) => {
@@ -13,27 +15,16 @@ export async function getStaticPaths() {
 }
 
 const { role } = Astro.props;
-
-// Updated dynamic color logic to match your new "Faction" system
-let themeColor = "text-zinc-500 border-zinc-500";
-let bgGlow = "from-zinc-900/20";
-
-if (role.faction === "Hero" || role.faction === "Town") { 
-  themeColor = "text-emerald-500 border-emerald-500"; 
-  bgGlow = "from-emerald-900/20"; 
-} else if (role.faction === "Wolves" || role.faction === "Villain") { 
-  themeColor = "text-red-500 border-red-500"; 
-  bgGlow = "from-red-900/20"; 
-} else if (role.faction === "Neutral") { 
-  themeColor = "text-amber-500 border-amber-500"; 
-  bgGlow = "from-amber-900/20"; 
-}
+const theme = getFactionTheme(role.faction);
+const factionStyle = `--faction: ${theme.hex};`;
+const classTheme = getClassTheme(role.class);
+const classStyle = `--class: ${classTheme.hex};`;
 ---
 
 <Layout title={`${role.name} | ${role.set}`}>
-  <main class="bg-zinc-950 min-h-screen text-zinc-100 relative overflow-hidden pb-24">
-    
-    <div class={`absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] ${bgGlow} via-zinc-950 to-zinc-950 z-0 opacity-60`}></div>
+  <main class="bg-zinc-950 min-h-screen text-zinc-100 relative overflow-hidden pb-24" style={factionStyle}>
+
+    <div class="absolute inset-0 faction-page-glow z-0 opacity-60"></div>
 
     <div class="max-w-6xl mx-auto px-6 pt-12 md:pt-24 relative z-10">
       <nav class="mb-12">
@@ -42,30 +33,30 @@ if (role.faction === "Hero" || role.faction === "Town") {
         </a>
       </nav>
 
-      <div class="grid md:grid-cols-[1fr_2fr] gap-12 lg:gap-24 items-start">
-        
+      <div class="grid md:grid-cols-[1fr_1fr] gap-6 lg:gap-12 items-start">
+
         <div class="relative group">
-          <div class={`absolute -inset-1 bg-gradient-to-b ${themeColor.split(' ')[0].replace('text', 'from')} to-transparent rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
+          <div class="absolute -inset-1 faction-image-glow rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
           <div class="relative aspect-[2/3] bg-zinc-900 rounded-lg border border-zinc-800 overflow-hidden shadow-2xl">
-            <img src={role.portraitUrl || '/images/roles/default_portrait.png'} alt={role.name} class="w-full h-full object-cover opacity-90" />
+            <img src={role.imageUrl || '/images/roles/default_portrait.png'} alt={role.name} class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent"></div>
           </div>
         </div>
 
         <div class="py-6">
+          <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-5 drop-shadow-lg" style="font-family: 'Beaufort', serif;">{role.name}</h1>
+
           <div class="flex flex-wrap gap-3 mb-6">
-            <span class={`px-4 py-1 rounded border bg-zinc-950/50 backdrop-blur-sm text-xs font-black uppercase tracking-widest ${themeColor}`}>
-              {role.faction}
+            <span class="faction-text faction-border px-4 py-1 rounded border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest">
+              {role.factionName}
             </span>
-            <span class="px-4 py-1 rounded border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-zinc-300">
+            <span class="class-text class-border px-4 py-1 rounded border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest" style={classStyle}>
               {role.class}
             </span>
-            <span class="px-4 py-1 rounded border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-zinc-400">
+            <!-- <span class="px-4 py-1 rounded border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-zinc-400">
               {role.set}
-            </span>
+            </span> -->
           </div>
-
-          <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-6 drop-shadow-lg">{role.name}</h1>
 
           <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-8 backdrop-blur-sm shadow-xl">
             <h3 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Description</h3>

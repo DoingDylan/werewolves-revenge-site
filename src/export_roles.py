@@ -28,7 +28,7 @@ def export_roles_from_sets():
     processed_roles = set() 
     
     print(f"Found {len(set_assets)} Sets. Starting export...")
-    allowed_sets = ["Standard", "Starter", "Dark"]
+    allowed_sets = ["Standard", "Dark", "Olympia", "Grimm"]
 
     for set_data in set_assets:
         set_asset = set_data.get_asset()
@@ -53,22 +53,11 @@ def export_roles_from_sets():
                 continue
             processed_roles.add(unique_role_id)
 
+            image_tex = role_asset.get_editor_property("Image")
+            image_filename = exportImage(image_tex, img_export_dir, "default_image.png")
+
             portrait_tex = role_asset.get_editor_property("Portrait")
-            image_filename = "default_portrait.png"
-            
-            if portrait_tex:
-                image_filename = f"{portrait_tex.get_name()}.png"
-                export_path = os.path.join(img_export_dir, image_filename)
-                
-                # Only export if file doesn't already exist to save time
-                if not os.path.exists(export_path):
-                    task = unreal.AssetExportTask()
-                    task.object = portrait_tex
-                    task.filename = export_path
-                    task.automated = True
-                    task.replace_identical = True
-                    unreal.Exporter.run_asset_export_task(task)
-                    print(f"Exported Image: {image_filename}")
+            portrait_filename = exportImage(portrait_tex, img_export_dir, "default_portrait.png")
 
             faction_obj = role_asset.get_editor_property("Faction")
             class_obj = role_asset.get_editor_property("Class")
@@ -78,9 +67,11 @@ def export_roles_from_sets():
                 "set": current_set_name, 
                 "name": str(role_asset.get_editor_property("Name")),
                 "faction": faction_obj.get_name() if faction_obj else "Unknown",
+                "factionName": str(faction_obj.get_editor_property("Name")) if faction_obj else "Unknown",
                 "class": class_obj.get_name() if class_obj else "Unknown",
                 "description": str(role_asset.get_editor_property("Description")),
-                "portraitUrl": f"/images/roles/{image_filename}"
+                "imageUrl": f"/images/roles/{image_filename}",
+                "portraitUrl": f"/images/roles/{portrait_filename}"
             }
             
             json_data.append(role_info)
@@ -91,5 +82,29 @@ def export_roles_from_sets():
         json.dump(json_data, f, indent=2)
         
     print(f"SUCCESS: Exported {len(json_data)} roles and assets!")
+
+def exportImage(texture, img_export_dir, default_filename):
+    """Exports a texture asset (Image or Portrait) to img_export_dir as a PNG.
+
+    Returns the resulting filename, falling back to default_filename when
+    there is no texture to export.
+    """
+    if not texture:
+        return default_filename
+
+    filename = f"{texture.get_name()}.png"
+    export_path = os.path.join(img_export_dir, filename)
+
+    # Only export if file doesn't already exist to save time
+    if not os.path.exists(export_path):
+        task = unreal.AssetExportTask()
+        task.object = texture
+        task.filename = export_path
+        task.automated = True
+        task.replace_identical = True
+        unreal.Exporter.run_asset_export_task(task)
+        print(f"Exported Image: {filename}")
+
+    return filename
 
 export_roles_from_sets()

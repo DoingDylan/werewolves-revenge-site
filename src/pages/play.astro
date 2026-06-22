@@ -2,30 +2,26 @@
 // src/pages/play.astro
 import Layout from '../layouts/Layout.astro';
 import rolesData from '../data/roles.json';
+import { getFactionTheme } from '../data/factions';
 
 const heroBg = "https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?q=80&w=2073&auto=format&fit=crop";
 
 const factionMeta = [
-  { key: 'Town',       label: 'Town',        color: 'emerald', blurb: 'Root out evil before the village burns.' },
-  { key: 'Village',    label: 'Village',     color: 'sky',     blurb: 'Ordinary folk caught in an extraordinary night.' },
-  { key: 'Werewolf',   label: 'Werewolves',  color: 'red',     blurb: 'Hunt in the dark, lie in the light.' },
-  { key: 'Vampire',    label: 'Vampires',    color: 'fuchsia', blurb: 'Patient predators feeding on the unsuspecting.' },
-  { key: 'LesserEvil',  label: 'Lesser Evil', color: 'orange',  blurb: 'Chaos agents with their own twisted agendas.' },
-  { key: 'Neutral',    label: 'Neutral',     color: 'amber',   blurb: 'No allegiance — only their own survival.' },
+  { key: 'Town',       blurb: 'Root out evil before the village burns.' },
+  { key: 'Village',    blurb: 'Ordinary folk caught in an extraordinary night.' },
+  { key: 'Werewolf',   blurb: 'Hunt in the dark, lie in the light.' },
+  { key: 'Vampire',    blurb: 'Patient predators feeding on the unsuspecting.' },
+  { key: 'LesserEvil', blurb: 'Chaos agents with their own twisted agendas.' },
+  { key: 'Neutral',    blurb: 'No allegiance — only their own survival.' },
 ];
 
 const factionCounts = Object.fromEntries(
   factionMeta.map(f => [f.key, rolesData.filter(r => r.faction === f.key).length])
 );
 
-const factionColorMap: Record<string, { text: string; border: string; glow: string; bg: string }> = {
-  emerald: { text: 'text-emerald-400', border: 'hover:border-emerald-500/60', glow: 'hover:shadow-emerald-500/20', bg: 'from-emerald-500/10' },
-  sky:     { text: 'text-sky-400',     border: 'hover:border-sky-500/60',     glow: 'hover:shadow-sky-500/20',     bg: 'from-sky-500/10' },
-  red:     { text: 'text-red-500',     border: 'hover:border-red-600/60',     glow: 'hover:shadow-red-600/20',     bg: 'from-red-600/10' },
-  fuchsia: { text: 'text-fuchsia-400', border: 'hover:border-fuchsia-500/60', glow: 'hover:shadow-fuchsia-500/20', bg: 'from-fuchsia-500/10' },
-  orange:  { text: 'text-orange-400',  border: 'hover:border-orange-500/60',  glow: 'hover:shadow-orange-500/20',  bg: 'from-orange-500/10' },
-  amber:   { text: 'text-amber-400',   border: 'hover:border-amber-500/60',   glow: 'hover:shadow-amber-500/20',   bg: 'from-amber-500/10' },
-};
+// "faction" is the internal id used for filtering/coloring; "factionName" is
+// the display name shown to users.
+const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.faction, role.factionName]));
 
 const galleryPortraits = rolesData
   .filter(r => r.portraitUrl)
@@ -161,13 +157,17 @@ const steps = [
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {factionMeta.map(faction => {
-          const c = factionColorMap[faction.color];
+          const theme = getFactionTheme(faction.key);
           return (
-            <a href="/roles" class={`group relative bg-zinc-900 border border-zinc-800 rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${c.border} ${c.glow}`}>
-              <div class={`absolute inset-0 bg-gradient-to-br ${c.bg} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+            <a
+              href="/roles"
+              class="faction-tile group relative bg-zinc-900 border border-zinc-800 rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+              style={`--faction: ${theme.hex};`}
+            >
+              <div class="faction-tile-tint absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="relative z-10">
-                <p class={`text-4xl font-black mb-2 ${c.text}`}>{factionCounts[faction.key] ?? 0}</p>
-                <h3 class="text-2xl font-bold text-white mb-2">{faction.label}</h3>
+                <p class="faction-text text-4xl font-black mb-2">{factionCounts[faction.key] ?? 0}</p>
+                <h3 class="text-2xl font-bold text-white mb-2">{factionDisplayNames[faction.key] ?? theme.label}</h3>
                 <p class="text-zinc-500 text-sm leading-relaxed">{faction.blurb}</p>
               </div>
             </a>
@@ -327,16 +327,6 @@ const steps = [
             <span>Studio Serene</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- AI DISCLOSURE FOOTNOTE -->
-    <section class="max-w-4xl mx-auto px-6 pb-20 text-center">
-      <div class="border border-zinc-800 rounded p-6 bg-zinc-900/30">
-        <h5 class="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-2">AI Generated Content Disclosure</h5>
-        <p class="text-zinc-500 text-sm italic">
-          Certain character portraits are using AI art as placeholders.
-        </p>
       </div>
     </section>
 

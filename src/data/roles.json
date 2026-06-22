@@ -1,29 +1,79 @@
 [
   {
+    "id": "olympia-achilles",
+    "set": "Olympia",
+    "name": "Achilles",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Achilles.png",
+    "portraitUrl": "/images/roles/T_Achilles_P.png"
+  },
+  {
     "id": "dark-acolyte",
     "set": "Dark",
     "name": "Acolyte",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Acolyte.png",
     "portraitUrl": "/images/roles/T_Acolyte_Portrait.png"
+  },
+  {
+    "id": "olympia-agamemnon",
+    "set": "Olympia",
+    "name": "Agamemnon",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Agamemnon.png",
+    "portraitUrl": "/images/roles/T_Agamemnon_P.png"
   },
   {
     "id": "dark-alchemist",
     "set": "Dark",
     "name": "Alchemist",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Alchemist.png",
     "portraitUrl": "/images/roles/T_Alchemist_Portrait.png"
+  },
+  {
+    "id": "olympia-alecto",
+    "set": "Olympia",
+    "name": "Alecto",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Alecto.png",
+    "portraitUrl": "/images/roles/T_Alecto_P.png"
   },
   {
     "id": "dark-alp",
     "set": "Dark",
     "name": "Alp",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Alp.png",
+    "portraitUrl": "/images/roles/T_Alp_Portrait.png"
+  },
+  {
+    "id": "grimm-alp",
+    "set": "Grimm",
+    "name": "Alp",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Investigation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/T_Alp.png",
     "portraitUrl": "/images/roles/T_Alp_Portrait.png"
   },
   {
@@ -31,17 +81,10 @@
     "set": "Standard",
     "name": "Alpha Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Do not fear the dark, little lamb. Let me show you how to rule it.",
-    "portraitUrl": "/images/roles/T_AlphaWolf_P.png"
-  },
-  {
-    "id": "starter-alpha-wolf",
-    "set": "Starter",
-    "name": "Alpha Wolf",
-    "faction": "Werewolf",
-    "class": "Manipulation",
-    "description": "Do not fear the dark, little lamb. Let me show you how to rule it.",
+    "imageUrl": "/images/roles/T_AlphaWolf.png",
     "portraitUrl": "/images/roles/T_AlphaWolf_P.png"
   },
   {
@@ -49,8 +92,10 @@
     "set": "Dark",
     "name": "Amnesiac",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Amnesiac.png",
     "portraitUrl": "/images/roles/T_Amnesiac_Portrait.png"
   },
   {
@@ -58,53 +103,142 @@
     "set": "Dark",
     "name": "Angel",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Angel.png",
     "portraitUrl": "/images/roles/T_Angel_P.png"
+  },
+  {
+    "id": "olympia-aphrodite",
+    "set": "Olympia",
+    "name": "Aphrodite",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Aphrodite.png",
+    "portraitUrl": "/images/roles/T_Aphrodite_P.png"
+  },
+  {
+    "id": "olympia-apollo",
+    "set": "Olympia",
+    "name": "Apollo",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Apollo.png",
+    "portraitUrl": "/images/roles/T_Apollo_P.png"
   },
   {
     "id": "dark-apothecary",
     "set": "Dark",
     "name": "Apothecary",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Apothecary.png",
     "portraitUrl": "/images/roles/T_Apothecary_Portrait.png"
+  },
+  {
+    "id": "grimm-apprentice",
+    "set": "Grimm",
+    "name": "Apprentice",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/T_Apprentice.png",
+    "portraitUrl": "/images/roles/T_Apprentice_P.png"
+  },
+  {
+    "id": "olympia-arachne",
+    "set": "Olympia",
+    "name": "Arachne",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Arachne.png",
+    "portraitUrl": "/images/roles/T_Arachne_P.png"
   },
   {
     "id": "standard-arcane-mage",
     "set": "Standard",
     "name": "Arcane Mage",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Shut down important targets by turning them into sheep or obliterating them.",
+    "imageUrl": "/images/roles/T_Magus.png",
     "portraitUrl": "/images/roles/T_MagusPortrait.png"
+  },
+  {
+    "id": "grimm-arch-witch",
+    "set": "Grimm",
+    "name": "Arch Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Manipulation",
+    "description": "Oberhexe",
+    "imageUrl": "/images/roles/T_ArchWitch.png",
+    "portraitUrl": "/images/roles/T_ArchWitch_P.png"
   },
   {
     "id": "dark-architect",
     "set": "Dark",
     "name": "Architect",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Architect.png",
     "portraitUrl": "/images/roles/T_Architect_Portrait.png"
+  },
+  {
+    "id": "olympia-ares",
+    "set": "Olympia",
+    "name": "Ares",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Ares.png",
+    "portraitUrl": "/images/roles/T_Ares_P.png"
   },
   {
     "id": "standard-arsonist",
     "set": "Standard",
     "name": "Arsonist",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Set the town ablaze and watch it burn.",
+    "imageUrl": "/images/roles/T_Arsonist.png",
     "portraitUrl": "/images/roles/T_Arsonist_P.png"
+  },
+  {
+    "id": "olympia-artemis",
+    "set": "Olympia",
+    "name": "Artemis",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Artemis.png",
+    "portraitUrl": "/images/roles/T_Artemis_P.png"
   },
   {
     "id": "dark-assassin",
     "set": "Dark",
     "name": "Assassin",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Assassin.png",
     "portraitUrl": "/images/roles/T_Assassin_Portrait.png"
   },
   {
@@ -112,8 +246,10 @@
     "set": "Standard",
     "name": "Assassin",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Elimination",
     "description": "Eliminate key targets whilst staying out of sight.",
+    "imageUrl": "/images/roles/T_Assassin.png",
     "portraitUrl": "/images/roles/T_AssassinPortrait.png"
   },
   {
@@ -121,8 +257,10 @@
     "set": "Standard",
     "name": "Assumer",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Assume the role of a player.",
+    "imageUrl": "/images/roles/T_WerewolfAssumer.png",
     "portraitUrl": "/images/roles/T_WerewolfAssumerPortrait.png"
   },
   {
@@ -130,17 +268,65 @@
     "set": "Dark",
     "name": "Astrologer",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Astrologer.png",
     "portraitUrl": "/images/roles/T_Astrologer_P.png"
+  },
+  {
+    "id": "olympia-atalanta",
+    "set": "Olympia",
+    "name": "Atalanta",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Atalanta.png",
+    "portraitUrl": "/images/roles/T_Atalanta_P.png"
+  },
+  {
+    "id": "olympia-ate",
+    "set": "Olympia",
+    "name": "Ate",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Ate.png",
+    "portraitUrl": "/images/roles/T_Ate_P.png"
+  },
+  {
+    "id": "olympia-athena",
+    "set": "Olympia",
+    "name": "Athena",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Athena.png",
+    "portraitUrl": "/images/roles/T_Athena_P.png"
+  },
+  {
+    "id": "olympia-atlas",
+    "set": "Olympia",
+    "name": "Atlas",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Atlas.png",
+    "portraitUrl": "/images/roles/T_Atlas_P.png"
   },
   {
     "id": "standard-baby-dragon",
     "set": "Standard",
     "name": "Baby Dragon",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Grow up to become a Dragon of your choice.",
+    "imageUrl": "/images/roles/T_BabyDragon.png",
     "portraitUrl": "/images/roles/T_BabyDragonPortrait.png"
   },
   {
@@ -148,8 +334,10 @@
     "set": "Dark",
     "name": "Banshee",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "A wailing spirit of despair, your screams do not kill, but shatter focus and weaken the living.",
+    "imageUrl": "/images/roles/T_Banshee.png",
     "portraitUrl": "/images/roles/T_Banshee_Portrait.png"
   },
   {
@@ -157,17 +345,32 @@
     "set": "Standard",
     "name": "Bard",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Serenade other players, enhancing their abilities.",
+    "imageUrl": "/images/roles/T_Bard.png",
     "portraitUrl": "/images/roles/T_BardPortrait.png"
+  },
+  {
+    "id": "grimm-bear",
+    "set": "Grimm",
+    "name": "Bear",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "B\u00e4r",
+    "imageUrl": "/images/roles/Bear.png",
+    "portraitUrl": "/images/roles/Bear_P.png"
   },
   {
     "id": "dark-beast",
     "set": "Dark",
     "name": "Beast",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Beast.png",
     "portraitUrl": "/images/roles/T_Beast_Portrait.png"
   },
   {
@@ -175,17 +378,32 @@
     "set": "Dark",
     "name": "Bell Ringer",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "Armed with nothing but a giant church bell and questionable hearing, ward off evil spirits.",
+    "imageUrl": "/images/roles/T_BellRinger.png",
     "portraitUrl": "/images/roles/T_BellRinger_Portrait.png"
+  },
+  {
+    "id": "grimm-big-bad-wolf-",
+    "set": "Grimm",
+    "name": "Big Bad Wolf ",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Gro\u00dfer b\u00f6ser Wolf",
+    "imageUrl": "/images/roles/GreatBadWolf.png",
+    "portraitUrl": "/images/roles/GreatBadWolf_P.png"
   },
   {
     "id": "dark-blighted",
     "set": "Dark",
     "name": "Blighted",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Blighted.png",
     "portraitUrl": "/images/roles/T_Blighted_Portrait.png"
   },
   {
@@ -193,8 +411,10 @@
     "set": "Standard",
     "name": "Blood Fiend",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Hunt and bleed out the Town.",
+    "imageUrl": "/images/roles/T_BloodFiend.png",
     "portraitUrl": "/images/roles/T_BloodFiendPortrait.png"
   },
   {
@@ -202,17 +422,10 @@
     "set": "Standard",
     "name": "Blood Mage",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Drain the blood of the Town until it's dry.",
-    "portraitUrl": "/images/roles/T_BloodMagePortrait.png"
-  },
-  {
-    "id": "starter-blood-mage",
-    "set": "Starter",
-    "name": "Blood Mage",
-    "faction": "Evil",
-    "class": "Elimination",
-    "description": "Drain the blood of the Town until it's dry.",
+    "imageUrl": "/images/roles/T_BloodMage.png",
     "portraitUrl": "/images/roles/T_BloodMagePortrait.png"
   },
   {
@@ -220,17 +433,10 @@
     "set": "Standard",
     "name": "Bodyguard",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Protect the town from the horrors of the night.",
-    "portraitUrl": "/images/roles/T_BodyguardPortrait.png"
-  },
-  {
-    "id": "starter-bodyguard",
-    "set": "Starter",
-    "name": "Bodyguard",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Protect the town from the horrors of the night.",
+    "imageUrl": "/images/roles/T_Bodyguard.png",
     "portraitUrl": "/images/roles/T_BodyguardPortrait.png"
   },
   {
@@ -238,8 +444,10 @@
     "set": "Dark",
     "name": "Bounty Hunter",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_BountyHunter.png",
     "portraitUrl": "/images/roles/T_BountyHunter_Portrait.png"
   },
   {
@@ -247,35 +455,65 @@
     "set": "Standard",
     "name": "Brawler",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Elimination",
     "description": "Strike players with a bleeding attack.",
+    "imageUrl": "/images/roles/T_WerewolfBrawler.png",
     "portraitUrl": "/images/roles/T_WerewolfBrawlerPortrait.png"
   },
   {
-    "id": "starter-brawler",
-    "set": "Starter",
-    "name": "Brawler",
-    "faction": "Werewolf",
-    "class": "Elimination",
-    "description": "Strike players with a bleeding attack.",
-    "portraitUrl": "/images/roles/T_WerewolfBrawlerPortrait.png"
+    "id": "grimm-brownie",
+    "set": "Grimm",
+    "name": "Brownie",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Brownie.png",
+    "portraitUrl": "/images/roles/Brownie_P.png"
   },
   {
     "id": "dark-butcher",
     "set": "Dark",
     "name": "Butcher",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Butcher.png",
     "portraitUrl": "/images/roles/T_Butcher_Portrait.png"
+  },
+  {
+    "id": "olympia-cacus",
+    "set": "Olympia",
+    "name": "Cacus",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Cacus.png",
+    "portraitUrl": "/images/roles/T_Cacus_P.png"
+  },
+  {
+    "id": "olympia-calchas",
+    "set": "Olympia",
+    "name": "Calchas",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Calchas.png",
+    "portraitUrl": "/images/roles/T_Calchas_P.png"
   },
   {
     "id": "dark-candlemaker",
     "set": "Dark",
     "name": "CandleMaker",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_CandleMaker.png",
     "portraitUrl": "/images/roles/T_CandleMaker_Portrait.png"
   },
   {
@@ -283,17 +521,131 @@
     "set": "Standard",
     "name": "Cannibal",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "He used to feed the village. Now, the village feeds him.",
+    "imageUrl": "/images/roles/T_Cannibal.png",
     "portraitUrl": "/images/roles/T_CannibalPortrait.png"
+  },
+  {
+    "id": "olympia-cassandra",
+    "set": "Olympia",
+    "name": "Cassandra",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Cassandra.png",
+    "portraitUrl": "/images/roles/T_Cassandra_P.png"
+  },
+  {
+    "id": "olympia-centaur",
+    "set": "Olympia",
+    "name": "Centaur",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Centaur.png",
+    "portraitUrl": "/images/roles/T_Centaur_P.png"
+  },
+  {
+    "id": "olympia-cerberus",
+    "set": "Olympia",
+    "name": "Cerberus",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Cerberus.png",
+    "portraitUrl": "/images/roles/T_Cerberus_P.png"
+  },
+  {
+    "id": "grimm-changeling",
+    "set": "Grimm",
+    "name": "Changeling",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Wechselbalg",
+    "imageUrl": "/images/roles/ChangelingChild.png",
+    "portraitUrl": "/images/roles/ChangelingChild_P.png"
+  },
+  {
+    "id": "grimm-charcoal-maker",
+    "set": "Grimm",
+    "name": "Charcoal Maker",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/CharCoalMaker.png",
+    "portraitUrl": "/images/roles/CharCoalMaker_P.png"
+  },
+  {
+    "id": "olympia-charon",
+    "set": "Olympia",
+    "name": "Charon",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Charon.png",
+    "portraitUrl": "/images/roles/T_Charon_P.png"
+  },
+  {
+    "id": "grimm-chicken",
+    "set": "Grimm",
+    "name": "Chicken",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "Huhn",
+    "imageUrl": "/images/roles/Chicken.png",
+    "portraitUrl": "/images/roles/Chicken_P.png"
+  },
+  {
+    "id": "grimm-child-eater",
+    "set": "Grimm",
+    "name": "Child Eater",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Kinderfresser",
+    "imageUrl": "/images/roles/ChildEater.png",
+    "portraitUrl": "/images/roles/ChildEater_P.png"
+  },
+  {
+    "id": "olympia-chimera",
+    "set": "Olympia",
+    "name": "Chimera",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Chimera.png",
+    "portraitUrl": "/images/roles/T_Chimera_P.png"
+  },
+  {
+    "id": "grimm-chimney-cleaner",
+    "set": "Grimm",
+    "name": "Chimney Cleaner",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/ChimneyCleaner.png",
+    "portraitUrl": "/images/roles/ChimneyCleaner_P.png"
   },
   {
     "id": "standard-chronomancer",
     "set": "Standard",
     "name": "Chronomancer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Manipulate time to protect or kill.",
+    "imageUrl": "/images/roles/T_Chronomancer.png",
     "portraitUrl": "/images/roles/T_Chronomancer_Portrait.png"
   },
   {
@@ -301,35 +653,43 @@
     "set": "Standard",
     "name": "Chupacabra",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Hunt the Werewolves to eliminate the competition, then feast on the town.",
+    "imageUrl": "/images/roles/T_Chupacabra.png",
     "portraitUrl": "/images/roles/T_ChupacabraPortrait.png"
   },
   {
-    "id": "starter-chupacabra",
-    "set": "Starter",
-    "name": "Chupacabra",
-    "faction": "Evil",
-    "class": "Elimination",
-    "description": "Hunt the Werewolves to eliminate the competition, then feast on the town.",
-    "portraitUrl": "/images/roles/T_ChupacabraPortrait.png"
+    "id": "grimm-cinderella",
+    "set": "Grimm",
+    "name": "Cinderella",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Cinderella.png",
+    "portraitUrl": "/images/roles/Cinderella_P.png"
+  },
+  {
+    "id": "olympia-circe",
+    "set": "Olympia",
+    "name": "Circe",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Circe.png",
+    "portraitUrl": "/images/roles/T_Circe_P.png"
   },
   {
     "id": "standard-clairvoyant",
     "set": "Standard",
     "name": "Clairvoyant",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Learn information about the players targeting a player.",
-    "portraitUrl": "/images/roles/T_Clairvoyant_Portrait.png"
-  },
-  {
-    "id": "starter-clairvoyant",
-    "set": "Starter",
-    "name": "Clairvoyant",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Learn information about the players targeting a player.",
+    "imageUrl": "/images/roles/T_Clairvoyant.png",
     "portraitUrl": "/images/roles/T_Clairvoyant_Portrait.png"
   },
   {
@@ -337,17 +697,54 @@
     "set": "Dark",
     "name": "Cleric",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Cleric.png",
     "portraitUrl": "/images/roles/T_Cleric_Portrait.png"
+  },
+  {
+    "id": "olympia-cloelia",
+    "set": "Olympia",
+    "name": "Cloelia",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Cloelia.png",
+    "portraitUrl": "/images/roles/T_Cloelia_P.png"
+  },
+  {
+    "id": "olympia-clotho",
+    "set": "Olympia",
+    "name": "Clotho",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Clotho.png",
+    "portraitUrl": "/images/roles/T_Clotho_P.png"
+  },
+  {
+    "id": "grimm-commoner",
+    "set": "Grimm",
+    "name": "Commoner",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Commoner.png",
+    "portraitUrl": "/images/roles/Commoner_P.png"
   },
   {
     "id": "dark-condemned",
     "set": "Dark",
     "name": "Condemned",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Elimination",
     "description": "Condemned for being able to conjure fire from air, you seek revenge on Town.",
+    "imageUrl": "/images/roles/T_Condemned.png",
     "portraitUrl": "/images/roles/T_Condemned_P.png"
   },
   {
@@ -355,8 +752,10 @@
     "set": "Dark",
     "name": "Coroner",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Coroner.png",
     "portraitUrl": "/images/roles/T_Coroner_P.png"
   },
   {
@@ -364,17 +763,10 @@
     "set": "Standard",
     "name": "Corrupt Noble",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Meet with the closest evil player each night.",
-    "portraitUrl": "/images/roles/T_CorruptNoblePortrait.png"
-  },
-  {
-    "id": "starter-corrupt-noble",
-    "set": "Starter",
-    "name": "Corrupt Noble",
-    "faction": "LesserEvil",
-    "class": "Manipulation",
-    "description": "Meet with the closest evil player each night.",
+    "imageUrl": "/images/roles/T_CorruptNoble.png",
     "portraitUrl": "/images/roles/T_CorruptNoblePortrait.png"
   },
   {
@@ -382,8 +774,10 @@
     "set": "Standard",
     "name": "Council Elder",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Induct players into a council.",
+    "imageUrl": "/images/roles/T_CouncilElder.png",
     "portraitUrl": "/images/roles/T_CouncilElderPortrait.png"
   },
   {
@@ -391,8 +785,10 @@
     "set": "Standard",
     "name": "Courier",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Disrupt abilities by moving them around.",
+    "imageUrl": "/images/roles/T_Courier.png",
     "portraitUrl": "/images/roles/T_CourierPortrait.png"
   },
   {
@@ -400,17 +796,10 @@
     "set": "Standard",
     "name": "Cow",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "Your only ambition in life is to die.",
-    "portraitUrl": "/images/roles/T_CowPortrait.png"
-  },
-  {
-    "id": "starter-cow",
-    "set": "Starter",
-    "name": "Cow",
-    "faction": "Neutral",
-    "class": "Elimination",
-    "description": "Your only ambition in life is to die.",
+    "imageUrl": "/images/roles/T_Cow.png",
     "portraitUrl": "/images/roles/T_CowPortrait.png"
   },
   {
@@ -418,35 +807,54 @@
     "set": "Standard",
     "name": "Creep",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "Get to know your neighbours.. verrrry well..",
+    "imageUrl": "/images/roles/T_Creep.png",
     "portraitUrl": "/images/roles/T_Creep_Portrait.png"
   },
   {
-    "id": "starter-creep",
-    "set": "Starter",
-    "name": "Creep",
-    "faction": "LesserEvil",
-    "class": "Investigation",
-    "description": "Get to know your neighbours.. verrrry well..",
-    "portraitUrl": "/images/roles/T_Creep_Portrait.png"
+    "id": "grimm-crown-prince",
+    "set": "Grimm",
+    "name": "Crown Prince",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/CrownPrince.png",
+    "portraitUrl": "/images/roles/CrownPrince_P.png"
+  },
+  {
+    "id": "grimm-crown-princess",
+    "set": "Grimm",
+    "name": "Crown Princess",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/CrownPrincess.png",
+    "portraitUrl": "/images/roles/CrownPrincess_P.png"
+  },
+  {
+    "id": "grimm-crunchy-witch",
+    "set": "Grimm",
+    "name": "Crunchy Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/ChrunchyWitch.png",
+    "portraitUrl": "/images/roles/ChrunchyWitch_P.png"
   },
   {
     "id": "standard-cthulhu",
     "set": "Standard",
     "name": "Cthulhu",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Control the minds of players to cause chaos.",
-    "portraitUrl": "/images/roles/T_CthulhuPortrait.png"
-  },
-  {
-    "id": "starter-cthulhu",
-    "set": "Starter",
-    "name": "Cthulhu",
-    "faction": "Neutral",
-    "class": "Manipulation",
-    "description": "Control the minds of players to cause chaos.",
+    "imageUrl": "/images/roles/T_Cthulhu.png",
     "portraitUrl": "/images/roles/T_CthulhuPortrait.png"
   },
   {
@@ -454,8 +862,10 @@
     "set": "Standard",
     "name": "Cult Leader",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "Lead a secret cult to slowly take over the Town. ",
+    "imageUrl": "/images/roles/T_CultLeader.png",
     "portraitUrl": "/images/roles/T_CultLeaderPortrait.png"
   },
   {
@@ -463,44 +873,65 @@
     "set": "Standard",
     "name": "Cupid",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Love is in the air!",
+    "imageUrl": "/images/roles/T_Cupid.png",
     "portraitUrl": "/images/roles/T_Cupid_Portrait.png"
   },
   {
-    "id": "starter-cupid",
-    "set": "Starter",
-    "name": "Cupid",
-    "faction": "LesserEvil",
+    "id": "olympia-cyclops",
+    "set": "Olympia",
+    "name": "Cyclops",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Cyclops.png",
+    "portraitUrl": "/images/roles/T_Cyclops_P.png"
+  },
+  {
+    "id": "olympia-daedalus",
+    "set": "Olympia",
+    "name": "Daedalus",
+    "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
-    "description": "Love is in the air!",
-    "portraitUrl": "/images/roles/T_Cupid_Portrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/T_Daedalus.png",
+    "portraitUrl": "/images/roles/T_Daedalus_P.png"
   },
   {
     "id": "dark-damsel",
     "set": "Dark",
     "name": "Damsel",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Damsel.png",
     "portraitUrl": "/images/roles/T_Damsel_Portrait.png"
+  },
+  {
+    "id": "olympia-daphne",
+    "set": "Olympia",
+    "name": "Daphne",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Daphne.png",
+    "portraitUrl": "/images/roles/T_Daphne_P.png"
   },
   {
     "id": "standard-dark-seer",
     "set": "Standard",
     "name": "Dark Seer",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "Learn player's roles.",
-    "portraitUrl": "/images/roles/T_DarkSeerPortrait.png"
-  },
-  {
-    "id": "starter-dark-seer",
-    "set": "Starter",
-    "name": "Dark Seer",
-    "faction": "LesserEvil",
-    "class": "Investigation",
-    "description": "Learn player's roles.",
+    "imageUrl": "/images/roles/T_DarkSeer.png",
     "portraitUrl": "/images/roles/T_DarkSeerPortrait.png"
   },
   {
@@ -508,8 +939,10 @@
     "set": "Dark",
     "name": "Dark Twin",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_DarkTwin.png",
     "portraitUrl": "/images/roles/T_DarkTwin_Portrait.png"
   },
   {
@@ -517,8 +950,10 @@
     "set": "Standard",
     "name": "Death",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Harvest the souls of the living.",
+    "imageUrl": "/images/roles/T_Death.png",
     "portraitUrl": "/images/roles/T_Death_Portrait.png"
   },
   {
@@ -526,17 +961,32 @@
     "set": "Dark",
     "name": "Defeated",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Defeated.png",
     "portraitUrl": "/images/roles/T_Defeated_Portrait.png"
+  },
+  {
+    "id": "olympia-demeter",
+    "set": "Olympia",
+    "name": "Demeter",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Demeter.png",
+    "portraitUrl": "/images/roles/T_Demeter_P.png"
   },
   {
     "id": "dark-demon",
     "set": "Dark",
     "name": "Demon",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Demon.png",
     "portraitUrl": "/images/roles/T_Demon_Portrait.png"
   },
   {
@@ -544,17 +994,10 @@
     "set": "Standard",
     "name": "Den Mother",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Protection",
     "description": "Protect your pups at all costs.",
-    "portraitUrl": "/images/roles/T_DenMother_Portrait.png"
-  },
-  {
-    "id": "starter-den-mother",
-    "set": "Starter",
-    "name": "Den Mother",
-    "faction": "Werewolf",
-    "class": "Protection",
-    "description": "Protect your pups at all costs.",
+    "imageUrl": "/images/roles/T_DenMother.png",
     "portraitUrl": "/images/roles/T_DenMother_Portrait.png"
   },
   {
@@ -562,35 +1005,87 @@
     "set": "Dark",
     "name": "Dhampyr",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Dhampyr.png",
     "portraitUrl": "/images/roles/T_Dhampyr_Portrait.png"
+  },
+  {
+    "id": "olympia-dionysus",
+    "set": "Olympia",
+    "name": "Dionysus",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Dionysus.png",
+    "portraitUrl": "/images/roles/T_Dionysus_P.png"
+  },
+  {
+    "id": "grimm-do-no-well",
+    "set": "Grimm",
+    "name": "Do-no-well",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Do-Not-Well.png",
+    "portraitUrl": "/images/roles/Do-Not-Well_P.png"
+  },
+  {
+    "id": "olympia-dolon",
+    "set": "Olympia",
+    "name": "Dolon",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Dolon.png",
+    "portraitUrl": "/images/roles/T_Dolon_P.png"
+  },
+  {
+    "id": "grimm-donkey",
+    "set": "Grimm",
+    "name": "Donkey",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Elimination",
+    "description": "Esel",
+    "imageUrl": "/images/roles/Donkey.png",
+    "portraitUrl": "/images/roles/Donkey_P.png"
   },
   {
     "id": "dark-doomsayer",
     "set": "Dark",
     "name": "Doomsayer",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Doomsayer.png",
     "portraitUrl": "/images/roles/T_Doomsayer_Portrait.png"
+  },
+  {
+    "id": "grimm-dove",
+    "set": "Grimm",
+    "name": "Dove",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "Taube",
+    "imageUrl": "/images/roles/Dove.png",
+    "portraitUrl": "/images/roles/Dove_P.png"
   },
   {
     "id": "standard-dracula",
     "set": "Standard",
     "name": "Dracula",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Turn the town against itself.",
-    "portraitUrl": "/images/roles/T_DraculaPortrait.png"
-  },
-  {
-    "id": "starter-dracula",
-    "set": "Starter",
-    "name": "Dracula",
-    "faction": "Evil",
-    "class": "Elimination",
-    "description": "Turn the town against itself.",
+    "imageUrl": "/images/roles/T_Dracula.png",
     "portraitUrl": "/images/roles/T_DraculaPortrait.png"
   },
   {
@@ -598,35 +1093,32 @@
     "set": "Standard",
     "name": "Dragon Knight",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Protect those who are worthy, and burn those who aren't.",
+    "imageUrl": "/images/roles/T_DragonKnight.png",
     "portraitUrl": "/images/roles/T_DragonKnightPortrait.png"
   },
   {
-    "id": "starter-dragon-knight",
-    "set": "Starter",
-    "name": "Dragon Knight",
-    "faction": "Town",
+    "id": "grimm-drak",
+    "set": "Grimm",
+    "name": "Drak",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
     "class": "Protection",
-    "description": "Protect those who are worthy, and burn those who aren't.",
-    "portraitUrl": "/images/roles/T_DragonKnightPortrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/Drak_P.png",
+    "portraitUrl": "/images/roles/Drak.png"
   },
   {
     "id": "standard-druid",
     "set": "Standard",
     "name": "Druid",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Use the powers of nature to protect the town from harm.",
-    "portraitUrl": "/images/roles/T_DruidPortrait.png"
-  },
-  {
-    "id": "starter-druid",
-    "set": "Starter",
-    "name": "Druid",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Use the powers of nature to protect the town from harm.",
+    "imageUrl": "/images/roles/T_Druid.png",
     "portraitUrl": "/images/roles/T_DruidPortrait.png"
   },
   {
@@ -634,26 +1126,65 @@
     "set": "Standard",
     "name": "Dusk Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Force the start of the next night by revealing your role.",
+    "imageUrl": "/images/roles/T_DuskWolf.png",
     "portraitUrl": "/images/roles/T_DuskWolf_Portrait.png"
   },
   {
-    "id": "starter-dusk-wolf",
-    "set": "Starter",
-    "name": "Dusk Wolf",
-    "faction": "Werewolf",
+    "id": "grimm-dwarf",
+    "set": "Grimm",
+    "name": "Dwarf",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
     "class": "Manipulation",
-    "description": "Force the start of the next night by revealing your role.",
-    "portraitUrl": "/images/roles/T_DuskWolf_Portrait.png"
+    "description": "Alp",
+    "imageUrl": "/images/roles/Dwarf.png",
+    "portraitUrl": "/images/roles/Dwarf_P.png"
+  },
+  {
+    "id": "olympia-echidna",
+    "set": "Olympia",
+    "name": "Echidna",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Echidna.png",
+    "portraitUrl": "/images/roles/T_Echidna_P.png"
+  },
+  {
+    "id": "olympia-echo",
+    "set": "Olympia",
+    "name": "Echo",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Echo.png",
+    "portraitUrl": "/images/roles/T_Echo_P.png"
+  },
+  {
+    "id": "olympia-eidolon",
+    "set": "Olympia",
+    "name": "Eidolon",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Eidolon.png",
+    "portraitUrl": "/images/roles/T_Eidolon_P.png"
   },
   {
     "id": "standard-elder-dragon",
     "set": "Standard",
     "name": "Elder Dragon",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_ElderDragon.png",
     "portraitUrl": "/images/roles/T_ElderDragon_P.png"
   },
   {
@@ -661,8 +1192,10 @@
     "set": "Dark",
     "name": "Embalmer",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Embalmer.png",
     "portraitUrl": "/images/roles/T_Embalmer_Portrait.png"
   },
   {
@@ -670,17 +1203,10 @@
     "set": "Standard",
     "name": "Ember Archer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Unleash a volley of flaming arrows upon your enemies.",
-    "portraitUrl": "/images/roles/T_EmberArcherPortrait.png"
-  },
-  {
-    "id": "starter-ember-archer",
-    "set": "Starter",
-    "name": "Ember Archer",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Unleash a volley of flaming arrows upon your enemies.",
+    "imageUrl": "/images/roles/T_EmberArcher.png",
     "portraitUrl": "/images/roles/T_EmberArcherPortrait.png"
   },
   {
@@ -688,17 +1214,10 @@
     "set": "Standard",
     "name": "Ember Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Elimination",
     "description": "Engulf the Town in flames.",
-    "portraitUrl": "/images/roles/T_EmberWolf_Portrait.png"
-  },
-  {
-    "id": "starter-ember-wolf",
-    "set": "Starter",
-    "name": "Ember Wolf",
-    "faction": "Werewolf",
-    "class": "Elimination",
-    "description": "Engulf the Town in flames.",
+    "imageUrl": "/images/roles/T_EmberWolf.png",
     "portraitUrl": "/images/roles/T_EmberWolf_Portrait.png"
   },
   {
@@ -706,17 +1225,109 @@
     "set": "Dark",
     "name": "Empath",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Empath.png",
     "portraitUrl": "/images/roles/T_Empath_Portrait.png"
+  },
+  {
+    "id": "grimm-emperor",
+    "set": "Grimm",
+    "name": "Emperor",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Emperor.png",
+    "portraitUrl": "/images/roles/Emperor_P.png"
+  },
+  {
+    "id": "grimm-empress",
+    "set": "Grimm",
+    "name": "Empress",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Empress.png",
+    "portraitUrl": "/images/roles/Empress_P.png"
+  },
+  {
+    "id": "olympia-empusa",
+    "set": "Olympia",
+    "name": "Empusa",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Empusa.png",
+    "portraitUrl": "/images/roles/T_Empusa_P.png"
+  },
+  {
+    "id": "olympia-eris",
+    "set": "Olympia",
+    "name": "Eris",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Eris.png",
+    "portraitUrl": "/images/roles/T_Eris_P.png"
+  },
+  {
+    "id": "grimm-erlking",
+    "set": "Grimm",
+    "name": "Erlking",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Protection",
+    "description": "Erlk\u00f6nig",
+    "imageUrl": "/images/roles/Erlking.png",
+    "portraitUrl": "/images/roles/Erlking_P.png"
+  },
+  {
+    "id": "olympia-eurydice",
+    "set": "Olympia",
+    "name": "Eurydice",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Eurydice.png",
+    "portraitUrl": "/images/roles/T_Eurydice_P.png"
+  },
+  {
+    "id": "grimm-evil-queen",
+    "set": "Grimm",
+    "name": "Evil Queen",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Protection",
+    "description": "B\u00f6se K\u00f6nigin",
+    "imageUrl": "/images/roles/EvilQueeen.png",
+    "portraitUrl": "/images/roles/EvilQueeen_P.png"
+  },
+  {
+    "id": "grimm-excecutioner",
+    "set": "Grimm",
+    "name": "Excecutioner",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Excecutioner.png",
+    "portraitUrl": "/images/roles/Excecutioner_P.png"
   },
   {
     "id": "dark-exorcist",
     "set": "Dark",
     "name": "Exorcist",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Exorcist.png",
     "portraitUrl": "/images/roles/T_Exorcist_Portrait.png"
   },
   {
@@ -724,26 +1335,32 @@
     "set": "Standard",
     "name": "Faceless",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Copy the role of another player, but share their fate.",
+    "imageUrl": "/images/roles/T_Faceless.png",
     "portraitUrl": "/images/roles/T_FacelessPortrait.png"
   },
   {
-    "id": "starter-faceless",
-    "set": "Starter",
-    "name": "Faceless",
-    "faction": "Neutral",
+    "id": "grimm-fafnir",
+    "set": "Grimm",
+    "name": "Fafnir",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
-    "description": "Copy the role of another player, but share their fate.",
-    "portraitUrl": "/images/roles/T_FacelessPortrait.png"
+    "description": "Fafner",
+    "imageUrl": "/images/roles/Fafnir.png",
+    "portraitUrl": "/images/roles/Fafnir_P.png"
   },
   {
     "id": "standard-fallen-angel",
     "set": "Standard",
     "name": "Fallen Angel",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Make the Town vulnerable to attacks.",
+    "imageUrl": "/images/roles/T_FallenAngel.png",
     "portraitUrl": "/images/roles/T_FallenAngel_Portrait.png"
   },
   {
@@ -751,17 +1368,43 @@
     "set": "Standard",
     "name": "Fallen Star",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Protection",
     "description": "Manipulate time to protect or kill.",
+    "imageUrl": "/images/roles/T_FallenStar.png",
     "portraitUrl": "/images/roles/T_FallenStar_Portrait.png"
+  },
+  {
+    "id": "grimm-false-healer",
+    "set": "Grimm",
+    "name": "False Healer",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Manipulation",
+    "description": "Quacksalber",
+    "imageUrl": "/images/roles/FalseHealer.png",
+    "portraitUrl": "/images/roles/FalseHealer_P.png"
+  },
+  {
+    "id": "grimm-familiar",
+    "set": "Grimm",
+    "name": "Familiar",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Familiar.png",
+    "portraitUrl": "/images/roles/Familiar_P.png"
   },
   {
     "id": "standard-fanatic",
     "set": "Standard",
     "name": "Fanatic",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Keep the town safe as long as they don't vote to eliminate you.",
+    "imageUrl": "/images/roles/T_Fanatic.png",
     "portraitUrl": "/images/roles/T_FanaticPortrait.png"
   },
   {
@@ -769,35 +1412,54 @@
     "set": "Standard",
     "name": "Farmer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Your death will cause the town to starve.",
+    "imageUrl": "/images/roles/T_Farmer.png",
     "portraitUrl": "/images/roles/T_FarmerPortrait.png"
   },
   {
-    "id": "starter-farmer",
-    "set": "Starter",
-    "name": "Farmer",
-    "faction": "Town",
+    "id": "grimm-father",
+    "set": "Grimm",
+    "name": "Father",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Father.png",
+    "portraitUrl": "/images/roles/Father_P.png"
+  },
+  {
+    "id": "grimm-father-of-animals",
+    "set": "Grimm",
+    "name": "Father of animals",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
-    "description": "Your death will cause the town to starve.",
-    "portraitUrl": "/images/roles/T_FarmerPortrait.png"
+    "description": "Vater der Tiere",
+    "imageUrl": "/images/roles/FatherOfAnimals.png",
+    "portraitUrl": "/images/roles/FatherOfAnimals_P.png"
+  },
+  {
+    "id": "grimm-fenix",
+    "set": "Grimm",
+    "name": "Fenix",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/Fenix.png",
+    "portraitUrl": "/images/roles/Fenix_P.png"
   },
   {
     "id": "standard-fire-dragon",
     "set": "Standard",
     "name": "Fire Dragon",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Unleash an ancient rage in the form a fury of flames.",
-    "portraitUrl": "/images/roles/T_DragonPortrait.png"
-  },
-  {
-    "id": "starter-fire-dragon",
-    "set": "Starter",
-    "name": "Fire Dragon",
-    "faction": "Evil",
-    "class": "Elimination",
-    "description": "Unleash an ancient rage in the form a fury of flames.",
+    "imageUrl": "/images/roles/T_FireDragon.png",
     "portraitUrl": "/images/roles/T_DragonPortrait.png"
   },
   {
@@ -805,26 +1467,32 @@
     "set": "Standard",
     "name": "Fire Mage",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Use fire magic to eliminate key targets.",
+    "imageUrl": "/images/roles/T_FireMage.png",
     "portraitUrl": "/images/roles/T_FireMagePortrait.png"
   },
   {
-    "id": "starter-fire-mage",
-    "set": "Starter",
-    "name": "Fire Mage",
-    "faction": "Town",
+    "id": "grimm-firespawn",
+    "set": "Grimm",
+    "name": "Firespawn",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
     "class": "Elimination",
-    "description": "Use fire magic to eliminate key targets.",
-    "portraitUrl": "/images/roles/T_FireMagePortrait.png"
+    "description": "Hinzelmann",
+    "imageUrl": "/images/roles/Firespawn.png",
+    "portraitUrl": "/images/roles/Firespawn_P.png"
   },
   {
     "id": "dark-fisherman",
     "set": "Dark",
     "name": "Fisherman",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Fisherman.png",
     "portraitUrl": "/images/roles/T_Fisherman_Portrait.png"
   },
   {
@@ -832,8 +1500,10 @@
     "set": "Dark",
     "name": "Flame Keeper",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Keeper.png",
     "portraitUrl": "/images/roles/T_Keeper_Portrait.png"
   },
   {
@@ -841,17 +1511,54 @@
     "set": "Dark",
     "name": "Fledgling",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Fledgling.png",
     "portraitUrl": "/images/roles/T_Fledgling_Portrait.png"
+  },
+  {
+    "id": "grimm-fog-witch",
+    "set": "Grimm",
+    "name": "Fog Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Investigation",
+    "description": "Nebelhexe",
+    "imageUrl": "/images/roles/FogWitch.png",
+    "portraitUrl": "/images/roles/FogWitch_P.png"
+  },
+  {
+    "id": "grimm-forest-fairy",
+    "set": "Grimm",
+    "name": "Forest Fairy",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Holla.png",
+    "portraitUrl": "/images/roles/Holla_P.png"
+  },
+  {
+    "id": "grimm-forest-witch",
+    "set": "Grimm",
+    "name": "Forest Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Waldhexe",
+    "imageUrl": "/images/roles/ForestWitch.png",
+    "portraitUrl": "/images/roles/ForestWitch_P.png"
   },
   {
     "id": "dark-fortune-teller",
     "set": "Dark",
     "name": "Fortune Teller",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_FortuneTeller.png",
     "portraitUrl": "/images/roles/T_FortuneTeller_Portrait.png"
   },
   {
@@ -859,17 +1566,32 @@
     "set": "Dark",
     "name": "Freak",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Freak.png",
     "portraitUrl": "/images/roles/T_Freak_Portrait.png"
+  },
+  {
+    "id": "grimm-frog-king",
+    "set": "Grimm",
+    "name": "Frog King",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/FrogKing.png",
+    "portraitUrl": "/images/roles/FrogKing_P.png"
   },
   {
     "id": "standard-frost-drake",
     "set": "Standard",
     "name": "Frost Drake",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Investigation",
     "description": "Indirectly lay waste to the town.",
+    "imageUrl": "/images/roles/T_FrostDrake.png",
     "portraitUrl": "/images/roles/T_FrostDrake_Portrait.png"
   },
   {
@@ -877,8 +1599,10 @@
     "set": "Standard",
     "name": "Frost Mage",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Use frost magic to protect key targets.",
+    "imageUrl": "/images/roles/T_FrostMage.png",
     "portraitUrl": "/images/roles/T_FrostMagePortrait.png"
   },
   {
@@ -886,17 +1610,32 @@
     "set": "Standard",
     "name": "Frost Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "The cold will be the only victor in the end.",
+    "imageUrl": "/images/roles/T_FrostWolf.png",
     "portraitUrl": "/images/roles/T_FrostWolfPortrait.png"
+  },
+  {
+    "id": "olympia-gaia",
+    "set": "Olympia",
+    "name": "Gaia",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Gaia.png",
+    "portraitUrl": "/images/roles/T_Gaia_P.png"
   },
   {
     "id": "dark-gambler",
     "set": "Dark",
     "name": "Gambler",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Gambler.png",
     "portraitUrl": "/images/roles/T_Gambler_Portrait.png"
   },
   {
@@ -904,44 +1643,131 @@
     "set": "Dark",
     "name": "Gargoyle",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Gargoyle.png",
     "portraitUrl": "/images/roles/T_Gargoyle_Portrait.png"
+  },
+  {
+    "id": "grimm-ghost",
+    "set": "Grimm",
+    "name": "Ghost",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Protection",
+    "description": "Gespenst",
+    "imageUrl": "/images/roles/Ghost.png",
+    "portraitUrl": "/images/roles/Ghost_P.png"
   },
   {
     "id": "dark-ghoul",
     "set": "Dark",
     "name": "Ghoul",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Ghoul.png",
     "portraitUrl": "/images/roles/T_Ghoul_Portrait.png"
+  },
+  {
+    "id": "olympia-giant",
+    "set": "Olympia",
+    "name": "Giant",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Giant.png",
+    "portraitUrl": "/images/roles/T_Giant_P.png"
+  },
+  {
+    "id": "grimm-giant-",
+    "set": "Grimm",
+    "name": "Giant ",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Riese",
+    "imageUrl": "/images/roles/Giant.png",
+    "portraitUrl": "/images/roles/Giant_P.png"
   },
   {
     "id": "dark-goat",
     "set": "Dark",
     "name": "Goat",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Goat.png",
     "portraitUrl": "/images/roles/T_Goat_Portrait.png"
+  },
+  {
+    "id": "grimm-goblin",
+    "set": "Grimm",
+    "name": "Goblin",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/Goblin.png",
+    "portraitUrl": "/images/roles/Goblin_P.png"
+  },
+  {
+    "id": "grimm-golden-goose",
+    "set": "Grimm",
+    "name": "Golden Goose",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/Golden_Goose.png",
+    "portraitUrl": "/images/roles/Golden_Goose_P.png"
+  },
+  {
+    "id": "grimm-good-fairy",
+    "set": "Grimm",
+    "name": "Good Fairy",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/GoodFairy.png",
+    "portraitUrl": "/images/roles/GoodFairy_P.png"
+  },
+  {
+    "id": "grimm-good-witch",
+    "set": "Grimm",
+    "name": "Good Witch",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/GoodWitch.png",
+    "portraitUrl": "/images/roles/GoodWitch_P.png"
+  },
+  {
+    "id": "grimm-grandmother",
+    "set": "Grimm",
+    "name": "Grandmother",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Grandmother.png",
+    "portraitUrl": "/images/roles/Grandmother_P.png"
   },
   {
     "id": "standard-grave-digger",
     "set": "Standard",
     "name": "Grave Digger",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Dig up the dead to assume their role.",
-    "portraitUrl": "/images/roles/T_GraveDigger_Portrait.png"
-  },
-  {
-    "id": "starter-grave-digger",
-    "set": "Starter",
-    "name": "Grave Digger",
-    "faction": "Neutral",
-    "class": "Manipulation",
-    "description": "Dig up the dead to assume their role.",
+    "imageUrl": "/images/roles/T_GraveDigger.png",
     "portraitUrl": "/images/roles/T_GraveDigger_Portrait.png"
   },
   {
@@ -949,8 +1775,10 @@
     "set": "Dark",
     "name": "Grave Robber",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_GraveRobber.png",
     "portraitUrl": "/images/roles/T_GraveRobber_P.png"
   },
   {
@@ -958,26 +1786,32 @@
     "set": "Standard",
     "name": "Greenhorn",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Sacrifice yourself to save another.",
+    "imageUrl": "/images/roles/T_Greenhorn.png",
     "portraitUrl": "/images/roles/T_GreenhornPortrait.png"
   },
   {
-    "id": "starter-greenhorn",
-    "set": "Starter",
-    "name": "Greenhorn",
-    "faction": "Town",
+    "id": "grimm-gretel",
+    "set": "Grimm",
+    "name": "Gretel",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
     "class": "Elimination",
-    "description": "Sacrifice yourself to save another.",
-    "portraitUrl": "/images/roles/T_GreenhornPortrait.png"
+    "description": "Alp",
+    "imageUrl": "/images/roles/Gretel.png",
+    "portraitUrl": "/images/roles/Gretel_P.png"
   },
   {
     "id": "standard-guard-dog",
     "set": "Standard",
     "name": "Guard Dog",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "The best boi, Dexter.",
+    "imageUrl": "/images/roles/T_GuardDog.png",
     "portraitUrl": "/images/roles/T_GuardDog_P.png"
   },
   {
@@ -985,71 +1819,142 @@
     "set": "Standard",
     "name": "Guardian Angel",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Protection",
     "description": "Vow to protect two players at all cost.",
+    "imageUrl": "/images/roles/T_GuardianAngel.png",
     "portraitUrl": "/images/roles/T_GuardianAngelPortrait.png"
   },
   {
-    "id": "starter-guardian-angel",
-    "set": "Starter",
-    "name": "Guardian Angel",
-    "faction": "Neutral",
-    "class": "Protection",
-    "description": "Vow to protect two players at all cost.",
-    "portraitUrl": "/images/roles/T_GuardianAngelPortrait.png"
+    "id": "olympia-hades",
+    "set": "Olympia",
+    "name": "Hades",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hades.png",
+    "portraitUrl": "/images/roles/T_Hades_P.png"
   },
   {
     "id": "dark-hag",
     "set": "Dark",
     "name": "Hag",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Hag.png",
     "portraitUrl": "/images/roles/T_HagPortrait.png"
+  },
+  {
+    "id": "grimm-halfling",
+    "set": "Grimm",
+    "name": "Halfling",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/Halfling.png",
+    "portraitUrl": "/images/roles/Halfling_P.png"
+  },
+  {
+    "id": "grimm-hansel",
+    "set": "Grimm",
+    "name": "Hansel",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Hansel.png",
+    "portraitUrl": "/images/roles/Hansel_P.png"
   },
   {
     "id": "standard-harlot",
     "set": "Standard",
     "name": "Harlot",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Use lust to leave other players exposed and weak.",
+    "imageUrl": "/images/roles/T_Harlot.png",
     "portraitUrl": "/images/roles/T_Harlot_Portrait.png"
   },
   {
-    "id": "starter-harlot",
-    "set": "Starter",
-    "name": "Harlot",
-    "faction": "Town",
+    "id": "olympia-harmonia",
+    "set": "Olympia",
+    "name": "Harmonia",
+    "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
-    "description": "Use lust to leave other players exposed and weak.",
-    "portraitUrl": "/images/roles/T_Harlot_Portrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/T_Harmonia.png",
+    "portraitUrl": "/images/roles/T_Harmonia_P.png"
+  },
+  {
+    "id": "olympia-harpy",
+    "set": "Olympia",
+    "name": "Harpy",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Harpy.png",
+    "portraitUrl": "/images/roles/T_Harpy_P.png"
   },
   {
     "id": "standard-healer",
     "set": "Standard",
     "name": "Healer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Heal the ailments of other players.",
+    "imageUrl": "/images/roles/T_Healer.png",
     "portraitUrl": "/images/roles/T_Healer_Portrait.png"
   },
   {
-    "id": "starter-healer",
-    "set": "Starter",
-    "name": "Healer",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Heal the ailments of other players.",
-    "portraitUrl": "/images/roles/T_Healer_Portrait.png"
+    "id": "olympia-hecate",
+    "set": "Olympia",
+    "name": "Hecate",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hecate.png",
+    "portraitUrl": "/images/roles/T_Hecate_P.png"
+  },
+  {
+    "id": "olympia-helenus",
+    "set": "Olympia",
+    "name": "Helenus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Helenus.png",
+    "portraitUrl": "/images/roles/T_Helenus_P.png"
+  },
+  {
+    "id": "olympia-hephaestus",
+    "set": "Olympia",
+    "name": "Hephaestus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hephaestus.png",
+    "portraitUrl": "/images/roles/T_Hephaestus_P.png"
   },
   {
     "id": "dark-herb-vendor",
     "set": "Dark",
     "name": "Herb Vendor",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_HerbVendor.png",
     "portraitUrl": "/images/roles/T_HerbVendor_Portrait.png"
   },
   {
@@ -1057,17 +1962,10 @@
     "set": "Standard",
     "name": "Herbalist",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Use fire magic to eliminate key targets.",
-    "portraitUrl": "/images/roles/T_Herbalist_Portrait.png"
-  },
-  {
-    "id": "starter-herbalist",
-    "set": "Starter",
-    "name": "Herbalist",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Use fire magic to eliminate key targets.",
+    "imageUrl": "/images/roles/T_Herbalist.png",
     "portraitUrl": "/images/roles/T_Herbalist_Portrait.png"
   },
   {
@@ -1075,17 +1973,54 @@
     "set": "Dark",
     "name": "Heretic",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Heretic.png",
     "portraitUrl": "/images/roles/T_Heretic_Portrait.png"
+  },
+  {
+    "id": "olympia-hermes",
+    "set": "Olympia",
+    "name": "Hermes",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hermes.png",
+    "portraitUrl": "/images/roles/T_Hermes_P.png"
+  },
+  {
+    "id": "olympia-hestia",
+    "set": "Olympia",
+    "name": "Hestia",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hestia.png",
+    "portraitUrl": "/images/roles/T_Hestia_P.png"
+  },
+  {
+    "id": "grimm-hiking-man",
+    "set": "Grimm",
+    "name": "Hiking Man",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alp",
+    "imageUrl": "/images/roles/HikingMan.png",
+    "portraitUrl": "/images/roles/HikingMan_P.png"
   },
   {
     "id": "standard-horror",
     "set": "Standard",
     "name": "Horror",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Scare important protections off of players by making them untargetable.",
+    "imageUrl": "/images/roles/T_WerewolfHorror.png",
     "portraitUrl": "/images/roles/T_WerewolfHorrorPortrait.png"
   },
   {
@@ -1093,17 +2028,76 @@
     "set": "Dark",
     "name": "Hunter",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Hunter.png",
     "portraitUrl": "/images/roles/T_Hunter_Portrait.png"
+  },
+  {
+    "id": "grimm-hunter",
+    "set": "Grimm",
+    "name": "Hunter",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Alp",
+    "imageUrl": "/images/roles/Hunter.png",
+    "portraitUrl": "/images/roles/Hunter_P.png"
+  },
+  {
+    "id": "olympia-hydra",
+    "set": "Olympia",
+    "name": "Hydra",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Hydra.png",
+    "portraitUrl": "/images/roles/T_Hydra_P.png"
+  },
+  {
+    "id": "olympia-icarus",
+    "set": "Olympia",
+    "name": "Icarus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Icarus.png",
+    "portraitUrl": "/images/roles/T_Icarus_P.png"
+  },
+  {
+    "id": "grimm-ice-wyrm",
+    "set": "Grimm",
+    "name": "Ice Wyrm",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Protection",
+    "description": "Eiswurm",
+    "imageUrl": "/images/roles/IceWyrm.png",
+    "portraitUrl": "/images/roles/IceWyrm_P.png"
+  },
+  {
+    "id": "grimm-imp",
+    "set": "Grimm",
+    "name": "Imp",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Wichtel",
+    "imageUrl": "/images/roles/Imp.png",
+    "portraitUrl": "/images/roles/Imp_P.png"
   },
   {
     "id": "standard-impersonator",
     "set": "Standard",
     "name": "Impersonator",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Copy the roles of other players. ",
+    "imageUrl": "/images/roles/T_Impersonator.png",
     "portraitUrl": "/images/roles/T_ImpersonatorPortrait.png"
   },
   {
@@ -1111,8 +2105,10 @@
     "set": "Dark",
     "name": "Information Broker",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_InformationBroker.png",
     "portraitUrl": "/images/roles/T_InformationBrokerPortrait.png"
   },
   {
@@ -1120,53 +2116,54 @@
     "set": "Standard",
     "name": "Inquisitor",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Obtain large amounts of information about players that is mostly accurate.",
+    "imageUrl": "/images/roles/T_Inquisitor.png",
     "portraitUrl": "/images/roles/T_InquisitorPortrait.png"
   },
   {
-    "id": "starter-inquisitor",
-    "set": "Starter",
-    "name": "Inquisitor",
-    "faction": "Town",
+    "id": "grimm-jack-and-the-beanstalk",
+    "set": "Grimm",
+    "name": "Jack and the Beanstalk",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
     "class": "Investigation",
-    "description": "Obtain large amounts of information about players that is mostly accurate.",
-    "portraitUrl": "/images/roles/T_InquisitorPortrait.png"
+    "description": "Alp",
+    "imageUrl": "/images/roles/JackAndTheBeanstalk.png",
+    "portraitUrl": "/images/roles/JackAndTheBeanstalk_P.png"
   },
   {
     "id": "standard-jackal",
     "set": "Standard",
     "name": "Jackal",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Protection",
     "description": "Disrupt the town by calling the gods to protect you.",
+    "imageUrl": "/images/roles/T_Jackal.png",
     "portraitUrl": "/images/roles/T_JackalPortrait.png"
   },
   {
-    "id": "starter-jackal",
-    "set": "Starter",
-    "name": "Jackal",
-    "faction": "Werewolf",
-    "class": "Protection",
-    "description": "Disrupt the town by calling the gods to protect you.",
-    "portraitUrl": "/images/roles/T_JackalPortrait.png"
+    "id": "grimm-jackalope",
+    "set": "Grimm",
+    "name": "Jackalope",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "Wolpertinger",
+    "imageUrl": "/images/roles/Jackalope.png",
+    "portraitUrl": "/images/roles/Jackalope_P.png"
   },
   {
     "id": "standard-jailer",
     "set": "Standard",
     "name": "Jailer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Interrogate players at night.",
-    "portraitUrl": "/images/roles/T_JailerPortrait.png"
-  },
-  {
-    "id": "starter-jailer",
-    "set": "Starter",
-    "name": "Jailer",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Interrogate players at night.",
+    "imageUrl": "/images/roles/T_Jailer.png",
     "portraitUrl": "/images/roles/T_JailerPortrait.png"
   },
   {
@@ -1174,17 +2171,32 @@
     "set": "Standard",
     "name": "Janitor",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Learn information about players whilst making them untargetable to other players.",
+    "imageUrl": "/images/roles/T_Janitor.png",
     "portraitUrl": "/images/roles/T_JanitorPortrait.png"
+  },
+  {
+    "id": "olympia-janus",
+    "set": "Olympia",
+    "name": "Janus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Janus.png",
+    "portraitUrl": "/images/roles/T_Janus_P.png"
   },
   {
     "id": "dark-jester",
     "set": "Dark",
     "name": "Jester",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Jester.png",
     "portraitUrl": "/images/roles/T_Jester_Portrait.png"
   },
   {
@@ -1192,17 +2204,10 @@
     "set": "Standard",
     "name": "Judge",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "Have the final say in all execution votes during the day.",
-    "portraitUrl": "/images/roles/T_Judge_Portrait.png"
-  },
-  {
-    "id": "starter-judge",
-    "set": "Starter",
-    "name": "Judge",
-    "faction": "Neutral",
-    "class": "Elimination",
-    "description": "Have the final say in all execution votes during the day.",
+    "imageUrl": "/images/roles/T_Judge.png",
     "portraitUrl": "/images/roles/T_Judge_Portrait.png"
   },
   {
@@ -1210,8 +2215,10 @@
     "set": "Standard",
     "name": "Juggernaut",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Wreck havoc in the Town.",
+    "imageUrl": "/images/roles/T_Juggernaut.png",
     "portraitUrl": "/images/roles/T_JuggernautPortrait.png"
   },
   {
@@ -1219,35 +2226,32 @@
     "set": "Standard",
     "name": "Justice",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Take justice into your own hands when the jusice system fails.",
+    "imageUrl": "/images/roles/T_Justice.png",
     "portraitUrl": "/images/roles/T_JusticePortrait.png"
   },
   {
-    "id": "starter-justice",
-    "set": "Starter",
-    "name": "Justice",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Take justice into your own hands when the jusice system fails.",
-    "portraitUrl": "/images/roles/T_JusticePortrait.png"
+    "id": "grimm-kind-matron",
+    "set": "Grimm",
+    "name": "Kind Matron",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Frau Holle",
+    "imageUrl": "/images/roles/Miss_Holle.png",
+    "portraitUrl": "/images/roles/Miss_Holle_P.png"
   },
   {
     "id": "standard-king",
     "set": "Standard",
     "name": "King",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Prove that you are better than the Mad King.",
-    "portraitUrl": "/images/roles/T_KingPortrait.png"
-  },
-  {
-    "id": "starter-king",
-    "set": "Starter",
-    "name": "King",
-    "faction": "Town",
-    "class": "Manipulation",
-    "description": "Prove that you are better than the Mad King.",
+    "imageUrl": "/images/roles/T_King.png",
     "portraitUrl": "/images/roles/T_KingPortrait.png"
   },
   {
@@ -1255,26 +2259,120 @@
     "set": "Dark",
     "name": "Knight",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Knight.png",
     "portraitUrl": "/images/roles/T_Knight_Portrait.png"
+  },
+  {
+    "id": "grimm-knight",
+    "set": "Grimm",
+    "name": "Knight",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Ritter",
+    "imageUrl": "/images/roles/Knight.png",
+    "portraitUrl": "/images/roles/Knight_P.png"
+  },
+  {
+    "id": "olympia-ladon",
+    "set": "Olympia",
+    "name": "Ladon",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Ladon.png",
+    "portraitUrl": "/images/roles/T_Ladon_P.png"
+  },
+  {
+    "id": "grimm-lamb",
+    "set": "Grimm",
+    "name": "Lamb",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "Gei\u00dflein",
+    "imageUrl": "/images/roles/Lamb.png",
+    "portraitUrl": "/images/roles/Lamb_P.png"
+  },
+  {
+    "id": "olympia-lamia",
+    "set": "Olympia",
+    "name": "Lamia",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Lamia.png",
+    "portraitUrl": "/images/roles/T_Lamia_P.png"
   },
   {
     "id": "dark-life-drinker",
     "set": "Dark",
     "name": "Life Drinker",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_LifeDrinker.png",
     "portraitUrl": "/images/roles/T_LifeDrinker_Portrait.png"
+  },
+  {
+    "id": "grimm-lindwyrm",
+    "set": "Grimm",
+    "name": "Lindwyrm",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Lindwurm",
+    "imageUrl": "/images/roles/Lindwyrm.png",
+    "portraitUrl": "/images/roles/Lindwyrm_P.png"
+  },
+  {
+    "id": "grimm-litte-witch",
+    "set": "Grimm",
+    "name": "Litte Witch",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Manipulation",
+    "description": "Kleine Hexe",
+    "imageUrl": "/images/roles/LittleWitch.png",
+    "portraitUrl": "/images/roles/LittleWitch_P.png"
+  },
+  {
+    "id": "grimm-little-mermaid",
+    "set": "Grimm",
+    "name": "Little Mermaid",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Kleine Meerjungfrau",
+    "imageUrl": "/images/roles/LittleMermaid.png",
+    "portraitUrl": "/images/roles/LittleMermaid_P.png"
+  },
+  {
+    "id": "grimm-little-red-riding-hood",
+    "set": "Grimm",
+    "name": "Little Red Riding Hood",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Rotk\u00e4ppchen",
+    "imageUrl": "/images/roles/LittleRedRidingHood.png",
+    "portraitUrl": "/images/roles/LittleRedRidingHood_P.png"
   },
   {
     "id": "standard-locksmith",
     "set": "Standard",
     "name": "Locksmith",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Keep people safe by locking them inside of their houses.",
+    "imageUrl": "/images/roles/T_Locksmith.png",
     "portraitUrl": "/images/roles/T_Locksmith_Portrait.png"
   },
   {
@@ -1282,26 +2380,65 @@
     "set": "Dark",
     "name": "Loner",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Loner.png",
     "portraitUrl": "/images/roles/T_Loner_Portrait.png"
+  },
+  {
+    "id": "grimm-lord-of-the-hill",
+    "set": "Grimm",
+    "name": "Lord of the Hill",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "R\u00fcbezahl",
+    "imageUrl": "/images/roles/LordOfTheHill.png",
+    "portraitUrl": "/images/roles/LordOfTheHill_P.png"
+  },
+  {
+    "id": "grimm-lucky-hans",
+    "set": "Grimm",
+    "name": "Lucky Hans",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Hans im Gl\u00fcck",
+    "imageUrl": "/images/roles/LuckyHans.png",
+    "portraitUrl": "/images/roles/LuckyHans_P.png"
+  },
+  {
+    "id": "olympia-lycaon",
+    "set": "Olympia",
+    "name": "Lycaon",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Lycaon.png",
+    "portraitUrl": "/images/roles/T_Lycaon_P.png"
+  },
+  {
+    "id": "olympia-lyssa",
+    "set": "Olympia",
+    "name": "Lyssa",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Lyssa.png",
+    "portraitUrl": "/images/roles/T_Lyssa_P.png"
   },
   {
     "id": "standard-mad-bomber",
     "set": "Standard",
     "name": "Mad Bomber",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Move a bomb between players. On death, trigger it.",
-    "portraitUrl": "/images/roles/T_MadBomberPortrait.png"
-  },
-  {
-    "id": "starter-mad-bomber",
-    "set": "Starter",
-    "name": "Mad Bomber",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Move a bomb between players. On death, trigger it.",
+    "imageUrl": "/images/roles/T_MadBomber.png",
     "portraitUrl": "/images/roles/T_MadBomberPortrait.png"
   },
   {
@@ -1309,8 +2446,10 @@
     "set": "Dark",
     "name": "Mad King",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_MadKing.png",
     "portraitUrl": "/images/roles/T_MadKing_Portrait.png"
   },
   {
@@ -1318,17 +2457,54 @@
     "set": "Standard",
     "name": "Magistrate",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Control the narative by influencing votes.",
+    "imageUrl": "/images/roles/T_Magistrate.png",
     "portraitUrl": "/images/roles/T_MagistratePortrait.png"
+  },
+  {
+    "id": "grimm-maid",
+    "set": "Grimm",
+    "name": "Maid",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Magd",
+    "imageUrl": "/images/roles/Maid.png",
+    "portraitUrl": "/images/roles/Maid_P.png"
+  },
+  {
+    "id": "grimm-mandrake",
+    "set": "Grimm",
+    "name": "Mandrake",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/Mandrake.png",
+    "portraitUrl": "/images/roles/Mandrake_P.png"
+  },
+  {
+    "id": "grimm-mare",
+    "set": "Grimm",
+    "name": "Mare",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/Mare.png",
+    "portraitUrl": "/images/roles/Mare_P.png"
   },
   {
     "id": "dark-martyr",
     "set": "Dark",
     "name": "Martyr",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Martyr.png",
     "portraitUrl": "/images/roles/T_Martyr_Portrait.png"
   },
   {
@@ -1336,8 +2512,10 @@
     "set": "Dark",
     "name": "Masochist",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Masochist.png",
     "portraitUrl": "/images/roles/T_Masochist_Portrait.png"
   },
   {
@@ -1345,53 +2523,120 @@
     "set": "Dark",
     "name": "Mastermind",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Mastermind.png",
     "portraitUrl": "/images/roles/T_Mastermind_Portrait.png"
+  },
+  {
+    "id": "grimm-mayor",
+    "set": "Grimm",
+    "name": "Mayor",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/Mayor.png",
+    "portraitUrl": "/images/roles/Mayor_P.png"
+  },
+  {
+    "id": "olympia-medea",
+    "set": "Olympia",
+    "name": "Medea",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Medea.png",
+    "portraitUrl": "/images/roles/T_Medea_P.png"
   },
   {
     "id": "standard-medium",
     "set": "Standard",
     "name": "Medium",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Be the voice of dead players.",
+    "imageUrl": "/images/roles/T_Medium.png",
     "portraitUrl": "/images/roles/T_MediumPortrait.png"
   },
   {
-    "id": "starter-medium",
-    "set": "Starter",
-    "name": "Medium",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Be the voice of dead players.",
-    "portraitUrl": "/images/roles/T_MediumPortrait.png"
+    "id": "olympia-medusa",
+    "set": "Olympia",
+    "name": "Medusa",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Medusa.png",
+    "portraitUrl": "/images/roles/T_Medusa_P.png"
+  },
+  {
+    "id": "olympia-melampus",
+    "set": "Olympia",
+    "name": "Melampus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Melampus.png",
+    "portraitUrl": "/images/roles/T_Melampus_P.png"
   },
   {
     "id": "standard-mentalist",
     "set": "Standard",
     "name": "Mentalist",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Find similarities between players.",
+    "imageUrl": "/images/roles/T_Mentalist.png",
     "portraitUrl": "/images/roles/T_MentalistPortrait.png"
   },
   {
-    "id": "starter-mentalist",
-    "set": "Starter",
-    "name": "Mentalist",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Find similarities between players.",
-    "portraitUrl": "/images/roles/T_MentalistPortrait.png"
+    "id": "grimm-mercenary",
+    "set": "Grimm",
+    "name": "Mercenary",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Landsknecht",
+    "imageUrl": "/images/roles/Mercenary.png",
+    "portraitUrl": "/images/roles/Mercenary_P.png"
+  },
+  {
+    "id": "olympia-midas",
+    "set": "Olympia",
+    "name": "Midas",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Midas.png",
+    "portraitUrl": "/images/roles/T_Midas_P.png"
+  },
+  {
+    "id": "grimm-miller",
+    "set": "Grimm",
+    "name": "Miller",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "M\u00fcller",
+    "imageUrl": "/images/roles/Miller.png",
+    "portraitUrl": "/images/roles/Miller_P.png"
   },
   {
     "id": "dark-mimic",
     "set": "Dark",
     "name": "Mimic",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Mimic.png",
     "portraitUrl": "/images/roles/T_Mimic_Portrait.png"
   },
   {
@@ -1399,107 +2644,329 @@
     "set": "Dark",
     "name": "Mind Eater",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_MindEater.png",
     "portraitUrl": "/images/roles/T_MindEater_Portrait.png"
+  },
+  {
+    "id": "grimm-mine-spirit",
+    "set": "Grimm",
+    "name": "Mine Spirit",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Bergm\u00f6nch",
+    "imageUrl": "/images/roles/MineSpirit.png",
+    "portraitUrl": "/images/roles/MineSpirit_P.png"
   },
   {
     "id": "dark-minion",
     "set": "Dark",
     "name": "Minion",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Minion.png",
     "portraitUrl": "/images/roles/T_Minion_Portrait.png"
+  },
+  {
+    "id": "olympia-minotaur",
+    "set": "Olympia",
+    "name": "Minotaur",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Minotaur.png",
+    "portraitUrl": "/images/roles/T_Minotaur_P.png"
   },
   {
     "id": "standard-mirror-fiend",
     "set": "Standard",
     "name": "Mirror Fiend",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Reach through the mirror to steal someone's identity. ",
+    "imageUrl": "/images/roles/T_Mirrorfiend.png",
     "portraitUrl": "/images/roles/T_MirrorfiendPortrait.png"
+  },
+  {
+    "id": "grimm-mirror,-mirror",
+    "set": "Grimm",
+    "name": "Mirror, Mirror",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/Mirror.png",
+    "portraitUrl": "/images/roles/Mirror_P.png"
+  },
+  {
+    "id": "olympia-momus",
+    "set": "Olympia",
+    "name": "Momus",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Momus.png",
+    "portraitUrl": "/images/roles/T_Momus_P.png"
+  },
+  {
+    "id": "olympia-mormo",
+    "set": "Olympia",
+    "name": "Mormo",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Mormo.png",
+    "portraitUrl": "/images/roles/T_Mormo_P.png"
+  },
+  {
+    "id": "olympia-morpheus",
+    "set": "Olympia",
+    "name": "Morpheus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Morpheus.png",
+    "portraitUrl": "/images/roles/T_Morpheus_P.png"
   },
   {
     "id": "dark-mortician",
     "set": "Dark",
     "name": "Mortician",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Mortician.png",
     "portraitUrl": "/images/roles/T_Mortician_P.png"
+  },
+  {
+    "id": "grimm-mountain-witch",
+    "set": "Grimm",
+    "name": "Mountain Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Protection",
+    "description": "Berghexe",
+    "imageUrl": "/images/roles/MountainWitch.png",
+    "portraitUrl": "/images/roles/MountainWitch_P.png"
+  },
+  {
+    "id": "grimm-musician",
+    "set": "Grimm",
+    "name": "Musician",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/Musician.png",
+    "portraitUrl": "/images/roles/Musician_P.png"
   },
   {
     "id": "dark-mutator",
     "set": "Dark",
     "name": "Mutator",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Mutator.png",
     "portraitUrl": "/images/roles/T_Mutator_Portrait.png"
+  },
+  {
+    "id": "olympia-narcissus",
+    "set": "Olympia",
+    "name": "Narcissus",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Narcissus.png",
+    "portraitUrl": "/images/roles/T_Narcissus_P.png"
   },
   {
     "id": "dark-necromancer",
     "set": "Dark",
     "name": "Necromancer",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Necromancer.png",
     "portraitUrl": "/images/roles/T_Necromancer_Portrait.png"
+  },
+  {
+    "id": "olympia-nemesis",
+    "set": "Olympia",
+    "name": "Nemesis",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Nemesis.png",
+    "portraitUrl": "/images/roles/T_Nemesis_P.png"
   },
   {
     "id": "standard-night-owl",
     "set": "Standard",
     "name": "Night Owl",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Sleep is for the weak.",
+    "imageUrl": "/images/roles/T_NightOwl.png",
     "portraitUrl": "/images/roles/T_NightOwl_Portrait.png"
+  },
+  {
+    "id": "grimm-night-pixie",
+    "set": "Grimm",
+    "name": "Night Pixie",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Protection",
+    "description": "Drude",
+    "imageUrl": "/images/roles/Nightpixie.png",
+    "portraitUrl": "/images/roles/Nightpixie_P.png"
   },
   {
     "id": "dark-night's-watch",
     "set": "Dark",
     "name": "Night's Watch",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_NightsWatch.png",
     "portraitUrl": "/images/roles/T_NightsWatch_Portrait.png"
+  },
+  {
+    "id": "grimm-nightingale",
+    "set": "Grimm",
+    "name": "Nightingale",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Investigation",
+    "description": "Nachtigall",
+    "imageUrl": "/images/roles/Nighttinggale.png",
+    "portraitUrl": "/images/roles/Nighttinggale_P.png"
+  },
+  {
+    "id": "grimm-nis-puk",
+    "set": "Grimm",
+    "name": "Nis Puk",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Nis Puk",
+    "imageUrl": "/images/roles/NisPuk.png",
+    "portraitUrl": "/images/roles/NisPuk_P.png"
+  },
+  {
+    "id": "olympia-nosos",
+    "set": "Olympia",
+    "name": "Nosos",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Nosos.png",
+    "portraitUrl": "/images/roles/T_Nosos_P.png"
   },
   {
     "id": "standard-nymph",
     "set": "Standard",
     "name": "Nymph",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Keep the peace so that nature can be safe.",
+    "imageUrl": "/images/roles/T_Nymph.png",
     "portraitUrl": "/images/roles/T_Nymph__P.png"
+  },
+  {
+    "id": "olympia-nyx",
+    "set": "Olympia",
+    "name": "Nyx",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Nyx.png",
+    "portraitUrl": "/images/roles/T_Nyx_P.png"
+  },
+  {
+    "id": "grimm-oberon",
+    "set": "Grimm",
+    "name": "Oberon",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Aberdal",
+    "imageUrl": "/images/roles/Oberon.png",
+    "portraitUrl": "/images/roles/Oberon_P.png"
+  },
+  {
+    "id": "olympia-odysseus",
+    "set": "Olympia",
+    "name": "Odysseus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Odysseus.png",
+    "portraitUrl": "/images/roles/T_Odysseus_P.png"
   },
   {
     "id": "standard-old-man",
     "set": "Standard",
     "name": "Old Man",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Role play as Dylan for a bit.",
+    "imageUrl": "/images/roles/T_OldMan.png",
     "portraitUrl": "/images/roles/T_OldMan_Portrait.png"
   },
   {
-    "id": "starter-old-man",
-    "set": "Starter",
-    "name": "Old Man",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Role play as Dylan for a bit.",
-    "portraitUrl": "/images/roles/T_OldMan_Portrait.png"
+    "id": "grimm-old-wizard-",
+    "set": "Grimm",
+    "name": "Old Wizard ",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Alter Zaberer",
+    "imageUrl": "/images/roles/Old_Wizard.png",
+    "portraitUrl": "/images/roles/Old_Wizard_P.png"
+  },
+  {
+    "id": "olympia-oracle",
+    "set": "Olympia",
+    "name": "Oracle",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Oracle.png",
+    "portraitUrl": "/images/roles/T_Oracle_P.png"
   },
   {
     "id": "dark-outsider",
     "set": "Dark",
     "name": "Outsider",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Outsider.png",
     "portraitUrl": "/images/roles/T_Outsider_Portrait.png"
   },
   {
@@ -1507,17 +2974,10 @@
     "set": "Standard",
     "name": "Pack Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Elimination",
     "description": "Strike at the Town with your claws.",
-    "portraitUrl": "/images/roles/T_PackWolf_P.png"
-  },
-  {
-    "id": "starter-pack-wolf",
-    "set": "Starter",
-    "name": "Pack Wolf",
-    "faction": "Werewolf",
-    "class": "Elimination",
-    "description": "Strike at the Town with your claws.",
+    "imageUrl": "/images/roles/T_PackWolf.png",
     "portraitUrl": "/images/roles/T_PackWolf_P.png"
   },
   {
@@ -1525,26 +2985,54 @@
     "set": "Dark",
     "name": "Paladin",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Paladin.png",
     "portraitUrl": "/images/roles/T_Paladin_Portrait.png"
+  },
+  {
+    "id": "olympia-pan",
+    "set": "Olympia",
+    "name": "Pan",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Pan.png",
+    "portraitUrl": "/images/roles/T_Pan_P.png"
+  },
+  {
+    "id": "olympia-panacea",
+    "set": "Olympia",
+    "name": "Panacea",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Panacea.png",
+    "portraitUrl": "/images/roles/T_Panacea_P.png"
+  },
+  {
+    "id": "olympia-pandora",
+    "set": "Olympia",
+    "name": "Pandora",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Pandora.png",
+    "portraitUrl": "/images/roles/T_Pandora_P.png"
   },
   {
     "id": "standard-pants-wolf",
     "set": "Standard",
     "name": "Pants Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Leave players more exposed than they were planning for.",
-    "portraitUrl": "/images/roles/T_PantsuWolfPortrait.png"
-  },
-  {
-    "id": "starter-pants-wolf",
-    "set": "Starter",
-    "name": "Pants Wolf",
-    "faction": "Werewolf",
-    "class": "Manipulation",
-    "description": "Leave players more exposed than they were planning for.",
+    "imageUrl": "/images/roles/T_PantsuWolf.png",
     "portraitUrl": "/images/roles/T_PantsuWolfPortrait.png"
   },
   {
@@ -1552,8 +3040,10 @@
     "set": "Dark",
     "name": "Parasite",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Parasite.png",
     "portraitUrl": "/images/roles/T_Parasite_Portrait.png"
   },
   {
@@ -1561,8 +3051,10 @@
     "set": "Dark",
     "name": "Parishioner",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Parishioner.png",
     "portraitUrl": "/images/roles/T_Parishioner_Portrait.png"
   },
   {
@@ -1570,8 +3062,10 @@
     "set": "Standard",
     "name": "Party Animal",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Protect players by inviting them around for a party!",
+    "imageUrl": "/images/roles/T_PartyAnimal.png",
     "portraitUrl": "/images/roles/T_PartyAnimalPortrait.png"
   },
   {
@@ -1579,26 +3073,87 @@
     "set": "Standard",
     "name": "Peasant",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Sometimes a well placed spear can change history.",
+    "imageUrl": "/images/roles/T_Peasant.png",
     "portraitUrl": "/images/roles/T_Peasant_Portrait.png"
   },
   {
-    "id": "starter-peasant",
-    "set": "Starter",
-    "name": "Peasant",
-    "faction": "Town",
+    "id": "olympia-pegasus",
+    "set": "Olympia",
+    "name": "Pegasus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Pegasus.png",
+    "portraitUrl": "/images/roles/T_Pegasus_P.png"
+  },
+  {
+    "id": "olympia-persephone",
+    "set": "Olympia",
+    "name": "Persephone",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
     "class": "Elimination",
-    "description": "Sometimes a well placed spear can change history.",
-    "portraitUrl": "/images/roles/T_Peasant_Portrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/T_Persephone.png",
+    "portraitUrl": "/images/roles/T_Persephone_P.png"
+  },
+  {
+    "id": "olympia-perseus",
+    "set": "Olympia",
+    "name": "Perseus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Perseus.png",
+    "portraitUrl": "/images/roles/T_Perseus_P.png"
+  },
+  {
+    "id": "grimm-peterman",
+    "set": "Grimm",
+    "name": "Peterman",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Peterm\u00e4nnchen",
+    "imageUrl": "/images/roles/Peterman.png",
+    "portraitUrl": "/images/roles/Peterman_P.png"
+  },
+  {
+    "id": "olympia-phobos",
+    "set": "Olympia",
+    "name": "Phobos",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Phobos.png",
+    "portraitUrl": "/images/roles/T_Phobos_P.png"
+  },
+  {
+    "id": "grimm-pied-piper",
+    "set": "Grimm",
+    "name": "Pied Piper",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Rattenf\u00e4nger",
+    "imageUrl": "/images/roles/PiedPiper.png",
+    "portraitUrl": "/images/roles/PiedPiper_P.png"
   },
   {
     "id": "standard-plague-doctor",
     "set": "Standard",
     "name": "Plague Doctor",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Spread plague to wipe out the Town.",
+    "imageUrl": "/images/roles/T_PlagueDoctor.png",
     "portraitUrl": "/images/roles/T_PlagueDoctorPortrait.png"
   },
   {
@@ -1606,17 +3161,32 @@
     "set": "Standard",
     "name": "Poison Drake",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "Spread plague to wipe out the Town.",
+    "imageUrl": "/images/roles/T_Poison_Drake.png",
     "portraitUrl": "/images/roles/T_Poison_Drake_Portrait.png"
+  },
+  {
+    "id": "olympia-poseidon",
+    "set": "Olympia",
+    "name": "Poseidon",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Poseidon.png",
+    "portraitUrl": "/images/roles/T_Poseidon_P.png"
   },
   {
     "id": "dark-preacher",
     "set": "Dark",
     "name": "Preacher",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Preacher.png",
     "portraitUrl": "/images/roles/T_Preacher_Portrait.png"
   },
   {
@@ -1624,17 +3194,10 @@
     "set": "Standard",
     "name": "Priest",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Protect the righteous and eliminate wolves with holy water. ",
-    "portraitUrl": "/images/roles/T_PriestPortrait.png"
-  },
-  {
-    "id": "starter-priest",
-    "set": "Starter",
-    "name": "Priest",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Protect the righteous and eliminate wolves with holy water. ",
+    "imageUrl": "/images/roles/T_Priest.png",
     "portraitUrl": "/images/roles/T_PriestPortrait.png"
   },
   {
@@ -1642,8 +3205,10 @@
     "set": "Dark",
     "name": "Prince",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Prince.png",
     "portraitUrl": "/images/roles/T_Prince_Portrait.png"
   },
   {
@@ -1651,8 +3216,10 @@
     "set": "Standard",
     "name": "Princess",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Overturn a vote by revealing yourself.",
+    "imageUrl": "/images/roles/T_Princess.png",
     "portraitUrl": "/images/roles/T_PrincessPortrait.png"
   },
   {
@@ -1660,35 +3227,54 @@
     "set": "Dark",
     "name": "Prophet",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Prophet.png",
     "portraitUrl": "/images/roles/T_Prophet_Portrait.png"
+  },
+  {
+    "id": "olympia-prophet",
+    "set": "Olympia",
+    "name": "Prophet",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Prophet.png",
+    "portraitUrl": "/images/roles/T_Prophet_P.png"
   },
   {
     "id": "standard-prophet",
     "set": "Standard",
     "name": "Prophet",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Use prophecies to decern information about your neighbours.",
+    "imageUrl": "/images/roles/T_Prophet.png",
     "portraitUrl": "/images/roles/T_ProphetPortrait.png"
   },
   {
-    "id": "starter-prophet",
-    "set": "Starter",
-    "name": "Prophet",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Use prophecies to decern information about your neighbours.",
-    "portraitUrl": "/images/roles/T_ProphetPortrait.png"
+    "id": "olympia-psyche",
+    "set": "Olympia",
+    "name": "Psyche",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Psyche.png",
+    "portraitUrl": "/images/roles/T_Psyche_P.png"
   },
   {
     "id": "dark-psychic",
     "set": "Dark",
     "name": "Psychic",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Psychic.png",
     "portraitUrl": "/images/roles/T_Psychic_Portrait.png"
   },
   {
@@ -1696,71 +3282,131 @@
     "set": "Standard",
     "name": "Psychopath",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "Take revenge on players who dare to visit your obession.",
+    "imageUrl": "/images/roles/T_Psycopath.png",
     "portraitUrl": "/images/roles/T_PsycopathPortrait.png"
+  },
+  {
+    "id": "grimm-puss-in-boots",
+    "set": "Grimm",
+    "name": "Puss in Boots",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Gestiefelte Kater",
+    "imageUrl": "/images/roles/T_Puss_in_Boots.png",
+    "portraitUrl": "/images/roles/T_Puss_in_Boots_Portrait.png"
+  },
+  {
+    "id": "olympia-python",
+    "set": "Olympia",
+    "name": "Python",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Python.png",
+    "portraitUrl": "/images/roles/T_Python_P.png"
   },
   {
     "id": "standard-queen",
     "set": "Standard",
     "name": "Queen",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Use poison and politics to outnumber the irrelevant.",
+    "imageUrl": "/images/roles/T_Queen.png",
     "portraitUrl": "/images/roles/T_QueenPortrait.png"
+  },
+  {
+    "id": "grimm-rapunzel",
+    "set": "Grimm",
+    "name": "Rapunzel",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Rapunzel",
+    "imageUrl": "/images/roles/Rapunzel.png",
+    "portraitUrl": "/images/roles/Rapunzel_P.png"
   },
   {
     "id": "dark-rat",
     "set": "Dark",
     "name": "Rat",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Rat.png",
     "portraitUrl": "/images/roles/T_Rat_Portrait.png"
+  },
+  {
+    "id": "grimm-raven",
+    "set": "Grimm",
+    "name": "Raven",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Investigation",
+    "description": "Rabe",
+    "imageUrl": "/images/roles/Raven.png",
+    "portraitUrl": "/images/roles/Raven_P.png"
   },
   {
     "id": "dark-raven-keeper",
     "set": "Dark",
     "name": "Raven Keeper",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_RavenKeeper.png",
     "portraitUrl": "/images/roles/T_RavenKeeper_Portrait.png"
+  },
+  {
+    "id": "grimm-revenant",
+    "set": "Grimm",
+    "name": "Revenant",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Elimination",
+    "description": "Nachzehrer",
+    "imageUrl": "/images/roles/Revenant.png",
+    "portraitUrl": "/images/roles/Revenant_P.png"
   },
   {
     "id": "standard-ringmaster",
     "set": "Standard",
     "name": "Ringmaster",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "Force players to roll dice for their lives.",
+    "imageUrl": "/images/roles/T_Ringmaster.png",
     "portraitUrl": "/images/roles/T_RingmasterPortrait.png"
   },
   {
-    "id": "starter-ringmaster",
-    "set": "Starter",
-    "name": "Ringmaster",
-    "faction": "Neutral",
-    "class": "Elimination",
-    "description": "Force players to roll dice for their lives.",
-    "portraitUrl": "/images/roles/T_RingmasterPortrait.png"
+    "id": "grimm-robber",
+    "set": "Grimm",
+    "name": "Robber",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Manipulation",
+    "description": "R\u00e4uber",
+    "imageUrl": "/images/roles/Robber.png",
+    "portraitUrl": "/images/roles/Robber_P.png"
   },
   {
     "id": "standard-royal-guard",
     "set": "Standard",
     "name": "Royal Guard",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Be the first and last line of defense between the Royals and the horrors of the night.",
-    "portraitUrl": "/images/roles/T_RoyalGuardPortrait.png"
-  },
-  {
-    "id": "starter-royal-guard",
-    "set": "Starter",
-    "name": "Royal Guard",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Be the first and last line of defense between the Royals and the horrors of the night.",
+    "imageUrl": "/images/roles/T_RoyalGuard.png",
     "portraitUrl": "/images/roles/T_RoyalGuardPortrait.png"
   },
   {
@@ -1768,26 +3414,32 @@
     "set": "Standard",
     "name": "Royal Knight",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Protect the town from the horrors of the night.",
+    "imageUrl": "/images/roles/T_RoyalKnight.png",
     "portraitUrl": "/images/roles/T_RoyalKnightPortrait.png"
   },
   {
-    "id": "starter-royal-knight",
-    "set": "Starter",
-    "name": "Royal Knight",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Protect the town from the horrors of the night.",
-    "portraitUrl": "/images/roles/T_RoyalKnightPortrait.png"
+    "id": "grimm-rumpelstiltskin",
+    "set": "Grimm",
+    "name": "Rumpelstiltskin",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Investigation",
+    "description": "Rumpelstilzchen",
+    "imageUrl": "/images/roles/Rumpelstilzechen.png",
+    "portraitUrl": "/images/roles/Rumpelstilzechen_P.png"
   },
   {
     "id": "dark-saboteur",
     "set": "Dark",
     "name": "Saboteur",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Saboteur.png",
     "portraitUrl": "/images/roles/T_Saboteur_Portrait.png"
   },
   {
@@ -1795,17 +3447,32 @@
     "set": "Dark",
     "name": "Saint",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Saint.png",
     "portraitUrl": "/images/roles/T_Saint_Portrait.png"
+  },
+  {
+    "id": "grimm-sandman",
+    "set": "Grimm",
+    "name": "Sandman",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Sandmann",
+    "imageUrl": "/images/roles/Sandmann.png",
+    "portraitUrl": "/images/roles/Sandmann_P.png"
   },
   {
     "id": "dark-sanguine",
     "set": "Dark",
     "name": "Sanguine",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Sanguine.png",
     "portraitUrl": "/images/roles/T_Sanguine_Portrait.png"
   },
   {
@@ -1813,8 +3480,10 @@
     "set": "Dark",
     "name": "Scout",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Scout.png",
     "portraitUrl": "/images/roles/T_Scout_Portrait.png"
   },
   {
@@ -1822,8 +3491,10 @@
     "set": "Dark",
     "name": "Scribe",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Scribe.png",
     "portraitUrl": "/images/roles/T_Scribe_Portrait.png"
   },
   {
@@ -1831,26 +3502,32 @@
     "set": "Standard",
     "name": "Scryer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Read the negative energy of players, discerning who can kill. ",
+    "imageUrl": "/images/roles/T_Scryer.png",
     "portraitUrl": "/images/roles/T_ScryerPortrait.png"
   },
   {
-    "id": "starter-scryer",
-    "set": "Starter",
-    "name": "Scryer",
-    "faction": "Town",
+    "id": "olympia-scylla",
+    "set": "Olympia",
+    "name": "Scylla",
+    "faction": "Monster",
+    "factionName": "Monster",
     "class": "Investigation",
-    "description": "Read the negative energy of players, discerning who can kill. ",
-    "portraitUrl": "/images/roles/T_ScryerPortrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/T_Scylla.png",
+    "portraitUrl": "/images/roles/T_Scylla_P.png"
   },
   {
     "id": "standard-sectator",
     "set": "Standard",
     "name": "Sectator",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Convert Town into Werewolves if your numbers are too low. ",
+    "imageUrl": "/images/roles/T_Sectator.png",
     "portraitUrl": "/images/roles/T_SectatorPortrait.png"
   },
   {
@@ -1858,17 +3535,10 @@
     "set": "Standard",
     "name": "Seer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Use your crystal ball to discern who can be trusted.",
-    "portraitUrl": "/images/roles/T_SeerPortrait.png"
-  },
-  {
-    "id": "starter-seer",
-    "set": "Starter",
-    "name": "Seer",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Use your crystal ball to discern who can be trusted.",
+    "imageUrl": "/images/roles/T_Seer.png",
     "portraitUrl": "/images/roles/T_SeerPortrait.png"
   },
   {
@@ -1876,8 +3546,10 @@
     "set": "Standard",
     "name": "Serial Killer",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "Kill players if you can predict where they will be at night.",
+    "imageUrl": "/images/roles/T_SerialKiller.png",
     "portraitUrl": "/images/roles/T_SerialKillerPortrait.png"
   },
   {
@@ -1885,8 +3557,10 @@
     "set": "Dark",
     "name": "Serpent",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Serpant.png",
     "portraitUrl": "/images/roles/T_Serpant_Portrait.png"
   },
   {
@@ -1894,8 +3568,10 @@
     "set": "Dark",
     "name": "Servant",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Servant.png",
     "portraitUrl": "/images/roles/T_Servant_Portrait.png"
   },
   {
@@ -1903,8 +3579,10 @@
     "set": "Dark",
     "name": "Shade",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Shade.png",
     "portraitUrl": "/images/roles/T_Shade_Portrait.png"
   },
   {
@@ -1912,17 +3590,10 @@
     "set": "Standard",
     "name": "Sheep",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Protection",
     "description": "You are a sheep.",
-    "portraitUrl": "/images/roles/T_SheepPortrait.png"
-  },
-  {
-    "id": "starter-sheep",
-    "set": "Starter",
-    "name": "Sheep",
-    "faction": "Neutral",
-    "class": "Protection",
-    "description": "You are a sheep.",
+    "imageUrl": "/images/roles/T_Sheep.png",
     "portraitUrl": "/images/roles/T_SheepPortrait.png"
   },
   {
@@ -1930,53 +3601,98 @@
     "set": "Standard",
     "name": "Shield Maiden",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Protect large groups of players by placing yourself in front of them.",
+    "imageUrl": "/images/roles/T_ShieldMaiden.png",
     "portraitUrl": "/images/roles/T_ShieldMaidenPortrait.png"
   },
   {
-    "id": "starter-shield-maiden",
-    "set": "Starter",
-    "name": "Shield Maiden",
-    "faction": "Town",
-    "class": "Protection",
-    "description": "Protect large groups of players by placing yourself in front of them.",
-    "portraitUrl": "/images/roles/T_ShieldMaidenPortrait.png"
+    "id": "grimm-shrat",
+    "set": "Grimm",
+    "name": "Shrat",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "Schrat",
+    "imageUrl": "/images/roles/Shart.png",
+    "portraitUrl": "/images/roles/Shart_P.png"
   },
   {
     "id": "standard-shrouder",
     "set": "Standard",
     "name": "Shrouder",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Elimination",
     "description": "Enter an enraged state on death, killing someone before you perish.",
+    "imageUrl": "/images/roles/T_Shrouder.png",
     "portraitUrl": "/images/roles/T_ShrouderPortrait.png"
   },
   {
-    "id": "starter-shrouder",
-    "set": "Starter",
-    "name": "Shrouder",
-    "faction": "Werewolf",
+    "id": "grimm-siegfried",
+    "set": "Grimm",
+    "name": "Siegfried",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
     "class": "Elimination",
-    "description": "Enter an enraged state on death, killing someone before you perish.",
-    "portraitUrl": "/images/roles/T_ShrouderPortrait.png"
+    "description": "Der Drachent\u00f6ter",
+    "imageUrl": "/images/roles/Siegfried.png",
+    "portraitUrl": "/images/roles/Siegfried_P.png"
   },
   {
     "id": "dark-siren",
     "set": "Dark",
     "name": "Siren",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Siren.png",
     "portraitUrl": "/images/roles/T_Siren_Portrait.png"
+  },
+  {
+    "id": "olympia-siren",
+    "set": "Olympia",
+    "name": "Siren",
+    "faction": "Monster",
+    "factionName": "Monster",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Siren.png",
+    "portraitUrl": "/images/roles/T_Siren_P.png"
+  },
+  {
+    "id": "grimm-sisters",
+    "set": "Grimm",
+    "name": "Sisters",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Manipulation",
+    "description": "Schneewei\u00dfchen und Rosenrot",
+    "imageUrl": "/images/roles/RoseRedandWhiteSnow.png",
+    "portraitUrl": "/images/roles/RoseRedandWhiteSnow_P.png"
+  },
+  {
+    "id": "olympia-sisyphus",
+    "set": "Olympia",
+    "name": "Sisyphus",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Sisyphus.png",
+    "portraitUrl": "/images/roles/T_Sisyphus_P.png"
   },
   {
     "id": "standard-skeletal-wolf",
     "set": "Standard",
     "name": "Skeletal Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Cause other players to crumble to dust.",
+    "imageUrl": "/images/roles/T_Skeletal_Wolf.png",
     "portraitUrl": "/images/roles/T_Skeletal_Wolf_Portrait.png"
   },
   {
@@ -1984,8 +3700,10 @@
     "set": "Dark",
     "name": "Skeleton Archer",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_SkeletonArcher.png",
     "portraitUrl": "/images/roles/T_SkeletonArcher_Portrait.png"
   },
   {
@@ -1993,8 +3711,10 @@
     "set": "Dark",
     "name": "Skeleton Mage",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_SkeletonMage.png",
     "portraitUrl": "/images/roles/T_SkeletonMage_Portrait.png"
   },
   {
@@ -2002,8 +3722,10 @@
     "set": "Dark",
     "name": "Skeleton Warrior",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_SkeletonWarrior.png",
     "portraitUrl": "/images/roles/T_SkeletonWarrior_Portrait.png"
   },
   {
@@ -2011,26 +3733,65 @@
     "set": "Dark",
     "name": "Sleep Walker",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_SleepWalker.png",
     "portraitUrl": "/images/roles/T_SleepWalker_Portrait.png"
+  },
+  {
+    "id": "grimm-sleeping-beauty",
+    "set": "Grimm",
+    "name": "Sleeping Beauty",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Manipulation",
+    "description": "Dornr\u00f6schen",
+    "imageUrl": "/images/roles/SleepingBeauty.png",
+    "portraitUrl": "/images/roles/SleepingBeauty_P.png"
   },
   {
     "id": "dark-sniper",
     "set": "Dark",
     "name": "Sniper",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Sniper.png",
     "portraitUrl": "/images/roles/T_Sniper_P.png"
+  },
+  {
+    "id": "grimm-snow-queen",
+    "set": "Grimm",
+    "name": "Snow Queen",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Schneek\u00f6nigin",
+    "imageUrl": "/images/roles/SnowQueen.png",
+    "portraitUrl": "/images/roles/SnowQueen_P.png"
+  },
+  {
+    "id": "grimm-snowwhite",
+    "set": "Grimm",
+    "name": "Snowwhite",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Schneewittchen",
+    "imageUrl": "/images/roles/Snowwhite.png",
+    "portraitUrl": "/images/roles/Snowwhite_P.png"
   },
   {
     "id": "standard-soothesayer",
     "set": "Standard",
     "name": "Soothesayer",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Protection",
     "description": "Cast a soothing aura to save players from death.",
+    "imageUrl": "/images/roles/T_Soothesayer.png",
     "portraitUrl": "/images/roles/T_SoothesayerPortrait.png"
   },
   {
@@ -2038,17 +3799,10 @@
     "set": "Standard",
     "name": "Sorceress",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Use magic to eliminate and protect.",
-    "portraitUrl": "/images/roles/T_SorceressPortrait.png"
-  },
-  {
-    "id": "starter-sorceress",
-    "set": "Starter",
-    "name": "Sorceress",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Use magic to eliminate and protect.",
+    "imageUrl": "/images/roles/T_Sorceress.png",
     "portraitUrl": "/images/roles/T_SorceressPortrait.png"
   },
   {
@@ -2056,26 +3810,43 @@
     "set": "Dark",
     "name": "Soul Binder",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_SoulSeeker.png",
     "portraitUrl": "/images/roles/T_SoulSeeker_Portrait.png"
+  },
+  {
+    "id": "grimm-soulless",
+    "set": "Grimm",
+    "name": "Soulless",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Manipulation",
+    "description": "Unhold",
+    "imageUrl": "/images/roles/Soulless.png",
+    "portraitUrl": "/images/roles/Soulless_P.png"
+  },
+  {
+    "id": "grimm-spinner",
+    "set": "Grimm",
+    "name": "Spinner",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Spinnerin",
+    "imageUrl": "/images/roles/Spinner.png",
+    "portraitUrl": "/images/roles/Spinner_P.png"
   },
   {
     "id": "standard-squire",
     "set": "Standard",
     "name": "Squire",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Assume the role of a another Townsfolk.",
-    "portraitUrl": "/images/roles/T_Squire_Portrait.png"
-  },
-  {
-    "id": "starter-squire",
-    "set": "Starter",
-    "name": "Squire",
-    "faction": "Town",
-    "class": "Manipulation",
-    "description": "Assume the role of a another Townsfolk.",
+    "imageUrl": "/images/roles/T_Squire.png",
     "portraitUrl": "/images/roles/T_Squire_Portrait.png"
   },
   {
@@ -2083,26 +3854,65 @@
     "set": "Dark",
     "name": "Stalker",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Stalker.png",
     "portraitUrl": "/images/roles/T_Stalker_Portrait.png"
+  },
+  {
+    "id": "olympia-stallion",
+    "set": "Olympia",
+    "name": "Stallion",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Stallion.png",
+    "portraitUrl": "/images/roles/T_Stallion_P.png"
   },
   {
     "id": "standard-starving-wolf",
     "set": "Standard",
     "name": "Starving Wolf",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Limit the Werwolves options.",
+    "imageUrl": "/images/roles/T_StarvingWolf.png",
     "portraitUrl": "/images/roles/T_StarvingWolfPortrait.png"
+  },
+  {
+    "id": "grimm-step-sister",
+    "set": "Grimm",
+    "name": "Step Sister",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/StepSister.png",
+    "portraitUrl": "/images/roles/StepSister_P.png"
+  },
+  {
+    "id": "grimm-stepmother",
+    "set": "Grimm",
+    "name": "Stepmother",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Manipulation",
+    "description": "Stiefmutter",
+    "imageUrl": "/images/roles/Stepmother.png",
+    "portraitUrl": "/images/roles/Stepmother_P.png"
   },
   {
     "id": "standard-stone-golem",
     "set": "Standard",
     "name": "Stone Golem",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Redirect attacks to your strong self.",
+    "imageUrl": "/images/roles/T_StoneGolem.png",
     "portraitUrl": "/images/roles/T_StoneGolem_Portrait.png"
   },
   {
@@ -2110,8 +3920,10 @@
     "set": "Dark",
     "name": "Stone Mason",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Protection",
     "description": "",
+    "imageUrl": "/images/roles/T_Artisan.png",
     "portraitUrl": "/images/roles/T_Artisan_Portrait.png"
   },
   {
@@ -2119,8 +3931,10 @@
     "set": "Dark",
     "name": "Strigoi",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Strigoi.png",
     "portraitUrl": "/images/roles/T_Strigoi_Portrait.png"
   },
   {
@@ -2128,80 +3942,252 @@
     "set": "Dark",
     "name": "Succubus",
     "faction": "Vampire",
+    "factionName": "Vampire",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Succubus.png",
     "portraitUrl": "/images/roles/T_Succubus_Portrait.png"
+  },
+  {
+    "id": "grimm-swamp-witch",
+    "set": "Grimm",
+    "name": "Swamp Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Sumpfhexe",
+    "imageUrl": "/images/roles/SwampWitch.png",
+    "portraitUrl": "/images/roles/SwampWitch_P.png"
+  },
+  {
+    "id": "olympia-swine",
+    "set": "Olympia",
+    "name": "Swine",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Swine.png",
+    "portraitUrl": "/images/roles/T_Swine_P.png"
+  },
+  {
+    "id": "grimm-sylph",
+    "set": "Grimm",
+    "name": "Sylph",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Investigation",
+    "description": "Sylphe",
+    "imageUrl": "/images/roles/Sylphe.png",
+    "portraitUrl": "/images/roles/Sylphe_P.png"
   },
   {
     "id": "dark-tailor",
     "set": "Dark",
     "name": "Tailor",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Tailor.png",
     "portraitUrl": "/images/roles/T_Tailor_Portrait.png"
+  },
+  {
+    "id": "grimm-tailor",
+    "set": "Grimm",
+    "name": "Tailor",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Schneider",
+    "imageUrl": "/images/roles/Tailor.png",
+    "portraitUrl": "/images/roles/Tailor_P.png"
+  },
+  {
+    "id": "olympia-talos",
+    "set": "Olympia",
+    "name": "Talos",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Talos.png",
+    "portraitUrl": "/images/roles/T_Talos_P.png"
   },
   {
     "id": "dark-tavern-keeper",
     "set": "Dark",
     "name": "Tavern Keeper",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_TavernKeeper.png",
     "portraitUrl": "/images/roles/T_TavernKeeper_Portrait.png"
+  },
+  {
+    "id": "grimm-tazzelwyrm",
+    "set": "Grimm",
+    "name": "Tazzelwyrm",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Elimination",
+    "description": "Tatzelwurm",
+    "imageUrl": "/images/roles/Tatzelwyrm.png",
+    "portraitUrl": "/images/roles/Tatzelwyrm_P.png"
   },
   {
     "id": "standard-the-blob",
     "set": "Standard",
     "name": "The Blob",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Protection",
     "description": "Gives very enthusiastic hugs.",
+    "imageUrl": "/images/roles/T_TheBlob.png",
     "portraitUrl": "/images/roles/T_TheBlob_P.png"
+  },
+  {
+    "id": "grimm-the-devil",
+    "set": "Grimm",
+    "name": "The Devil",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Manipulation",
+    "description": "Teufel",
+    "imageUrl": "/images/roles/TheDevil.png",
+    "portraitUrl": "/images/roles/TheDevil_P.png"
+  },
+  {
+    "id": "olympia-themis",
+    "set": "Olympia",
+    "name": "Themis",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Themis.png",
+    "portraitUrl": "/images/roles/T_Themis_P.png"
   },
   {
     "id": "dark-thief",
     "set": "Dark",
     "name": "Thief",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Thief.png",
     "portraitUrl": "/images/roles/T_Thief_P.png"
+  },
+  {
+    "id": "grimm-thumbling",
+    "set": "Grimm",
+    "name": "Thumbling",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Investigation",
+    "description": "D\u00e4umling",
+    "imageUrl": "/images/roles/Thumbling.png",
+    "portraitUrl": "/images/roles/Thumbling_P.png"
+  },
+  {
+    "id": "olympia-tiresias",
+    "set": "Olympia",
+    "name": "Tiresias",
+    "faction": "Hero",
+    "factionName": "Hero",
+    "class": "Investigation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Tiresias.png",
+    "portraitUrl": "/images/roles/T_Tiresias_P.png"
+  },
+  {
+    "id": "olympia-tisiphone",
+    "set": "Olympia",
+    "name": "Tisiphone",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Tisiphone.png",
+    "portraitUrl": "/images/roles/T_Tisiphone_P.png"
+  },
+  {
+    "id": "grimm-titania",
+    "set": "Grimm",
+    "name": "Titania",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Protection",
+    "description": "Titania",
+    "imageUrl": "/images/roles/Titania.png",
+    "portraitUrl": "/images/roles/Titania_P.png"
+  },
+  {
+    "id": "grimm-toad",
+    "set": "Grimm",
+    "name": "Toad",
+    "faction": "Grim_LesserEvil",
+    "factionName": "Lesser Evil",
+    "class": "Elimination",
+    "description": "Unke",
+    "imageUrl": "/images/roles/Toad.png",
+    "portraitUrl": "/images/roles/Toad_P.png"
   },
   {
     "id": "standard-tormentor",
     "set": "Standard",
     "name": "Tormentor",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Manipulation",
     "description": "Torment players, causing havoc in the Town.",
+    "imageUrl": "/images/roles/T_Tormenter.png",
     "portraitUrl": "/images/roles/T_TormentedPortrait.png"
+  },
+  {
+    "id": "grimm-torturer",
+    "set": "Grimm",
+    "name": "Torturer",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Foltermeister",
+    "imageUrl": "/images/roles/Torturer.png",
+    "portraitUrl": "/images/roles/Torturer_P.png"
   },
   {
     "id": "dark-town-crier",
     "set": "Dark",
     "name": "Town Crier",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_TownCrier.png",
     "portraitUrl": "/images/roles/T_TownCrier_Portrait.png"
+  },
+  {
+    "id": "grimm-town's-guard",
+    "set": "Grimm",
+    "name": "Town's Guard",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Stadtwache",
+    "imageUrl": "/images/roles/TownsGuard.png",
+    "portraitUrl": "/images/roles/TownsGuard_P.png"
   },
   {
     "id": "standard-tracker",
     "set": "Standard",
     "name": "Tracker",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Do you wish to allow cookies?",
-    "portraitUrl": "/images/roles/T_TrackerPortrait.png"
-  },
-  {
-    "id": "starter-tracker",
-    "set": "Starter",
-    "name": "Tracker",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Do you wish to allow cookies?",
+    "imageUrl": "/images/roles/T_Tracker.png",
     "portraitUrl": "/images/roles/T_TrackerPortrait.png"
   },
   {
@@ -2209,8 +4195,10 @@
     "set": "Dark",
     "name": "Trapper",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Trapper.png",
     "portraitUrl": "/images/roles/T_Trapper_Portrait.png"
   },
   {
@@ -2218,17 +4206,10 @@
     "set": "Standard",
     "name": "Traveler",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Investigation",
     "description": "Travel to players houses learning what they are capable of.",
-    "portraitUrl": "/images/roles/T_TravelerPortrait.png"
-  },
-  {
-    "id": "starter-traveler",
-    "set": "Starter",
-    "name": "Traveler",
-    "faction": "Town",
-    "class": "Investigation",
-    "description": "Travel to players houses learning what they are capable of.",
+    "imageUrl": "/images/roles/T_Traveler.png",
     "portraitUrl": "/images/roles/T_TravelerPortrait.png"
   },
   {
@@ -2236,44 +4217,98 @@
     "set": "Standard",
     "name": "Treant",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Manipulation",
     "description": "Contain danger as an ancient protector of the forest.",
+    "imageUrl": "/images/roles/T_Treant.png",
     "portraitUrl": "/images/roles/T_Treant_Portrait.png"
+  },
+  {
+    "id": "olympia-tree",
+    "set": "Olympia",
+    "name": "Tree",
+    "faction": "Neutral",
+    "factionName": "Neutral",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/T_Tree.png",
+    "portraitUrl": "/images/roles/T_Tree_P.png"
   },
   {
     "id": "standard-tree",
     "set": "Standard",
     "name": "Tree",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Protection",
     "description": "Provide oxygen for the town.",
+    "imageUrl": "/images/roles/T_Tree.png",
     "portraitUrl": "/images/roles/T_TreePortrait.png"
   },
   {
-    "id": "starter-tree",
-    "set": "Starter",
-    "name": "Tree",
-    "faction": "Neutral",
-    "class": "Protection",
-    "description": "Provide oxygen for the town.",
-    "portraitUrl": "/images/roles/T_TreePortrait.png"
+    "id": "olympia-trojan-horse",
+    "set": "Olympia",
+    "name": "Trojan Horse",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_TrojanHorse.png",
+    "portraitUrl": "/images/roles/T_TrojanHorse_P.png"
+  },
+  {
+    "id": "grimm-truth-seer",
+    "set": "Grimm",
+    "name": "Truth Seer",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Wahrsagerin",
+    "imageUrl": "/images/roles/Truthsseer.png",
+    "portraitUrl": "/images/roles/TruthsSeer_P.png"
+  },
+  {
+    "id": "olympia-typhon",
+    "set": "Olympia",
+    "name": "Typhon",
+    "faction": "Tainted",
+    "factionName": "Tainted",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/T_Typhon.png",
+    "portraitUrl": "/images/roles/T_Typhon_P.png"
   },
   {
     "id": "dark-undertaker",
     "set": "Dark",
     "name": "Undertaker",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_Undertaker.png",
     "portraitUrl": "/images/roles/T_Undertaker_P.png"
+  },
+  {
+    "id": "grimm-unicorn",
+    "set": "Grimm",
+    "name": "Unicorn",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Investigation",
+    "description": "Einhorn",
+    "imageUrl": "/images/roles/Unicorn.png",
+    "portraitUrl": "/images/roles/Unicorn_P.png"
   },
   {
     "id": "dark-vampire-hunter",
     "set": "Dark",
     "name": "Vampire Hunter",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_VampireHunter.png",
     "portraitUrl": "/images/roles/T_VampireHunter_Portrait.png"
   },
   {
@@ -2281,17 +4316,10 @@
     "set": "Standard",
     "name": "Vigilante",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Strike someone with an unstoppable attack by revealing yourself.",
-    "portraitUrl": "/images/roles/T_VigilantePortrait.png"
-  },
-  {
-    "id": "starter-vigilante",
-    "set": "Starter",
-    "name": "Vigilante",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Strike someone with an unstoppable attack by revealing yourself.",
+    "imageUrl": "/images/roles/T_Vigilante.png",
     "portraitUrl": "/images/roles/T_VigilantePortrait.png"
   },
   {
@@ -2299,8 +4327,10 @@
     "set": "Dark",
     "name": "Visionary",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Visionary.png",
     "portraitUrl": "/images/roles/T_Visionary_Portrait.png"
   },
   {
@@ -2308,17 +4338,32 @@
     "set": "Dark",
     "name": "Vourdalak",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Vourdalak.png",
     "portraitUrl": "/images/roles/T_Vourdalak_Portrait.png"
+  },
+  {
+    "id": "grimm-war-surgeon",
+    "set": "Grimm",
+    "name": "War Surgeon",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Protection",
+    "description": "Feldscher",
+    "imageUrl": "/images/roles/WarSurgeon.png",
+    "portraitUrl": "/images/roles/WarSurgeon_P.png"
   },
   {
     "id": "standard-warden",
     "set": "Standard",
     "name": "Warden",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Protection",
     "description": "Weird smash but okay",
+    "imageUrl": "/images/roles/T_Warden.png",
     "portraitUrl": "/images/roles/T_Warden_P.png"
   },
   {
@@ -2326,8 +4371,10 @@
     "set": "Dark",
     "name": "Warlock",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Warlock.png",
     "portraitUrl": "/images/roles/T_Warlock_Portrait.png"
   },
   {
@@ -2335,26 +4382,43 @@
     "set": "Standard",
     "name": "Warrior",
     "faction": "Town",
+    "factionName": "Town",
     "class": "Elimination",
     "description": "Challenge players to duels, leaving you both bleeding.",
+    "imageUrl": "/images/roles/T_Warrior.png",
     "portraitUrl": "/images/roles/T_WarriorPortrait.png"
   },
   {
-    "id": "starter-warrior",
-    "set": "Starter",
-    "name": "Warrior",
-    "faction": "Town",
-    "class": "Elimination",
-    "description": "Challenge players to duels, leaving you both bleeding.",
-    "portraitUrl": "/images/roles/T_WarriorPortrait.png"
+    "id": "grimm-water-spirit",
+    "set": "Grimm",
+    "name": "Water Spirit",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Protection",
+    "description": "",
+    "imageUrl": "/images/roles/WaterSpirit.png",
+    "portraitUrl": "/images/roles/WaterSpirit_P.png"
+  },
+  {
+    "id": "grimm-weather-witch",
+    "set": "Grimm",
+    "name": "Weather Witch",
+    "faction": "Grimm_Evil",
+    "factionName": "Evil",
+    "class": "Manipulation",
+    "description": "Wetterhexe",
+    "imageUrl": "/images/roles/WeatherWitch.png",
+    "portraitUrl": "/images/roles/WeatherWitch_P.png"
   },
   {
     "id": "dark-weaver",
     "set": "Dark",
     "name": "Weaver",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Weaver.png",
     "portraitUrl": "/images/roles/T_Weaver_Portrait.png"
   },
   {
@@ -2362,17 +4426,10 @@
     "set": "Standard",
     "name": "Werecat",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Manipulation",
     "description": "Flip teams if you survive an accusation.",
-    "portraitUrl": "/images/roles/T_WerecatPortrait.png"
-  },
-  {
-    "id": "starter-werecat",
-    "set": "Starter",
-    "name": "Werecat",
-    "faction": "Neutral",
-    "class": "Manipulation",
-    "description": "Flip teams if you survive an accusation.",
+    "imageUrl": "/images/roles/T_Werecat.png",
     "portraitUrl": "/images/roles/T_WerecatPortrait.png"
   },
   {
@@ -2380,8 +4437,10 @@
     "set": "Standard",
     "name": "Weresheep",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Turn a player into a sheep.",
+    "imageUrl": "/images/roles/T_Weresheep.png",
     "portraitUrl": "/images/roles/T_WeresheepPortrait.png"
   },
   {
@@ -2389,17 +4448,10 @@
     "set": "Standard",
     "name": "Werewolf Herbalist",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Protection",
     "description": "Use both the healing and harmful properties of the herbs around you.",
-    "portraitUrl": "/images/roles/T_WerewolfHerbalist_Portrait.png"
-  },
-  {
-    "id": "starter-werewolf-herbalist",
-    "set": "Starter",
-    "name": "Werewolf Herbalist",
-    "faction": "Werewolf",
-    "class": "Protection",
-    "description": "Use both the healing and harmful properties of the herbs around you.",
+    "imageUrl": "/images/roles/T_WerewolfHerbalist.png",
     "portraitUrl": "/images/roles/T_WerewolfHerbalist_Portrait.png"
   },
   {
@@ -2407,17 +4459,10 @@
     "set": "Standard",
     "name": "Werewolf Scholar",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Investigation",
     "description": "Study players, learning what they are capable of.",
-    "portraitUrl": "/images/roles/T_WerewolfScholar_Portrait.png"
-  },
-  {
-    "id": "starter-werewolf-scholar",
-    "set": "Starter",
-    "name": "Werewolf Scholar",
-    "faction": "Werewolf",
-    "class": "Investigation",
-    "description": "Study players, learning what they are capable of.",
+    "imageUrl": "/images/roles/T_WerewolfScholar.png",
     "portraitUrl": "/images/roles/T_WerewolfScholar_Portrait.png"
   },
   {
@@ -2425,17 +4470,10 @@
     "set": "Standard",
     "name": "Werewolf Shaman",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Protection",
     "description": "Call upon Divine powers to protect those worthy.",
-    "portraitUrl": "/images/roles/T_WerewolfShamanPortrait.png"
-  },
-  {
-    "id": "starter-werewolf-shaman",
-    "set": "Starter",
-    "name": "Werewolf Shaman",
-    "faction": "Werewolf",
-    "class": "Protection",
-    "description": "Call upon Divine powers to protect those worthy.",
+    "imageUrl": "/images/roles/T_WerewolfShaman.png",
     "portraitUrl": "/images/roles/T_WerewolfShamanPortrait.png"
   },
   {
@@ -2443,17 +4481,10 @@
     "set": "Standard",
     "name": "Werewolf Tracker",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Investigation",
     "description": "Track important targets to find out who they target.",
-    "portraitUrl": "/images/roles/T_WerewolfTrackerPortrait.png"
-  },
-  {
-    "id": "starter-werewolf-tracker",
-    "set": "Starter",
-    "name": "Werewolf Tracker",
-    "faction": "Werewolf",
-    "class": "Investigation",
-    "description": "Track important targets to find out who they target.",
+    "imageUrl": "/images/roles/T_WerewolfTracker.png",
     "portraitUrl": "/images/roles/T_WerewolfTrackerPortrait.png"
   },
   {
@@ -2461,8 +4492,10 @@
     "set": "Standard",
     "name": "Werewolf Trickster",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Elimination",
     "description": "Deceive the town by faking announcements.",
+    "imageUrl": "/images/roles/T_WerewolfTrickster.png",
     "portraitUrl": "/images/roles/T_WerewolfTrickster_P.png"
   },
   {
@@ -2470,35 +4503,54 @@
     "set": "Dark",
     "name": "Widow",
     "faction": "Neutral",
+    "factionName": "Neutral",
     "class": "Elimination",
     "description": "",
+    "imageUrl": "/images/roles/T_Widow.png",
     "portraitUrl": "/images/roles/T_Widow_Portrait.png"
+  },
+  {
+    "id": "grimm-wight",
+    "set": "Grimm",
+    "name": "Wight",
+    "faction": "Grim_Fei",
+    "factionName": "Fei",
+    "class": "Manipulation",
+    "description": "",
+    "imageUrl": "/images/roles/Wight.png",
+    "portraitUrl": "/images/roles/Wight_P.png"
   },
   {
     "id": "dark-willow",
     "set": "Dark",
     "name": "Willow",
     "faction": "LesserEvil",
+    "factionName": "Lesser Evil",
     "class": "Investigation",
     "description": "",
+    "imageUrl": "/images/roles/T_WeepingWillow.png",
     "portraitUrl": "/images/roles/T_WeepingWillow_Portrait.png"
+  },
+  {
+    "id": "grimm-witch-hunter",
+    "set": "Grimm",
+    "name": "Witch Hunter",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Hexenj\u00e4ger",
+    "imageUrl": "/images/roles/WitchHunter.png",
+    "portraitUrl": "/images/roles/WitchHunter_P.png"
   },
   {
     "id": "standard-wolf-cub",
     "set": "Standard",
     "name": "Wolf Cub",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Manipulation",
     "description": "Sacrifice yourself to empower the other Wolves. ",
-    "portraitUrl": "/images/roles/T_WolfCubPortrait.png"
-  },
-  {
-    "id": "starter-wolf-cub",
-    "set": "Starter",
-    "name": "Wolf Cub",
-    "faction": "Werewolf",
-    "class": "Manipulation",
-    "description": "Sacrifice yourself to empower the other Wolves. ",
+    "imageUrl": "/images/roles/T_WolfCub.png",
     "portraitUrl": "/images/roles/T_WolfCubPortrait.png"
   },
   {
@@ -2506,35 +4558,65 @@
     "set": "Standard",
     "name": "Wolf Girl",
     "faction": "Werewolf",
+    "factionName": "Werewolf",
     "class": "Investigation",
     "description": "Blend in with the Town as you find out what people are capable of.",
+    "imageUrl": "/images/roles/T_WolfGirl.png",
     "portraitUrl": "/images/roles/T_WolfGirlPortrait.png"
   },
   {
-    "id": "starter-wolf-girl",
-    "set": "Starter",
-    "name": "Wolf Girl",
-    "faction": "Werewolf",
+    "id": "olympia-woodpecker",
+    "set": "Olympia",
+    "name": "Woodpecker",
+    "faction": "Hero",
+    "factionName": "Hero",
     "class": "Investigation",
-    "description": "Blend in with the Town as you find out what people are capable of.",
-    "portraitUrl": "/images/roles/T_WolfGirlPortrait.png"
+    "description": "",
+    "imageUrl": "/images/roles/T_Woodpecker.png",
+    "portraitUrl": "/images/roles/T_Woodpecker_P.png"
   },
   {
     "id": "dark-wretch",
     "set": "Dark",
     "name": "Wretch",
     "faction": "Village",
+    "factionName": "Village",
     "class": "Manipulation",
     "description": "",
+    "imageUrl": "/images/roles/T_Wretch.png",
     "portraitUrl": "/images/roles/T_Wretch_Portrait.png"
+  },
+  {
+    "id": "grimm-your-friend,-death",
+    "set": "Grimm",
+    "name": "Your friend, Death",
+    "faction": "Grimm_Neutral",
+    "factionName": "Neutral",
+    "class": "Protection",
+    "description": "Dein Freund Hein",
+    "imageUrl": "/images/roles/YourFriendDeath.png",
+    "portraitUrl": "/images/roles/YourFriendDeath_P.png"
+  },
+  {
+    "id": "olympia-zeus",
+    "set": "Olympia",
+    "name": "Zeus",
+    "faction": "Corrupted",
+    "factionName": "Corrupted",
+    "class": "Elimination",
+    "description": "",
+    "imageUrl": "/images/roles/T_Zeus.png",
+    "portraitUrl": "/images/roles/T_Zeus_P.png"
   },
   {
     "id": "standard-zombie",
     "set": "Standard",
     "name": "Zombie",
     "faction": "Evil",
+    "factionName": "Evil",
     "class": "Manipulation",
     "description": "rAaAa Gggg OrRr aaraaa RAa!!",
+    "imageUrl": "/images/roles/T_Zombie.png",
     "portraitUrl": "/images/roles/T_ZombiePortrait.png"
   }
 ]
