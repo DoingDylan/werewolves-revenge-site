@@ -1,0 +1,136 @@
+---
+// src/pages/news.astro
+import Layout from '../layouts/Layout.astro';
+
+const STEAM_APP_ID = 1867320;
+
+interface NewsItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  author: string;
+  descriptionHtml: string;
+  imageUrl: string | null;
+}
+
+function decodeEntities(str: string) {
+  return str
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, '&');
+}
+
+function extractTag(block: string, tag: string) {
+  const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`));
+  return match ? match[1].trim() : '';
+}
+
+async function fetchHeaderImage(announcementUrl: string): Promise<string | null> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 6000);
+    const res = await fetch(announcementUrl, { signal: controller.signal });
+    clearTimeout(timeout);
+    if (!res.ok) return null;
+    const html = await res.text();
+    const match = html.match(/<meta property="og:image" content="([^"]+)"/);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+let newsItems: NewsItem[] = [];
+let fetchError = false;
+
+try {
+  const res = await fetch(`https://steamcommunity.com/games/${STEAM_APP_ID}/rss/`);
+  if (!res.ok) throw new Error(`RSS fetch failed: ${res.status}`);
+  const xml = await res.text();
+
+  const blocks = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((m) => m[1]);
+
+  const parsed = blocks.map((block) => {
+    const linkMatch = block.match(/<link><!\[CDATA\[([\s\S]*?)\]\]><\/link>/);
+    return {
+      title: decodeEntities(extractTag(block, 'title')),
+      link: linkMatch ? linkMatch[1].trim() : '',
+      pubDate: extractTag(block, 'pubDate'),
+      author: decodeEntities(extractTag(block, 'author')),
+      descriptionHtml: decodeEntities(extractTag(block, 'description')),
+      imageUrl: null as string | null,
+    };
+  });
+
+  // Header art lives on each announcement's own page (og:image), not in the
+  // RSS feed itself, so fetch all of them in parallel.
+  const images = await Promise.all(parsed.map((item) => (item.link ? fetchHeaderImage(item.link) : Promise.resolve(null))));
+  parsed.forEach((item, i) => {
+    item.imageUrl = images[i];
+  });
+
+  newsItems = parsed.filter((item) => item.title && item.descriptionHtml);
+} catch (e) {
+  fetchError = true;
+}
+
+function formatDate(pubDate: string) {
+  const date = new Date(pubDate);
+  if (isNaN(date.getTime())) return pubDate;
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout title="News | Werewolves Revenge">
+  <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-zinc-800 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/40 via-zinc-950 to-zinc-950 z-0"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <h1 class="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        Latest <span class="text-red-600">News</span>
+      </h1>
+      <p class="text-zinc-500">Steam updates and patch notes.</p>
+    </div>
+  </header>
+
+  <main class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8">
+    <div class="max-w-3xl mx-auto space-y-8">
+
+      {fetchError && (
+        <p class="text-center text-zinc-500 py-16">
+          Couldn't load news from Steam right now. Check back later, or
+          <a href={`https://store.steampowered.com/news/app/${STEAM_APP_ID}`} target="_blank" rel="noopener" class="text-red-500 hover:text-red-400 underline">
+            view updates directly on Steam
+          </a>.
+        </p>
+      )}
+
+      {!fetchError && newsItems.length === 0 && (
+        <p class="text-center text-zinc-500 py-16">No news posts yet.</p>
+      )}
+
+      {newsItems.map((item) => (
+        <article class="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/50 transition-colors">
+          {item.imageUrl && (
+            <div class="relative aspect-video">
+              <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+            </div>
+          )}
+          <div class="p-8">
+            <p class="text-zinc-500 text-xs font-bold uppercase tracking-widest mb-2">{formatDate(item.pubDate)}</p>
+            <h2 class="text-2xl font-bold text-white mb-4">{item.title}</h2>
+            <div class="steam-post text-zinc-400 leading-relaxed mb-4" set:html={item.descriptionHtml} />
+            <a href={item.link} target="_blank" rel="noopener" class="text-red-500 hover:text-red-400 text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2">
+              Read Full Update On Steam
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+
+    </div>
+  </main>
+</Layout>

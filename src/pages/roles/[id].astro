@@ -53,15 +53,61 @@ const classStyle = `--class: ${classTheme.hex};`;
             <span class="class-text class-border px-4 py-1 rounded border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest" style={classStyle}>
               {role.class}
             </span>
+            {role.group && (
+              <span class="accent-text accent-border px-4 py-1 rounded border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest" style={`--accent: ${role.group.color || '#71717a'};`}>
+                {role.group.name}
+              </span>
+            )}
             <!-- <span class="px-4 py-1 rounded border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-zinc-400">
               {role.set}
             </span> -->
           </div>
 
-          <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-8 backdrop-blur-sm shadow-xl">
+          <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-8 backdrop-blur-sm shadow-xl mb-6">
             <h3 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Description</h3>
             <p class="text-lg text-zinc-300 leading-relaxed">{role.description}</p>
           </div>
+
+          {role.resource && (
+            <div class="flex items-center gap-3 mb-6 bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 backdrop-blur-sm" style={`--accent: ${role.resource.color || '#71717a'};`}>
+              {role.resource.iconUrl && (
+                <img src={role.resource.iconUrl} alt={role.resource.name} class="w-10 h-10 object-contain" />
+              )}
+              <div>
+                <p class="accent-text text-xs font-bold uppercase tracking-widest">{role.resource.name}</p>
+                {role.resource.description && (
+                  <p class="text-zinc-500 text-sm">{role.resource.description}</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {role.abilities && role.abilities.length > 0 && (
+            <div>
+              <h3 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Abilities</h3>
+              <div class="space-y-4">
+                {role.abilities.map((ability) => (
+                  <div class="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm">
+                    {ability.iconUrl && (
+                      <img src={ability.iconUrl} alt={ability.name} class="w-12 h-12 object-contain shrink-0" />
+                    )}
+                    <div class="flex-1">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                        <h4 class="text-lg font-bold text-white">{ability.name}</h4>
+                        <div class="flex gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
+                          {ability.abilityType && <span>{ability.abilityType}</span>}
+                          {ability.costValue != null && ability.costValue > 0 && (
+                            <span>&middot; {ability.costValue} {ability.costType}</span>
+                          )}
+                        </div>
+                      </div>
+                      <p class="text-zinc-400 leading-relaxed">{ability.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

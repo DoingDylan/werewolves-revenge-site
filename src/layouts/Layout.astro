@@ -28,6 +28,7 @@ const path = new URL(Astro.request.url).pathname;
 			<div class="nav-links">
 				<a href="/play" class={path === '/play' ? 'active' : ''}>Play</a>
 				<a href="/roles" class={path.startsWith('/roles') ? 'active' : ''}>Roles</a>
+				<a href="/news" class={path === '/news' ? 'active' : ''}>News</a>
 			</div>
 		</nav>
 

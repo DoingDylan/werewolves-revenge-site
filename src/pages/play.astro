@@ -7,20 +7,17 @@ import { getFactionTheme } from '../data/factions';
 const heroBg = "https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?q=80&w=2073&auto=format&fit=crop";
 
 const factionMeta = [
-  { key: 'Town',       blurb: 'Root out evil before the village burns.' },
-  { key: 'Village',    blurb: 'Ordinary folk caught in an extraordinary night.' },
-  { key: 'Werewolf',   blurb: 'Hunt in the dark, lie in the light.' },
-  { key: 'Vampire',    blurb: 'Patient predators feeding on the unsuspecting.' },
-  { key: 'LesserEvil', blurb: 'Chaos agents with their own twisted agendas.' },
-  { key: 'Neutral',    blurb: 'No allegiance — only their own survival.' },
+  { key: 'Town',       blurb: 'Identify and eliminate the hidden Werewolves through discussion and voting.', winCondition: 'You win when there are no Werewolves, Vampires or Evils left alive.' },
+  { key: 'Werewolf',   blurb: 'Secretly eliminate villagers each night and try to blend in during the day.', winCondition: 'You win when Werewolves equal or outnumber other players, and there are no Evils left alive.' },
+  { key: 'Neutral',    blurb: 'See to your own unique objectives or win condition, independent of other factions.', winCondition: 'You win if you survive until the end of the game.' },
+  { key: 'Evil', blurb: 'Oppose the Town and Werewolves, creating a complex dynamic of competing factions.', winCondition: 'You win when there are 3 or less players alive, regardless of their factions.' },
+  { key: 'LesserEvil',    blurb: 'Align with both Werewolves and Evils against the Town.', winCondition: 'You win with either the Werewolves or an Evil.' },
 ];
 
 const factionCounts = Object.fromEntries(
   factionMeta.map(f => [f.key, rolesData.filter(r => r.faction === f.key).length])
 );
 
-// "faction" is the internal id used for filtering/coloring; "factionName" is
-// the display name shown to users.
 const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.faction, role.factionName]));
 
 const galleryPortraits = rolesData
@@ -50,16 +47,15 @@ const steps = [
     <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/30 to-zinc-950"></div>
     <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_black_90%)]"></div>
 
-    <div class="relative z-10 text-center px-4 flex flex-col items-center pt-28">
-      <div class="flex items-center gap-3 mb-6 bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 px-4 py-2 rounded-full shadow-lg">
+    <div class="relative z-10 text-center px-4 flex flex-col items-center pt-12">
+      <h1 class="mb-4">
+        <img src="/images/WerewolvesRevenge.png" alt="Werewolves Revenge" class="w-full max-w-md md:max-w-2xl mx-auto drop-shadow-2xl" />
+      </h1>
+
+      <div class="flex items-center gap-3 mb-14 bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 px-4 py-2 rounded-full shadow-lg">
         <span class="text-emerald-400 font-bold text-sm tracking-wide">VERY POSITIVE (95%)</span>
         <span class="text-zinc-500 text-xs font-bold uppercase tracking-widest px-2 border-l border-zinc-700">Steam Reviews</span>
       </div>
-
-      <h1 class="text-6xl md:text-[8rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-500 drop-shadow-2xl leading-none mb-4">
-        Werewolves<br/>
-        <span class="text-red-600 bg-clip-text bg-gradient-to-b from-red-500 to-red-900">Revenge</span>
-      </h1>
 
       <p class="text-xl text-zinc-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md">
         An immersive, player-driven social deduction game for 8–16 players. Trust no one. Suspect everyone.
@@ -155,20 +151,30 @@ const steps = [
         <span class="text-red-500 text-xs font-bold uppercase tracking-[0.3em]">Choose Your Side</span>
         <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mt-4">{factionMeta.length} Factions. One Survivor.</h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {factionMeta.map(faction => {
+      <div class="grid sm:grid-cols-6 gap-6">
+        {factionMeta.map((faction, i) => {
           const theme = getFactionTheme(faction.key);
+          const spanClass = i < 2 ? 'sm:col-span-3' : 'sm:col-span-2';
           return (
             <a
               href="/roles"
-              class="faction-tile group relative bg-zinc-900 border border-zinc-800 rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+              class={`faction-tile group relative flex bg-zinc-900 border border-zinc-800 rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${spanClass}`}
               style={`--faction: ${theme.hex};`}
             >
               <div class="faction-tile-tint absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <p class="faction-text text-4xl font-black mb-2">{factionCounts[faction.key] ?? 0}</p>
-                <h3 class="text-2xl font-bold text-white mb-2">{factionDisplayNames[faction.key] ?? theme.label}</h3>
-                <p class="text-zinc-500 text-sm leading-relaxed">{faction.blurb}</p>
+              <div class="relative z-10 flex flex-col flex-1">
+                <div class="flex items-center justify-between gap-4 mb-3">
+                  <p class="faction-text text-3xl md:text-4xl font-black">{factionDisplayNames[faction.key] ?? theme.label}</p>
+                  <span class="faction-text faction-border shrink-0 text-xs font-bold uppercase tracking-widest border rounded-full px-3 py-1">
+                    {factionCounts[faction.key] ?? 0} Roles
+                  </span>
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-6">{faction.blurb}</p>
+
+                <div class="mt-auto pt-5 border-t border-zinc-800">
+                  <span class="faction-text text-xs font-bold uppercase tracking-widest block mb-1.5">Win Condition</span>
+                  <p class="text-zinc-500 text-sm leading-relaxed">{faction.winCondition}</p>
+                </div>
               </div>
             </a>
           );

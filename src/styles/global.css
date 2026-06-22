@@ -51,3 +51,87 @@
 .class-border {
   border-color: var(--class);
 }
+
+/*
+ * Generic accent color.
+ * Unlike faction/class (a small fixed catalog of colors maintained in
+ * factions.ts/classes.ts), Group and Resource colors come straight from
+ * each role's own data (Unreal's "Colour" property), so there's no central
+ * map to look up — each element just sets `--accent` inline to whatever hex
+ * that role's Group/Resource carries.
+ */
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-border {
+  border-color: var(--accent);
+}
+
+/*
+ * Steam news post content.
+ * Steam's RSS feed returns post bodies as HTML using its own "bb_*" class
+ * names (one class per BBCode tag the author used) instead of semantic
+ * tags, so we style those directly to match the site's dark theme.
+ */
+
+.steam-post .bb_h1,
+.steam-post .bb_h2,
+.steam-post .bb_h3 {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.steam-post .bb_h1 {
+  font-size: 1.25rem;
+}
+
+.steam-post .bb_h2 {
+  font-size: 1.1rem;
+}
+
+.steam-post .bb_h3 {
+  font-size: 1rem;
+  color: #a1a1aa;
+}
+
+.steam-post .bb_paragraph {
+  margin-bottom: 0.5rem;
+}
+
+.steam-post .bb_paragraph:empty {
+  display: none;
+}
+
+.steam-post .bb_ul,
+.steam-post .bb_ol {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.steam-post .bb_ul .bb_paragraph,
+.steam-post .bb_ol .bb_paragraph {
+  margin-bottom: 0.15rem;
+}
+
+.steam-post .bb_link {
+  color: #ef4444;
+  text-decoration: underline;
+}
+
+.steam-post img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.steam-post strong,
+.steam-post .bb_strong {
+  color: #fff;
+}
