@@ -7,7 +7,8 @@ interface Props {
 }
 
 const { title = "Werewolves Revenge" } = Astro.props;
-const path = new URL(Astro.request.url).pathname;
+const rawPath = new URL(Astro.request.url).pathname;
+const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 ---
 
 <!doctype html>
