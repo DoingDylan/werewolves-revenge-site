@@ -32,7 +32,7 @@ const metaDescription = role.description
   : `${role.name} is a ${role.factionName} role from the ${role.set} set in Werewolves Revenge.`;
 ---
 
-<Layout title={`${role.name} | ${role.set}`} description={metaDescription} image={role.imageUrl || role.portraitUrl}>
+<Layout title={role.name} description={metaDescription} image={role.imageUrl || role.portraitUrl}>
   <main id="main-content" class="bg-zinc-950 min-h-screen text-zinc-100 relative overflow-hidden pb-24" style={factionStyle}>
 
     <div class="absolute inset-0 faction-page-glow z-0 opacity-60"></div>

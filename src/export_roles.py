@@ -4,49 +4,6 @@ import os
 import re
 import builtins
 
-# Inline icon decorators used in Unreal RichTextBlock descriptions, written
-# as `<img id="Name"/>`. "textureName" is the underlying texture asset name,
-# which sometimes differs from the decorator name (e.g. "Perish" -> "Die")
-# -- the actual file in public/images/keywords might be saved under either
-# name, so resolveKeywordIconFile() below tries both.
-KEYWORD_DECORATORS = {
-    "Attack": {"textureName": "Attack", "color": "#883532"},
-    "UnstoppableAttack": {"textureName": "UnstoppableAttack", "color": "#883532"},
-    "Bleed": {"textureName": "Bleed", "color": "#883532"},
-    "Ignite": {"textureName": "Ignite", "color": "#883532"},
-    "Poison": {"textureName": "Poison", "color": "#883532"},
-    "Protect": {"textureName": "Protect", "color": "#5F90C4"},
-    "DivineProtection": {"textureName": "DivineProtection", "color": "#5F90C4"},
-    "Heal": {"textureName": "Heal", "color": "#5F90C4"},
-    "PermanentDefence": {"textureName": "PermanentDefence", "color": "#5F90C4"},
-    "Untargetable": {"textureName": "Untargetable", "color": "#839C38"},
-    "Exposed": {"textureName": "Exposed", "color": "#839C38"},
-    "Frail": {"textureName": "Frail", "color": "#839C38"},
-    "Convert": {"textureName": "Convert", "color": "#839C38"},
-    "Remove": {"textureName": "Remove", "color": "#ffffff"},
-    "Transform": {"textureName": "Transform", "color": "#839C38"},
-    "Assume": {"textureName": "Assume", "color": "#839C38"},
-    "Redirect": {"textureName": "Redirect", "color": "#839C38"},
-    "Meet": {"textureName": "Meet", "color": "#839C38"},
-    "ShareFate": {"textureName": "ShareFate", "color": "#839C38"},
-    "Share": {"textureName": "Share", "color": "#839C38"},
-    "Reveal": {"textureName": "Revealed", "color": "#839C38"},
-    "Role": {"textureName": "Role", "color": "#ffffff"},
-    "Class": {"textureName": "Class", "color": "#ffffff"},
-    "Capability": {"textureName": "Capabilities", "color": "#ffffff"},
-    "Targets": {"textureName": "Targets", "color": "#ffffff"},
-    "Execute": {"textureName": "Execute", "color": "#883532"},
-    "Miss": {"textureName": "Miss", "color": "#839C38"},
-    "Learn": {"textureName": "Learn", "color": "#B38FC4"},
-    "Faction": {"textureName": "Faction", "color": "#ffffff"},
-    "Active": {"textureName": "Active", "color": "#ffffff"},
-    "Perish": {"textureName": "Die", "color": "#ffffff"},
-    "Hemorrhage": {"textureName": "Hemorrhage_", "color": "#883532"},
-    "Incinerate": {"textureName": "Incinerate", "color": "#883532"},
-    "Neighbours": {"textureName": "Neighbours", "color": "#ffffff"},
-    "Enhance": {"textureName": "Enhance", "color": "#839C38"},
-}
-
 # Diagnostic logging that survives a hard editor crash.
 # In-editor print() output is lost the moment the editor crashes, so every
 # print() in this script is mirrored to a plain text file on disk. flush()
@@ -67,7 +24,24 @@ def print(*args, **kwargs):
 
 print(f"--- Starting export, logging to {_log_path} ---")
 
-def export_roles_from_sets():
+def export_roles_from_sets(keywords_data):
+    # Inline `<img id="X"/>` icon decorators in role/ability descriptions
+    # mostly match the keyword's Icon texture name (e.g. "DivineProtection"
+    # for the "Divine Protection" keyword), but some single-word keywords
+    # have a decorator id matching their Name instead, with a *different*
+    # icon filename (e.g. decorator "Reveal" -> name "Reveal", icon
+    # "Revealed"; decorator "Hemorrhage" -> name "Hemorrhage", icon
+    # "Hemorrhage_") -- plus decorators aren't always cased consistently
+    # ("attack" vs "Attack"). So index by a case/space-insensitive key built
+    # from *both* fields rather than assuming one or the other.
+    def normalize_key(s):
+        return s.replace(" ", "").lower()
+
+    keywords_by_icon = {}
+    for kw in keywords_data:
+        keywords_by_icon[normalize_key(kw["icon"])] = kw
+        keywords_by_icon[normalize_key(kw["name"])] = kw
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.dirname(script_dir)
 
@@ -88,6 +62,9 @@ def export_roles_from_sets():
         os.makedirs(faction_img_export_dir)
     if not os.path.exists(class_img_export_dir):
         os.makedirs(class_img_export_dir)
+
+    factions_output_path = os.path.join(script_dir, "data", "factions.json").replace("\\", "/")
+    classes_output_path = os.path.join(script_dir, "data", "classes.json").replace("\\", "/")
 
     asset_registry = unreal.AssetRegistryHelpers.get_asset_registry()
 
@@ -192,7 +169,7 @@ def export_roles_from_sets():
                 if not ability_asset:
                     print(f"    !! ability[{i}] on {role_id} resolved to None, skipping")
                     continue
-                abilities_data.append(exportAbility(ability_asset, ability_img_export_dir, keywords_dir))
+                abilities_data.append(exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon))
 
             description = str(role_asset.get_editor_property("Description"))
 
@@ -205,7 +182,7 @@ def export_roles_from_sets():
                 "factionName": str(faction_obj.get_editor_property("Name")) if faction_obj else "Unknown",
                 "class": class_obj.get_name() if class_obj else "Unknown",
                 "description": description,
-                "descriptionHtml": convertIcons(description, keywords_dir),
+                "descriptionHtml": convertIcons(description, keywords_by_icon),
                 # Unreal's exporter only writes PNGs
                 # You must run `npm run optimize-images` to convert the pngs to webp
                 "imageUrl": f"/images/roles/{image_filename.replace('.png', '.webp')}",
@@ -224,14 +201,12 @@ def export_roles_from_sets():
 
     print(f"SUCCESS: Exported {len(json_data)} roles and assets!")
 
-    factions_output_path = os.path.join(script_dir, "data", "factions.json").replace("\\", "/")
-    factions_data = sorted(factions_registry.values(), key=lambda f: (f["order"], f["name"]))
+    factions_data = sorted(factions_registry.values(), key=lambda fa: (fa["order"], fa["name"]))
     with open(factions_output_path, 'w', encoding='utf-8') as f:
         json.dump(factions_data, f, indent=2)
 
     print(f"SUCCESS: Exported {len(factions_data)} factions!")
 
-    classes_output_path = os.path.join(script_dir, "data", "classes.json").replace("\\", "/")
     classes_data = sorted(classes_registry.values(), key=lambda c: (c["order"], c["name"]))
     with open(classes_output_path, 'w', encoding='utf-8') as f:
         json.dump(classes_data, f, indent=2)
@@ -376,36 +351,31 @@ def enumToStr(value):
     text = str(value)
     return text.split("::")[-1] if "::" in text else text
 
-_keyword_icon_index_cache = {}
+_PRETTIFY_MINOR_WORDS = {"a", "an", "the", "of", "in", "on", "at", "to", "for", "and", "or"}
 
-def resolveKeywordIconFile(keywords_dir, candidates):
-    """Finds the actual filename in public/images/keywords matching one of
-    the given candidate names (case/whitespace-insensitive, extension
-    ignored), since files there were added by hand and don't perfectly
-    match either the decorator name or the underlying texture name in every
-    case (e.g. "Perish" vs its texture "Die").
+def prettifyEnumName(name):
+    """Converts an enum member's raw .name (e.g. "NO_COST", "ON_THE_FIRST_NIGHT")
+    into a display string (e.g. "No Cost", "On the First Night") -- same
+    underscore-separated-caps convention confirmed for the Faction/Class
+    enums (see exportFaction/exportClass), so no hardcoded name->label
+    mapping is needed. Uses proper title-case (minor words like "the"
+    stay lowercase unless they're the first word) rather than str.title(),
+    since str.title() would wrongly capitalize "On The First Night"."""
+    if not name:
+        return None
+    words = name.replace("_", " ").lower().split()
+    return " ".join(
+        word if i > 0 and word in _PRETTIFY_MINOR_WORDS else word.capitalize()
+        for i, word in enumerate(words)
+    )
 
-    Returns the matched filename's base name (no extension), or None.
-    """
-    if keywords_dir not in _keyword_icon_index_cache:
-        index = {}
-        if os.path.exists(keywords_dir):
-            for f in os.listdir(keywords_dir):
-                base, _ext = os.path.splitext(f)
-                index[base.strip().lower()] = base.strip()
-        _keyword_icon_index_cache[keywords_dir] = index
-
-    index = _keyword_icon_index_cache[keywords_dir]
-    for candidate in candidates:
-        key = candidate.strip().lower()
-        if key in index:
-            return index[key]
-    return None
-
-def convertIcons(text, keywords_dir):
+def convertIcons(text, keywords_by_icon):
     """Converts `<img id="Name"/>` inline icon decorators in role/ability
     descriptions into a small masked/tinted icon <span> (see .kw-icon in
-    global.css), using KEYWORD_DECORATORS for the color.
+    global.css), using keywords_by_icon (built from the Keywords DataTable
+    export, see export_roles_from_sets()) for the color/icon filename --
+    this is the same data already exported to keywords.json, so the site's
+    glossary and these inline icons can never disagree with each other.
 
     This does NOT add any text styling (bold, color, etc) for other
     decorators -- but it does strip them out (keeping their inner text)
@@ -431,19 +401,14 @@ def convertIcons(text, keywords_dir):
 
     def replace_icon(match):
         name = match.group(1)
-        decorator = KEYWORD_DECORATORS.get(name)
-        if not decorator:
+        keyword = keywords_by_icon.get(name.replace(" ", "").lower())
+        if not keyword:
             print(f"    !! Unknown icon decorator id '{name}'")
             return ""
 
-        icon_file = resolveKeywordIconFile(keywords_dir, [name, decorator["textureName"]])
-        if not icon_file:
-            print(f"    !! No keyword icon file found for decorator '{name}' (tried '{name}', '{decorator['textureName']}')")
-            return ""
-
         return (
-            f'<span class="kw-icon" style="--kw: {decorator["color"]}; '
-            f'--kw-icon: url(\'/images/keywords/{icon_file}.webp\')" '
+            f'<span class="kw-icon" style="--kw: {keyword["color"]}; '
+            f'--kw-icon: url(\'/images/keywords/{keyword["icon"]}.webp\')" '
             f'role="img" aria-label="{name}" title="{name}"></span>'
         )
 
@@ -468,18 +433,19 @@ def exportGroupOrResource(obj, img_export_dir):
         "iconUrl": f"/images/roles/{icon_filename.replace('.png', '.webp')}",
     }
 
-def exportAbility(ability_asset, ability_img_export_dir, keywords_dir):
+def exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon):
     """Exports a single Ability data asset to a plain dict, including its icon.
 
-    NOTE: "Ability Type" and "Cost Type" are deliberately NOT read here.
-    Reading either of those two enum properties reliably crashes the editor
-    with an EXCEPTION_ACCESS_VIOLATION partway through a full export, despite
-    extensive isolation testing showing the underlying data/asset is fine in
-    isolation (see project history/chat log). Skipping them lets the rest of
-    the export (including ability icons, name, description, cost value)
-    complete successfully. Revisit once the root cause is found -- likely an
-    Unreal Python plugin instability with Blueprint-enum reflection under
-    sustained use, not a bug in this script or the data.
+    NOTE: "Cost Type" reads fine directly via .name + prettifyEnumName().
+    "Ability Type" does NOT -- reading that specific enum property directly
+    reliably crashes the editor with a native EXCEPTION_ACCESS_VIOLATION on
+    certain assets, confirmed (via isolated testing -- see chat history) to
+    be the Python<->enum marshalling itself, not stale/corrupted data. The
+    fix is to never let Python touch the raw enum at all: GetAbilityTypeText
+    is a BlueprintCallable function added to the Ability class that converts
+    the enum to a plain string entirely on the Unreal/C++ side, so Python
+    only ever receives a string (the same safe category of data as
+    Name/Description, never problematic).
     """
     icon_tex = ability_asset.get_editor_property("Image")
     icon_filename = exportImage(icon_tex, ability_img_export_dir, "default_ability.png")
@@ -488,14 +454,26 @@ def exportAbility(ability_asset, ability_img_export_dir, keywords_dir):
     description = str(ability_asset.get_editor_property("Description"))
     cost_value = ability_asset.get_editor_property("Cost Value")
 
+    cost_type = None
+    try:
+        cost_type = prettifyEnumName(ability_asset.get_editor_property("Cost Type").name)
+    except Exception as e:
+        print(f"    !! Could not read Cost Type on '{name}': {e}")
+
+    ability_type = None
+    try:
+        ability_type = str(ability_asset.call_method("GetAbilityTypeText"))
+    except Exception as e:
+        print(f"    !! Could not call GetAbilityTypeText on '{name}': {e}")
+
     return {
         "id": ability_asset.get_name(),
         "name": name,
         "description": description,
-        "descriptionHtml": convertIcons(description, keywords_dir),
+        "descriptionHtml": convertIcons(description, keywords_by_icon),
         "iconUrl": f"/images/abilities/{icon_filename.replace('.png', '.webp')}",
-        "abilityType": None,
-        "costType": None,
+        "abilityType": ability_type,
+        "costType": cost_type,
         "costValue": cost_value,
     }
 
@@ -514,6 +492,11 @@ CAPABILITY_COLORS = {
 }
 
 def export_keywords():
+    """Exports the Keywords DataTable to keywords.json and returns the
+    exported list, so export_roles_from_sets() can reuse it as the single
+    source of truth for inline `<img id="X"/>` icon decorators in role/
+    ability descriptions (see convertIcons()) instead of a separately
+    maintained hardcoded dict."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.dirname(script_dir)
 
@@ -526,7 +509,7 @@ def export_keywords():
     keywords_table = unreal.load_asset(KEYWORDS_TABLE_PATH)
     if not keywords_table:
         print(f"!! Could not load Keywords DataTable at {KEYWORDS_TABLE_PATH}, skipping keyword export")
-        return
+        return []
 
     # This engine build has no DataTable->JSON helper, and rows aren't plain
     # UObjects (no get_editor_property on the row itself). Instead, read each
@@ -598,6 +581,6 @@ def export_keywords():
         json.dump(json_data, f, indent=2)
 
     print(f"SUCCESS: Exported {len(json_data)} keywords!")
+    return json_data
 
-export_roles_from_sets()
-export_keywords()
+export_roles_from_sets(export_keywords())
