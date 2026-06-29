@@ -155,3 +155,32 @@
   -webkit-mask: var(--kw-icon) no-repeat center / contain;
   mask: var(--kw-icon) no-repeat center / contain;
 }
+
+/* Larger, block-level variant for the /keywords glossary page. */
+.kw-icon-lg {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--kw);
+  -webkit-mask: var(--kw-icon) no-repeat center / contain;
+  mask: var(--kw-icon) no-repeat center / contain;
+}
+
+/*
+ * Shared ornamental section divider (small flourish flanked by gold lines).
+ * Originally added on the play page; pulled into global.css so other pages
+ * can reuse it without copy-pasting the CSS.
+ */
+
+.ornate-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(151, 119, 74, 0.6);
+}
+
+.ornate-divider span {
+  height: 1px;
+  width: 4rem;
+  background: currentColor;
+}

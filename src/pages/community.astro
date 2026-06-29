@@ -1,0 +1,116 @@
+---
+// src/pages/community.astro
+import Layout from '../layouts/Layout.astro';
+
+const DISCORD_URL = 'https://discord.gg/4SBsnnVjgD';
+const DISCORD_INVITE_CODE = '4SBsnnVjgD';
+
+interface DiscordWidgetData {
+  name: string;
+  memberCount: number;
+  onlineCount: number;
+  iconUrl: string | null;
+}
+
+let discordWidget: DiscordWidgetData | null = null;
+
+try {
+  const res = await fetch(`https://discord.com/api/v10/invites/${DISCORD_INVITE_CODE}?with_counts=true`);
+  if (res.ok) {
+    const data = await res.json();
+    discordWidget = {
+      name: data.guild?.name ?? 'Werewolves Revenge',
+      memberCount: data.approximate_member_count ?? 0,
+      onlineCount: data.approximate_presence_count ?? 0,
+      iconUrl: data.guild?.icon ? `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png` : null,
+    };
+  }
+} catch {
+  discordWidget = null;
+}
+
+const pillars = [
+  { title: 'Community-Hosted Games', text: 'Every game is run by a real person, not a faceless matchmaker. Hosts shape the experience, keep things fair, and make every lobby feel like a gathering of friends rather than strangers.' },
+  { title: 'A Welcoming Crowd', text: "Werewolves Revenge's community is made up almost entirely of people who genuinely love the genre. New players are walked through their first few games rather than thrown to the wolves." },
+  { title: 'Always Someone To Play With', text: "Don't have a group to play with? The Discord is where lobbies form, friends are made, and games are always being organised." },
+];
+---
+
+<Layout title="Community | Werewolves Revenge" description="Join the Werewolves Revenge Discord, find a community-hosted lobby, and never play alone again.">
+  <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-[#97774A]/30 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(151,119,74,0.08),_transparent_60%)] z-0"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="ornate-divider mb-6 justify-center">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        The Community
+      </h1>
+      <p class="text-zinc-500 max-w-xl mx-auto">Werewolves Revenge isn't just a game — it's the people you play it with.</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="bg-zinc-950 min-h-screen">
+
+    <!-- DISCORD CTA -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <div class="relative overflow-hidden border border-[#97774A]/30">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-950 via-zinc-950 to-zinc-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.15),_transparent_60%)]"></div>
+        <div class="relative z-10 px-8 md:px-16 py-16 text-center">
+          <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4" style="font-family: 'Beaufort', serif;">Join The Discord</h2>
+          <p class="text-zinc-400 text-lg max-w-xl mx-auto mb-8">Find a lobby, make friends, and never play alone again.</p>
+
+          {discordWidget && (
+            <div class="flex items-center justify-center gap-4 mb-8 bg-zinc-950/60 border border-[#97774A]/30 rounded-md px-6 py-4 max-w-sm mx-auto backdrop-blur-sm">
+              {discordWidget.iconUrl && (
+                <img src={discordWidget.iconUrl} alt={discordWidget.name} class="w-12 h-12 rounded-full shrink-0" />
+              )}
+              <div class="text-left">
+                <p class="text-white font-bold">{discordWidget.name}</p>
+                <p class="text-sm text-zinc-400">
+                  <span class="text-emerald-400 font-bold">● {discordWidget.onlineCount.toLocaleString()} online</span>
+                  <span class="text-zinc-600 mx-2">/</span>
+                  <span>{discordWidget.memberCount.toLocaleString()} members</span>
+                </p>
+              </div>
+            </div>
+          )}
+
+          <a href={DISCORD_URL} target="_blank" rel="noopener" class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white uppercase tracking-[0.2em] transition-all duration-300 bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] hover:-translate-y-1 overflow-hidden">
+            <span class="relative z-10 text-xl">Join Discord</span>
+            <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-20">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+        {pillars.map((pillar) => (
+          <div class="bg-zinc-900/50 border border-[#97774A]/30 rounded-sm p-8">
+            <h3 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">{pillar.title}</h3>
+            <p class="text-zinc-400 leading-relaxed">{pillar.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- OTHER LINKS -->
+    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: 'Beaufort', serif;">Find Us Elsewhere</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-4 font-bold text-zinc-200 uppercase tracking-[0.2em] text-sm border border-[#97774A]/40 rounded-sm hover:border-[#97774A]/60 hover:text-white transition-colors">
+          Steam Page
+        </a>
+        <a href="/news" class="inline-flex items-center justify-center px-8 py-4 font-bold text-zinc-200 uppercase tracking-[0.2em] text-sm border border-[#97774A]/40 rounded-sm hover:border-[#97774A]/60 hover:text-white transition-colors">
+          Latest News
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>

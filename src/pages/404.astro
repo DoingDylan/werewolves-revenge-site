@@ -1,0 +1,36 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found | Werewolves Revenge" noindex={true}>
+  <main id="main-content" class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black px-6 text-center">
+    <div class="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(ellipse_at_center,_rgba(151,119,74,0.15),_transparent_60%)]"></div>
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_black_90%)]"></div>
+
+    <div class="relative z-10 flex flex-col items-center">
+      <div class="ornate-divider mb-6 justify-center">
+        <span></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+
+      <p class="text-7xl md:text-9xl font-black text-[#97774A]/80 mb-2" style="font-family: 'Beaufort', serif;">404</p>
+      <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        This Page Has Perished
+      </h1>
+      <p class="text-zinc-400 text-lg max-w-md mx-auto mb-10">
+        Whatever you were looking for didn't survive the night.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <a href="/" class="inline-flex items-center justify-center px-10 py-5 font-bold text-white uppercase trnpacking-[0.2em] text-sm bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.5)] hover:-translate-y-1 transition-all duration-300">
+          Return Home
+        </a>
+        <a href="/roles" class="inline-flex items-center justify-center px-10 py-5 font-bold text-[#97774A]/90 uppercase tracking-[0.2em] text-sm border border-[#97774A]/40 rounded-sm hover:border-[#97774A]/60 hover:text-white transition-colors">
+          Browse The Roles
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

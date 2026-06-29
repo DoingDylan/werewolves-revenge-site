@@ -1,0 +1,146 @@
+[
+  {
+    "id": "Grim_Folk",
+    "name": "Folk",
+    "description": "Find the Evil and Fei that hide beside you and eliminate them trough discussion and voting.",
+    "winCondition": "You win when no Evil nor Fei remain.",
+    "color": "#5f90c4",
+    "iconUrl": "/images/factions/Grimm_Folk.webp",
+    "order": 0
+  },
+  {
+    "id": "Hero",
+    "name": "Hero",
+    "description": "The heroes of this story you must work together to vanquish threats to Olympia.",
+    "winCondition": " You win when there are no Monsters or Corrupted left alive.",
+    "color": "#5f90c4",
+    "iconUrl": "/images/factions/T_Protagonist.webp",
+    "order": 0
+  },
+  {
+    "id": "Town",
+    "name": "Town",
+    "description": "Identify and eliminate the hidden Werewolves through discussion and voting. ",
+    "winCondition": "You win when there are no Werewolves, Vampires or Evils left alive.",
+    "color": "#5f90c4",
+    "iconUrl": "/images/factions/Town.webp",
+    "order": 0
+  },
+  {
+    "id": "Village",
+    "name": "Village",
+    "description": "Identify and eliminate the hidden Vampires through discussion and voting. ",
+    "winCondition": " You win when there are no Werewolves, Vampires or Evils left alive.",
+    "color": "#5f90c4",
+    "iconUrl": "/images/factions/Village.webp",
+    "order": 0
+  },
+  {
+    "id": "Grim_Fei",
+    "name": "Fei",
+    "description": "Hide in plain side and take Folk at night.",
+    "winCondition": "You win when Fei equal or outnumber Folk and no Evils are left alive.",
+    "color": "#765d86",
+    "iconUrl": "/images/factions/Grimm_Fei.webp",
+    "order": 1
+  },
+  {
+    "id": "Monster",
+    "name": "Monster",
+    "description": "Beasts of all kinds, you dont need a reason to want others dead.",
+    "winCondition": "You win when Monsters equal or outnumber other players, and there are no Corrupted left alive.",
+    "color": "#883532",
+    "iconUrl": "/images/factions/T_Antagonist.webp",
+    "order": 1
+  },
+  {
+    "id": "Vampire",
+    "name": "Vampire",
+    "description": "Secretly eliminate villagers each night and try to blend in during the day.",
+    "winCondition": "You win when Vampires equal or outnumber other players, and there are no Evils left alive.",
+    "color": "#765d86",
+    "iconUrl": "/images/factions/Vampire.webp",
+    "order": 1
+  },
+  {
+    "id": "Werewolf",
+    "name": "Werewolf",
+    "description": "Secretly eliminate villagers each night and try to blend in during the day. ",
+    "winCondition": "You win when Werewolves equal or outnumber other players, and there are no Evils left alive.",
+    "color": "#883532",
+    "iconUrl": "/images/factions/Werewolf.webp",
+    "order": 1
+  },
+  {
+    "id": "Neutral",
+    "name": "Neutral",
+    "description": "See to your own unique objectives or win condition, independent of other factions.",
+    "winCondition": "You win if you survive until the end of the game.",
+    "color": "#b3b3b3",
+    "iconUrl": "/images/factions/Neutral.webp",
+    "order": 2
+  },
+  {
+    "id": "Grimm_Neutral",
+    "name": "Neutral",
+    "description": "See to your own unique objectives or win conditions, independent of other factions.",
+    "winCondition": "You win if you survive to the end of the game or your objectives are fulfilled.",
+    "color": "#b3b3b3",
+    "iconUrl": "/images/factions/Grimm_Neutral_.webp",
+    "order": 2
+  },
+  {
+    "id": "Corrupted",
+    "name": "Corrupted",
+    "description": "Corrupted by Evil forces you will do whatever it takes to prevail over Olympia. ",
+    "winCondition": "You win when there are 3 or less players alive, regardless of their factions.",
+    "color": "#839c38",
+    "iconUrl": "/images/factions/Evil_OLY.webp",
+    "order": 3
+  },
+  {
+    "id": "Evil",
+    "name": "Evil",
+    "description": "Oppose the Town and Werewolves, creating a complex dynamic of competing factions. ",
+    "winCondition": "You win when there are 3 or less players alive, regardless of their factions.",
+    "color": "#839c38",
+    "iconUrl": "/images/factions/Evil.webp",
+    "order": 3
+  },
+  {
+    "id": "Grimm_Evil",
+    "name": "Evil",
+    "description": "Oppose the Folk and Fei, creating a complex dynamic of competing factions.",
+    "winCondition": "You win when there are 3 or less players alive and no Fei remain. Some Evil might pursue other goals.",
+    "color": "#839c38",
+    "iconUrl": "/images/factions/Grimm_Evil.webp",
+    "order": 3
+  },
+  {
+    "id": "LesserEvil",
+    "name": "Lesser Evil",
+    "description": "Align with both Werewolves and Evils against the Town. ",
+    "winCondition": "You win with either the Werewolves or an Evil.",
+    "color": "#8b7884",
+    "iconUrl": "/images/factions/Lesser_Evil_2.webp",
+    "order": 4
+  },
+  {
+    "id": "Grim_LesserEvil",
+    "name": "Lesser Evil",
+    "description": "Align with Evil and Fei against the Folk.",
+    "winCondition": "You win with either Fei or Evil.",
+    "color": "#8b7884",
+    "iconUrl": "/images/factions/Grimm_LesserEvil.webp",
+    "order": 4
+  },
+  {
+    "id": "Tainted",
+    "name": "Tainted",
+    "description": "Swayed by evil forces you sabotage the heroes from the shadows.",
+    "winCondition": "You win if the Heroes lose.",
+    "color": "#8b7884",
+    "iconUrl": "/images/factions/LesserEvil_OLY.webp",
+    "order": 4
+  }
+]

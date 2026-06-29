@@ -4,11 +4,35 @@ import '../styles/global.css';
 
 interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
+	noindex?: boolean;
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = "Werewolves Revenge" } = Astro.props;
+const DEFAULT_DESCRIPTION = "Werewolves Revenge is a free-to-play, player-driven social deduction game for 8–16 players. 300+ roles, proximity voice chat, and a community-hosted village where nobody can be trusted.";
+
+const {
+	title = "Werewolves Revenge",
+	description = DEFAULT_DESCRIPTION,
+	image = "/images/og-image.jpg",
+	noindex = false,
+	jsonLd,
+} = Astro.props;
+
 const rawPath = new URL(Astro.request.url).pathname;
 const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
+const canonicalURL = new URL(rawPath, Astro.site);
+const absoluteImageURL = new URL(image, Astro.site);
+
+const siteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "Werewolves Revenge",
+	url: Astro.site?.toString(),
+};
+
+const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
 ---
 
 <!doctype html>
@@ -16,20 +40,51 @@ const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph (Discord, Facebook, Slack, etc.) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={absoluteImageURL} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:site_name" content="Werewolves Revenge" />
+
+		<!-- Twitter/X card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={absoluteImageURL} />
+
+		<meta name="theme-color" content="#09090b" />
+
+		{schemaBlocks.map((block) => (
+			<script type="application/ld+json" set:html={JSON.stringify(block)} />
+		))}
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Skip to content</a>
 		<nav class="main-nav">
 			<a href="/" class={`brand ${path === '/' ? 'active' : ''}`} aria-label="Werewolves Revenge home">
 				<span class="brand-logo"></span>
 			</a>
-			<div class="nav-links">
-				<a href="/play" class={path === '/play' ? 'active' : ''}>Play</a>
+			<div class="nav-links nav-links-primary">
+				<a href="/features" class={path === '/features' ? 'active' : ''}>Features</a>
 				<a href="/roles" class={path.startsWith('/roles') ? 'active' : ''}>Roles</a>
 				<a href="/news" class={path === '/news' ? 'active' : ''}>News</a>
+			</div>
+			<div class="nav-links nav-links-secondary">
+				<a href="/keywords" class={path === '/keywords' ? 'active' : ''}>Keywords</a>
+				<a href="/how-to-play" class={path === '/how-to-play' ? 'active' : ''}>How To Play</a>
+				<a href="/community" class={path === '/community' ? 'active' : ''}>Discord</a>
 			</div>
 		</nav>
 
@@ -45,6 +100,10 @@ const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
+	}
+
+	html {
+		scrollbar-gutter: stable;
 	}
 
 	html,
@@ -65,8 +124,9 @@ const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 		z-index: 50;
 		display: flex;
 		align-items: center;
-		gap: 2.5rem;
-		padding: 1.1rem 2rem;
+		flex-wrap: wrap;
+		gap: 1.25rem 1.75rem;
+		padding: 1rem 2rem;
 		background: rgba(9, 9, 11, 0.7);
 		backdrop-filter: blur(12px);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -98,17 +158,23 @@ const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 
 	.main-nav .nav-links {
 		display: flex;
-		gap: 2rem;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.25rem;
+	}
+
+	.main-nav .nav-links-secondary {
+		margin-left: auto;
 	}
 
 	.main-nav a {
 		color: #a1a1aa;
 		text-decoration: none;
 		font-weight: 600;
-		font-size: 1.6rem;
+		font-size: 1.45rem;
 		text-transform: uppercase;
-		letter-spacing: 0.12em;
+		letter-spacing: 0.1em;
 		transition: color 0.2s ease;
+		white-space: nowrap;
 	}
 
 	.main-nav a:hover {
@@ -117,5 +183,40 @@ const path = rawPath !== '/' ? rawPath.replace(/\/$/, '') : rawPath;
 
 	.main-nav a.active {
 		color: #ef4444;
+	}
+
+	.main-nav .nav-links-secondary a {
+		color: #71717a;
+		font-size: 1.22rem;
+		font-weight: 500;
+	}
+
+	.main-nav .nav-links-secondary a:hover {
+		color: #d4d4d8;
+	}
+
+	.main-nav .nav-links-secondary a.active {
+		color: #ef4444;
+	}
+
+	.skip-link {
+		position: absolute;
+		top: -100px;
+		left: 1rem;
+		z-index: 100;
+		background: #ef4444;
+		color: #fff;
+		padding: 0.75rem 1.25rem;
+		border-radius: 0.25rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: top 0.2s ease;
+	}
+
+	.skip-link:focus {
+		top: 1rem;
 	}
 </style>

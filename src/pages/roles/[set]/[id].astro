@@ -1,0 +1,231 @@
+---
+// src/pages/roles/[set]/[id].astro
+import Layout from '../../../layouts/Layout.astro';
+import rolesData from '../../../data/roles.json';
+import factionsData from '../../../data/factions.json';
+import classesData from '../../../data/classes.json';
+
+export async function getStaticPaths() {
+  return rolesData.map((role) => {
+    return {
+      params: { set: role.set.toLowerCase(), id: role.id },
+      props: { role },
+    };
+  });
+}
+
+const factionsById = Object.fromEntries(factionsData.map((f) => [f.id, f]));
+const classesById = Object.fromEntries(classesData.map((c) => [c.id, c]));
+
+const { role } = Astro.props;
+const factionInfo = factionsById[role.faction];
+const factionHex = factionInfo?.color ?? '#71717a';
+const factionIconUrl = factionInfo?.iconUrl;
+const factionStyle = `--faction: ${factionHex};`;
+const classInfo = classesById[role.class];
+const classHex = classInfo?.color ?? '#71717a';
+const classIconUrl = classInfo?.iconUrl;
+const classStyle = `--class: ${classHex};`;
+
+const metaDescription = role.description
+  ? role.description.slice(0, 155) + (role.description.length > 155 ? '…' : '')
+  : `${role.name} is a ${role.factionName} role from the ${role.set} set in Werewolves Revenge.`;
+---
+
+<Layout title={`${role.name} | ${role.set}`} description={metaDescription} image={role.imageUrl || role.portraitUrl}>
+  <main id="main-content" class="bg-zinc-950 min-h-screen text-zinc-100 relative overflow-hidden pb-24" style={factionStyle}>
+
+    <div class="absolute inset-0 faction-page-glow z-0 opacity-60"></div>
+
+    <div class="max-w-6xl mx-auto px-6 pt-12 md:pt-24 relative z-10">
+      <nav class="mb-12">
+        <a href="/roles" class="text-zinc-500 hover:text-white uppercase tracking-widest text-sm font-bold transition-colors flex items-center gap-2">
+          <span>&larr;</span> Back to All Roles
+        </a>
+      </nav>
+
+      <div class="grid md:grid-cols-[1fr_1fr] gap-6 lg:gap-12 items-start">
+
+        <div class="relative group">
+          <div class="absolute -inset-1 faction-image-glow rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+          <div class="relative aspect-[2/3] bg-zinc-900 rounded-lg border border-zinc-800 overflow-hidden shadow-2xl">
+            <img src={role.imageUrl || '/images/roles/default_portrait.webp'} alt={role.name} class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent"></div>
+
+            <div class="absolute inset-x-0 bottom-0 h-[30%] flex flex-col justify-end p-6 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="role-description text-lg text-zinc-300 leading-relaxed italic" set:html={role.descriptionHtml || role.description} />
+            </div>
+          </div>
+        </div>
+
+        <div class="py-6">
+          <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-5 drop-shadow-lg" style="font-family: 'Beaufort', serif;">{role.name}</h1>
+
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="badge-tooltip-wrap relative group">
+              <span class="faction-border flex items-center gap-2 px-4 py-1.5 rounded-lg border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest shadow-[0_0_12px_-2px_var(--faction)]">
+                {factionIconUrl && (
+                  <span class="badge-icon" style={`background-color: var(--faction); --badge-icon: url('${factionIconUrl}')`}></span>
+                )}
+                <span class="faction-text">{role.factionName}</span>
+              </span>
+              {(factionInfo?.description || factionInfo?.winCondition) && (
+                <span class="badge-tooltip" style={factionStyle}>
+                  {factionInfo?.description && <span class="block">{factionInfo.description}</span>}
+                  {factionInfo?.winCondition && (
+                    <>
+                      <span class="block text-[#97774A] text-xs font-bold uppercase tracking-widest mt-3 mb-1">Win Condition</span>
+                      <span class="block">{factionInfo.winCondition}</span>
+                    </>
+                  )}
+                </span>
+              )}
+            </span>
+            <span class="badge-tooltip-wrap relative group">
+              <span class="class-border flex items-center gap-2 px-4 py-1.5 rounded-lg border bg-zinc-950/50 backdrop-blur-sm text-s font-bold uppercase tracking-widest shadow-[0_0_12px_-2px_var(--class)]" style={classStyle}>
+                {classIconUrl && (
+                  <span class="badge-icon" style={`background-color: var(--class); --badge-icon: url('${classIconUrl}')`}></span>
+                )}
+                <span class="class-text">{role.class}</span>
+              </span>
+              {classInfo?.description && (
+                <span class="badge-tooltip" style={classStyle}>
+                  <span class="block">{classInfo.description}</span>
+                </span>
+              )}
+            </span>
+            <!-- <span class="px-4 py-1 rounded border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-zinc-400">
+              {role.set}
+            </span> -->
+          </div>
+
+          {role.group && (
+            <div class="mb-6">
+              <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Group</h2>
+              <div class="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm" style={`--accent: ${role.group.color || '#71717a'};`}>
+                {role.group.iconUrl && (
+                  <img src={role.group.iconUrl} alt={role.group.name} class="w-16 h-16 object-contain shrink-0 rounded-xl" />
+                )}
+                <div class="flex-1">
+                  <h3 class="accent-text text-lg font-bold mb-1">{role.group.name}</h3>
+                  {role.group.description && (
+                    <p class="text-lg text-zinc-300 leading-relaxed">{role.group.description}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {role.resource && (
+            <div class="mb-6">
+              <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Resource</h2>
+              <div class="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm" style={`--accent: ${role.resource.color || '#71717a'};`}>
+                {role.resource.iconUrl && (
+                  <img src={role.resource.iconUrl} alt={role.resource.name} class="w-16 h-16 object-contain shrink-0 rounded-xl" />
+                )}
+                <div class="flex-1">
+                  <h3 class="accent-text text-lg font-bold mb-1">{role.resource.name}</h3>
+                  {role.resource.description && (
+                    <p class="text-lg text-zinc-300 leading-relaxed">{role.resource.description}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {role.abilities && role.abilities.length > 0 && (
+            <div>
+              <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Abilities</h2>
+              <div class="space-y-4">
+                {role.abilities.map((ability) => (
+                  <div class="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm">
+                    {ability.iconUrl && (
+                      <img src={ability.iconUrl} alt={ability.name} class="w-16 h-16 object-contain shrink-0 rounded-xl" />
+                    )}
+                    <div class="flex-1">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                        <h3 class="text-lg font-bold text-white">{ability.name}</h3>
+                        <div class="flex gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
+                          {ability.abilityType && <span>{ability.abilityType}</span>}
+                          {ability.costValue != null && ability.costValue > 0 && (
+                            <span>&middot; {ability.costValue} {ability.costType}</span>
+                          )}
+                        </div>
+                      </div>
+                      <p class="text-lg text-zinc-300 leading-relaxed" set:html={ability.descriptionHtml || ability.description} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .role-description::before,
+  .role-description::after {
+    font-family: 'Beaufort', serif;
+    font-style: normal;
+    font-size: 1.8em;
+    color: #97774A;
+    line-height: 0;
+    vertical-align: -0.35em;
+  }
+
+  .role-description::before {
+    content: '\201C';
+    margin-right: 0.15em;
+  }
+
+  .role-description::after {
+    content: '\201D';
+    margin-left: 0.15em;
+  }
+
+  .badge-icon {
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+    margin-right: 0.2em;
+    -webkit-mask: var(--badge-icon) no-repeat center / contain;
+    mask: var(--badge-icon) no-repeat center / contain;
+    /* Visually scale up without affecting layout (the badge stays the same
+       size) -- transform doesn't trigger reflow, it's paint-only. */
+    transform: scale(1.3);
+  }
+
+  .badge-tooltip {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 50%;
+    z-index: 30;
+    width: 16rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(151, 119, 74, 0.6);
+    background: rgba(9, 9, 11, 0.97);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .badge-tooltip-wrap:hover .badge-tooltip,
+  .badge-tooltip-wrap:focus-within .badge-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>

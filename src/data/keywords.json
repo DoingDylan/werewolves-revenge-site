@@ -1,0 +1,261 @@
+[
+  {
+    "name": "Active",
+    "color": "#ffffff",
+    "icon": "Active",
+    "description": "Is a player using an active ability during the night.",
+    "capability": "General"
+  },
+  {
+    "name": "Appear",
+    "color": "#839C38",
+    "icon": "Appear",
+    "description": "Make as aspect of a player appear as something else.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Assume",
+    "color": "#839C38",
+    "icon": "Assume",
+    "description": "Change your role to another player's role.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Attack",
+    "color": "#883532",
+    "icon": "Attack",
+    "description": "Eliminate a player from the game.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Bleed",
+    "color": "#883532",
+    "icon": "Bleed",
+    "description": "Announced that a player is bleeding, they are then eliminated during the following night.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Capability",
+    "color": "#ffffff",
+    "icon": "Capabilities",
+    "description": "What a player is capable of when taking all of their abilities into account.",
+    "capability": "General"
+  },
+  {
+    "name": "Class",
+    "color": "#ffffff",
+    "icon": "Class",
+    "description": "A role's responsibilities they have for for their faction.",
+    "capability": "General"
+  },
+  {
+    "name": "Convert",
+    "color": "#839C38",
+    "icon": "Convert",
+    "description": "Change a player's faction.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Divine Protection",
+    "color": "#5F90C4",
+    "icon": "DivineProtection",
+    "description": "Block a single fatal attack or execution during the day or night.",
+    "capability": "Protection"
+  },
+  {
+    "name": "Enhance",
+    "color": "#839C38",
+    "icon": "Enhance",
+    "description": "Allow a player to use an ability an additional time during the night.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Execute",
+    "color": "#883532",
+    "icon": "Execute",
+    "description": "Eliminate a player during the day.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Exposed",
+    "color": "#839C38",
+    "icon": "Exposed",
+    "description": "You are instantly executed if you are accused.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Faction",
+    "color": "#ffffff",
+    "icon": "Faction",
+    "description": "The team a player is part of.",
+    "capability": "General"
+  },
+  {
+    "name": "Frail",
+    "color": "#839C38",
+    "icon": "Frail",
+    "description": "Protections on you during the night have no affect.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Guarantee",
+    "color": "#839C38",
+    "icon": "Guarantee",
+    "description": "Prevent any manipulations from affecting an ability or target.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Heal",
+    "color": "#5F90C4",
+    "icon": "Heal",
+    "description": "Reduces the effect of a single elimination ability during the night. Prioritises bleeding, poison and ignite, removing them; otherwise reduces an attack to a bleed.",
+    "capability": "Protection"
+  },
+  {
+    "name": "Hemorrhage",
+    "color": "#883532",
+    "icon": "Hemorrhage_",
+    "description": "Announced that a player is bleeding, they are then eliminated during the following night. Cannot be stopped by protection.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Ignite",
+    "color": "#883532",
+    "icon": "Ignite",
+    "description": "Announced that a player is ignited, they are then incinerated during the following night.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Incinerate",
+    "color": "#883532",
+    "icon": "Incinerate",
+    "description": "Eliminate a player whilst also denying their role reveal and any 'on death' abilities.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Learn",
+    "color": "#B38FC4",
+    "icon": "Learn",
+    "description": "Secretly obtain information during the night.",
+    "capability": "Investigation"
+  },
+  {
+    "name": "Meet",
+    "color": "#839C38",
+    "icon": "Meet",
+    "description": "Secretly meet with a player during the night.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Miss",
+    "color": "#839C38",
+    "icon": "Miss",
+    "description": "Abilities used on a player will have no effect.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Neighbours",
+    "color": "#ffffff",
+    "icon": "Neighbours",
+    "description": "The closest alive player on each of your sides.",
+    "capability": "General"
+  },
+  {
+    "name": "Perish",
+    "color": "#ffffff",
+    "icon": "Die",
+    "description": "Be eliminated from the game.",
+    "capability": "General"
+  },
+  {
+    "name": "Permanent Defence",
+    "color": "#5F90C4",
+    "icon": "PermanentDefence",
+    "description": "If you are fated to die during the night, protect yourself.",
+    "capability": "Protection"
+  },
+  {
+    "name": "Poison",
+    "color": "#883532",
+    "icon": "Poison",
+    "description": "Player learns that they are poisoned, they are then eliminated during the following night.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Protect",
+    "color": "#5F90C4",
+    "icon": "Protect",
+    "description": "Block all attacks during the night.",
+    "capability": "Protection"
+  },
+  {
+    "name": "Redirect",
+    "color": "#839C38",
+    "icon": "Redirect",
+    "description": "Move targets on a player to another player.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Remove",
+    "color": "#ffffff",
+    "icon": "Remove",
+    "description": "Remove a player from the game.  Any \"on death\" abilities to not trigger and their role to not be revealed. Cannot be protected against or manipulated.",
+    "capability": "General"
+  },
+  {
+    "name": "Reveal",
+    "color": "#839C38",
+    "icon": "Revealed",
+    "description": "Publically reveal information.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Role",
+    "color": "#ffffff",
+    "icon": "Role",
+    "description": "A player's current role.",
+    "capability": "General"
+  },
+  {
+    "name": "Share",
+    "color": "#839C38",
+    "icon": "Share",
+    "description": "Share targets on one player to another player.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Share Fate",
+    "color": "#839C38",
+    "icon": "ShareFate",
+    "description": "Perish if the player you are sharing fate with dies.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Targets",
+    "color": "#ffffff",
+    "icon": "Targets",
+    "description": "The players that a player is using their active abilities on during the night.",
+    "capability": "General"
+  },
+  {
+    "name": "Transform",
+    "color": "#839C38",
+    "icon": "Transform",
+    "description": "Change a player's role to another role.",
+    "capability": "Manipulation"
+  },
+  {
+    "name": "Unstoppable Attack",
+    "color": "#883532",
+    "icon": "UnstoppableAttack",
+    "description": "Eliminate a player from the game. Cannot be stopped by protection.",
+    "capability": "Elimination"
+  },
+  {
+    "name": "Untargetable",
+    "color": "#839C38",
+    "icon": "Untargetable",
+    "description": "All targets on a player during the night will miss.",
+    "capability": "Manipulation"
+  }
+]

@@ -82,9 +82,16 @@ function formatDate(pubDate: string) {
   if (isNaN(date.getTime())) return pubDate;
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
+
+// All posts are already fetched and rendered into this page at build time
+// (see above) -- there's no live API to page through. To still get a
+// "loads in sections as you scroll" feel, every card beyond the first
+// batch starts hidden and is revealed in batches via IntersectionObserver
+// (see the script at the bottom of this file).
+const REVEAL_BATCH_SIZE = 4;
 ---
 
-<Layout title="News | Werewolves Revenge">
+<Layout title="News | Werewolves Revenge" description="The latest updates and patch notes for Werewolves Revenge, straight from Steam.">
   <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-zinc-800 relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/40 via-zinc-950 to-zinc-950 z-0"></div>
     <div class="max-w-4xl mx-auto relative z-10 text-center">
@@ -95,7 +102,7 @@ function formatDate(pubDate: string) {
     </div>
   </header>
 
-  <main class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8">
+  <main id="main-content" class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8">
     <div class="max-w-3xl mx-auto space-y-8">
 
       {fetchError && (
@@ -111,8 +118,11 @@ function formatDate(pubDate: string) {
         <p class="text-center text-zinc-500 py-16">No news posts yet.</p>
       )}
 
-      {newsItems.map((item) => (
-        <article class="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/50 transition-colors">
+      {newsItems.map((item, i) => (
+        <article
+          class={`news-card bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/50 transition-colors ${i >= REVEAL_BATCH_SIZE ? 'news-card-pending' : ''}`}
+          data-index={i}
+        >
           {item.imageUrl && (
             <div class="relative aspect-video">
               <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover" loading="lazy" />
@@ -131,6 +141,58 @@ function formatDate(pubDate: string) {
         </article>
       ))}
 
+      {newsItems.length > REVEAL_BATCH_SIZE && (
+        <div id="newsSentinel" class="py-8 text-center text-zinc-600 text-sm uppercase tracking-widest">
+          Loading more...
+        </div>
+      )}
+
     </div>
   </main>
 </Layout>
+
+<style>
+  .news-card-pending {
+    display: none;
+  }
+
+  .news-card-revealed {
+    animation: newsCardFadeIn 0.4s ease-out;
+  }
+
+  @keyframes newsCardFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script define:vars={{ REVEAL_BATCH_SIZE }}>
+  const sentinel = document.getElementById('newsSentinel');
+  const allCards = Array.from(document.querySelectorAll('.news-card'));
+  let shownCount = Math.min(REVEAL_BATCH_SIZE, allCards.length);
+
+  function revealNextBatch() {
+    const nextBatch = allCards.slice(shownCount, shownCount + REVEAL_BATCH_SIZE);
+    nextBatch.forEach((card) => {
+      card.classList.remove('news-card-pending');
+      card.classList.add('news-card-revealed');
+    });
+    shownCount += nextBatch.length;
+
+    if (shownCount >= allCards.length && sentinel) {
+      sentinel.remove();
+      observer.disconnect();
+    }
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        revealNextBatch();
+      }
+    },
+    { rootMargin: '200px' }
+  );
+
+  if (sentinel) observer.observe(sentinel);
+</script>

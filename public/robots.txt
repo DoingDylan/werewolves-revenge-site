@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://werewolvesrevenge.com/sitemap-index.xml

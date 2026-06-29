@@ -1,7 +1,8 @@
 [
   {
-    "id": "olympia-achilles",
+    "id": "achilles",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Achilles",
     "faction": "Hero",
     "factionName": "Hero",
@@ -26,8 +27,9 @@
     ]
   },
   {
-    "id": "dark-acolyte",
+    "id": "acolyte",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Acolyte",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -52,8 +54,9 @@
     ]
   },
   {
-    "id": "olympia-agamemnon",
+    "id": "agamemnon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Agamemnon",
     "faction": "Hero",
     "factionName": "Hero",
@@ -88,8 +91,9 @@
     ]
   },
   {
-    "id": "dark-alchemist",
+    "id": "alchemist",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Alchemist",
     "faction": "Village",
     "factionName": "Village",
@@ -124,8 +128,9 @@
     ]
   },
   {
-    "id": "olympia-alecto",
+    "id": "alecto",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Alecto",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -150,8 +155,9 @@
     ]
   },
   {
-    "id": "dark-alp",
+    "id": "alp",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Alp",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -176,8 +182,9 @@
     ]
   },
   {
-    "id": "grimm-alp",
+    "id": "alp",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Alp",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -192,8 +199,8 @@
       {
         "id": "DA_Grimm_Alp_Ability_1",
         "name": "Haunting dreams",
-        "description": "Haunt your targets dreams allowing you to <img id=\"Learn\"/> <i>learn</> their <b>capabilities</> or <b>role</>, however, they will know they had a bad dream.",
-        "descriptionHtml": "Haunt your targets dreams allowing you to <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn their capabilities or role, however, they will know they had a bad dream.",
+        "description": "Haunt your targets dreams allowing you to either <img id=\"Learn\"/> <i>learn</> their <b>capabilities</> secretly or <img id=\"Learn\"/> <i>learn</> their <b>role</>, which causes your target to learn that they had a bad dream.",
+        "descriptionHtml": "Haunt your targets dreams allowing you to either <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn their capabilities secretly or <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn their role, which causes your target to learn that they had a bad dream.",
         "iconUrl": "/images/abilities/T_Grimm_Alp_1.webp",
         "abilityType": null,
         "costType": null,
@@ -202,8 +209,9 @@
     ]
   },
   {
-    "id": "standard-alpha-wolf",
+    "id": "alpha-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Alpha Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -228,8 +236,9 @@
     ]
   },
   {
-    "id": "dark-amnesiac",
+    "id": "amnesiac",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Amnesiac",
     "faction": "Village",
     "factionName": "Village",
@@ -243,7 +252,7 @@
       "id": "Amnesiac_Resource",
       "name": "Memories",
       "description": "You slowly regain the memories of who you were, gaining 10 per night.",
-      "color": "#0d1216",
+      "color": "#3f4b52",
       "iconUrl": "/images/roles/sparkles.webp"
     },
     "abilities": [
@@ -260,8 +269,9 @@
     ]
   },
   {
-    "id": "dark-angel",
+    "id": "angel",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Angel",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -296,8 +306,9 @@
     ]
   },
   {
-    "id": "olympia-aphrodite",
+    "id": "aphrodite",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Aphrodite",
     "faction": "Hero",
     "factionName": "Hero",
@@ -332,8 +343,9 @@
     ]
   },
   {
-    "id": "olympia-apollo",
+    "id": "apollo",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Apollo",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -358,8 +370,9 @@
     ]
   },
   {
-    "id": "dark-apothecary",
+    "id": "apothecary",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Apothecary",
     "faction": "Village",
     "factionName": "Village",
@@ -394,8 +407,9 @@
     ]
   },
   {
-    "id": "grimm-apprentice",
+    "id": "apprentice",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Apprentice",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -420,8 +434,9 @@
     ]
   },
   {
-    "id": "olympia-arachne",
+    "id": "arachne",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Arachne",
     "faction": "Hero",
     "factionName": "Hero",
@@ -446,8 +461,9 @@
     ]
   },
   {
-    "id": "standard-arcane-mage",
+    "id": "arcane-mage",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Arcane Mage",
     "faction": "Town",
     "factionName": "Town",
@@ -461,7 +477,7 @@
       "id": "ArcaneMage_Resource",
       "name": "Mana",
       "description": "Gain 30 mana each night.",
-      "color": "#291667",
+      "color": "#7052aa",
       "iconUrl": "/images/roles/round-potion.webp"
     },
     "abilities": [
@@ -488,8 +504,9 @@
     ]
   },
   {
-    "id": "grimm-arch-witch",
+    "id": "arch-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Arch Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -502,7 +519,7 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": null,
@@ -510,8 +527,8 @@
       {
         "id": "DA_Grimm_ArchWitch_Ability_1",
         "name": "Broom",
-        "description": "You choose a player\u2019s house, who is not a witch to keep your broom save. You <img id=\"ShareFate\"/> <m>share their fate</> until the Walpurgisnacht arrives and you take your broom back. If you fail to use this ability you <b>perish</>.",
-        "descriptionHtml": "You choose a player\u2019s house, who is not a witch to keep your broom save. You <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/ShareFate.webp')\" role=\"img\" aria-label=\"ShareFate\" title=\"ShareFate\"></span> share their fate until the Walpurgisnacht arrives and you take your broom back. If you fail to use this ability you perish.",
+        "description": "You choose a player\u2019s house, who is not a witch to keep your broom safe. You <img id=\"ShareFate\"/> <m>share their fate</> until the Walpurgisnacht arrives and you take your broom back. If you fail to use this ability you <b>perish</>.",
+        "descriptionHtml": "You choose a player\u2019s house, who is not a witch to keep your broom safe. You <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/ShareFate.webp')\" role=\"img\" aria-label=\"ShareFate\" title=\"ShareFate\"></span> share their fate until the Walpurgisnacht arrives and you take your broom back. If you fail to use this ability you perish.",
         "iconUrl": "/images/abilities/T_ArchWitch_1.webp",
         "abilityType": null,
         "costType": null,
@@ -540,8 +557,9 @@
     ]
   },
   {
-    "id": "dark-architect",
+    "id": "architect",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Architect",
     "faction": "Village",
     "factionName": "Village",
@@ -566,8 +584,9 @@
     ]
   },
   {
-    "id": "olympia-ares",
+    "id": "ares",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Ares",
     "faction": "Hero",
     "factionName": "Hero",
@@ -602,8 +621,9 @@
     ]
   },
   {
-    "id": "standard-arsonist",
+    "id": "arsonist",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Arsonist",
     "faction": "Evil",
     "factionName": "Evil",
@@ -617,7 +637,7 @@
       "id": "Arsonist_Resource",
       "name": "Oil",
       "description": "Gain 2 Oil per night.",
-      "color": "#1a0301",
+      "color": "#5a1f08",
       "iconUrl": "/images/roles/flamed-leaf.webp"
     },
     "abilities": [
@@ -634,8 +654,9 @@
     ]
   },
   {
-    "id": "olympia-artemis",
+    "id": "artemis",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Artemis",
     "faction": "Hero",
     "factionName": "Hero",
@@ -649,7 +670,7 @@
       "id": "Artemis_Resource",
       "name": "Arrow",
       "description": "Gain 1 <b>Arrow</> each night.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/flaming-arrow.webp"
     },
     "abilities": [
@@ -666,34 +687,9 @@
     ]
   },
   {
-    "id": "dark-assassin",
-    "set": "Dark",
-    "name": "Assassin",
-    "faction": "Vampire",
-    "factionName": "Vampire",
-    "class": "Elimination",
-    "description": "",
-    "descriptionHtml": "",
-    "imageUrl": "/images/roles/T_Assassin.webp",
-    "portraitUrl": "/images/roles/T_Assassin_Portrait.webp",
-    "group": null,
-    "resource": null,
-    "abilities": [
-      {
-        "id": "AssassinDK_Ability_1",
-        "name": "Silent Night",
-        "description": "Stalk a player, planning to kill them on the following night. They will learn that they are being stalked by the <b>Assassin</>. \r\n\r\nIf another player targets them on the following night you will be interrupted and have to call off your kill. If uninterrupted and you are still alive, strike them with an <img id=\"UnstoppableAttack\"/> <e>unstoppable attack</>.",
-        "descriptionHtml": "Stalk a player, planning to kill them on the following night. They will learn that they are being stalked by the Assassin. \r\n\r\nIf another player targets them on the following night you will be interrupted and have to call off your kill. If uninterrupted and you are still alive, strike them with an <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppable attack.",
-        "iconUrl": "/images/abilities/T_Assassin_1.webp",
-        "abilityType": null,
-        "costType": null,
-        "costValue": 0
-      }
-    ]
-  },
-  {
-    "id": "standard-assassin",
+    "id": "assassin",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Assassin",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -728,8 +724,9 @@
     ]
   },
   {
-    "id": "standard-assumer",
+    "id": "assumer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Assumer",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -754,8 +751,9 @@
     ]
   },
   {
-    "id": "dark-astrologer",
+    "id": "astrologer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Astrologer",
     "faction": "Village",
     "factionName": "Village",
@@ -780,8 +778,9 @@
     ]
   },
   {
-    "id": "olympia-atalanta",
+    "id": "atalanta",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Atalanta",
     "faction": "Hero",
     "factionName": "Hero",
@@ -806,8 +805,9 @@
     ]
   },
   {
-    "id": "olympia-ate",
+    "id": "ate",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Ate",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -842,8 +842,9 @@
     ]
   },
   {
-    "id": "olympia-athena",
+    "id": "athena",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Athena",
     "faction": "Hero",
     "factionName": "Hero",
@@ -868,8 +869,9 @@
     ]
   },
   {
-    "id": "olympia-atlas",
+    "id": "atlas",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Atlas",
     "faction": "Hero",
     "factionName": "Hero",
@@ -894,8 +896,9 @@
     ]
   },
   {
-    "id": "standard-baby-dragon",
+    "id": "baby-dragon",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Baby Dragon",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -908,7 +911,7 @@
       "id": "Dragon",
       "name": "Dragon",
       "description": "Ancient draconic beings who once ruled.",
-      "color": "#3f0908",
+      "color": "#883532",
       "iconUrl": "/images/roles/Group_Dragon.webp"
     },
     "resource": null,
@@ -936,8 +939,9 @@
     ]
   },
   {
-    "id": "dark-banshee",
+    "id": "banshee",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Banshee",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -962,8 +966,9 @@
     ]
   },
   {
-    "id": "standard-bard",
+    "id": "bard",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Bard",
     "faction": "Town",
     "factionName": "Town",
@@ -998,8 +1003,9 @@
     ]
   },
   {
-    "id": "grimm-bear",
+    "id": "bear",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Bear",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -1012,7 +1018,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -1040,8 +1046,9 @@
     ]
   },
   {
-    "id": "dark-beast",
+    "id": "beast",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Beast",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -1076,8 +1083,9 @@
     ]
   },
   {
-    "id": "dark-bell-ringer",
+    "id": "bell-ringer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Bell Ringer",
     "faction": "Village",
     "factionName": "Village",
@@ -1102,8 +1110,9 @@
     ]
   },
   {
-    "id": "grimm-big-bad-wolf-",
+    "id": "big-bad-wolf-",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Big Bad Wolf ",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -1117,7 +1126,7 @@
       "id": "DA_Grimm_BigBadWolf_R",
       "name": "Fullness",
       "description": "Gain 3 fullness per night.",
-      "color": "#5b0206",
+      "color": "#a1152b",
       "iconUrl": "/images/roles/BigBadWolf1R.webp"
     },
     "abilities": [
@@ -1154,8 +1163,9 @@
     ]
   },
   {
-    "id": "dark-blighted",
+    "id": "blighted",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Blighted",
     "faction": "Evil",
     "factionName": "Evil",
@@ -1180,8 +1190,9 @@
     ]
   },
   {
-    "id": "standard-blood-fiend",
+    "id": "blood-fiend",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Blood Fiend",
     "faction": "Evil",
     "factionName": "Evil",
@@ -1216,8 +1227,9 @@
     ]
   },
   {
-    "id": "standard-blood-mage",
+    "id": "blood-mage",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Blood Mage",
     "faction": "Evil",
     "factionName": "Evil",
@@ -1231,7 +1243,7 @@
       "id": "BloodMage_Resource",
       "name": "Blood",
       "description": "A potent reservoir of life. Gain 2 Blood each night.",
-      "color": "#420103",
+      "color": "#8b101e",
       "iconUrl": "/images/roles/heart-organ.webp"
     },
     "abilities": [
@@ -1258,8 +1270,9 @@
     ]
   },
   {
-    "id": "standard-bodyguard",
+    "id": "bodyguard",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Bodyguard",
     "faction": "Town",
     "factionName": "Town",
@@ -1284,8 +1297,9 @@
     ]
   },
   {
-    "id": "dark-bounty-hunter",
+    "id": "bounty-hunter",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Bounty Hunter",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -1310,8 +1324,9 @@
     ]
   },
   {
-    "id": "standard-brawler",
+    "id": "brawler",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Brawler",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -1336,8 +1351,9 @@
     ]
   },
   {
-    "id": "grimm-brownie",
+    "id": "brownie",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Brownie",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -1362,8 +1378,9 @@
     ]
   },
   {
-    "id": "dark-butcher",
+    "id": "butcher",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Butcher",
     "faction": "Village",
     "factionName": "Village",
@@ -1398,8 +1415,9 @@
     ]
   },
   {
-    "id": "olympia-cacus",
+    "id": "cacus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Cacus",
     "faction": "Monster",
     "factionName": "Monster",
@@ -1424,8 +1442,9 @@
     ]
   },
   {
-    "id": "olympia-calchas",
+    "id": "calchas",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Calchas",
     "faction": "Hero",
     "factionName": "Hero",
@@ -1450,8 +1469,9 @@
     ]
   },
   {
-    "id": "dark-candlemaker",
+    "id": "candlemaker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "CandleMaker",
     "faction": "Village",
     "factionName": "Village",
@@ -1476,8 +1496,9 @@
     ]
   },
   {
-    "id": "standard-cannibal",
+    "id": "cannibal",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Cannibal",
     "faction": "Evil",
     "factionName": "Evil",
@@ -1512,8 +1533,9 @@
     ]
   },
   {
-    "id": "olympia-cassandra",
+    "id": "cassandra",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Cassandra",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -1538,8 +1560,9 @@
     ]
   },
   {
-    "id": "olympia-centaur",
+    "id": "centaur",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Centaur",
     "faction": "Monster",
     "factionName": "Monster",
@@ -1574,8 +1597,9 @@
     ]
   },
   {
-    "id": "olympia-cerberus",
+    "id": "cerberus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Cerberus",
     "faction": "Monster",
     "factionName": "Monster",
@@ -1610,8 +1634,9 @@
     ]
   },
   {
-    "id": "grimm-changeling",
+    "id": "changeling",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Changeling",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -1646,8 +1671,9 @@
     ]
   },
   {
-    "id": "grimm-charcoal-maker",
+    "id": "charcoal-maker",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Charcoal Maker",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -1661,7 +1687,7 @@
       "id": "DA_Grimm_CharcoalMaker_R",
       "name": "Charcoal",
       "description": "With the fae around it is not safe anymore to make more charcoal, use your 4 charcoals wisely.",
-      "color": "#240d12",
+      "color": "#69414c",
       "iconUrl": "/images/roles/CharcoalMaker1R.webp"
     },
     "abilities": [
@@ -1688,8 +1714,9 @@
     ]
   },
   {
-    "id": "olympia-charon",
+    "id": "charon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Charon",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -1724,8 +1751,9 @@
     ]
   },
   {
-    "id": "grimm-chicken",
+    "id": "chicken",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Chicken",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -1738,7 +1766,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -1756,8 +1784,8 @@
       {
         "id": "DA_Grimm_Chicken_2",
         "name": "Laid",
-        "description": "Lay an egg on you targets Poarch. If your target is not <b>active</> in this night, your egg hatches. With three successful hatches you win the game. If you target is <b>active</>, they step into your egg and you are <img id=\"Exposed\"/> <m>exposed</>.",
-        "descriptionHtml": "Lay an egg on you targets Poarch. If your target is not active in this night, your egg hatches. With three successful hatches you win the game. If you target is active, they step into your egg and you are <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Exposed.webp')\" role=\"img\" aria-label=\"Exposed\" title=\"Exposed\"></span> exposed.",
+        "description": "Lay an egg on you targets Poarch. If your target is not <b>active</> in this night, your egg hatches. If you target is <b>active</>, they step into your egg and you are <img id=\"Exposed\"/> <m>exposed</>.",
+        "descriptionHtml": "Lay an egg on you targets Poarch. If your target is not active in this night, your egg hatches. If you target is active, they step into your egg and you are <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Exposed.webp')\" role=\"img\" aria-label=\"Exposed\" title=\"Exposed\"></span> exposed.",
         "iconUrl": "/images/abilities/Chicken2.webp",
         "abilityType": null,
         "costType": null,
@@ -1766,8 +1794,9 @@
     ]
   },
   {
-    "id": "grimm-child-eater",
+    "id": "child-eater",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Child Eater",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -1792,8 +1821,8 @@
       {
         "id": "DA_Grimm_ChildEater_2",
         "name": "Midnight snack",
-        "description": "If your target is not <b>capable</> of elimination <b>remove</> them silently from the game.",
-        "descriptionHtml": "If your target is not capable of elimination remove them silently from the game.",
+        "description": "If your target is not <b>capable</> of elimination, <b>remove</> them silently from the game.",
+        "descriptionHtml": "If your target is not capable of elimination, remove them silently from the game.",
         "iconUrl": "/images/abilities/ChildEater2.webp",
         "abilityType": null,
         "costType": null,
@@ -1802,8 +1831,8 @@
       {
         "id": "DA_Grimm_ChildEater_3",
         "name": "It\u2019s under the bed",
-        "description": "If your target is not <b>capable</> of elimination, <b>remove</> them silently from the game, if they are they leave you <img id=\"Bleed\"/> <e>bleeding</>.",
-        "descriptionHtml": "If your target is not capable of elimination, remove them silently from the game, if they are they leave you <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> bleeding.",
+        "description": "If your target is not <b>capable</> of elimination, <b>remove</> them silently from the game. If they are  <b>capable</> of elimination, they leave you <img id=\"Bleed\"/> <e>bleeding</>.",
+        "descriptionHtml": "If your target is not capable of elimination, remove them silently from the game. If they are  capable of elimination, they leave you <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> bleeding.",
         "iconUrl": "/images/abilities/ChildEater3.webp",
         "abilityType": null,
         "costType": null,
@@ -1812,8 +1841,9 @@
     ]
   },
   {
-    "id": "olympia-chimera",
+    "id": "chimera",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Chimera",
     "faction": "Monster",
     "factionName": "Monster",
@@ -1858,8 +1888,9 @@
     ]
   },
   {
-    "id": "grimm-chimney-cleaner",
+    "id": "chimney-cleaner",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Chimney Cleaner",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -1873,7 +1904,7 @@
       "id": "DA_Grimm_ChimneyCleaner_R",
       "name": "Task",
       "description": "You do your job every night, doing one task per night.",
-      "color": "#6c4a28",
+      "color": "#ae936e",
       "iconUrl": "/images/roles/ChimneyCleaner1R.webp"
     },
     "abilities": [
@@ -1900,8 +1931,9 @@
     ]
   },
   {
-    "id": "standard-chronomancer",
+    "id": "chronomancer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Chronomancer",
     "faction": "Town",
     "factionName": "Town",
@@ -1926,8 +1958,9 @@
     ]
   },
   {
-    "id": "standard-chupacabra",
+    "id": "chupacabra",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Chupacabra",
     "faction": "Evil",
     "factionName": "Evil",
@@ -1962,8 +1995,9 @@
     ]
   },
   {
-    "id": "grimm-cinderella",
+    "id": "cinderella",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Cinderella",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -1978,8 +2012,8 @@
       {
         "id": "DA_Grimm_Cinderella_1",
         "name": "Your shoe",
-        "description": "If you target the Crown Prince, he is <img id=\"Transform\"/> <m>transformed</> into the Emperor and you into the Empress whilst both maintain their faction.",
-        "descriptionHtml": "If you target the Crown Prince, he is <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transformed into the Emperor and you into the Empress whilst both maintain their faction.",
+        "description": "If you target the Crown Prince, he is <img id=\"Transform\"/> <m>transformed</> into the Emperor and you into the Empress. Both of you maintain your factions.",
+        "descriptionHtml": "If you target the Crown Prince, he is <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transformed into the Emperor and you into the Empress. Both of you maintain your factions.",
         "iconUrl": "/images/abilities/Cinderella1.webp",
         "abilityType": null,
         "costType": null,
@@ -1998,8 +2032,9 @@
     ]
   },
   {
-    "id": "olympia-circe",
+    "id": "circe",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Circe",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2024,8 +2059,9 @@
     ]
   },
   {
-    "id": "standard-clairvoyant",
+    "id": "clairvoyant",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Clairvoyant",
     "faction": "Town",
     "factionName": "Town",
@@ -2050,8 +2086,9 @@
     ]
   },
   {
-    "id": "dark-cleric",
+    "id": "cleric",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Cleric",
     "faction": "Village",
     "factionName": "Village",
@@ -2086,8 +2123,9 @@
     ]
   },
   {
-    "id": "olympia-cloelia",
+    "id": "cloelia",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Cloelia",
     "faction": "Hero",
     "factionName": "Hero",
@@ -2101,7 +2139,7 @@
       "id": "Cloelia_Resource",
       "name": "Virtus",
       "description": "If you survive an accusation, gain 2 <b>Virtus</>.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/sparkles.webp"
     },
     "abilities": [
@@ -2118,8 +2156,9 @@
     ]
   },
   {
-    "id": "olympia-clotho",
+    "id": "clotho",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Clotho",
     "faction": "Hero",
     "factionName": "Hero",
@@ -2144,8 +2183,9 @@
     ]
   },
   {
-    "id": "grimm-commoner",
+    "id": "commoner",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Commoner",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -2180,8 +2220,9 @@
     ]
   },
   {
-    "id": "dark-condemned",
+    "id": "condemned",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Condemned",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -2206,8 +2247,9 @@
     ]
   },
   {
-    "id": "dark-coroner",
+    "id": "coroner",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Coroner",
     "faction": "Village",
     "factionName": "Village",
@@ -2232,8 +2274,9 @@
     ]
   },
   {
-    "id": "standard-corrupt-noble",
+    "id": "corrupt-noble",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Corrupt Noble",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -2268,8 +2311,9 @@
     ]
   },
   {
-    "id": "standard-council-elder",
+    "id": "council-elder",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Council Elder",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2294,8 +2338,9 @@
     ]
   },
   {
-    "id": "standard-courier",
+    "id": "courier",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Courier",
     "faction": "Town",
     "factionName": "Town",
@@ -2330,8 +2375,9 @@
     ]
   },
   {
-    "id": "standard-cow",
+    "id": "cow",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Cow",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2356,8 +2402,9 @@
     ]
   },
   {
-    "id": "standard-creep",
+    "id": "creep",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Creep",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -2382,8 +2429,9 @@
     ]
   },
   {
-    "id": "grimm-crown-prince",
+    "id": "crown-prince",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Crown Prince",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -2396,7 +2444,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -2424,8 +2472,9 @@
     ]
   },
   {
-    "id": "grimm-crown-princess",
+    "id": "crown-princess",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Crown Princess",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -2438,7 +2487,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -2466,8 +2515,9 @@
     ]
   },
   {
-    "id": "grimm-crunchy-witch",
+    "id": "crunchy-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Crunchy Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -2480,14 +2530,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_CrunchyWitch_R",
       "name": "Crispy Children",
       "description": "As the sister of the cannibal, you bake a child every night.",
-      "color": "#480600",
+      "color": "#912a01",
       "iconUrl": "/images/roles/ChrunyWitch1.webp"
     },
     "abilities": [
@@ -2514,8 +2564,9 @@
     ]
   },
   {
-    "id": "standard-cthulhu",
+    "id": "cthulhu",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Cthulhu",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2540,8 +2591,9 @@
     ]
   },
   {
-    "id": "standard-cult-leader",
+    "id": "cult-leader",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Cult Leader",
     "faction": "Evil",
     "factionName": "Evil",
@@ -2576,8 +2628,9 @@
     ]
   },
   {
-    "id": "standard-cupid",
+    "id": "cupid",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Cupid",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -2602,8 +2655,9 @@
     ]
   },
   {
-    "id": "olympia-cyclops",
+    "id": "cyclops",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Cyclops",
     "faction": "Monster",
     "factionName": "Monster",
@@ -2638,8 +2692,9 @@
     ]
   },
   {
-    "id": "olympia-daedalus",
+    "id": "daedalus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Daedalus",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2664,8 +2719,9 @@
     ]
   },
   {
-    "id": "dark-damsel",
+    "id": "damsel",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Damsel",
     "faction": "Village",
     "factionName": "Village",
@@ -2700,8 +2756,9 @@
     ]
   },
   {
-    "id": "olympia-daphne",
+    "id": "daphne",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Daphne",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2726,8 +2783,9 @@
     ]
   },
   {
-    "id": "standard-dark-seer",
+    "id": "dark-seer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Dark Seer",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -2752,8 +2810,9 @@
     ]
   },
   {
-    "id": "dark-dark-twin",
+    "id": "dark-twin",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Dark Twin",
     "faction": "Evil",
     "factionName": "Evil",
@@ -2788,8 +2847,9 @@
     ]
   },
   {
-    "id": "standard-death",
+    "id": "death",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Death",
     "faction": "Evil",
     "factionName": "Evil",
@@ -2803,7 +2863,7 @@
       "id": "Death_Resource",
       "name": "Souls",
       "description": "You have an abundance of souls that you have collected, but can collect no more.",
-      "color": "#00081f",
+      "color": "#043062",
       "iconUrl": "/images/roles/soul-vessel.webp"
     },
     "abilities": [
@@ -2830,8 +2890,9 @@
     ]
   },
   {
-    "id": "dark-defeated",
+    "id": "defeated",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Defeated",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -2856,8 +2917,9 @@
     ]
   },
   {
-    "id": "olympia-demeter",
+    "id": "demeter",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Demeter",
     "faction": "Hero",
     "factionName": "Hero",
@@ -2882,8 +2944,9 @@
     ]
   },
   {
-    "id": "dark-demon",
+    "id": "demon",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Demon",
     "faction": "Evil",
     "factionName": "Evil",
@@ -2918,8 +2981,9 @@
     ]
   },
   {
-    "id": "standard-den-mother",
+    "id": "den-mother",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Den Mother",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -2944,8 +3008,9 @@
     ]
   },
   {
-    "id": "dark-dhampyr",
+    "id": "dhampyr",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Dhampyr",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -2970,8 +3035,9 @@
     ]
   },
   {
-    "id": "olympia-dionysus",
+    "id": "dionysus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Dionysus",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -2996,8 +3062,9 @@
     ]
   },
   {
-    "id": "grimm-do-no-well",
+    "id": "do-no-well",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Do-no-well",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -3022,8 +3089,9 @@
     ]
   },
   {
-    "id": "olympia-dolon",
+    "id": "dolon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Dolon",
     "faction": "Monster",
     "factionName": "Monster",
@@ -3048,8 +3116,9 @@
     ]
   },
   {
-    "id": "grimm-donkey",
+    "id": "donkey",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Donkey",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -3062,7 +3131,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -3080,8 +3149,9 @@
     ]
   },
   {
-    "id": "dark-doomsayer",
+    "id": "doomsayer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Doomsayer",
     "faction": "Evil",
     "factionName": "Evil",
@@ -3116,40 +3186,9 @@
     ]
   },
   {
-    "id": "grimm-dove",
-    "set": "Grimm",
-    "name": "Dove",
-    "faction": "Grimm_Neutral",
-    "factionName": "Neutral",
-    "class": "Manipulation",
-    "description": "Taube",
-    "descriptionHtml": "Taube",
-    "imageUrl": "/images/roles/Dove.webp",
-    "portraitUrl": "/images/roles/Dove_P.webp",
-    "group": {
-      "id": "DA_Grim_Animal",
-      "name": "Animal",
-      "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
-      "iconUrl": "/images/roles/Grimm_Animal.webp"
-    },
-    "resource": null,
-    "abilities": [
-      {
-        "id": "DA_Grimm_Dove_1",
-        "name": "Courier",
-        "description": "Send to and receive from your target a short message during the night.",
-        "descriptionHtml": "Send to and receive from your target a short message during the night.",
-        "iconUrl": "/images/abilities/Dove1.webp",
-        "abilityType": null,
-        "costType": null,
-        "costValue": 0
-      }
-    ]
-  },
-  {
-    "id": "standard-dracula",
+    "id": "dracula",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Dracula",
     "faction": "Evil",
     "factionName": "Evil",
@@ -3184,8 +3223,9 @@
     ]
   },
   {
-    "id": "standard-dragon-knight",
+    "id": "dragon-knight",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Dragon Knight",
     "faction": "Town",
     "factionName": "Town",
@@ -3220,8 +3260,46 @@
     ]
   },
   {
-    "id": "grimm-drak",
+    "id": "dragon-slayer",
     "set": "Grimm",
+    "setOrder": 3,
+    "name": "Dragon Slayer",
+    "faction": "Grim_Folk",
+    "factionName": "Folk",
+    "class": "Elimination",
+    "description": "Siegfried",
+    "descriptionHtml": "Siegfried",
+    "imageUrl": "/images/roles/Siegfried.webp",
+    "portraitUrl": "/images/roles/Siegfried_P.webp",
+    "group": null,
+    "resource": null,
+    "abilities": [
+      {
+        "id": "DA_Grimm_DragonSlayer_1",
+        "name": "Dragon\u2019s Blood",
+        "description": "If you\u2019ve slain an Evil you gain one <img id=\"DivineProtection\"/> <p>divine protection</> every night.",
+        "descriptionHtml": "If you\u2019ve slain an Evil you gain one <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/DivineProtection.webp')\" role=\"img\" aria-label=\"DivineProtection\" title=\"DivineProtection\"></span> divine protection every night.",
+        "iconUrl": "/images/abilities/Siegfried1.webp",
+        "abilityType": null,
+        "costType": null,
+        "costValue": 0
+      },
+      {
+        "id": "DA_Grimm_DragonSlayer_2",
+        "name": "Dragonslayer",
+        "description": "Slay your target, striking them with an <img id=\"UnstoppableAttack\"/> <e>unstoppable attack</> if they are Evil.",
+        "descriptionHtml": "Slay your target, striking them with an <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppable attack if they are Evil.",
+        "iconUrl": "/images/abilities/Siegfried2.webp",
+        "abilityType": null,
+        "costType": null,
+        "costValue": 1
+      }
+    ]
+  },
+  {
+    "id": "drak",
+    "set": "Grimm",
+    "setOrder": 3,
     "name": "Drak",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -3256,8 +3334,9 @@
     ]
   },
   {
-    "id": "standard-druid",
+    "id": "druid",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Druid",
     "faction": "Town",
     "factionName": "Town",
@@ -3292,8 +3371,9 @@
     ]
   },
   {
-    "id": "standard-dusk-wolf",
+    "id": "dusk-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Dusk Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -3318,8 +3398,9 @@
     ]
   },
   {
-    "id": "grimm-dwarf",
+    "id": "dwarf",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Dwarf",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -3344,8 +3425,9 @@
     ]
   },
   {
-    "id": "olympia-echidna",
+    "id": "echidna",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Echidna",
     "faction": "Monster",
     "factionName": "Monster",
@@ -3370,8 +3452,9 @@
     ]
   },
   {
-    "id": "olympia-echo",
+    "id": "echo",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Echo",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -3396,8 +3479,9 @@
     ]
   },
   {
-    "id": "olympia-eidolon",
+    "id": "eidolon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Eidolon",
     "faction": "Monster",
     "factionName": "Monster",
@@ -3422,8 +3506,9 @@
     ]
   },
   {
-    "id": "standard-elder-dragon",
+    "id": "elder-dragon",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Elder Dragon",
     "faction": "Evil",
     "factionName": "Evil",
@@ -3436,7 +3521,7 @@
       "id": "Dragon",
       "name": "Dragon",
       "description": "Ancient draconic beings who once ruled.",
-      "color": "#3f0908",
+      "color": "#883532",
       "iconUrl": "/images/roles/Group_Dragon.webp"
     },
     "resource": null,
@@ -3464,8 +3549,9 @@
     ]
   },
   {
-    "id": "dark-embalmer",
+    "id": "embalmer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Embalmer",
     "faction": "Evil",
     "factionName": "Evil",
@@ -3500,8 +3586,9 @@
     ]
   },
   {
-    "id": "standard-ember-archer",
+    "id": "ember-archer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Ember Archer",
     "faction": "Town",
     "factionName": "Town",
@@ -3515,7 +3602,7 @@
       "id": "EmberArcher_Resource",
       "name": "Imbued Arrows",
       "description": "Gain 2 arrows imbued with Dragon Fire each night.",
-      "color": "#d14d00",
+      "color": "#e99500",
       "iconUrl": "/images/roles/flaming-arrow.webp"
     },
     "abilities": [
@@ -3532,8 +3619,9 @@
     ]
   },
   {
-    "id": "standard-ember-wolf",
+    "id": "ember-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Ember Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -3558,8 +3646,9 @@
     ]
   },
   {
-    "id": "dark-empath",
+    "id": "empath",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Empath",
     "faction": "Village",
     "factionName": "Village",
@@ -3584,8 +3673,9 @@
     ]
   },
   {
-    "id": "grimm-emperor",
+    "id": "emperor",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Emperor",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -3598,7 +3688,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -3606,8 +3696,8 @@
       {
         "id": "DA_Grimm_Emperor_1",
         "name": "Summoning",
-        "description": "As the emperor you can make and destroy anyone. Summon your target to the court, inviting them, by claiming their <b>capability</>.",
-        "descriptionHtml": "As the emperor you can make and destroy anyone. Summon your target to the court, inviting them, by claiming their capability.",
+        "description": "As the emperor you can make and destroy anyone. Summon your target to the court by correctly stating their <b>capabilities</>. If correct, they gain permanent access to the court.",
+        "descriptionHtml": "As the emperor you can make and destroy anyone. Summon your target to the court by correctly stating their capabilities. If correct, they gain permanent access to the court.",
         "iconUrl": "/images/abilities/Emperor1.webp",
         "abilityType": null,
         "costType": null,
@@ -3626,8 +3716,9 @@
     ]
   },
   {
-    "id": "grimm-empress",
+    "id": "empress",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Empress",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -3640,14 +3731,14 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": {
       "id": "DA_Grimm_Empress_R",
       "name": "Guardsmen",
       "description": "Gain a guardsmen per two members of the Court.",
-      "color": "#171819",
+      "color": "#555758",
       "iconUrl": "/images/roles/Empress1R.webp"
     },
     "abilities": [
@@ -3664,8 +3755,9 @@
     ]
   },
   {
-    "id": "olympia-empusa",
+    "id": "empusa",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Empusa",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -3700,8 +3792,9 @@
     ]
   },
   {
-    "id": "olympia-eris",
+    "id": "eris",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Eris",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -3726,12 +3819,13 @@
     ]
   },
   {
-    "id": "grimm-erlking",
+    "id": "erlking",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Erlking",
     "faction": "Grim_Fei",
     "factionName": "Fei",
-    "class": "Protection",
+    "class": "Manipulation",
     "description": "Erlk\u00f6nig",
     "descriptionHtml": "Erlk\u00f6nig",
     "imageUrl": "/images/roles/Erlking.webp",
@@ -3741,7 +3835,7 @@
       "id": "DA_Grimm_Erlking_R",
       "name": "Feathers",
       "description": "Raven are your kin and they gift you two of their feathers every night.",
-      "color": "#010b14",
+      "color": "#093a50",
       "iconUrl": "/images/roles/ErlkingR.webp"
     },
     "abilities": [
@@ -3768,8 +3862,9 @@
     ]
   },
   {
-    "id": "olympia-eurydice",
+    "id": "eurydice",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Eurydice",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -3804,8 +3899,9 @@
     ]
   },
   {
-    "id": "grimm-evil-queen",
+    "id": "evil-queen",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Evil Queen",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -3818,7 +3914,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -3856,8 +3952,9 @@
     ]
   },
   {
-    "id": "grimm-excecutioner",
+    "id": "excecutioner",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Excecutioner",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -3882,8 +3979,9 @@
     ]
   },
   {
-    "id": "dark-exorcist",
+    "id": "exorcist",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Exorcist",
     "faction": "Village",
     "factionName": "Village",
@@ -3908,8 +4006,9 @@
     ]
   },
   {
-    "id": "standard-faceless",
+    "id": "faceless",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Faceless",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -3934,8 +4033,9 @@
     ]
   },
   {
-    "id": "grimm-fafnir",
+    "id": "fafnir",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Fafnir",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -3948,7 +4048,7 @@
       "id": "DA_Grim_Dragon",
       "name": "Dragon",
       "description": "Each dragon learns of the existence of any other dragon, however not of their identity.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Dragon.webp"
     },
     "resource": null,
@@ -3976,8 +4076,9 @@
     ]
   },
   {
-    "id": "standard-fallen-angel",
+    "id": "fallen-angel",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Fallen Angel",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -4012,8 +4113,9 @@
     ]
   },
   {
-    "id": "standard-fallen-star",
+    "id": "fallen-star",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Fallen Star",
     "faction": "Evil",
     "factionName": "Evil",
@@ -4058,8 +4160,9 @@
     ]
   },
   {
-    "id": "grimm-false-healer",
+    "id": "false-healer",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "False Healer",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -4104,8 +4207,9 @@
     ]
   },
   {
-    "id": "grimm-familiar",
+    "id": "familiar",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Familiar",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -4140,8 +4244,9 @@
     ]
   },
   {
-    "id": "standard-fanatic",
+    "id": "fanatic",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Fanatic",
     "faction": "Town",
     "factionName": "Town",
@@ -4176,8 +4281,9 @@
     ]
   },
   {
-    "id": "standard-farmer",
+    "id": "farmer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Farmer",
     "faction": "Town",
     "factionName": "Town",
@@ -4212,8 +4318,9 @@
     ]
   },
   {
-    "id": "grimm-father",
+    "id": "father",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Father",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -4233,13 +4340,14 @@
         "iconUrl": "/images/abilities/Father1.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 0
+        "costValue": 1
       }
     ]
   },
   {
-    "id": "grimm-father-of-animals",
+    "id": "father-of-animals",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Father of animals",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -4264,8 +4372,8 @@
       {
         "id": "DA_Grimm_FatherOfAnimals_2",
         "name": "Following",
-        "description": "<img id=\"Transform\"/> <m>Transform</> your target, if they are neither Fei nor Evil. into following, depending on the night. They keep their faction unless they are Folk. In addition they also learn of the existence of their god and who you are.\r\n\r\nThe roles in order are Dove- Chicken- Toad- Nightingale- Donkey- Raven- Lamb first one again.",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> Transform your target, if they are neither Fei nor Evil. into following, depending on the night. They keep their faction unless they are Folk. In addition they also learn of the existence of their god and who you are.\r\n\r\nThe roles in order are Dove- Chicken- Toad- Nightingale- Donkey- Raven- Lamb first one again.",
+        "description": "<img id=\"Transform\"/> <m>Transform</> your target, if they are neither Fei nor Evil. into following, depending on the night. They keep their faction unless they are Folk. In addition they also learn of the existence of their god and who you are.\r\n\r\nThe roles in order are Raven- Chicken- Toad- Nightingale- Donkey- Raven- Lamb first one again.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> Transform your target, if they are neither Fei nor Evil. into following, depending on the night. They keep their faction unless they are Folk. In addition they also learn of the existence of their god and who you are.\r\n\r\nThe roles in order are Raven- Chicken- Toad- Nightingale- Donkey- Raven- Lamb first one again.",
         "iconUrl": "/images/abilities/FatherOfAllAnimals2.webp",
         "abilityType": null,
         "costType": null,
@@ -4274,8 +4382,9 @@
     ]
   },
   {
-    "id": "grimm-fenix",
+    "id": "fenix",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Fenix",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -4290,8 +4399,8 @@
       {
         "id": "DA_Grimm_Fenix_1",
         "name": "Following steps",
-        "description": "Follow a player to <img id=\"Learn\"/> <i>learn</> who they are <b>targeting</>, but with that also <img id=\"Redirect\"/> <m>redirect</> everything from them onto you.",
-        "descriptionHtml": "Follow a player to <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn who they are targeting, but with that also <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Redirect.webp')\" role=\"img\" aria-label=\"Redirect\" title=\"Redirect\"></span> redirect everything from them onto you.",
+        "description": "Follow a player to <img id=\"Learn\"/> <i>learn</> who they are <b>targeting</>, but <img id=\"Redirect\"/> <m>redirect</> everything from them onto you.",
+        "descriptionHtml": "Follow a player to <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn who they are targeting, but <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Redirect.webp')\" role=\"img\" aria-label=\"Redirect\" title=\"Redirect\"></span> redirect everything from them onto you.",
         "iconUrl": "/images/abilities/Fenix1.webp",
         "abilityType": null,
         "costType": null,
@@ -4300,8 +4409,9 @@
     ]
   },
   {
-    "id": "standard-fire-dragon",
+    "id": "fire-dragon",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Fire Dragon",
     "faction": "Evil",
     "factionName": "Evil",
@@ -4314,7 +4424,7 @@
       "id": "Dragon",
       "name": "Dragon",
       "description": "Ancient draconic beings who once ruled.",
-      "color": "#3f0908",
+      "color": "#883532",
       "iconUrl": "/images/roles/Group_Dragon.webp"
     },
     "resource": null,
@@ -4342,8 +4452,9 @@
     ]
   },
   {
-    "id": "standard-fire-mage",
+    "id": "fire-mage",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Fire Mage",
     "faction": "Town",
     "factionName": "Town",
@@ -4357,7 +4468,7 @@
       "id": "FireMage_Resource",
       "name": "Mana",
       "description": "Gain 25 Mana per night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/round-potion.webp"
     },
     "abilities": [
@@ -4384,8 +4495,9 @@
     ]
   },
   {
-    "id": "grimm-firespawn",
+    "id": "firespawn",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Firespawn",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -4420,8 +4532,9 @@
     ]
   },
   {
-    "id": "dark-fisherman",
+    "id": "fisherman",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Fisherman",
     "faction": "Village",
     "factionName": "Village",
@@ -4446,8 +4559,9 @@
     ]
   },
   {
-    "id": "dark-flame-keeper",
+    "id": "flame-keeper",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Flame Keeper",
     "faction": "Village",
     "factionName": "Village",
@@ -4472,8 +4586,9 @@
     ]
   },
   {
-    "id": "dark-fledgling",
+    "id": "fledgling",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Fledgling",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -4498,8 +4613,9 @@
     ]
   },
   {
-    "id": "grimm-fog-witch",
+    "id": "fog-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Fog Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -4512,14 +4628,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_FogWitch_R",
       "name": "Rites",
       "description": "You gain three rites on the first night. As Walpurgisnacht draws closer, gain another rite for each day passed.",
-      "color": "#685643",
+      "color": "#ab9d8c",
       "iconUrl": "/images/roles/FogWitch1R.webp"
     },
     "abilities": [
@@ -4556,8 +4672,9 @@
     ]
   },
   {
-    "id": "grimm-forest-fairy",
+    "id": "forest-fairy",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Forest Fairy",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -4571,15 +4688,15 @@
       "id": "DA_Grimm_ForestFairy_R",
       "name": "Flowers",
       "description": "Gather 3 flowers per night.",
-      "color": "#6f1990",
+      "color": "#b059c6",
       "iconUrl": "/images/roles/Elve1R.webp"
     },
     "abilities": [
       {
         "id": "DA_Grimm_ForestFairy_1",
         "name": "Cousins",
-        "description": "As a being closely related to the Fei, you are <img id=\"Protect\"/> <p>protected</> from their shared attack, but you appear as Fei to all forms of investigation.",
-        "descriptionHtml": "As a being closely related to the Fei, you are <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/Protect.webp')\" role=\"img\" aria-label=\"Protect\" title=\"Protect\"></span> protected from their shared attack, but you appear as Fei to all forms of investigation.",
+        "description": "As a being closely related to the Fei, you are <img id=\"Protect\"/> <p>protected</> from their shared attack. In addition, you appear as Fei to all forms of investigation.",
+        "descriptionHtml": "As a being closely related to the Fei, you are <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/Protect.webp')\" role=\"img\" aria-label=\"Protect\" title=\"Protect\"></span> protected from their shared attack. In addition, you appear as Fei to all forms of investigation.",
         "iconUrl": "/images/abilities/Elve2.webp",
         "abilityType": null,
         "costType": null,
@@ -4608,12 +4725,13 @@
     ]
   },
   {
-    "id": "grimm-forest-witch",
+    "id": "forest-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Forest Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
-    "class": "Elimination",
+    "class": "Protection",
     "description": "Waldhexe",
     "descriptionHtml": "Waldhexe",
     "imageUrl": "/images/roles/ForestWitch.webp",
@@ -4622,14 +4740,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_ForestWitch_R",
       "name": "Rites",
       "description": "You gain three rites in the first night. As Walpurgisnacht draws closer, gain another rite for each day passed.",
-      "color": "#614d30",
+      "color": "#a69578",
       "iconUrl": "/images/roles/ForestWitchs1R.webp"
     },
     "abilities": [
@@ -4666,8 +4784,9 @@
     ]
   },
   {
-    "id": "dark-fortune-teller",
+    "id": "fortune-teller",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Fortune Teller",
     "faction": "Village",
     "factionName": "Village",
@@ -4692,8 +4811,9 @@
     ]
   },
   {
-    "id": "dark-freak",
+    "id": "freak",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Freak",
     "faction": "Village",
     "factionName": "Village",
@@ -4728,8 +4848,9 @@
     ]
   },
   {
-    "id": "grimm-frog-king",
+    "id": "frog-king",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Frog King",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -4754,8 +4875,9 @@
     ]
   },
   {
-    "id": "standard-frost-drake",
+    "id": "frost-drake",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Frost Drake",
     "faction": "Evil",
     "factionName": "Evil",
@@ -4768,7 +4890,7 @@
       "id": "Dragon",
       "name": "Dragon",
       "description": "Ancient draconic beings who once ruled.",
-      "color": "#3f0908",
+      "color": "#883532",
       "iconUrl": "/images/roles/Group_Dragon.webp"
     },
     "resource": null,
@@ -4806,8 +4928,9 @@
     ]
   },
   {
-    "id": "standard-frost-mage",
+    "id": "frost-mage",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Frost Mage",
     "faction": "Town",
     "factionName": "Town",
@@ -4821,7 +4944,7 @@
       "id": "FrostMage_Resource",
       "name": "Mana",
       "description": "Gain 25 Mana per night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/round-potion.webp"
     },
     "abilities": [
@@ -4848,8 +4971,9 @@
     ]
   },
   {
-    "id": "standard-frost-wolf",
+    "id": "frost-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Frost Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -4874,8 +4998,9 @@
     ]
   },
   {
-    "id": "olympia-gaia",
+    "id": "gaia",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Gaia",
     "faction": "Hero",
     "factionName": "Hero",
@@ -4900,8 +5025,9 @@
     ]
   },
   {
-    "id": "dark-gambler",
+    "id": "gambler",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Gambler",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -4926,8 +5052,9 @@
     ]
   },
   {
-    "id": "dark-gargoyle",
+    "id": "gargoyle",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Gargoyle",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -4952,8 +5079,9 @@
     ]
   },
   {
-    "id": "grimm-ghost",
+    "id": "ghost",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Ghost",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -4988,8 +5116,9 @@
     ]
   },
   {
-    "id": "dark-ghoul",
+    "id": "ghoul",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Ghoul",
     "faction": "Evil",
     "factionName": "Evil",
@@ -5024,8 +5153,9 @@
     ]
   },
   {
-    "id": "olympia-giant",
+    "id": "giant",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Giant",
     "faction": "Monster",
     "factionName": "Monster",
@@ -5050,8 +5180,9 @@
     ]
   },
   {
-    "id": "grimm-giant-",
+    "id": "giant-",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Giant ",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -5076,8 +5207,9 @@
     ]
   },
   {
-    "id": "dark-goat",
+    "id": "goat",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Goat",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -5112,8 +5244,9 @@
     ]
   },
   {
-    "id": "grimm-goblin",
+    "id": "goblin",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Goblin",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -5127,7 +5260,7 @@
       "id": "DA_Grimm_Goblin_R",
       "name": "Bones",
       "description": "Strolling through nocturnal woods you find a pretty bone every night.",
-      "color": "#523d1b",
+      "color": "#9a865c",
       "iconUrl": "/images/roles/Goblin1R.webp"
     },
     "abilities": [
@@ -5144,8 +5277,8 @@
       {
         "id": "DA_Grimm_Goblin_2",
         "name": "Who would kiss you now?",
-        "description": "<img id=\"Transform\"/> <m>Transform</> a player into an Unke if they are Folk.",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> Transform a player into an Unke if they are Folk.",
+        "description": "<img id=\"Transform\"/> <m>Transform</> a player into an Toad if they are Folk.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> Transform a player into an Toad if they are Folk.",
         "iconUrl": "/images/abilities/Goblin3.webp",
         "abilityType": null,
         "costType": null,
@@ -5154,8 +5287,9 @@
     ]
   },
   {
-    "id": "grimm-golden-goose",
+    "id": "golden-goose",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Golden Goose",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -5190,8 +5324,9 @@
     ]
   },
   {
-    "id": "grimm-good-fairy",
+    "id": "good-fairy",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Good Fairy",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -5205,7 +5340,7 @@
       "id": "DA_Grimm_GoodFairy_R",
       "name": "Hazelnuts",
       "description": "You enchant three hazelnuts, no more as you ate the rest. Use them wisely.",
-      "color": "#671304",
+      "color": "#aa4d22",
       "iconUrl": "/images/roles/GoodFariy2.webp"
     },
     "abilities": [
@@ -5222,8 +5357,9 @@
     ]
   },
   {
-    "id": "grimm-good-witch",
+    "id": "good-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Good Witch",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -5237,7 +5373,7 @@
       "id": "DA_Grimm_GoodWitch_R",
       "name": "Spells",
       "description": "Cast a spell every night.",
-      "color": "#925c9a",
+      "color": "#c7a2cc",
       "iconUrl": "/images/roles/GoodWitch1R.webp"
     },
     "abilities": [
@@ -5254,8 +5390,8 @@
       {
         "id": "DA_Grimm_GoodWitch_2",
         "name": "Cursing sharp stones",
-        "description": "Distil a sap to <img id=\"DivinelyProtect\"/> <p>divinely protect</> a player.",
-        "descriptionHtml": "Distil a sap to  divinely protect a player.",
+        "description": "Distil a sap to <img id=\"DivineProtection\"/> <p>divinely protect</> a player.",
+        "descriptionHtml": "Distil a sap to <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/DivineProtection.webp')\" role=\"img\" aria-label=\"DivineProtection\" title=\"DivineProtection\"></span> divinely protect a player.",
         "iconUrl": "/images/abilities/GoodWitch3.webp",
         "abilityType": null,
         "costType": null,
@@ -5274,8 +5410,9 @@
     ]
   },
   {
-    "id": "grimm-grandmother",
+    "id": "grandmother",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Grandmother",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -5300,8 +5437,9 @@
     ]
   },
   {
-    "id": "standard-grave-digger",
+    "id": "grave-digger",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Grave Digger",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -5336,8 +5474,9 @@
     ]
   },
   {
-    "id": "dark-grave-robber",
+    "id": "grave-robber",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Grave Robber",
     "faction": "Village",
     "factionName": "Village",
@@ -5362,8 +5501,9 @@
     ]
   },
   {
-    "id": "standard-greenhorn",
+    "id": "greenhorn",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Greenhorn",
     "faction": "Town",
     "factionName": "Town",
@@ -5398,8 +5538,9 @@
     ]
   },
   {
-    "id": "grimm-gretel",
+    "id": "gretel",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Gretel",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -5429,13 +5570,14 @@
         "iconUrl": "/images/abilities/Gretel2.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 0
+        "costValue": 1
       }
     ]
   },
   {
-    "id": "standard-guard-dog",
+    "id": "guard-dog",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Guard Dog",
     "faction": "Town",
     "factionName": "Town",
@@ -5460,8 +5602,9 @@
     ]
   },
   {
-    "id": "standard-guardian-angel",
+    "id": "guardian-angel",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Guardian Angel",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -5476,8 +5619,8 @@
       {
         "id": "GuardianAngel_Ability_1",
         "name": "Vows",
-        "description": "Vow to protect two players for the rest of the game. This ability cannot <img id=\"Miss\"/> <m>miss</> or be <img id=\"Redirect\"/> <m>redirected</>. If both players die you will <b>perish</>. ",
-        "descriptionHtml": "Vow to protect two players for the rest of the game. This ability cannot <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Miss.webp')\" role=\"img\" aria-label=\"Miss\" title=\"Miss\"></span> miss or be <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Redirect.webp')\" role=\"img\" aria-label=\"Redirect\" title=\"Redirect\"></span> redirected. If both players die you will perish. ",
+        "description": "Vow to protect two players for the rest of the game. This target is <img id=\"Guarantee\"/> <m>guaranteed</>. If both players die you will <b>perish</>. ",
+        "descriptionHtml": "Vow to protect two players for the rest of the game. This target is  guaranteed. If both players die you will perish. ",
         "iconUrl": "/images/abilities/T_GuardianAngel_1.webp",
         "abilityType": null,
         "costType": null,
@@ -5496,8 +5639,9 @@
     ]
   },
   {
-    "id": "olympia-hades",
+    "id": "hades",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hades",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -5511,7 +5655,7 @@
       "id": "Hades_Resource",
       "name": "Souls",
       "description": "Gain 1 soul each night.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/soul-vessel.webp"
     },
     "abilities": [
@@ -5538,8 +5682,9 @@
     ]
   },
   {
-    "id": "dark-hag",
+    "id": "hag",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Hag",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -5574,8 +5719,9 @@
     ]
   },
   {
-    "id": "grimm-halfling",
+    "id": "halfling",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Halfling",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -5600,12 +5746,13 @@
     ]
   },
   {
-    "id": "grimm-hansel",
+    "id": "hansel",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Hansel",
     "faction": "Grim_Folk",
     "factionName": "Folk",
-    "class": "Protection",
+    "class": "Investigation",
     "description": "Alp",
     "descriptionHtml": "Alp",
     "imageUrl": "/images/roles/Hansel.webp",
@@ -5615,15 +5762,15 @@
       "id": "DA_Grimm_Hansel_R",
       "name": "Breadcrumbs",
       "description": "Your parents send you away with little food and these twelve breadcrumbs are all that is left.",
-      "color": "#7a3611",
+      "color": "#b87f4a",
       "iconUrl": "/images/roles/H\u00e4nsel1R.webp"
     },
     "abilities": [
       {
         "id": "DA_Grimm_Hansel_1",
         "name": "Leaving a trail",
-        "description": "Leave breadcrumbs on your target\u2019s door, <img id=\"Learn\"/> <i>learning</> if they have been <b>active</> or somebody <b>targeted</> them.",
-        "descriptionHtml": "Leave breadcrumbs on your target\u2019s door, <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learning if they have been active or somebody targeted them.",
+        "description": "Leave breadcrumbs on your target\u2019s door, <img id=\"Learn\"/> <i>learning</> if they have been <b>active</> or if somebody <b>targeted</> them.",
+        "descriptionHtml": "Leave breadcrumbs on your target\u2019s door, <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learning if they have been active or if somebody targeted them.",
         "iconUrl": "/images/abilities/H\u00e4nsel2.webp",
         "abilityType": null,
         "costType": null,
@@ -5632,8 +5779,9 @@
     ]
   },
   {
-    "id": "standard-harlot",
+    "id": "harlot",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Harlot",
     "faction": "Town",
     "factionName": "Town",
@@ -5668,8 +5816,9 @@
     ]
   },
   {
-    "id": "olympia-harmonia",
+    "id": "harmonia",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Harmonia",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -5704,8 +5853,9 @@
     ]
   },
   {
-    "id": "olympia-harpy",
+    "id": "harpy",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Harpy",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -5730,8 +5880,9 @@
     ]
   },
   {
-    "id": "standard-healer",
+    "id": "healer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Healer",
     "faction": "Town",
     "factionName": "Town",
@@ -5745,7 +5896,7 @@
       "id": "Healer_Resource",
       "name": "Mana",
       "description": "Gain 40 Mana per night to a maximum of 60 Mana.",
-      "color": "#406716",
+      "color": "#89aa53",
       "iconUrl": "/images/roles/round-potion.webp"
     },
     "abilities": [
@@ -5762,8 +5913,9 @@
     ]
   },
   {
-    "id": "olympia-hecate",
+    "id": "hecate",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hecate",
     "faction": "Hero",
     "factionName": "Hero",
@@ -5788,8 +5940,9 @@
     ]
   },
   {
-    "id": "olympia-helenus",
+    "id": "helenus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Helenus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -5814,8 +5967,9 @@
     ]
   },
   {
-    "id": "olympia-hephaestus",
+    "id": "hephaestus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hephaestus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -5850,8 +6004,9 @@
     ]
   },
   {
-    "id": "dark-herb-vendor",
+    "id": "herb-vendor",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Herb Vendor",
     "faction": "Village",
     "factionName": "Village",
@@ -5886,8 +6041,9 @@
     ]
   },
   {
-    "id": "standard-herbalist",
+    "id": "herbalist",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Herbalist",
     "faction": "Town",
     "factionName": "Town",
@@ -5901,7 +6057,7 @@
       "id": "Herbalist_Resource",
       "name": "Herbs",
       "description": "It's not safe to collect herbs anymore, you'll have to work with what you've got.",
-      "color": "#2f4501",
+      "color": "#778e0a",
       "iconUrl": "/images/roles/oak-leaf.webp"
     },
     "abilities": [
@@ -5928,8 +6084,9 @@
     ]
   },
   {
-    "id": "dark-heretic",
+    "id": "heretic",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Heretic",
     "faction": "Village",
     "factionName": "Village",
@@ -5954,8 +6111,9 @@
     ]
   },
   {
-    "id": "olympia-hermes",
+    "id": "hermes",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hermes",
     "faction": "Hero",
     "factionName": "Hero",
@@ -5990,8 +6148,9 @@
     ]
   },
   {
-    "id": "olympia-hestia",
+    "id": "hestia",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hestia",
     "faction": "Hero",
     "factionName": "Hero",
@@ -6016,8 +6175,9 @@
     ]
   },
   {
-    "id": "grimm-hiking-man",
+    "id": "hiking-man",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Hiking Man",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6042,8 +6202,9 @@
     ]
   },
   {
-    "id": "standard-horror",
+    "id": "horror",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Horror",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -6068,8 +6229,9 @@
     ]
   },
   {
-    "id": "dark-hunter",
+    "id": "hunter",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Hunter",
     "faction": "Village",
     "factionName": "Village",
@@ -6094,8 +6256,9 @@
     ]
   },
   {
-    "id": "grimm-hunter",
+    "id": "hunter",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Hunter",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6120,8 +6283,9 @@
     ]
   },
   {
-    "id": "olympia-hydra",
+    "id": "hydra",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Hydra",
     "faction": "Monster",
     "factionName": "Monster",
@@ -6135,7 +6299,7 @@
       "id": "Hydra_Resource",
       "name": "Heads",
       "description": "Gain a head each time you survive an accusation.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/T_Hydra_R.webp"
     },
     "abilities": [
@@ -6152,8 +6316,9 @@
     ]
   },
   {
-    "id": "olympia-icarus",
+    "id": "icarus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Icarus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -6178,8 +6343,9 @@
     ]
   },
   {
-    "id": "grimm-ice-wyrm",
+    "id": "ice-wyrm",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Ice Wyrm",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -6192,7 +6358,7 @@
       "id": "DA_Grim_Dragon",
       "name": "Dragon",
       "description": "Each dragon learns of the existence of any other dragon, however not of their identity.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Dragon.webp"
     },
     "resource": null,
@@ -6200,8 +6366,8 @@
       {
         "id": "DA_Grimm_IceWyrm_1",
         "name": "Grausam",
-        "description": "Der schrecklichste der Schrecken, das war der Wurm, er tat am Eise lecken.",
-        "descriptionHtml": "Der schrecklichste der Schrecken, das war der Wurm, er tat am Eise lecken.",
+        "description": "Just a poem. \"Der schrecklichste der Schrecken, das war der Wurm, er tat am Eise lecken.\"",
+        "descriptionHtml": "Just a poem. \"Der schrecklichste der Schrecken, das war der Wurm, er tat am Eise lecken.\"",
         "iconUrl": "/images/abilities/IceWyrm1.webp",
         "abilityType": null,
         "costType": null,
@@ -6220,8 +6386,9 @@
     ]
   },
   {
-    "id": "grimm-imp",
+    "id": "imp",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Imp",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -6256,8 +6423,9 @@
     ]
   },
   {
-    "id": "standard-impersonator",
+    "id": "impersonator",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Impersonator",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -6282,8 +6450,9 @@
     ]
   },
   {
-    "id": "dark-information-broker",
+    "id": "information-broker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Information Broker",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -6308,8 +6477,9 @@
     ]
   },
   {
-    "id": "standard-inquisitor",
+    "id": "inquisitor",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Inquisitor",
     "faction": "Town",
     "factionName": "Town",
@@ -6334,8 +6504,9 @@
     ]
   },
   {
-    "id": "grimm-jack-and-the-beanstalk",
+    "id": "jack-and-the-beanstalk",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Jack and the Beanstalk",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6360,8 +6531,9 @@
     ]
   },
   {
-    "id": "standard-jackal",
+    "id": "jackal",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Jackal",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -6386,8 +6558,9 @@
     ]
   },
   {
-    "id": "grimm-jackalope",
+    "id": "jackalope",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Jackalope",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -6422,8 +6595,8 @@
       {
         "id": "DA_Grimm_Jackalope_3",
         "name": "Fawn Tail",
-        "description": "<img id=\"Exposed\"/> <m>Expose</> your target",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Exposed.webp')\" role=\"img\" aria-label=\"Exposed\" title=\"Exposed\"></span> Expose your target",
+        "description": "<img id=\"Exposed\"/> <m>Expose</> your target.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Exposed.webp')\" role=\"img\" aria-label=\"Exposed\" title=\"Exposed\"></span> Expose your target.",
         "iconUrl": "/images/abilities/Jackalope3.webp",
         "abilityType": null,
         "costType": null,
@@ -6442,8 +6615,9 @@
     ]
   },
   {
-    "id": "standard-jailer",
+    "id": "jailer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Jailer",
     "faction": "Town",
     "factionName": "Town",
@@ -6478,8 +6652,9 @@
     ]
   },
   {
-    "id": "standard-janitor",
+    "id": "janitor",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Janitor",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -6504,8 +6679,9 @@
     ]
   },
   {
-    "id": "olympia-janus",
+    "id": "janus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Janus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -6540,8 +6716,9 @@
     ]
   },
   {
-    "id": "dark-jester",
+    "id": "jester",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Jester",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -6566,8 +6743,9 @@
     ]
   },
   {
-    "id": "standard-judge",
+    "id": "judge",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Judge",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -6592,8 +6770,9 @@
     ]
   },
   {
-    "id": "standard-juggernaut",
+    "id": "juggernaut",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Juggernaut",
     "faction": "Town",
     "factionName": "Town",
@@ -6628,8 +6807,9 @@
     ]
   },
   {
-    "id": "standard-justice",
+    "id": "justice",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Justice",
     "faction": "Town",
     "factionName": "Town",
@@ -6654,8 +6834,9 @@
     ]
   },
   {
-    "id": "grimm-kind-matron",
+    "id": "kind-matron",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Kind Matron",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6670,8 +6851,8 @@
       {
         "id": "DA_Grimm_MissHolle_1",
         "name": "Puffed pillows",
-        "description": "Invite your target into your home, <img id=\"ShareFate\"/> <m>sharing a fate</>. They do chores for your hospitality, so they are occupied and <img id=\"Miss\"/> <m>miss</>. If they are not Folk however, they will be <img id=\"Poison\"/> <e>poisoned</>.",
-        "descriptionHtml": "Invite your target into your home, <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/ShareFate.webp')\" role=\"img\" aria-label=\"ShareFate\" title=\"ShareFate\"></span> sharing a fate. They do chores for your hospitality, so they are occupied and <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Miss.webp')\" role=\"img\" aria-label=\"Miss\" title=\"Miss\"></span> miss. If they are not Folk however, they will be <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Poison.webp')\" role=\"img\" aria-label=\"Poison\" title=\"Poison\"></span> poisoned.",
+        "description": "Invite your target into your home, <img id=\"ShareFate\"/> <m>sharing a fate</>. If they are not Folk however, they will be <img id=\"Poison\"/> <e>poisoned</>.",
+        "descriptionHtml": "Invite your target into your home, <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/ShareFate.webp')\" role=\"img\" aria-label=\"ShareFate\" title=\"ShareFate\"></span> sharing a fate. If they are not Folk however, they will be <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Poison.webp')\" role=\"img\" aria-label=\"Poison\" title=\"Poison\"></span> poisoned.",
         "iconUrl": "/images/abilities/MissHolle1.webp",
         "abilityType": null,
         "costType": null,
@@ -6680,8 +6861,9 @@
     ]
   },
   {
-    "id": "standard-king",
+    "id": "king",
     "set": "Standard",
+    "setOrder": 0,
     "name": "King",
     "faction": "Town",
     "factionName": "Town",
@@ -6694,7 +6876,7 @@
       "id": "Royal",
       "name": "Royal",
       "description": "A privileged circle of influential figures who meet in secret each night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Group_Royal.webp"
     },
     "resource": null,
@@ -6722,8 +6904,9 @@
     ]
   },
   {
-    "id": "dark-knight",
+    "id": "knight",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Knight",
     "faction": "Village",
     "factionName": "Village",
@@ -6748,8 +6931,9 @@
     ]
   },
   {
-    "id": "grimm-knight",
+    "id": "knight",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Knight",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6762,7 +6946,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -6770,8 +6954,8 @@
       {
         "id": "DA_Grimm_Knight_1",
         "name": "Following Orders",
-        "description": "You are the hand of the court. <img id=\"Bleed\"/> <e>Bleed</> your target, if they are a member of the court they will be removed form court.",
-        "descriptionHtml": "You are the hand of the court. <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> Bleed your target, if they are a member of the court they will be removed form court.",
+        "description": "You are the hand of the court. <img id=\"Bleed\"/> <e>Bleed</> your target, if they are a member of the court they will be removed form court during the next day.",
+        "descriptionHtml": "You are the hand of the court. <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> Bleed your target, if they are a member of the court they will be removed form court during the next day.",
         "iconUrl": "/images/abilities/Knight1.webp",
         "abilityType": null,
         "costType": null,
@@ -6780,8 +6964,9 @@
     ]
   },
   {
-    "id": "olympia-ladon",
+    "id": "ladon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Ladon",
     "faction": "Monster",
     "factionName": "Monster",
@@ -6806,8 +6991,9 @@
     ]
   },
   {
-    "id": "grimm-lamb",
+    "id": "lamb",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Lamb",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -6820,7 +7006,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -6838,8 +7024,9 @@
     ]
   },
   {
-    "id": "olympia-lamia",
+    "id": "lamia",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Lamia",
     "faction": "Monster",
     "factionName": "Monster",
@@ -6864,8 +7051,9 @@
     ]
   },
   {
-    "id": "dark-life-drinker",
+    "id": "life-drinker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Life Drinker",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -6890,8 +7078,9 @@
     ]
   },
   {
-    "id": "grimm-lindwyrm",
+    "id": "lindwyrm",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Lindwyrm",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -6904,14 +7093,14 @@
       "id": "DA_Grim_Dragon",
       "name": "Dragon",
       "description": "Each dragon learns of the existence of any other dragon, however not of their identity.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Dragon.webp"
     },
     "resource": {
       "id": "DA_Grimm_Lindwyrm_R",
       "name": "Embers",
       "description": "If you were accused, gain three ember.",
-      "color": "#b34a02",
+      "color": "#da9313",
       "iconUrl": "/images/roles/Lindwyrm1.webp"
     },
     "abilities": [
@@ -6938,8 +7127,9 @@
     ]
   },
   {
-    "id": "grimm-litte-witch",
+    "id": "litte-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Litte Witch",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -6954,8 +7144,8 @@
       {
         "id": "DA_Grimm_LitteWitch_1",
         "name": "Grown up",
-        "description": "After surviving an accusation, the elder witches notice you and invite you to join their ranks. You may <img id=\"Transform\"/> <m>transform</> into any Witch you\u2019d like.",
-        "descriptionHtml": "After surviving an accusation, the elder witches notice you and invite you to join their ranks. You may <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transform into any Witch you\u2019d like.",
+        "description": "After surviving an accusation, the elder witches notice you and invite you to join their ranks. You may <img id=\"Transform\"/> <m>transform</> into any Witch not already in the game.",
+        "descriptionHtml": "After surviving an accusation, the elder witches notice you and invite you to join their ranks. You may <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transform into any Witch not already in the game.",
         "iconUrl": "/images/abilities/LittleWitch1.webp",
         "abilityType": null,
         "costType": null,
@@ -6964,8 +7154,9 @@
     ]
   },
   {
-    "id": "grimm-little-mermaid",
+    "id": "little-mermaid",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Little Mermaid",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -6990,8 +7181,9 @@
     ]
   },
   {
-    "id": "grimm-little-red-riding-hood",
+    "id": "little-red-riding-hood",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Little Red Riding Hood",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -7006,8 +7198,8 @@
       {
         "id": "DA_Grimm_LittleRedRidingHood_1",
         "name": "Snakish",
-        "description": "Gift a basket with cake and wine to your target, <img id=\"Heal\"/> <p>healing</> them. However, if your target is not town, you <b>perish</>.",
-        "descriptionHtml": "Gift a basket with cake and wine to your target, <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/Heal.webp')\" role=\"img\" aria-label=\"Heal\" title=\"Heal\"></span> healing them. However, if your target is not town, you perish.",
+        "description": "Gift a basket with cake and wine to your target, <img id=\"Heal\"/> <p>healing</> them. However, if your target is not Folk, you become <img id=\"Frail\"/> <m>frail</>.",
+        "descriptionHtml": "Gift a basket with cake and wine to your target, <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/Heal.webp')\" role=\"img\" aria-label=\"Heal\" title=\"Heal\"></span> healing them. However, if your target is not Folk, you become <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Frail.webp')\" role=\"img\" aria-label=\"Frail\" title=\"Frail\"></span> frail.",
         "iconUrl": "/images/abilities/LittleRedRidingHood1.webp",
         "abilityType": null,
         "costType": null,
@@ -7016,8 +7208,9 @@
     ]
   },
   {
-    "id": "standard-locksmith",
+    "id": "locksmith",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Locksmith",
     "faction": "Town",
     "factionName": "Town",
@@ -7042,8 +7235,9 @@
     ]
   },
   {
-    "id": "dark-loner",
+    "id": "loner",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Loner",
     "faction": "Village",
     "factionName": "Village",
@@ -7068,8 +7262,9 @@
     ]
   },
   {
-    "id": "grimm-lord-of-the-hill",
+    "id": "lord-of-the-hill",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Lord of the Hill",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -7104,8 +7299,9 @@
     ]
   },
   {
-    "id": "grimm-lucky-hans",
+    "id": "lucky-hans",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Lucky Hans",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -7140,8 +7336,9 @@
     ]
   },
   {
-    "id": "olympia-lycaon",
+    "id": "lycaon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Lycaon",
     "faction": "Monster",
     "factionName": "Monster",
@@ -7166,8 +7363,9 @@
     ]
   },
   {
-    "id": "olympia-lyssa",
+    "id": "lyssa",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Lyssa",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -7202,8 +7400,9 @@
     ]
   },
   {
-    "id": "standard-mad-bomber",
+    "id": "mad-bomber",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Mad Bomber",
     "faction": "Town",
     "factionName": "Town",
@@ -7238,8 +7437,9 @@
     ]
   },
   {
-    "id": "dark-mad-king",
+    "id": "mad-king",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mad King",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -7264,8 +7464,9 @@
     ]
   },
   {
-    "id": "standard-magistrate",
+    "id": "magistrate",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Magistrate",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -7300,12 +7501,13 @@
     ]
   },
   {
-    "id": "grimm-maid",
+    "id": "maid",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Maid",
     "faction": "Grim_Folk",
     "factionName": "Folk",
-    "class": "Manipulation",
+    "class": "Investigation",
     "description": "Magd",
     "descriptionHtml": "Magd",
     "imageUrl": "/images/roles/Maid.webp",
@@ -7336,8 +7538,9 @@
     ]
   },
   {
-    "id": "grimm-mandrake",
+    "id": "mandrake",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mandrake",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -7362,8 +7565,9 @@
     ]
   },
   {
-    "id": "grimm-mare",
+    "id": "mare",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mare",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -7388,8 +7592,9 @@
     ]
   },
   {
-    "id": "dark-martyr",
+    "id": "martyr",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Martyr",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -7414,8 +7619,9 @@
     ]
   },
   {
-    "id": "dark-masochist",
+    "id": "masochist",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Masochist",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -7440,8 +7646,9 @@
     ]
   },
   {
-    "id": "dark-mastermind",
+    "id": "mastermind",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mastermind",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -7466,8 +7673,9 @@
     ]
   },
   {
-    "id": "grimm-mayor",
+    "id": "mayor",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mayor",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -7482,8 +7690,8 @@
       {
         "id": "DA_Grimm_Mayor_1",
         "name": "For democracy",
-        "description": "I The mayor vote will be announced\r\nII The town votes for a mayor before the accusation votes, any candidate may try to vow the\r\ntown to vote for them\r\nIII The elected candidate transforms into the mayor and his role is revealed. Their win condition\r\nstays the same as well as the keep the ace to cave, court,\u2026 If the candidate was an evil although neutral are treated as such.",
-        "descriptionHtml": "I The mayor vote will be announced\r\nII The town votes for a mayor before the accusation votes, any candidate may try to vow the\r\ntown to vote for them\r\nIII The elected candidate transforms into the mayor and his role is revealed. Their win condition\r\nstays the same as well as the keep the ace to cave, court,\u2026 If the candidate was an evil although neutral are treated as such.",
+        "description": "I The mayor vote will be announced.\r\nII The town votes for a mayor before the accusation votes, any candidate may try to vow the\r\ntown to vote for them,\r\nIII The elected candidate transforms into the mayor and his role is revealed. Their win condition stays the same as well as the keep the ace to cave, court,\u2026 If the candidate was an evil although neutral are treated as such.",
+        "descriptionHtml": "I The mayor vote will be announced.\r\nII The town votes for a mayor before the accusation votes, any candidate may try to vow the\r\ntown to vote for them,\r\nIII The elected candidate transforms into the mayor and his role is revealed. Their win condition stays the same as well as the keep the ace to cave, court,\u2026 If the candidate was an evil although neutral are treated as such.",
         "iconUrl": "/images/abilities/Mayor1.webp",
         "abilityType": null,
         "costType": null,
@@ -7512,8 +7720,9 @@
     ]
   },
   {
-    "id": "olympia-medea",
+    "id": "medea",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Medea",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -7523,10 +7732,16 @@
     "imageUrl": "/images/roles/T_Medea.webp",
     "portraitUrl": "/images/roles/T_Medea_P.webp",
     "group": null,
-    "resource": null,
+    "resource": {
+      "id": "DA_Olympia_Medea_R",
+      "name": "Deception",
+      "description": "You are able to make one deception, choose wisely.",
+      "color": "#848e42",
+      "iconUrl": "/images/roles/yin-yang.webp"
+    },
     "abilities": [
       {
-        "id": "Icarus_Ability_1",
+        "id": "DA_Medea_Icarus_Ability_1",
         "name": "Too Close to the Sun",
         "description": "Strike a player with an <img id=\"UnstoppableAttack\"/> <e>unstoppable attack</>. If the targeted player is a Hero their role is <img id=\"Reveal\"/> <m>revealed</>, but you <b>perish</> instead.",
         "descriptionHtml": "Strike a player with an <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppable attack. If the targeted player is a Hero their role is <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Reveal.webp')\" role=\"img\" aria-label=\"Reveal\" title=\"Reveal\"></span> revealed, but you perish instead.",
@@ -7536,7 +7751,7 @@
         "costValue": 1
       },
       {
-        "id": "Melampus_Ability_2",
+        "id": "DA_Medea_Melampus_Ability_2",
         "name": "Cleanse",
         "description": "Cleanse a player, if they are a Monster or Corrupted they will be <img id=\"Convert\"/> <m>converted</> into a Tainted.",
         "descriptionHtml": "Cleanse a player, if they are a Monster or Corrupted they will be <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Convert.webp')\" role=\"img\" aria-label=\"Convert\" title=\"Convert\"></span> converted into a Tainted.",
@@ -7546,7 +7761,7 @@
         "costValue": 1
       },
       {
-        "id": "Perseus_Ability_1",
+        "id": "DA_Medea_Perseus_Ability_1",
         "name": "Monster slayer",
         "description": "Guess a players role, if you are right they get <img id=\"UnstoppableAttack\"/> <e>unstoppably attacked</>. ",
         "descriptionHtml": "Guess a players role, if you are right they get <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppably attacked. ",
@@ -7558,8 +7773,9 @@
     ]
   },
   {
-    "id": "standard-medium",
+    "id": "medium",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Medium",
     "faction": "Town",
     "factionName": "Town",
@@ -7584,8 +7800,9 @@
     ]
   },
   {
-    "id": "olympia-medusa",
+    "id": "medusa",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Medusa",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -7610,8 +7827,8 @@
       {
         "id": "Medusa_Ability_2",
         "name": "Snake Bite",
-        "description": "<img id=\"Poison\"/> <e>Poison</> a player, this poison cant protected against.",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Poison.webp')\" role=\"img\" aria-label=\"Poison\" title=\"Poison\"></span> Poison a player, this poison cant protected against.",
+        "description": "<img id=\"Poison\"/> <e>Poison</> a player, this poison can't protected against.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Poison.webp')\" role=\"img\" aria-label=\"Poison\" title=\"Poison\"></span> Poison a player, this poison can't protected against.",
         "iconUrl": "/images/abilities/T_Medusa_2.webp",
         "abilityType": null,
         "costType": null,
@@ -7620,8 +7837,9 @@
     ]
   },
   {
-    "id": "olympia-melampus",
+    "id": "melampus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Melampus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -7656,8 +7874,9 @@
     ]
   },
   {
-    "id": "standard-mentalist",
+    "id": "mentalist",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Mentalist",
     "faction": "Town",
     "factionName": "Town",
@@ -7682,8 +7901,9 @@
     ]
   },
   {
-    "id": "grimm-mercenary",
+    "id": "mercenary",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mercenary",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -7697,19 +7917,19 @@
     "abilities": [
       {
         "id": "DA_Grimm_Mercenary_1",
-        "name": "Take a swing",
-        "description": "Earn your money and <img id=\"Attack\"/> <e>attack</> your target.",
-        "descriptionHtml": "Earn your money and <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Attack.webp')\" role=\"img\" aria-label=\"Attack\" title=\"Attack\"></span> attack your target.",
+        "name": "Parry",
+        "description": "Whilst you have a charge of Zweih\u00e4nder, you have <img id=\"PermanentDefence\"/> <p>permanent defense</>.",
+        "descriptionHtml": "Whilst you have a charge of Zweih\u00e4nder, you have <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/PermanentDefence.webp')\" role=\"img\" aria-label=\"PermanentDefence\" title=\"PermanentDefence\"></span> permanent defense.",
         "iconUrl": "/images/abilities/Mercenary1.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 1
+        "costValue": 0
       },
       {
         "id": "DA_Grimm_Mercenary_2",
         "name": "Zweih\u00e4nder",
-        "description": "Swing your Zweih\u00e4nder at a player <img id=\"Execute\"/> <e>executing</> them and <img id=\"Bleed\"/> <e>bleeding</> the neighbours.",
-        "descriptionHtml": "Swing your Zweih\u00e4nder at a player <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Execute.webp')\" role=\"img\" aria-label=\"Execute\" title=\"Execute\"></span> executing them and <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> bleeding the neighbours.",
+        "description": "Swing your Zweih\u00e4nder at a player <img id=\"Execute\"/> <e>executing</> them and <img id=\"Bleed\"/> <e>bleeding</> their neighbours. ",
+        "descriptionHtml": "Swing your Zweih\u00e4nder at a player <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Execute.webp')\" role=\"img\" aria-label=\"Execute\" title=\"Execute\"></span> executing them and <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Bleed.webp')\" role=\"img\" aria-label=\"Bleed\" title=\"Bleed\"></span> bleeding their neighbours. ",
         "iconUrl": "/images/abilities/Mercenray2.webp",
         "abilityType": null,
         "costType": null,
@@ -7718,8 +7938,9 @@
     ]
   },
   {
-    "id": "olympia-midas",
+    "id": "midas",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Midas",
     "faction": "Hero",
     "factionName": "Hero",
@@ -7744,8 +7965,9 @@
     ]
   },
   {
-    "id": "grimm-miller",
+    "id": "miller",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Miller",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -7770,8 +7992,9 @@
     ]
   },
   {
-    "id": "dark-mimic",
+    "id": "mimic",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mimic",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -7796,8 +8019,9 @@
     ]
   },
   {
-    "id": "dark-mind-eater",
+    "id": "mind-eater",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mind Eater",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -7822,8 +8046,9 @@
     ]
   },
   {
-    "id": "grimm-mine-spirit",
+    "id": "mine-spirit",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mine Spirit",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -7858,8 +8083,9 @@
     ]
   },
   {
-    "id": "dark-minion",
+    "id": "minion",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Minion",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -7884,8 +8110,9 @@
     ]
   },
   {
-    "id": "olympia-minotaur",
+    "id": "minotaur",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Minotaur",
     "faction": "Monster",
     "factionName": "Monster",
@@ -7910,8 +8137,9 @@
     ]
   },
   {
-    "id": "standard-mirror-fiend",
+    "id": "mirror-fiend",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Mirror Fiend",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -7936,8 +8164,9 @@
     ]
   },
   {
-    "id": "grimm-mirror,-mirror",
+    "id": "mirror,-mirror",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mirror, Mirror",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -7950,7 +8179,7 @@
       "id": "DA_Grim_Royal",
       "name": "Royal",
       "description": "Roles that meet in the Court during the night. Most of them are Folk but beware.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Grimm_Royal.webp"
     },
     "resource": null,
@@ -7968,8 +8197,9 @@
     ]
   },
   {
-    "id": "olympia-momus",
+    "id": "momus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Momus",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -7994,8 +8224,9 @@
     ]
   },
   {
-    "id": "olympia-mormo",
+    "id": "mormo",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Mormo",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -8020,8 +8251,9 @@
     ]
   },
   {
-    "id": "olympia-morpheus",
+    "id": "morpheus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Morpheus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8046,8 +8278,9 @@
     ]
   },
   {
-    "id": "dark-mortician",
+    "id": "mortician",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mortician",
     "faction": "Village",
     "factionName": "Village",
@@ -8072,8 +8305,9 @@
     ]
   },
   {
-    "id": "grimm-mountain-witch",
+    "id": "mountain-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Mountain Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -8086,14 +8320,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_MountainWitch_R",
       "name": "Rites",
       "description": "You gain three rites in the first night. As Walpurgisnacht draws closer, gain another rite for each day passed.",
-      "color": "#31243a",
+      "color": "#796983",
       "iconUrl": "/images/roles/MountainWitch1R.webp"
     },
     "abilities": [
@@ -8120,8 +8354,9 @@
     ]
   },
   {
-    "id": "grimm-musician",
+    "id": "musician",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Musician",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -8156,8 +8391,9 @@
     ]
   },
   {
-    "id": "dark-mutator",
+    "id": "mutator",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Mutator",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -8182,8 +8418,9 @@
     ]
   },
   {
-    "id": "olympia-narcissus",
+    "id": "narcissus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Narcissus",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -8218,8 +8455,9 @@
     ]
   },
   {
-    "id": "dark-necromancer",
+    "id": "necromancer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Necromancer",
     "faction": "Evil",
     "factionName": "Evil",
@@ -8254,8 +8492,9 @@
     ]
   },
   {
-    "id": "olympia-nemesis",
+    "id": "nemesis",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Nemesis",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8280,8 +8519,9 @@
     ]
   },
   {
-    "id": "standard-night-owl",
+    "id": "night-owl",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Night Owl",
     "faction": "Town",
     "factionName": "Town",
@@ -8316,8 +8556,9 @@
     ]
   },
   {
-    "id": "grimm-night-pixie",
+    "id": "night-pixie",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Night Pixie",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -8330,8 +8571,8 @@
     "resource": {
       "id": "DA_Grimm_NightPixie_R",
       "name": "Fallen Stars",
-      "description": "Gain three fallen stars every night.",
-      "color": "#290570",
+      "description": "Gain one fallen star every night.",
+      "color": "#6f28b1",
       "iconUrl": "/images/roles/Nightpixie1R.webp"
     },
     "abilities": [
@@ -8343,13 +8584,14 @@
         "iconUrl": "/images/abilities/Nightpixie2.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 2
+        "costValue": 1
       }
     ]
   },
   {
-    "id": "dark-night's-watch",
+    "id": "night's-watch",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Night's Watch",
     "faction": "Village",
     "factionName": "Village",
@@ -8374,8 +8616,9 @@
     ]
   },
   {
-    "id": "grimm-nightingale",
+    "id": "nightingale",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Nightingale",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -8388,7 +8631,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -8416,8 +8659,9 @@
     ]
   },
   {
-    "id": "grimm-nis-puk",
+    "id": "nis-puk",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Nis Puk",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -8452,8 +8696,9 @@
     ]
   },
   {
-    "id": "olympia-nosos",
+    "id": "nosos",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Nosos",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -8488,8 +8733,9 @@
     ]
   },
   {
-    "id": "standard-nymph",
+    "id": "nymph",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Nymph",
     "faction": "Town",
     "factionName": "Town",
@@ -8514,8 +8760,9 @@
     ]
   },
   {
-    "id": "olympia-nyx",
+    "id": "nyx",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Nyx",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -8550,8 +8797,9 @@
     ]
   },
   {
-    "id": "grimm-oberon",
+    "id": "oberon",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Oberon",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -8571,7 +8819,7 @@
         "iconUrl": "/images/abilities/Oberon1.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 0
+        "costValue": 1
       },
       {
         "id": "DA_Grimm_Oberon_2",
@@ -8581,7 +8829,7 @@
         "iconUrl": "/images/abilities/Oberon2.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 0
+        "costValue": 1
       },
       {
         "id": "DA_Grimm_Oberon_3",
@@ -8606,8 +8854,9 @@
     ]
   },
   {
-    "id": "olympia-odysseus",
+    "id": "odysseus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Odysseus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8632,8 +8881,9 @@
     ]
   },
   {
-    "id": "standard-old-man",
+    "id": "old-man",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Old Man",
     "faction": "Town",
     "factionName": "Town",
@@ -8668,8 +8918,9 @@
     ]
   },
   {
-    "id": "grimm-old-wizard-",
+    "id": "old-wizard-",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Old Wizard ",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -8683,7 +8934,7 @@
       "id": "DA_Grimm_OldWizard_R",
       "name": "Mana",
       "description": "Gain mana equal to the number of nights passed.",
-      "color": "#825c0b",
+      "color": "#bda23b",
       "iconUrl": "/images/roles/OldWizard1R.webp"
     },
     "abilities": [
@@ -8720,8 +8971,9 @@
     ]
   },
   {
-    "id": "olympia-oracle",
+    "id": "oracle",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Oracle",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8746,8 +8998,9 @@
     ]
   },
   {
-    "id": "dark-outsider",
+    "id": "outsider",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Outsider",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -8772,8 +9025,9 @@
     ]
   },
   {
-    "id": "standard-pack-wolf",
+    "id": "pack-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Pack Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -8798,8 +9052,9 @@
     ]
   },
   {
-    "id": "dark-paladin",
+    "id": "paladin",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Paladin",
     "faction": "Village",
     "factionName": "Village",
@@ -8834,8 +9089,9 @@
     ]
   },
   {
-    "id": "olympia-pan",
+    "id": "pan",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Pan",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -8860,8 +9116,9 @@
     ]
   },
   {
-    "id": "olympia-panacea",
+    "id": "panacea",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Panacea",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8875,7 +9132,7 @@
       "id": "Panacea_Resource",
       "name": "Salve",
       "description": "Gain 1 <b>Salve</> each night.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/round-potion.webp"
     },
     "abilities": [
@@ -8902,8 +9159,9 @@
     ]
   },
   {
-    "id": "olympia-pandora",
+    "id": "pandora",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Pandora",
     "faction": "Hero",
     "factionName": "Hero",
@@ -8928,8 +9186,9 @@
     ]
   },
   {
-    "id": "standard-pants-wolf",
+    "id": "pants-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Pants Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -8954,8 +9213,9 @@
     ]
   },
   {
-    "id": "dark-parasite",
+    "id": "parasite",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Parasite",
     "faction": "Evil",
     "factionName": "Evil",
@@ -8980,8 +9240,9 @@
     ]
   },
   {
-    "id": "dark-parishioner",
+    "id": "parishioner",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Parishioner",
     "faction": "Village",
     "factionName": "Village",
@@ -9016,8 +9277,9 @@
     ]
   },
   {
-    "id": "standard-party-animal",
+    "id": "party-animal",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Party Animal",
     "faction": "Town",
     "factionName": "Town",
@@ -9042,8 +9304,9 @@
     ]
   },
   {
-    "id": "standard-peasant",
+    "id": "peasant",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Peasant",
     "faction": "Town",
     "factionName": "Town",
@@ -9068,8 +9331,9 @@
     ]
   },
   {
-    "id": "olympia-pegasus",
+    "id": "pegasus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Pegasus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -9094,8 +9358,9 @@
     ]
   },
   {
-    "id": "olympia-persephone",
+    "id": "persephone",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Persephone",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -9109,7 +9374,7 @@
       "id": "Persephone_Resource",
       "name": "Twilight Essence",
       "description": "Gain 2 Twilight Essence every night.",
-      "color": "#090503",
+      "color": "#34271e",
       "iconUrl": "/images/roles/sparkles.webp"
     },
     "abilities": [
@@ -9136,8 +9401,9 @@
     ]
   },
   {
-    "id": "olympia-perseus",
+    "id": "perseus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Perseus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -9162,8 +9428,9 @@
     ]
   },
   {
-    "id": "grimm-peterman",
+    "id": "peterman",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Peterman",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -9188,8 +9455,9 @@
     ]
   },
   {
-    "id": "olympia-phobos",
+    "id": "phobos",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Phobos",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -9214,8 +9482,9 @@
     ]
   },
   {
-    "id": "grimm-pied-piper",
+    "id": "pied-piper",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Pied Piper",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -9260,8 +9529,9 @@
     ]
   },
   {
-    "id": "standard-plague-doctor",
+    "id": "plague-doctor",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Plague Doctor",
     "faction": "Evil",
     "factionName": "Evil",
@@ -9296,8 +9566,9 @@
     ]
   },
   {
-    "id": "standard-poison-drake",
+    "id": "poison-drake",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Poison Drake",
     "faction": "Evil",
     "factionName": "Evil",
@@ -9310,7 +9581,7 @@
       "id": "Dragon",
       "name": "Dragon",
       "description": "Ancient draconic beings who once ruled.",
-      "color": "#3f0908",
+      "color": "#883532",
       "iconUrl": "/images/roles/Group_Dragon.webp"
     },
     "resource": null,
@@ -9338,8 +9609,9 @@
     ]
   },
   {
-    "id": "olympia-poseidon",
+    "id": "poseidon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Poseidon",
     "faction": "Hero",
     "factionName": "Hero",
@@ -9364,8 +9636,9 @@
     ]
   },
   {
-    "id": "dark-preacher",
+    "id": "preacher",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Preacher",
     "faction": "Village",
     "factionName": "Village",
@@ -9390,8 +9663,9 @@
     ]
   },
   {
-    "id": "standard-priest",
+    "id": "priest",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Priest",
     "faction": "Town",
     "factionName": "Town",
@@ -9426,8 +9700,9 @@
     ]
   },
   {
-    "id": "dark-prince",
+    "id": "prince",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Prince",
     "faction": "Village",
     "factionName": "Village",
@@ -9462,8 +9737,9 @@
     ]
   },
   {
-    "id": "standard-princess",
+    "id": "princess",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Princess",
     "faction": "Town",
     "factionName": "Town",
@@ -9476,7 +9752,7 @@
       "id": "Royal",
       "name": "Royal",
       "description": "A privileged circle of influential figures who meet in secret each night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Group_Royal.webp"
     },
     "resource": null,
@@ -9504,8 +9780,9 @@
     ]
   },
   {
-    "id": "dark-prophet",
+    "id": "prophet",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Prophet",
     "faction": "Village",
     "factionName": "Village",
@@ -9530,8 +9807,9 @@
     ]
   },
   {
-    "id": "olympia-prophet",
+    "id": "prophet",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Prophet",
     "faction": "Hero",
     "factionName": "Hero",
@@ -9556,8 +9834,9 @@
     ]
   },
   {
-    "id": "standard-prophet",
+    "id": "prophet",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Prophet",
     "faction": "Town",
     "factionName": "Town",
@@ -9582,8 +9861,9 @@
     ]
   },
   {
-    "id": "olympia-psyche",
+    "id": "psyche",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Psyche",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -9608,8 +9888,9 @@
     ]
   },
   {
-    "id": "dark-psychic",
+    "id": "psychic",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Psychic",
     "faction": "Village",
     "factionName": "Village",
@@ -9634,8 +9915,9 @@
     ]
   },
   {
-    "id": "standard-psychopath",
+    "id": "psychopath",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Psychopath",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -9670,8 +9952,9 @@
     ]
   },
   {
-    "id": "grimm-puss-in-boots",
+    "id": "puss-in-boots",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Puss in Boots",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -9696,8 +9979,9 @@
     ]
   },
   {
-    "id": "olympia-python",
+    "id": "python",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Python",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -9722,8 +10006,9 @@
     ]
   },
   {
-    "id": "standard-queen",
+    "id": "queen",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Queen",
     "faction": "Town",
     "factionName": "Town",
@@ -9736,7 +10021,7 @@
       "id": "Royal",
       "name": "Royal",
       "description": "A privileged circle of influential figures who meet in secret each night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Group_Royal.webp"
     },
     "resource": null,
@@ -9764,8 +10049,9 @@
     ]
   },
   {
-    "id": "grimm-rapunzel",
+    "id": "rapunzel",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Rapunzel",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -9810,8 +10096,9 @@
     ]
   },
   {
-    "id": "dark-rat",
+    "id": "rat",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Rat",
     "faction": "Evil",
     "factionName": "Evil",
@@ -9846,8 +10133,9 @@
     ]
   },
   {
-    "id": "grimm-raven",
+    "id": "raven",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Raven",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -9860,7 +10148,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -9878,8 +10166,9 @@
     ]
   },
   {
-    "id": "dark-raven-keeper",
+    "id": "raven-keeper",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Raven Keeper",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -9914,8 +10203,9 @@
     ]
   },
   {
-    "id": "grimm-revenant",
+    "id": "revenant",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Revenant",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -9940,8 +10230,9 @@
     ]
   },
   {
-    "id": "standard-ringmaster",
+    "id": "ringmaster",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Ringmaster",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -9966,8 +10257,9 @@
     ]
   },
   {
-    "id": "grimm-robber",
+    "id": "robber",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Robber",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -10002,8 +10294,9 @@
     ]
   },
   {
-    "id": "standard-royal-guard",
+    "id": "royal-guard",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Royal Guard",
     "faction": "Town",
     "factionName": "Town",
@@ -10016,7 +10309,7 @@
       "id": "Royal",
       "name": "Royal",
       "description": "A privileged circle of influential figures who meet in secret each night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Group_Royal.webp"
     },
     "resource": null,
@@ -10034,8 +10327,9 @@
     ]
   },
   {
-    "id": "standard-royal-knight",
+    "id": "royal-knight",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Royal Knight",
     "faction": "Town",
     "factionName": "Town",
@@ -10048,7 +10342,7 @@
       "id": "Royal",
       "name": "Royal",
       "description": "A privileged circle of influential figures who meet in secret each night.",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Group_Royal.webp"
     },
     "resource": null,
@@ -10066,8 +10360,9 @@
     ]
   },
   {
-    "id": "grimm-rumpelstiltskin",
+    "id": "rumpelstiltskin",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Rumpelstiltskin",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -10091,7 +10386,7 @@
       },
       {
         "id": "DA_Grimm_Rumpelstiltskin_2",
-        "name": "Dass ich",
+        "name": "dass ich",
         "description": "Spy on your target <img id=\"Learn\"/> <i>learning</> their <b>capabilities</>.",
         "descriptionHtml": "Spy on your target <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learning their capabilities.",
         "iconUrl": "/images/abilities/Rumpelstiltskin2.webp",
@@ -10112,8 +10407,9 @@
     ]
   },
   {
-    "id": "dark-saboteur",
+    "id": "saboteur",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Saboteur",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -10148,8 +10444,9 @@
     ]
   },
   {
-    "id": "dark-saint",
+    "id": "saint",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Saint",
     "faction": "Village",
     "factionName": "Village",
@@ -10174,8 +10471,9 @@
     ]
   },
   {
-    "id": "grimm-sandman",
+    "id": "sandman",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Sandman",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -10189,7 +10487,7 @@
       "id": "DA_Grimm_SandMan_R",
       "name": "Sand",
       "description": "You gain one bag of sand of eternal sleep every night.",
-      "color": "#625137",
+      "color": "#a79980",
       "iconUrl": "/images/roles/Sandman1R.webp"
     },
     "abilities": [
@@ -10216,8 +10514,9 @@
     ]
   },
   {
-    "id": "dark-sanguine",
+    "id": "sanguine",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Sanguine",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -10252,8 +10551,9 @@
     ]
   },
   {
-    "id": "dark-scout",
+    "id": "scout",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Scout",
     "faction": "Village",
     "factionName": "Village",
@@ -10278,8 +10578,9 @@
     ]
   },
   {
-    "id": "dark-scribe",
+    "id": "scribe",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Scribe",
     "faction": "Village",
     "factionName": "Village",
@@ -10314,8 +10615,9 @@
     ]
   },
   {
-    "id": "standard-scryer",
+    "id": "scryer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Scryer",
     "faction": "Town",
     "factionName": "Town",
@@ -10340,8 +10642,9 @@
     ]
   },
   {
-    "id": "olympia-scylla",
+    "id": "scylla",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Scylla",
     "faction": "Monster",
     "factionName": "Monster",
@@ -10366,8 +10669,9 @@
     ]
   },
   {
-    "id": "standard-sectator",
+    "id": "sectator",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Sectator",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -10392,8 +10696,9 @@
     ]
   },
   {
-    "id": "standard-seer",
+    "id": "seer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Seer",
     "faction": "Town",
     "factionName": "Town",
@@ -10418,8 +10723,9 @@
     ]
   },
   {
-    "id": "standard-serial-killer",
+    "id": "serial-killer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Serial Killer",
     "faction": "Evil",
     "factionName": "Evil",
@@ -10454,8 +10760,9 @@
     ]
   },
   {
-    "id": "dark-serpent",
+    "id": "serpent",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Serpent",
     "faction": "Evil",
     "factionName": "Evil",
@@ -10480,8 +10787,9 @@
     ]
   },
   {
-    "id": "dark-servant",
+    "id": "servant",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Servant",
     "faction": "Village",
     "factionName": "Village",
@@ -10506,8 +10814,9 @@
     ]
   },
   {
-    "id": "dark-shade",
+    "id": "shade",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Shade",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -10542,8 +10851,9 @@
     ]
   },
   {
-    "id": "standard-sheep",
+    "id": "sheep",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Sheep",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -10568,8 +10878,9 @@
     ]
   },
   {
-    "id": "standard-shield-maiden",
+    "id": "shield-maiden",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Shield Maiden",
     "faction": "Town",
     "factionName": "Town",
@@ -10604,8 +10915,9 @@
     ]
   },
   {
-    "id": "grimm-shrat",
+    "id": "shrat",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Shrat",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -10630,8 +10942,9 @@
     ]
   },
   {
-    "id": "standard-shrouder",
+    "id": "shrouder",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Shrouder",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -10656,44 +10969,9 @@
     ]
   },
   {
-    "id": "grimm-siegfried",
-    "set": "Grimm",
-    "name": "Siegfried",
-    "faction": "Grim_Folk",
-    "factionName": "Folk",
-    "class": "Elimination",
-    "description": "Der Drachent\u00f6ter",
-    "descriptionHtml": "Der Drachent\u00f6ter",
-    "imageUrl": "/images/roles/Siegfried.webp",
-    "portraitUrl": "/images/roles/Siegfried_P.webp",
-    "group": null,
-    "resource": null,
-    "abilities": [
-      {
-        "id": "DA_Grimm_DragonSlayer_1",
-        "name": "Bathing in a dragon\u2019s blood",
-        "description": "If you\u2019ve slain an Evil you gain one <img id=\"DivineProtection\"/> <p>divine protection</> every night.",
-        "descriptionHtml": "If you\u2019ve slain an Evil you gain one <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/DivineProtection.webp')\" role=\"img\" aria-label=\"DivineProtection\" title=\"DivineProtection\"></span> divine protection every night.",
-        "iconUrl": "/images/abilities/Siegfried1.webp",
-        "abilityType": null,
-        "costType": null,
-        "costValue": 0
-      },
-      {
-        "id": "DA_Grimm_DragonSlayer_2",
-        "name": "Dragonslayer",
-        "description": "Slay your target, striking them with an <img id=\"UnstoppableAttack\"/> <e>unstoppable attack</> if they are Evil.",
-        "descriptionHtml": "Slay your target, striking them with an <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppable attack if they are Evil.",
-        "iconUrl": "/images/abilities/Siegfried2.webp",
-        "abilityType": null,
-        "costType": null,
-        "costValue": 1
-      }
-    ]
-  },
-  {
-    "id": "dark-siren",
+    "id": "siren",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Siren",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -10718,8 +10996,9 @@
     ]
   },
   {
-    "id": "olympia-siren",
+    "id": "siren",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Siren",
     "faction": "Monster",
     "factionName": "Monster",
@@ -10744,8 +11023,9 @@
     ]
   },
   {
-    "id": "grimm-sisters",
+    "id": "sisters",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Sisters",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -10780,8 +11060,9 @@
     ]
   },
   {
-    "id": "olympia-sisyphus",
+    "id": "sisyphus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Sisyphus",
     "faction": "Hero",
     "factionName": "Hero",
@@ -10806,8 +11087,9 @@
     ]
   },
   {
-    "id": "standard-skeletal-wolf",
+    "id": "skeletal-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Skeletal Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -10832,8 +11114,9 @@
     ]
   },
   {
-    "id": "dark-skeleton-archer",
+    "id": "skeleton-archer",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Skeleton Archer",
     "faction": "Evil",
     "factionName": "Evil",
@@ -10846,7 +11129,7 @@
       "id": "Undead",
       "name": "Undead",
       "description": "Reanimated and united by dark magic, all Undead learn each other's identities on the first night and win together.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Undead.webp"
     },
     "resource": null,
@@ -10864,8 +11147,9 @@
     ]
   },
   {
-    "id": "dark-skeleton-mage",
+    "id": "skeleton-mage",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Skeleton Mage",
     "faction": "Evil",
     "factionName": "Evil",
@@ -10878,7 +11162,7 @@
       "id": "Undead",
       "name": "Undead",
       "description": "Reanimated and united by dark magic, all Undead learn each other's identities on the first night and win together.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Undead.webp"
     },
     "resource": null,
@@ -10906,8 +11190,9 @@
     ]
   },
   {
-    "id": "dark-skeleton-warrior",
+    "id": "skeleton-warrior",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Skeleton Warrior",
     "faction": "Evil",
     "factionName": "Evil",
@@ -10920,7 +11205,7 @@
       "id": "Undead",
       "name": "Undead",
       "description": "Reanimated and united by dark magic, all Undead learn each other's identities on the first night and win together.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Undead.webp"
     },
     "resource": null,
@@ -10948,8 +11233,9 @@
     ]
   },
   {
-    "id": "dark-sleep-walker",
+    "id": "sleep-walker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Sleep Walker",
     "faction": "Village",
     "factionName": "Village",
@@ -10974,8 +11260,9 @@
     ]
   },
   {
-    "id": "grimm-sleeping-beauty",
+    "id": "sleeping-beauty",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Sleeping Beauty",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -11010,8 +11297,9 @@
     ]
   },
   {
-    "id": "dark-sniper",
+    "id": "sniper",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Sniper",
     "faction": "Village",
     "factionName": "Village",
@@ -11046,8 +11334,9 @@
     ]
   },
   {
-    "id": "grimm-snow-queen",
+    "id": "snow-queen",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Snow Queen",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -11082,12 +11371,13 @@
     ]
   },
   {
-    "id": "grimm-snowwhite",
+    "id": "snowwhite",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Snowwhite",
     "faction": "Grim_Folk",
     "factionName": "Folk",
-    "class": "Investigation",
+    "class": "Manipulation",
     "description": "Schneewittchen",
     "descriptionHtml": "Schneewittchen",
     "imageUrl": "/images/roles/Snowwhite.webp",
@@ -11108,8 +11398,8 @@
       {
         "id": "DA_Grimm_SnowWhite_2",
         "name": "Gift",
-        "description": "Eat the poisonous apple once gifted to you by an evil queen, causing you to <b>perish</>. However, with you perishing the roles of all dead players are <img id=\"Reveal\"/> <m>revealed</> as the seven dwarfs dig out the greatest grave ever.",
-        "descriptionHtml": "Eat the poisonous apple once gifted to you by an evil queen, causing you to perish. However, with you perishing the roles of all dead players are <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Reveal.webp')\" role=\"img\" aria-label=\"Reveal\" title=\"Reveal\"></span> revealed as the seven dwarfs dig out the greatest grave ever.",
+        "description": "Eat the poisonous apple once gifted to you by an evil queen, causing you to <img id=\"Reveal\"/> <m>revealed</> your <b>role</>, and the <b>role</> of another player.",
+        "descriptionHtml": "Eat the poisonous apple once gifted to you by an evil queen, causing you to <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Reveal.webp')\" role=\"img\" aria-label=\"Reveal\" title=\"Reveal\"></span> revealed your role, and the role of another player.",
         "iconUrl": "/images/abilities/Snowwhite2.webp",
         "abilityType": null,
         "costType": null,
@@ -11118,8 +11408,9 @@
     ]
   },
   {
-    "id": "standard-soothesayer",
+    "id": "soothesayer",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Soothesayer",
     "faction": "Town",
     "factionName": "Town",
@@ -11144,8 +11435,9 @@
     ]
   },
   {
-    "id": "standard-sorceress",
+    "id": "sorceress",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Sorceress",
     "faction": "Town",
     "factionName": "Town",
@@ -11180,8 +11472,9 @@
     ]
   },
   {
-    "id": "dark-soul-binder",
+    "id": "soul-binder",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Soul Binder",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -11206,8 +11499,9 @@
     ]
   },
   {
-    "id": "grimm-soulless",
+    "id": "soulless",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Soulless",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -11232,8 +11526,9 @@
     ]
   },
   {
-    "id": "grimm-spinner",
+    "id": "spinner",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Spinner",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -11248,8 +11543,8 @@
       {
         "id": "DA_Grimm_Spinner_1",
         "name": "Have you heard?",
-        "description": "You gossip and <img id=\"Learn\"/> <i>learn</> the combined players who are <b>targeting</> any of your three targets.",
-        "descriptionHtml": "You gossip and <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn the combined players who are targeting any of your three targets.",
+        "description": "You gossip and <img id=\"Learn\"/> <i>learn</> the combined players who are <b>targeting</> any of your two targets.",
+        "descriptionHtml": "You gossip and <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn the combined players who are targeting any of your two targets.",
         "iconUrl": "/images/abilities/Spinner_1.webp",
         "abilityType": null,
         "costType": null,
@@ -11258,8 +11553,9 @@
     ]
   },
   {
-    "id": "standard-squire",
+    "id": "squire",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Squire",
     "faction": "Town",
     "factionName": "Town",
@@ -11284,8 +11580,9 @@
     ]
   },
   {
-    "id": "dark-stalker",
+    "id": "stalker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Stalker",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -11298,10 +11595,10 @@
     "resource": null,
     "abilities": [
       {
-        "id": "Stalekr_Ability_1",
-        "name": "On the Prowl",
-        "description": "Stalk a player for the day. Once accusations have finished if you are not accused and they are accused, interrupt the vote and feast on them, <img id=\"Attack\"/> <e>attacking</> them and ending the day.",
-        "descriptionHtml": "Stalk a player for the day. Once accusations have finished if you are not accused and they are accused, interrupt the vote and feast on them, <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Attack.webp')\" role=\"img\" aria-label=\"Attack\" title=\"Attack\"></span> attacking them and ending the day.",
+        "id": "DA_Dark_Stalker_1",
+        "name": "Silent Night",
+        "description": "Stalk a player, planning to kill them on the following night. They will learn that they are being stalked by the <b>Assassin</>. \r\n\r\nIf another player targets them on the following night you will be interrupted and have to call off your kill. If uninterrupted and you are still alive, strike them with an <img id=\"UnstoppableAttack\"/> <e>unstoppable attack</>.",
+        "descriptionHtml": "Stalk a player, planning to kill them on the following night. They will learn that they are being stalked by the Assassin. \r\n\r\nIf another player targets them on the following night you will be interrupted and have to call off your kill. If uninterrupted and you are still alive, strike them with an <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppable attack.",
         "iconUrl": "/images/abilities/T_Stalker_1.webp",
         "abilityType": null,
         "costType": null,
@@ -11310,8 +11607,9 @@
     ]
   },
   {
-    "id": "olympia-stallion",
+    "id": "stallion",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Stallion",
     "faction": "Hero",
     "factionName": "Hero",
@@ -11324,7 +11622,7 @@
       "id": "Animal",
       "name": "Animal",
       "description": "A symbol of nature, the animals face more threats than just monsters",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Animal.webp"
     },
     "resource": null,
@@ -11342,8 +11640,9 @@
     ]
   },
   {
-    "id": "standard-starving-wolf",
+    "id": "starving-wolf",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Starving Wolf",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -11368,8 +11667,9 @@
     ]
   },
   {
-    "id": "grimm-step-sister",
+    "id": "step-sister",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Step Sister",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -11404,12 +11704,13 @@
     ]
   },
   {
-    "id": "grimm-stepmother",
+    "id": "stepmother",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Stepmother",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
-    "class": "Manipulation",
+    "class": "Elimination",
     "description": "Stiefmutter",
     "descriptionHtml": "Stiefmutter",
     "imageUrl": "/images/roles/Stepmother.webp",
@@ -11420,8 +11721,8 @@
       {
         "id": "DA_Grimm_Stepmother_1",
         "name": "I told you!",
-        "description": "Target a player, they will learn that they are not allowed to vote or to tell this to anyone, if they do, they will be <img id=\"UnstoppableAttack\"/> <e>unstoppably attacked</> during the following night.",
-        "descriptionHtml": "Target a player, they will learn that they are not allowed to vote or to tell this to anyone, if they do, they will be <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/UnstoppableAttack.webp')\" role=\"img\" aria-label=\"UnstoppableAttack\" title=\"UnstoppableAttack\"></span> unstoppably attacked during the following night.",
+        "description": "Target a player, they will learn that they are not allowed to vote or to tell this to anyone during the day. If they do, they will <b>perish</> during the following night.",
+        "descriptionHtml": "Target a player, they will learn that they are not allowed to vote or to tell this to anyone during the day. If they do, they will perish during the following night.",
         "iconUrl": "/images/abilities/Stepmother1.webp",
         "abilityType": null,
         "costType": null,
@@ -11440,8 +11741,9 @@
     ]
   },
   {
-    "id": "standard-stone-golem",
+    "id": "stone-golem",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Stone Golem",
     "faction": "Town",
     "factionName": "Town",
@@ -11476,8 +11778,9 @@
     ]
   },
   {
-    "id": "dark-stone-mason",
+    "id": "stone-mason",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Stone Mason",
     "faction": "Village",
     "factionName": "Village",
@@ -11502,8 +11805,9 @@
     ]
   },
   {
-    "id": "dark-strigoi",
+    "id": "strigoi",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Strigoi",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -11538,8 +11842,9 @@
     ]
   },
   {
-    "id": "dark-succubus",
+    "id": "succubus",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Succubus",
     "faction": "Vampire",
     "factionName": "Vampire",
@@ -11564,8 +11869,9 @@
     ]
   },
   {
-    "id": "grimm-swamp-witch",
+    "id": "swamp-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Swamp Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -11578,14 +11884,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_SwampWitch_R",
       "name": "Resource",
       "description": "You gain three rites in the first night. As Walpurgisnacht draws closer, gain another rite for each day passed.",
-      "color": "#de510e",
+      "color": "#f09943",
       "iconUrl": "/images/roles/SwampWitch1R.webp"
     },
     "abilities": [
@@ -11622,8 +11928,9 @@
     ]
   },
   {
-    "id": "olympia-swine",
+    "id": "swine",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Swine",
     "faction": "Hero",
     "factionName": "Hero",
@@ -11636,7 +11943,7 @@
       "id": "Animal",
       "name": "Animal",
       "description": "A symbol of nature, the animals face more threats than just monsters",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Animal.webp"
     },
     "resource": null,
@@ -11654,8 +11961,9 @@
     ]
   },
   {
-    "id": "grimm-sylph",
+    "id": "sylph",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Sylph",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -11680,7 +11988,7 @@
       {
         "id": "DA_Grimm_Sylph_2",
         "name": "Misinformation",
-        "description": "If your target is investigation, <img id=\"Learn\"/> <i>learn</> the information they should learn and alter it to your liking.",
+        "description": "If your target is investigation, <img id=\"Learn\"/> <i>learn</> the information they should learn and <m>alter</> it to your liking.",
         "descriptionHtml": "If your target is investigation, <span class=\"kw-icon\" style=\"--kw: #B38FC4; --kw-icon: url('/images/keywords/Learn.webp')\" role=\"img\" aria-label=\"Learn\" title=\"Learn\"></span> learn the information they should learn and alter it to your liking.",
         "iconUrl": "/images/abilities/Sylph2.webp",
         "abilityType": null,
@@ -11690,8 +11998,9 @@
     ]
   },
   {
-    "id": "dark-tailor",
+    "id": "tailor",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Tailor",
     "faction": "Village",
     "factionName": "Village",
@@ -11716,8 +12025,9 @@
     ]
   },
   {
-    "id": "grimm-tailor",
+    "id": "tailor",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Tailor",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -11742,8 +12052,9 @@
     ]
   },
   {
-    "id": "olympia-talos",
+    "id": "talos",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Talos",
     "faction": "Hero",
     "factionName": "Hero",
@@ -11778,8 +12089,9 @@
     ]
   },
   {
-    "id": "dark-tavern-keeper",
+    "id": "tavern-keeper",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Tavern Keeper",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -11814,8 +12126,9 @@
     ]
   },
   {
-    "id": "grimm-tazzelwyrm",
+    "id": "tazzelwyrm",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Tazzelwyrm",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -11828,7 +12141,7 @@
       "id": "DA_Grim_Dragon",
       "name": "Dragon",
       "description": "Each dragon learns of the existence of any other dragon, however not of their identity.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Dragon.webp"
     },
     "resource": null,
@@ -11836,8 +12149,8 @@
       {
         "id": "DA_Grimm_Tazzelwyrm_1",
         "name": "Fiery youngling",
-        "description": "Fire follows your every step, <img id=\"Ignite\"/> <e>igniting</> anyone who <b>targets</> you. If you survive four nights <img id=\"Transform\"/> <m>transform</> into a Lindwyrm with three embers.",
-        "descriptionHtml": "Fire follows your every step, <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Ignite.webp')\" role=\"img\" aria-label=\"Ignite\" title=\"Ignite\"></span> igniting anyone who targets you. If you survive four nights <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transform into a Lindwyrm with three embers.",
+        "description": "Fire follows your every step, <img id=\"Ignite\"/> <e>igniting</> anyone who <b>targets</> you. If you survive three nights <img id=\"Transform\"/> <m>transform</> into a Lindwyrm with three embers.",
+        "descriptionHtml": "Fire follows your every step, <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Ignite.webp')\" role=\"img\" aria-label=\"Ignite\" title=\"Ignite\"></span> igniting anyone who targets you. If you survive three nights <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transform into a Lindwyrm with three embers.",
         "iconUrl": "/images/abilities/Tazzelwyrm1.webp",
         "abilityType": null,
         "costType": null,
@@ -11856,8 +12169,8 @@
       {
         "id": "DA_Grimm_Tazzelwyrm_3",
         "name": "Frenzy",
-        "description": "<img id=\"Ignite\"/> <e>Ignite</> every town role whilst <img id=\"Attack\"/> <e>attacking</> yourself, if you survive the night you are <img id=\"Transform\"/> <m>transformed</> early into a Lindwyrm with three embers.",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Ignite.webp')\" role=\"img\" aria-label=\"Ignite\" title=\"Ignite\"></span> Ignite every town role whilst <span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Attack.webp')\" role=\"img\" aria-label=\"Attack\" title=\"Attack\"></span> attacking yourself, if you survive the night you are <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transformed early into a Lindwyrm with three embers.",
+        "description": "<img id=\"Attack\"/> <e>Attack</> yourself, if you survive the night you <img id=\"Transform\"/> <m>transform</> into any Dragon of your choice.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Attack.webp')\" role=\"img\" aria-label=\"Attack\" title=\"Attack\"></span> Attack yourself, if you survive the night you <span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Transform.webp')\" role=\"img\" aria-label=\"Transform\" title=\"Transform\"></span> transform into any Dragon of your choice.",
         "iconUrl": "/images/abilities/Tazzelwyrm3.webp",
         "abilityType": null,
         "costType": null,
@@ -11866,8 +12179,9 @@
     ]
   },
   {
-    "id": "standard-the-blob",
+    "id": "the-blob",
     "set": "Standard",
+    "setOrder": 0,
     "name": "The Blob",
     "faction": "Evil",
     "factionName": "Evil",
@@ -11912,8 +12226,9 @@
     ]
   },
   {
-    "id": "grimm-the-devil",
+    "id": "the-devil",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "The Devil",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -11927,7 +12242,7 @@
       "id": "DA_Grimm_TheDevil_R",
       "name": "Sin",
       "description": "You gain a sin every night.",
-      "color": "#112601",
+      "color": "#486c0a",
       "iconUrl": "/images/roles/Devil1R.webp"
     },
     "abilities": [
@@ -11954,8 +12269,9 @@
     ]
   },
   {
-    "id": "olympia-themis",
+    "id": "themis",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Themis",
     "faction": "Hero",
     "factionName": "Hero",
@@ -11980,8 +12296,9 @@
     ]
   },
   {
-    "id": "dark-thief",
+    "id": "thief",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Thief",
     "faction": "Village",
     "factionName": "Village",
@@ -12006,8 +12323,8 @@
       {
         "id": "Thief_Ability_2",
         "name": "Identity Theft",
-        "description": "<img id=\"Assume\"/> <m>Assume</>  the role of a player. You maintain your <b>faction</>.",
-        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Assume.webp')\" role=\"img\" aria-label=\"Assume\" title=\"Assume\"></span> Assume  the role of a player. You maintain your faction.",
+        "description": "<img id=\"Assume\"/> <m>Assume</>  the <b>role and <b>faction</> of a player.",
+        "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #839C38; --kw-icon: url('/images/keywords/Assume.webp')\" role=\"img\" aria-label=\"Assume\" title=\"Assume\"></span> Assume  the role and faction of a player.",
         "iconUrl": "/images/abilities/T_Thief_2.webp",
         "abilityType": null,
         "costType": null,
@@ -12016,8 +12333,9 @@
     ]
   },
   {
-    "id": "grimm-thumbling",
+    "id": "thumbling",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Thumbling",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -12042,8 +12360,9 @@
     ]
   },
   {
-    "id": "olympia-tiresias",
+    "id": "tiresias",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Tiresias",
     "faction": "Hero",
     "factionName": "Hero",
@@ -12078,8 +12397,9 @@
     ]
   },
   {
-    "id": "olympia-tisiphone",
+    "id": "tisiphone",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Tisiphone",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -12104,8 +12424,9 @@
     ]
   },
   {
-    "id": "grimm-titania",
+    "id": "titania",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Titania",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -12119,7 +12440,7 @@
       "id": "DA_Grimm_Titania_R",
       "name": "Stars",
       "description": "You take a star of the firmament every night. You take additional stars every night for every Feithat died.",
-      "color": "#1c255b",
+      "color": "#5d6aa1",
       "iconUrl": "/images/roles/Titania1R.webp"
     },
     "abilities": [
@@ -12141,7 +12462,7 @@
         "iconUrl": "/images/abilities/Titania3.webp",
         "abilityType": null,
         "costType": null,
-        "costValue": 2
+        "costValue": 3
       },
       {
         "id": "DA_Grimm_Titania_3",
@@ -12156,8 +12477,9 @@
     ]
   },
   {
-    "id": "grimm-toad",
+    "id": "toad",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Toad",
     "faction": "Grim_LesserEvil",
     "factionName": "Lesser Evil",
@@ -12170,7 +12492,7 @@
       "id": "DA_Grim_Animal",
       "name": "Animal",
       "description": "Cannot change faction to anything but neutral or lesser evil, as long as the father of animals is alive. Always win with father of animals.",
-      "color": "#737373",
+      "color": "#b3b3b3",
       "iconUrl": "/images/roles/Grimm_Animal.webp"
     },
     "resource": null,
@@ -12198,8 +12520,9 @@
     ]
   },
   {
-    "id": "standard-tormentor",
+    "id": "tormentor",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Tormentor",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -12224,8 +12547,9 @@
     ]
   },
   {
-    "id": "grimm-torturer",
+    "id": "torturer",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Torturer",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -12249,7 +12573,7 @@
       },
       {
         "id": "DA_Grimm_Torturer_2",
-        "name": "I thought I killed you already",
+        "name": "I thought I killed you",
         "description": "<img id=\"Execute\"/> <e>Execute</> your tortured target.",
         "descriptionHtml": "<span class=\"kw-icon\" style=\"--kw: #883532; --kw-icon: url('/images/keywords/Execute.webp')\" role=\"img\" aria-label=\"Execute\" title=\"Execute\"></span> Execute your tortured target.",
         "iconUrl": "/images/abilities/Torturer2.webp",
@@ -12260,8 +12584,9 @@
     ]
   },
   {
-    "id": "dark-town-crier",
+    "id": "town-crier",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Town Crier",
     "faction": "Village",
     "factionName": "Village",
@@ -12286,8 +12611,9 @@
     ]
   },
   {
-    "id": "grimm-town's-guard",
+    "id": "town's-guard",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Town's Guard",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -12322,8 +12648,9 @@
     ]
   },
   {
-    "id": "standard-tracker",
+    "id": "tracker",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Tracker",
     "faction": "Town",
     "factionName": "Town",
@@ -12348,8 +12675,9 @@
     ]
   },
   {
-    "id": "dark-trapper",
+    "id": "trapper",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Trapper",
     "faction": "Village",
     "factionName": "Village",
@@ -12374,8 +12702,9 @@
     ]
   },
   {
-    "id": "standard-traveler",
+    "id": "traveler",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Traveler",
     "faction": "Town",
     "factionName": "Town",
@@ -12400,8 +12729,9 @@
     ]
   },
   {
-    "id": "standard-treant",
+    "id": "treant",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Treant",
     "faction": "Town",
     "factionName": "Town",
@@ -12415,7 +12745,7 @@
       "id": "Treant_Resource",
       "name": "Growth",
       "description": "As mortals sleep you grow, gaining 1 <b>Growth</> per night.",
-      "color": "#2f4501",
+      "color": "#778e0a",
       "iconUrl": "/images/roles/oak-leaf.webp"
     },
     "abilities": [
@@ -12442,8 +12772,9 @@
     ]
   },
   {
-    "id": "olympia-tree",
+    "id": "tree",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Tree",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -12468,8 +12799,9 @@
     ]
   },
   {
-    "id": "standard-tree",
+    "id": "tree",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Tree",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -12504,8 +12836,9 @@
     ]
   },
   {
-    "id": "olympia-trojan-horse",
+    "id": "trojan-horse",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Trojan Horse",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -12540,8 +12873,9 @@
     ]
   },
   {
-    "id": "grimm-truth-seer",
+    "id": "truth-seer",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Truth Seer",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -12576,8 +12910,9 @@
     ]
   },
   {
-    "id": "olympia-typhon",
+    "id": "typhon",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Typhon",
     "faction": "Tainted",
     "factionName": "Tainted",
@@ -12602,8 +12937,9 @@
     ]
   },
   {
-    "id": "dark-undertaker",
+    "id": "undertaker",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Undertaker",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -12628,8 +12964,9 @@
     ]
   },
   {
-    "id": "grimm-unicorn",
+    "id": "unicorn",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Unicorn",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -12654,8 +12991,8 @@
       {
         "id": "DA_Grimm_Unicorn_2",
         "name": "Oh no, poor Sparkles",
-        "description": "Whoever kills you takes your horn and gains <img id=\"DivineProtection\"/> <p>permanent divine protection</> during the night.",
-        "descriptionHtml": "Whoever kills you takes your horn and gains <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/DivineProtection.webp')\" role=\"img\" aria-label=\"DivineProtection\" title=\"DivineProtection\"></span> permanent divine protection during the night.",
+        "description": "Whoever kills you during the night takes your horn and gains <img id=\"DivineProtection\"/> <p>permanent divine protection</> during the night.",
+        "descriptionHtml": "Whoever kills you during the night takes your horn and gains <span class=\"kw-icon\" style=\"--kw: #5F90C4; --kw-icon: url('/images/keywords/DivineProtection.webp')\" role=\"img\" aria-label=\"DivineProtection\" title=\"DivineProtection\"></span> permanent divine protection during the night.",
         "iconUrl": "/images/abilities/Unicorn2.webp",
         "abilityType": null,
         "costType": null,
@@ -12664,8 +13001,9 @@
     ]
   },
   {
-    "id": "dark-vampire-hunter",
+    "id": "vampire-hunter",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Vampire Hunter",
     "faction": "Village",
     "factionName": "Village",
@@ -12690,8 +13028,9 @@
     ]
   },
   {
-    "id": "standard-vigilante",
+    "id": "vigilante",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Vigilante",
     "faction": "Town",
     "factionName": "Town",
@@ -12716,8 +13055,9 @@
     ]
   },
   {
-    "id": "dark-visionary",
+    "id": "visionary",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Visionary",
     "faction": "Village",
     "factionName": "Village",
@@ -12742,8 +13082,9 @@
     ]
   },
   {
-    "id": "dark-vourdalak",
+    "id": "vourdalak",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Vourdalak",
     "faction": "Evil",
     "factionName": "Evil",
@@ -12778,8 +13119,9 @@
     ]
   },
   {
-    "id": "grimm-war-surgeon",
+    "id": "war-surgeon",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "War Surgeon",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -12793,7 +13135,7 @@
       "id": "DA_Grimm_WarSurgeon_R",
       "name": "Supplies",
       "description": "Supplies are steady even in thirty years of war, gain three bandages each night.",
-      "color": "#164768",
+      "color": "#5290ab",
       "iconUrl": "/images/roles/WarSurgeon1R.webp"
     },
     "abilities": [
@@ -12810,8 +13152,9 @@
     ]
   },
   {
-    "id": "standard-warden",
+    "id": "warden",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Warden",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -12836,8 +13179,9 @@
     ]
   },
   {
-    "id": "dark-warlock",
+    "id": "warlock",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Warlock",
     "faction": "Village",
     "factionName": "Village",
@@ -12862,8 +13206,9 @@
     ]
   },
   {
-    "id": "standard-warrior",
+    "id": "warrior",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Warrior",
     "faction": "Town",
     "factionName": "Town",
@@ -12898,8 +13243,9 @@
     ]
   },
   {
-    "id": "grimm-water-spirit",
+    "id": "water-spirit",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Water Spirit",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -12924,8 +13270,9 @@
     ]
   },
   {
-    "id": "grimm-weather-witch",
+    "id": "weather-witch",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Weather Witch",
     "faction": "Grimm_Evil",
     "factionName": "Evil",
@@ -12938,14 +13285,14 @@
       "id": "DA_Grim_Witch",
       "name": "Witch",
       "description": "Night 1, 3, 5 and 7 all Witches meet. Day 3 the Walpurgisnacht will be announced. Night 7 all perish and the witches win the game.",
-      "color": "#3a550a",
+      "color": "#839c38",
       "iconUrl": "/images/roles/Grimm_Witch.webp"
     },
     "resource": {
       "id": "DA_Grimm_WeatherWitch_R",
       "name": "Rites",
       "description": "You gain three rites in the first night. As Walpurgisnacht draws closer, gain another rite for each day passed.",
-      "color": "#463f3a",
+      "color": "#8f8883",
       "iconUrl": "/images/roles/WeatherWitch1R.webp"
     },
     "abilities": [
@@ -12982,8 +13329,9 @@
     ]
   },
   {
-    "id": "dark-weaver",
+    "id": "weaver",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Weaver",
     "faction": "Village",
     "factionName": "Village",
@@ -13008,8 +13356,9 @@
     ]
   },
   {
-    "id": "standard-werecat",
+    "id": "werecat",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werecat",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -13034,8 +13383,9 @@
     ]
   },
   {
-    "id": "standard-weresheep",
+    "id": "weresheep",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Weresheep",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13060,8 +13410,9 @@
     ]
   },
   {
-    "id": "standard-werewolf-herbalist",
+    "id": "werewolf-herbalist",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werewolf Herbalist",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13075,7 +13426,7 @@
       "id": "WerewolfHerbalist_Resource",
       "name": "Herbs",
       "description": "Venture into the dark and collect 1 <b>herb</> each night.",
-      "color": "#2f4501",
+      "color": "#778e0a",
       "iconUrl": "/images/roles/oak-leaf.webp"
     },
     "abilities": [
@@ -13102,8 +13453,9 @@
     ]
   },
   {
-    "id": "standard-werewolf-scholar",
+    "id": "werewolf-scholar",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werewolf Scholar",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13128,8 +13480,9 @@
     ]
   },
   {
-    "id": "standard-werewolf-shaman",
+    "id": "werewolf-shaman",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werewolf Shaman",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13154,8 +13507,9 @@
     ]
   },
   {
-    "id": "standard-werewolf-tracker",
+    "id": "werewolf-tracker",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werewolf Tracker",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13180,8 +13534,9 @@
     ]
   },
   {
-    "id": "standard-werewolf-trickster",
+    "id": "werewolf-trickster",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Werewolf Trickster",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13216,8 +13571,9 @@
     ]
   },
   {
-    "id": "dark-widow",
+    "id": "widow",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Widow",
     "faction": "Neutral",
     "factionName": "Neutral",
@@ -13242,8 +13598,9 @@
     ]
   },
   {
-    "id": "grimm-wight",
+    "id": "wight",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Wight",
     "faction": "Grim_Fei",
     "factionName": "Fei",
@@ -13278,8 +13635,9 @@
     ]
   },
   {
-    "id": "dark-willow",
+    "id": "willow",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Willow",
     "faction": "LesserEvil",
     "factionName": "Lesser Evil",
@@ -13304,8 +13662,9 @@
     ]
   },
   {
-    "id": "grimm-witch-hunter",
+    "id": "witch-hunter",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Witch Hunter",
     "faction": "Grim_Folk",
     "factionName": "Folk",
@@ -13340,8 +13699,9 @@
     ]
   },
   {
-    "id": "standard-wolf-cub",
+    "id": "wolf-cub",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Wolf Cub",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13366,8 +13726,9 @@
     ]
   },
   {
-    "id": "standard-wolf-girl",
+    "id": "wolf-girl",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Wolf Girl",
     "faction": "Werewolf",
     "factionName": "Werewolf",
@@ -13382,8 +13743,8 @@
       {
         "id": "WolfGirl_Ability_1",
         "name": "Complexion",
-        "description": "You appear as <t>Town</> with the <b>capability</> of Investigation.",
-        "descriptionHtml": "You appear as Town with the capability of Investigation.",
+        "description": "You <img id=\"Appear\"/> <m>appear</> as <t>Town</> with the <b>capability</> of Investigation.",
+        "descriptionHtml": "You  appear as Town with the capability of Investigation.",
         "iconUrl": "/images/abilities/T_WolfGirl_1.webp",
         "abilityType": null,
         "costType": null,
@@ -13402,8 +13763,9 @@
     ]
   },
   {
-    "id": "olympia-woodpecker",
+    "id": "woodpecker",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Woodpecker",
     "faction": "Hero",
     "factionName": "Hero",
@@ -13416,7 +13778,7 @@
       "id": "Animal",
       "name": "Animal",
       "description": "A symbol of nature, the animals face more threats than just monsters",
-      "color": "#1d478d",
+      "color": "#5f90c4",
       "iconUrl": "/images/roles/Animal.webp"
     },
     "resource": null,
@@ -13434,8 +13796,9 @@
     ]
   },
   {
-    "id": "dark-wretch",
+    "id": "wretch",
     "set": "Dark",
+    "setOrder": 1,
     "name": "Wretch",
     "faction": "Village",
     "factionName": "Village",
@@ -13470,8 +13833,9 @@
     ]
   },
   {
-    "id": "grimm-your-friend,-death",
+    "id": "your-friend,-death",
     "set": "Grimm",
+    "setOrder": 3,
     "name": "Your friend, Death",
     "faction": "Grimm_Neutral",
     "factionName": "Neutral",
@@ -13516,8 +13880,9 @@
     ]
   },
   {
-    "id": "olympia-zeus",
+    "id": "zeus",
     "set": "Olympia",
+    "setOrder": 2,
     "name": "Zeus",
     "faction": "Corrupted",
     "factionName": "Corrupted",
@@ -13552,8 +13917,9 @@
     ]
   },
   {
-    "id": "standard-zombie",
+    "id": "zombie",
     "set": "Standard",
+    "setOrder": 0,
     "name": "Zombie",
     "faction": "Evil",
     "factionName": "Evil",

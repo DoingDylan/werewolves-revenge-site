@@ -1,0 +1,122 @@
+---
+// src/pages/features.astro
+import Layout from '../layouts/Layout.astro';
+import rolesData from '../data/roles.json';
+
+const factionCount = new Set(rolesData.map((r) => r.faction)).size;
+
+const bigFeatures = [
+  {
+    title: `${rolesData.length}+ Roles Across ${factionCount} Factions`,
+    text: "No two games play the same. Every role brings its own abilities, win condition, and way of deceiving — or saving — the village. Factions battle for fundamentally different goals, so the shape of every game shifts depending on who's in the lobby.",
+    cta: { label: 'Browse The Role Directory', href: '/roles' },
+    image: '/images/game.webp',
+  },
+  {
+    title: 'Proximity Voice Chat',
+    text: "Plot in private, but beware of enemies listening in from the shadows. Where you stand and who's nearby matters — every conversation is a risk, and every overheard whisper is a clue.",
+    cta: null,
+    image: '/images/phases/discuss-deduce.webp',
+  },
+  {
+    title: 'The Personal Notebook',
+    text: 'Track claims, suspicions, and votes as the game unfolds — or use it to forge the perfect alibi and deceive the Town. Memory alone won\'t cut it once accusations start flying.',
+    cta: null,
+    image: '/images/phases/the-vote.webp',
+  },
+];
+
+const grid = [
+  { title: 'Deep Customization', text: 'Hundreds of cosmetic items to mix and match, plus player titles you can combine to show off your accolades.' },
+  { title: 'Multiple Maps', text: 'Explore distinct maps with unique layouts, in both first and third-person.' },
+  { title: 'Community-Hosted Games', text: 'Every lobby is run by a real person, not a faceless matchmaker — making each game feel hand-crafted.', cta: { label: 'Join The Community', href: '/community' } },
+  { title: 'A Simple Keyword System', text: 'Over 30 recurring keywords keep complex interactions easy to learn at a glance.', cta: { label: 'Browse Keywords', href: '/keywords' } },
+  { title: '88 Achievements', text: 'Plenty of milestones to chase, from your first execution to surviving an entire game undetected.' },
+  { title: 'Free To Play', text: 'No purchase required, ever. Just you, your friends, and the truth — somewhere in the dark.' },
+];
+---
+
+<Layout title="Features | Werewolves Revenge" description="300+ roles, proximity voice chat, a personal notebook, deep customization, and community-hosted games — everything Werewolves Revenge has to offer.">
+  <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-[#97774A]/30 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(151,119,74,0.08),_transparent_60%)] z-0"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="ornate-divider mb-6 justify-center">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        Features
+      </h1>
+      <p class="text-zinc-400 text-lg max-w-xl mx-auto">Everything that makes a night in the village worth fearing.</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="bg-zinc-950 min-h-screen">
+
+    <!-- BIG FEATURES, alternating layout -->
+    <div class="max-w-6xl mx-auto px-6 py-20 space-y-24">
+      {bigFeatures.map((feature, i) => (
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+          <div class={i % 2 === 1 ? 'md:order-2' : ''}>
+            <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-6" style="font-family: 'Beaufort', serif;">{feature.title}</h2>
+            <p class="text-lg text-zinc-400 leading-relaxed mb-6">{feature.text}</p>
+            {feature.cta && (
+              <a href={feature.cta.href} class="inline-flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-sm hover:text-red-400 transition-colors">
+                {feature.cta.label}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            )}
+          </div>
+          <div class={`relative ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+            <div class="absolute -inset-3 bg-gradient-to-br from-[#97774A]/10 via-transparent to-red-700/10 blur-2xl rounded-full"></div>
+            <div class="relative aspect-video rounded-sm overflow-hidden border border-[#97774A]/30 shadow-2xl">
+              <img src={feature.image} alt={feature.title} class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- SECONDARY FEATURE GRID -->
+    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">And There's More</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {grid.map((item) => (
+            <div class="bg-zinc-900/50 border border-[#97774A]/30 rounded-sm p-7">
+              <h3 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">{item.title}</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-4">{item.text}</p>
+              {item.cta && (
+                <a href={item.cta.href} class="inline-flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-xs hover:text-red-400 transition-colors">
+                  {item.cta.label}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <div class="relative overflow-hidden border border-[#97774A]/30">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-950 via-zinc-950 to-zinc-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.15),_transparent_60%)]"></div>
+        <div class="relative z-10 px-8 md:px-16 py-16 text-center">
+          <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4" style="font-family: 'Beaufort', serif;">See It For Yourself</h2>
+          <p class="text-zinc-400 text-lg max-w-xl mx-auto mb-8">Free to play. No purchase required.</p>
+          <a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white uppercase tracking-[0.2em] transition-all duration-300 bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] hover:-translate-y-1 overflow-hidden">
+            <span class="relative z-10 text-xl">Play For Free</span>
+            <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>

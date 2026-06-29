@@ -2,81 +2,120 @@
 // src/pages/roles/index.astro
 import Layout from '../../layouts/Layout.astro';
 import rolesData from '../../data/roles.json';
-import { getFactionTheme } from '../../data/factions';
+import factionsData from '../../data/factions.json';
+import classesData from '../../data/classes.json';
 
-const uniqueSets = [...new Set(rolesData.map(role => role.set))].filter(set => set !== "All");
-const uniqueFactions = [...new Set(rolesData.map(role => role.faction))].sort();
-const uniqueClasses = [...new Set(rolesData.map(role => role.class))].filter(Boolean).sort();
+const factionsById = Object.fromEntries(factionsData.map((f) => [f.id, f]));
+const classesById = Object.fromEntries(classesData.map((c) => [c.id, c]));
 
-// "faction" is the internal id used for filtering/coloring; "factionName" is
-// the display name shown to users. Build a lookup so the filter UI can show
-// the display name while still filtering/storing by the internal id.
-const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.faction, role.factionName]));
+// "setOrder" comes from export_roles.py's hand-ordered `allowed_sets` list,
+// denormalized onto every role since there's no separate sets.json. Faction
+// order/color now live in factions.json (the authoritative source), so we
+// read those directly via factionsById rather than keeping a redundant copy
+// on each role.
+const setOrders = Object.fromEntries(rolesData.map((role) => [role.set, role.setOrder ?? 0]));
+const uniqueSets = [...new Set(rolesData.map(role => role.set))]
+  .filter(set => set !== "All")
+  .sort((a, b) => (setOrders[a] ?? 0) - (setOrders[b] ?? 0) || a.localeCompare(b));
+
+// Classes are the same four across every set, so the class filter buttons
+// never need to change -- only their active/inactive state does.
+const CLASS_ORDER = ['Elimination', 'Protection', 'Investigation', 'Manipulation'];
+const uniqueClasses = CLASS_ORDER.filter((cls) => rolesData.some((role) => role.class === cls));
+
+// Factions differ per set (e.g. Standard has Town/Werewolf, Dark has
+// Village/Vampire), so build a per-set faction list the client script can
+// swap in whenever the Set dropdown changes.
+const factionsBySet = Object.fromEntries(
+  uniqueSets.map((set) => {
+    const rolesInSet = rolesData.filter((role) => role.set === set);
+    const factionsInSet = [...new Set(rolesInSet.map((role) => role.faction))];
+    const factionDisplayNames = Object.fromEntries(rolesInSet.map((role) => [role.faction, role.factionName]));
+    return [
+      set,
+      factionsInSet
+        .map((faction) => ({ id: faction, name: factionDisplayNames[faction] ?? faction, hex: factionsById[faction]?.color ?? '#71717a', iconUrl: factionsById[faction]?.iconUrl ?? null }))
+        .sort((a, b) => (factionsById[a.id]?.order ?? 0) - (factionsById[b.id]?.order ?? 0) || a.name.localeCompare(b.name)),
+    ];
+  })
+);
+
+const DEFAULT_SET = uniqueSets.includes('Standard') ? 'Standard' : uniqueSets[0];
 ---
 
-<Layout title="Role Directory | Werewolves Revenge">
+<Layout title="Role Directory | Werewolves Revenge" description="Browse every role in Werewolves Revenge — search and filter by set, faction, and class.">
 
-  <header class="bg-zinc-950 pt-28 pb-8 px-6 border-b border-zinc-800 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/40 via-zinc-950 to-zinc-950 z-0"></div>
-
-    <div class="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search roles..."
-        class="w-full md:w-96 bg-zinc-900 border border-zinc-700 text-white px-6 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors placeholder-zinc-600"
-      />
-
-      <div class="flex flex-wrap items-center gap-3">
-        <select
-          id="setFilter"
-          class="bg-zinc-900 border border-zinc-700 text-white px-4 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors cursor-pointer appearance-none uppercase font-bold text-sm tracking-wider"
-        >
-          {uniqueSets.map(set => (
-            <option value={set} selected={set === "Standard"}>{set}</option>
-          ))}
-        </select>
-
-        <select
-          id="factionFilter"
-          class="bg-zinc-900 border border-zinc-700 text-white px-4 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors cursor-pointer appearance-none uppercase font-bold text-sm tracking-wider"
-        >
-          <option value="" selected>All Factions</option>
-          {uniqueFactions.map(faction => (
-            <option value={faction}>{factionDisplayNames[faction] ?? faction}</option>
-          ))}
-        </select>
-
-        <select
-          id="classFilter"
-          class="bg-zinc-900 border border-zinc-700 text-white px-4 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors cursor-pointer appearance-none uppercase font-bold text-sm tracking-wider"
-        >
-          <option value="" selected>All Classes</option>
-          {uniqueClasses.map(roleClass => (
-            <option value={roleClass}>{roleClass}</option>
-          ))}
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8 relative z-20">
+  <main id="main-content" class="bg-zinc-950 min-h-screen pt-28 pb-16 px-4 md:px-8 relative z-20">
     <div class="max-w-[1400px] mx-auto">
+
+      <div class="bg-zinc-900/50 border border-[#97774A]/30 rounded-sm p-6 md:p-8 backdrop-blur-sm flex flex-col gap-6 mb-12">
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          <h1 class="text-6xl -my-5 leading-none font-black text-white uppercase tracking-tighter drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+            Roles
+          </h1>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div class="flex items-center gap-3">
+              <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest whitespace-nowrap">Set</p>
+              <select
+                id="setFilter"
+                class="bg-zinc-950 border border-[#97774A]/40 text-white px-4 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors cursor-pointer appearance-none uppercase font-bold text-sm tracking-wider"
+              >
+                {uniqueSets.map(set => (
+                  <option value={set} selected={set === DEFAULT_SET}>{set}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="relative">
+              <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search roles..."
+                class="w-full sm:w-72 bg-zinc-950 border border-[#97774A]/40 text-white pl-11 pr-6 py-3 rounded-md focus:outline-none focus:border-red-500 transition-colors placeholder-zinc-600"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 pt-6 border-t border-[#97774A]/20">
+          <div class="flex-1">
+            <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mb-3">Faction</p>
+            <div id="factionFilterGroup" class="flex flex-nowrap gap-2 overflow-x-auto" data-active=""></div>
+          </div>
+
+          <div class="shrink-0">
+            <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mb-3 text-right">Class</p>
+            <div id="classFilterGroup" class="flex flex-nowrap gap-2 overflow-x-auto" data-active="">
+              {uniqueClasses.map((cls) => (
+                <button type="button" class="filter-btn" data-value={cls} style={`--btn-color: ${classesById[cls]?.color ?? '#71717a'}; --btn-icon: url('${classesById[cls]?.iconUrl ?? ''}')`}>
+                  {classesById[cls]?.iconUrl && <span class="filter-btn-icon"></span>}
+                  {cls}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <p id="noResults" class="hidden text-center text-zinc-500 py-16 text-lg">
         No roles match your search.
       </p>
 
-      <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4" id="rolesGrid">
+      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 lg:grid-cols-11 gap-3 md:gap-4" id="rolesGrid">
 
         {rolesData.map((role) => {
-          const theme = getFactionTheme(role.faction);
+          const factionHex = factionsById[role.faction]?.color ?? '#71717a';
 
           return (
             <a
-              href={`/roles/${role.id}`}
+              href={`/roles/${role.set.toLowerCase()}/${role.id}`}
               class="role-card faction-card group relative block aspect-square bg-zinc-900 rounded border border-zinc-800 overflow-hidden transition-transform duration-300 hover:scale-150 hover:z-30"
-              style={`--faction: ${theme.hex};`}
+              style={`--faction: ${factionHex};`}
               data-set={role.set}
               data-name={role.name.toLowerCase()}
               data-faction={role.faction}
@@ -98,38 +137,115 @@ const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.facti
   </main>
 </Layout>
 
-<script>
+<style is:global>
+  .filter-btn {
+    --btn-color: #71717a;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    gap: 0.4rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(39, 39, 42, 0.6);
+    color: #d4d4d8;
+    font-weight: 700;
+    font-size: calc(0.8rem + 1pt);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .filter-btn-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    margin-right: 0.45em;
+    background-color: var(--btn-color);
+    -webkit-mask: var(--btn-icon) no-repeat center / contain;
+    mask: var(--btn-icon) no-repeat center / contain;
+    transition: background-color 0.15s ease;
+    /* Visually double the icon without affecting layout (button stays the
+       same size) -- transform doesn't trigger reflow, it's paint-only. */
+    transform: scale(2);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--btn-color);
+    color: #ffffff;
+  }
+
+  .filter-btn:hover .filter-btn-icon {
+    background-color: #ffffff;
+  }
+
+  .filter-btn.active {
+    background: color-mix(in srgb, var(--btn-color) 25%, transparent);
+    border-color: var(--btn-color);
+    color: #ffffff;
+    box-shadow: 0 0 12px -2px var(--btn-color);
+  }
+
+  .filter-btn.active .filter-btn-icon {
+    background-color: #ffffff;
+  }
+</style>
+
+<script define:vars={{ factionsBySet, DEFAULT_SET }}>
   document.addEventListener('DOMContentLoaded', () => {
-    const roleCards = document.querySelectorAll<HTMLAnchorElement>('.role-card');
+    const roleCards = document.querySelectorAll('.role-card');
+    const setFilter = document.getElementById('setFilter');
+    const factionGroup = document.getElementById('factionFilterGroup');
+    const classGroup = document.getElementById('classFilterGroup');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+
+    if (!setFilter || !factionGroup || !classGroup || !searchInput || !noResults) return;
+
+    function renderFactionButtons(set) {
+      const factions = factionsBySet[set] || [];
+      factionGroup.innerHTML = '';
+
+      factions.forEach((faction) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'filter-btn';
+        btn.dataset.value = faction.id;
+        btn.style.setProperty('--btn-color', faction.hex);
+
+        if (faction.iconUrl) {
+          btn.style.setProperty('--btn-icon', `url('${faction.iconUrl}')`);
+          const icon = document.createElement('span');
+          icon.className = 'filter-btn-icon';
+          btn.appendChild(icon);
+        }
+
+        btn.appendChild(document.createTextNode(faction.name));
+        factionGroup.appendChild(btn);
+      });
+    }
+
+    // No active buttons in a group means "no filter" -- i.e. show every
+    // value -- rather than there being a dedicated "All" button to select.
+    function getActiveValues(group) {
+      return Array.from(group.querySelectorAll('.filter-btn.active')).map((b) => b.dataset.value);
+    }
 
     function filterRoles() {
-      const setFilter = document.getElementById('setFilter');
-      const factionFilter = document.getElementById('factionFilter');
-      const classFilter = document.getElementById('classFilter');
-      const searchInput = document.getElementById('searchInput');
-      const noResults = document.getElementById('noResults');
-
-      if (
-        !(setFilter instanceof HTMLSelectElement) ||
-        !(factionFilter instanceof HTMLSelectElement) ||
-        !(classFilter instanceof HTMLSelectElement) ||
-        !(searchInput instanceof HTMLInputElement) ||
-        !noResults
-      ) {
-        return;
-      }
-
       const selectedSet = setFilter.value;
-      const selectedFaction = factionFilter.value;
-      const selectedClass = classFilter.value;
+      const selectedFactions = getActiveValues(factionGroup);
+      const selectedClasses = getActiveValues(classGroup);
       const searchTerm = searchInput.value.trim().toLowerCase();
       let visibleCount = 0;
 
-      roleCards.forEach(card => {
+      roleCards.forEach((card) => {
         const roleName = card.dataset.name ?? '';
         const matchesSet = card.dataset.set === selectedSet;
-        const matchesFaction = !selectedFaction || card.dataset.faction === selectedFaction;
-        const matchesClass = !selectedClass || card.dataset.class === selectedClass;
+        const matchesFaction = selectedFactions.length === 0 || selectedFactions.includes(card.dataset.faction);
+        const matchesClass = selectedClasses.length === 0 || selectedClasses.includes(card.dataset.class);
         const matchesSearch = roleName.includes(searchTerm);
         const isVisible = matchesSet && matchesFaction && matchesClass && matchesSearch;
 
@@ -140,12 +256,38 @@ const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.facti
       noResults.classList.toggle('hidden', visibleCount > 0);
     }
 
-    // Initialize filter on load to ensure "Standard" is shown immediately
-    filterRoles();
+    // Only one button per group can be active at a time -- clicking the
+    // already-active one deselects it (back to "no filter" / show all).
+    function selectSingleButton(group, btn) {
+      const wasActive = btn.classList.contains('active');
+      group.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      if (!wasActive) btn.classList.add('active');
+    }
 
-    document.getElementById('setFilter')?.addEventListener('change', filterRoles);
-    document.getElementById('factionFilter')?.addEventListener('change', filterRoles);
-    document.getElementById('classFilter')?.addEventListener('change', filterRoles);
-    document.getElementById('searchInput')?.addEventListener('input', filterRoles);
+    factionGroup.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      selectSingleButton(factionGroup, btn);
+      filterRoles();
+    });
+
+    classGroup.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      selectSingleButton(classGroup, btn);
+      filterRoles();
+    });
+
+    setFilter.addEventListener('change', () => {
+      renderFactionButtons(setFilter.value);
+      filterRoles();
+    });
+
+    searchInput.addEventListener('input', filterRoles);
+
+    // Initial render so "Standard" (or whichever default set) shows
+    // immediately with the right faction buttons.
+    renderFactionButtons(DEFAULT_SET);
+    filterRoles();
   });
 </script>

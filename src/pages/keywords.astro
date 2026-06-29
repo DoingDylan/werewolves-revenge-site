@@ -1,0 +1,88 @@
+---
+// src/pages/keywords.astro
+import Layout from '../layouts/Layout.astro';
+import KEYWORDS from '../data/keywords.json';
+
+const CAPABILITY_ORDER = ['Elimination', 'Protection', 'Manipulation', 'Investigation', 'General'];
+
+const groupedKeywords = CAPABILITY_ORDER.map((capability) => ({
+  capability,
+  keywords: KEYWORDS.filter((kw) => kw.capability === capability).sort((a, b) => a.name.localeCompare(b.name)),
+})).filter((group) => group.keywords.length > 0);
+---
+
+<Layout title="Keywords | Werewolves Revenge" description="A glossary of every keyword used in Werewolves Revenge role and ability descriptions, explained at a glance.">
+  <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-[#97774A]/30 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(151,119,74,0.08),_transparent_60%)] z-0"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="ornate-divider mb-6 justify-center">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        Keywords
+      </h1>
+      <input
+        type="text"
+        id="keywordSearch"
+        placeholder="Search keywords..."
+        class="w-full max-w-md mx-auto block bg-zinc-900 border border-[#97774A]/40 text-white text-lg px-6 py-4 rounded-md focus:outline-none focus:border-red-500 transition-colors placeholder-zinc-600"
+      />
+    </div>
+  </header>
+
+  <main id="main-content" class="bg-zinc-950 min-h-screen py-16 px-4 md:px-8">
+    <div class="max-w-5xl mx-auto space-y-14">
+      <p id="noKeywordResults" class="hidden text-center text-zinc-500 py-16 text-lg">No keywords match your search.</p>
+
+      {groupedKeywords.map((group) => (
+        <section class="keyword-group" data-capability={group.capability}>
+          <h2 class="text-sm font-bold text-[#97774A] uppercase tracking-widest mb-5 border-b border-[#97774A]/30 pb-3">{group.capability}</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {group.keywords.map((kw) => (
+              <div class="keyword-card flex gap-4 bg-zinc-900/50 border border-[#97774A]/30 rounded-sm p-5" data-name={kw.name.toLowerCase()} style={`--kw: ${kw.color}; --kw-icon: url('/images/keywords/${kw.icon}.webp')`}>
+                <span class="kw-icon-lg shrink-0"></span>
+                <div>
+                  <h3 class="text-lg font-bold text-white mb-1" style="font-family: 'Beaufort', serif;">{kw.name}</h3>
+                  <p class="text-zinc-400 text-sm leading-relaxed">{kw.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('keywordSearch');
+    const noResults = document.getElementById('noKeywordResults');
+    const groups = document.querySelectorAll<HTMLElement>('.keyword-group');
+    const cards = document.querySelectorAll<HTMLElement>('.keyword-card');
+
+    if (!(searchInput instanceof HTMLInputElement) || !noResults) return;
+
+    function filterKeywords() {
+      const term = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const isVisible = !term || (card.dataset.name ?? '').includes(term);
+        card.style.display = isVisible ? 'flex' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      groups.forEach((group) => {
+        const hasVisibleCard = Array.from(group.querySelectorAll<HTMLElement>('.keyword-card')).some((card) => card.style.display !== 'none');
+        group.style.display = hasVisibleCard ? '' : 'none';
+      });
+
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    searchInput.addEventListener('input', filterKeywords);
+  });
+</script>

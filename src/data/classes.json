@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Elimination",
+    "name": "Elimination",
+    "description": "Directly remove players from the game, either through night kills or by influencing daytime votes.",
+    "color": "#883532",
+    "iconUrl": "/images/classes/Elimination.webp",
+    "order": 0
+  },
+  {
+    "id": "Protection",
+    "name": "Protection",
+    "description": "Prevent players from being eliminated, by blocking night kills or influencing daytime votes to save targeted individuals.",
+    "color": "#5f90c4",
+    "iconUrl": "/images/classes/Protection.webp",
+    "order": 1
+  },
+  {
+    "id": "Investigation",
+    "name": "Investigation",
+    "description": "Gather information about other players' identities or roles to aid your faction in making informed decisions.",
+    "color": "#b38fc4",
+    "iconUrl": "/images/classes/Detection.webp",
+    "order": 2
+  },
+  {
+    "id": "Manipulation",
+    "name": "Manipulation",
+    "description": "Influence the game's mechanics or other players' actions, often by changing votes, altering information, or controlling events.",
+    "color": "#839c38",
+    "iconUrl": "/images/classes/Manipulation.webp",
+    "order": 3
+  }
+]

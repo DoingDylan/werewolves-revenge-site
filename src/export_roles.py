@@ -49,9 +49,13 @@ KEYWORD_DECORATORS = {
 
 # Diagnostic logging that survives a hard editor crash.
 # In-editor print() output is lost the moment the editor crashes, so every
-# print() in this script is mirrored to a plain text file on disk, flushed
-# and fsync'd immediately after each line. After a crash, check this file
-# for the last line written -- that's the line that caused it.
+# print() in this script is mirrored to a plain text file on disk. flush()
+# alone is enough to survive an application-level crash (Python/editor) --
+# it pushes the write to the OS, it just wouldn't survive a full power-loss
+# event, which isn't the scenario this guards against. os.fsync() forces a
+# hardware-level disk flush on every single call, which is dramatically
+# slower (especially inside a OneDrive-synced folder) and was overkill for
+# what this is actually protecting against.
 _log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "export_debug.log")
 _log_file = open(_log_path, "w", encoding="utf-8")
 
@@ -60,7 +64,6 @@ def print(*args, **kwargs):
     message = " ".join(str(a) for a in args)
     _log_file.write(message + "\n")
     _log_file.flush()
-    os.fsync(_log_file.fileno())
 
 print(f"--- Starting export, logging to {_log_path} ---")
 
@@ -72,6 +75,8 @@ def export_roles_from_sets():
     img_export_dir = os.path.join(root_dir, "public", "images", "roles").replace("\\", "/")
     ability_img_export_dir = os.path.join(root_dir, "public", "images", "abilities").replace("\\", "/")
     keywords_dir = os.path.join(root_dir, "public", "images", "keywords").replace("\\", "/")
+    faction_img_export_dir = os.path.join(root_dir, "public", "images", "factions").replace("\\", "/")
+    class_img_export_dir = os.path.join(root_dir, "public", "images", "classes").replace("\\", "/")
 
     if not os.path.exists(img_export_dir):
         os.makedirs(img_export_dir)
@@ -79,6 +84,10 @@ def export_roles_from_sets():
         os.makedirs(ability_img_export_dir)
     if not os.path.exists(keywords_dir):
         os.makedirs(keywords_dir)
+    if not os.path.exists(faction_img_export_dir):
+        os.makedirs(faction_img_export_dir)
+    if not os.path.exists(class_img_export_dir):
+        os.makedirs(class_img_export_dir)
 
     asset_registry = unreal.AssetRegistryHelpers.get_asset_registry()
 
@@ -94,8 +103,27 @@ def export_roles_from_sets():
 
     json_data = []
     processed_roles = set()
+    factions_registry = {}
+    classes_registry = {}
+    groups_resources_registry = {}
+
+    # Many roles share the same Group/Resource asset (e.g. every Werewolf
+    # shares the "Werewolves" group) -- cache by asset name so it's only
+    # actually read/exported once instead of once per role that references it.
+    def get_group_or_resource_data(obj):
+        if not obj:
+            return None
+        key = obj.get_name()
+        if key not in groups_resources_registry:
+            groups_resources_registry[key] = exportGroupOrResource(obj, img_export_dir)
+        return groups_resources_registry[key]
 
     print(f"Found {len(set_assets)} Sets. Starting export...")
+
+    # Only these Sets get exported to the website (any other Set found in
+    # Unreal is skipped entirely), and they'll appear in exactly this order
+    # everywhere the website lists Sets (e.g. the roles page's Set dropdown)
+    # -- reorder this list to change that.
     allowed_sets = ["Standard", "Dark", "Olympia", "Grimm"]
 
     for set_data in set_assets:
@@ -105,6 +133,10 @@ def export_roles_from_sets():
         if current_set_name not in allowed_sets:
             continue
 
+        # allowed_sets is already a hand-ordered list -- reuse its index as
+        # the set's sort order instead of adding any new property in Unreal.
+        set_order = allowed_sets.index(current_set_name)
+
         roles_in_set = set_asset.get_editor_property(roles_array_variable)
         if not roles_in_set:
             continue
@@ -113,13 +145,17 @@ def export_roles_from_sets():
             if not role_asset:
                 continue
 
-            base_role_id = str(role_asset.get_editor_property("Name")).lower().replace(" ", "-")
-            safe_set_name = current_set_name.lower().replace(" ", "-")
-            unique_role_id = f"{safe_set_name}-{base_role_id}"
+            # The role's id only needs to be unique *within* its own set --
+            # the website routes roles as /roles/{set}/{id}, so the set
+            # segment in the URL already disambiguates same-named roles
+            # across different sets (e.g. a "Bodyguard" in both Standard
+            # and Dark).
+            role_id = str(role_asset.get_editor_property("Name")).lower().replace(" ", "-")
+            dedupe_key = (current_set_name, role_id)
 
-            if unique_role_id in processed_roles:
+            if dedupe_key in processed_roles:
                 continue
-            processed_roles.add(unique_role_id)
+            processed_roles.add(dedupe_key)
 
             image_tex = role_asset.get_editor_property("Image")
             image_filename = exportImage(image_tex, img_export_dir, "default_image.png")
@@ -127,42 +163,43 @@ def export_roles_from_sets():
             portrait_tex = role_asset.get_editor_property("Portrait")
             portrait_filename = exportImage(portrait_tex, img_export_dir, "default_portrait.png")
 
-            print(f"  -> {unique_role_id}: reading Faction/Class")
+            print(f"-> {role_id}")
             faction_obj = role_asset.get_editor_property("Faction")
             class_obj = role_asset.get_editor_property("Class")
 
-            print(f"  -> {unique_role_id}: reading Group")
+            if faction_obj:
+                faction_key = faction_obj.get_name()
+                if faction_key not in factions_registry:
+                    print(f"  -> exporting new Faction asset '{faction_key}'")
+                    factions_registry[faction_key] = exportFaction(faction_obj, faction_img_export_dir)
+
+            if class_obj:
+                class_key = class_obj.get_name()
+                if class_key not in classes_registry:
+                    print(f"  -> exporting new Class asset '{class_key}'")
+                    classes_registry[class_key] = exportClass(class_obj, class_img_export_dir)
+
             group_obj = resolveSoftReference(role_asset.get_editor_property("Group"))
-
-            print(f"  -> {unique_role_id}: reading Resource")
             resource_obj = resolveSoftReference(role_asset.get_editor_property("Resource"))
-
-            print(f"  -> {unique_role_id}: reading Abilities")
             abilities_in_role = role_asset.get_editor_property("Abilities")
-            print(f"  -> {unique_role_id}: got {len(abilities_in_role) if abilities_in_role else 0} abilities")
 
-            print(f"  -> {unique_role_id}: exporting Group")
-            group_data = exportGroupOrResource(group_obj, img_export_dir)
+            group_data = get_group_or_resource_data(group_obj)
+            resource_data = get_group_or_resource_data(resource_obj)
 
-            print(f"  -> {unique_role_id}: exporting Resource")
-            resource_data = exportGroupOrResource(resource_obj, img_export_dir)
-
-            print(f"  -> {unique_role_id}: exporting Abilities")
             abilities_data = []
             for i, ability_ref in enumerate(abilities_in_role or []):
-                print(f"    -> ability[{i}]: raw value = {ability_ref}")
                 ability_asset = resolveSoftReference(ability_ref)
                 if not ability_asset:
-                    print(f"    -> ability[{i}]: resolved to None, skipping")
+                    print(f"    !! ability[{i}] on {role_id} resolved to None, skipping")
                     continue
-                print(f"    -> ability[{i}]: resolved to {ability_asset.get_name()}")
                 abilities_data.append(exportAbility(ability_asset, ability_img_export_dir, keywords_dir))
 
             description = str(role_asset.get_editor_property("Description"))
 
             role_info = {
-                "id": unique_role_id,
+                "id": role_id,
                 "set": current_set_name,
+                "setOrder": set_order,
                 "name": str(role_asset.get_editor_property("Name")),
                 "faction": faction_obj.get_name() if faction_obj else "Unknown",
                 "factionName": str(faction_obj.get_editor_property("Name")) if faction_obj else "Unknown",
@@ -186,6 +223,75 @@ def export_roles_from_sets():
         json.dump(json_data, f, indent=2)
 
     print(f"SUCCESS: Exported {len(json_data)} roles and assets!")
+
+    factions_output_path = os.path.join(script_dir, "data", "factions.json").replace("\\", "/")
+    factions_data = sorted(factions_registry.values(), key=lambda f: (f["order"], f["name"]))
+    with open(factions_output_path, 'w', encoding='utf-8') as f:
+        json.dump(factions_data, f, indent=2)
+
+    print(f"SUCCESS: Exported {len(factions_data)} factions!")
+
+    classes_output_path = os.path.join(script_dir, "data", "classes.json").replace("\\", "/")
+    classes_data = sorted(classes_registry.values(), key=lambda c: (c["order"], c["name"]))
+    with open(classes_output_path, 'w', encoding='utf-8') as f:
+        json.dump(classes_data, f, indent=2)
+
+    print(f"SUCCESS: Exported {len(classes_data)} classes!")
+
+def exportClass(class_obj, class_img_export_dir):
+    """Exports a single Class data asset to a plain dict, including its
+    icon/color and an "order" read directly from its own "Class" enum
+    dropdown's .value (a real Python enum member, e.g. NUM_Class.ELIMINATION:
+    0 -- confirmed via diagnostic logging, see chat) -- same shape/approach
+    as exportFaction(), except classes are already consistent across every
+    set (no per-set renaming), so there's no equivalent to Faction's "Win
+    Condition" field."""
+    icon_tex = class_obj.get_editor_property("Icon")
+    icon_filename = exportImage(icon_tex, class_img_export_dir, "default_image.png")
+
+    order = 99
+    try:
+        order = class_obj.get_editor_property("Class").value
+    except Exception as e:
+        print(f"    !! Could not read Class enum on '{class_obj.get_name()}', sorting last: {e}")
+
+    return {
+        "id": class_obj.get_name(),
+        "name": str(class_obj.get_editor_property("Name")),
+        "description": str(class_obj.get_editor_property("Description")),
+        "color": linearColorToHex(class_obj.get_editor_property("Colour")),
+        "iconUrl": f"/images/classes/{icon_filename.replace('.png', '.webp')}",
+        "order": order,
+    }
+
+def exportFaction(faction_obj, faction_img_export_dir):
+    """Exports a single Faction data asset to a plain dict, including its
+    icon/color/win-condition and an "order" read directly from its own
+    "Faction" enum dropdown's .value -- get_editor_property("Faction")
+    returns a real Python enum member (e.g. NUM_Faction.LESSER_EVIL: 4, not
+    a string -- confirmed via diagnostic logging, see chat), and .value is
+    already exactly the ordinal Town=0/Werewolf=1/Neutral=2/Evil=3/
+    LesserEvil=4 the user confirmed is shared across every set (e.g. Dark's
+    "Village" asset has this same enum set to TOWN, only its display Name
+    differs)."""
+    icon_tex = faction_obj.get_editor_property("Icon")
+    icon_filename = exportImage(icon_tex, faction_img_export_dir, "default_image.png")
+
+    order = 99
+    try:
+        order = faction_obj.get_editor_property("Faction").value
+    except Exception as e:
+        print(f"    !! Could not read Faction enum on '{faction_obj.get_name()}', sorting last: {e}")
+
+    return {
+        "id": faction_obj.get_name(),
+        "name": str(faction_obj.get_editor_property("Name")),
+        "description": str(faction_obj.get_editor_property("Description")),
+        "winCondition": str(faction_obj.get_editor_property("Win Condition")),
+        "color": linearColorToHex(faction_obj.get_editor_property("Colour")),
+        "iconUrl": f"/images/factions/{icon_filename.replace('.png', '.webp')}",
+        "order": order,
+    }
 
 def exportImage(texture, img_export_dir, default_filename):
     """Exports a texture asset (Image or Portrait) to img_export_dir as a PNG.
@@ -244,14 +350,24 @@ def resolveSoftReference(obj):
         return None
 
 def linearColorToHex(colour):
-    """Converts an unreal.LinearColor (0-1 float channels) to a "#rrggbb" hex string."""
+    """Converts an unreal.LinearColor (0-1 float channels, linear color space)
+    to a "#rrggbb" hex string (sRGB, gamma-encoded -- what every browser/CSS
+    color actually expects). Skipping the linear->sRGB conversion and just
+    scaling by 255 produces colors that look noticeably darker/duller than
+    what the color picker swatch shows in the Unreal editor.
+    """
     if colour is None:
         return None
 
-    def channel(value):
-        return max(0, min(255, round(value * 255)))
+    def linear_to_srgb(value):
+        value = max(0.0, min(1.0, value))
+        if value <= 0.0031308:
+            srgb = value * 12.92
+        else:
+            srgb = 1.055 * (value ** (1.0 / 2.4)) - 0.055
+        return max(0, min(255, round(srgb * 255)))
 
-    return f"#{channel(colour.r):02x}{channel(colour.g):02x}{channel(colour.b):02x}"
+    return f"#{linear_to_srgb(colour.r):02x}{linear_to_srgb(colour.g):02x}{linear_to_srgb(colour.b):02x}"
 
 def enumToStr(value):
     """Converts an unreal enum value to a plain string, e.g. "EAbilityType::Active" -> "Active"."""
@@ -383,4 +499,105 @@ def exportAbility(ability_asset, ability_img_export_dir, keywords_dir):
         "costValue": cost_value,
     }
 
+KEYWORDS_TABLE_PATH = "/Game/Roles/Keywords/Keywords"
+
+# Maps the "Capability" category on each Keywords DataTable row to the
+# color used to render that keyword's icon/badge on the website. Keep in
+# sync with src/data/classes.ts's CLASS_THEMES, which uses the same
+# category names/colors for role classes.
+CAPABILITY_COLORS = {
+    "General": "#ffffff",
+    "Elimination": "#883532",
+    "Protection": "#5F90C4",
+    "Manipulation": "#839C38",
+    "Investigation": "#B38FC4",
+}
+
+def export_keywords():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
+
+    output_path = os.path.join(script_dir, "data", "keywords.json").replace("\\", "/")
+    keywords_img_dir = os.path.join(root_dir, "public", "images", "keywords").replace("\\", "/")
+
+    if not os.path.exists(keywords_img_dir):
+        os.makedirs(keywords_img_dir)
+
+    keywords_table = unreal.load_asset(KEYWORDS_TABLE_PATH)
+    if not keywords_table:
+        print(f"!! Could not load Keywords DataTable at {KEYWORDS_TABLE_PATH}, skipping keyword export")
+        return
+
+    # This engine build has no DataTable->JSON helper, and rows aren't plain
+    # UObjects (no get_editor_property on the row itself). Instead, read each
+    # column as a parallel array of strings via get_data_table_column_as_string
+    # -- this also sidesteps the kind of enum-reflection crash seen with
+    # Ability Type/Cost Type in exportAbility() above, since it never touches
+    # the row struct's properties directly.
+    row_names = unreal.DataTableFunctionLibrary.get_data_table_row_names(keywords_table)
+    print(f"Found {len(row_names)} keyword rows. Starting export...")
+
+    names_col = unreal.DataTableFunctionLibrary.get_data_table_column_as_string(keywords_table, "Name")
+    description_col = unreal.DataTableFunctionLibrary.get_data_table_column_as_string(keywords_table, "Description")
+    icon_col = unreal.DataTableFunctionLibrary.get_data_table_column_as_string(keywords_table, "Icon")
+    capability_col = unreal.DataTableFunctionLibrary.get_data_table_column_as_string(keywords_table, "Capability")
+
+    def parse_object_path(value):
+        """Object-reference columns come back as a stringified UE object
+        reference, e.g. "Texture2D'/Game/UI/Icons/Attack.Attack'" -- pull
+        just the asset path out of that."""
+        if not value:
+            return None
+        match = re.search(r"'([^']+)'", value)
+        return match.group(1) if match else value
+
+    def resolve_ftext_string(value):
+        """FText columns (Name, Description) come back from
+        get_data_table_column_as_string() as their raw localization source,
+        e.g. NSLOCTEXT("[namespace]", "key", "Actual Text"), not the
+        resolved display string -- pull out just the third (text) argument
+        and unescape it."""
+        if not value:
+            return value
+        match = re.match(r'^\s*NSLOCTEXT\(\s*"(?:[^"\\]|\\.)*"\s*,\s*"(?:[^"\\]|\\.)*"\s*,\s*"((?:[^"\\]|\\.)*)"\s*\)\s*$', value)
+        if not match:
+            return value
+        text = match.group(1)
+        return text.replace('\\"', '"').replace("\\'", "'").replace('\\n', '\n').replace('\\\\', '\\')
+
+    json_data = []
+    for i, row_name in enumerate(row_names):
+        name = resolve_ftext_string(names_col[i]) if i < len(names_col) and names_col[i] else str(row_name)
+        description = resolve_ftext_string(description_col[i]) if i < len(description_col) else ""
+        capability = enumToStr(capability_col[i] if i < len(capability_col) else None)
+        color = CAPABILITY_COLORS.get(capability, CAPABILITY_COLORS["General"])
+
+        icon_filename = "default_image.png"
+        icon_path = parse_object_path(icon_col[i] if i < len(icon_col) else None)
+        if icon_path:
+            icon_tex = unreal.load_asset(icon_path)
+            if icon_tex:
+                icon_filename = exportImage(icon_tex, keywords_img_dir, "default_image.png")
+            else:
+                print(f"    !! Keyword '{name}': could not load Icon at '{icon_path}'")
+
+        json_data.append({
+            "name": name,
+            "color": color,
+            "icon": icon_filename.replace(".png", ""),
+            "description": description,
+            "capability": capability or "General",
+        })
+
+    # Display order on the Keywords page groups by capability first (see
+    # CAPABILITY_ORDER in src/pages/keywords.astro), then alphabetically
+    # within each group.
+    json_data = sorted(json_data, key=lambda k: k["name"])
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=2)
+
+    print(f"SUCCESS: Exported {len(json_data)} keywords!")
+
 export_roles_from_sets()
+export_keywords()

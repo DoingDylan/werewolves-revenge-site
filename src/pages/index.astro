@@ -1,11 +1,593 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import rolesData from '../data/roles.json';
+import factionsData from '../data/factions.json';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const factionsById = Object.fromEntries(factionsData.map((f) => [f.id, f]));
+
+const heroBg = "/images/hero-bg.webp";
+
+const factionMeta = [
+  { key: 'Town',       blurb: 'Identify and eliminate the hidden Werewolves through discussion and voting.', winCondition: 'You win when there are no Werewolves, Vampires or Evils left alive.' },
+  { key: 'Werewolf',   blurb: 'Secretly eliminate villagers each night and try to blend in during the day.', winCondition: 'You win when Werewolves equal or outnumber other players, and there are no Evils left alive.' },
+  { key: 'Neutral',    blurb: 'See to your own unique objectives or win condition, independent of other factions.', winCondition: 'You win if you survive until the end of the game.' },
+  { key: 'Evil', blurb: 'Oppose the Town and Werewolves, creating a complex dynamic of competing factions.', winCondition: 'You win when there are 3 or less players alive, regardless of their factions.' },
+  { key: 'LesserEvil',    blurb: 'Align with both Werewolves and Evils against the Town.', winCondition: 'You win with either the Werewolves or an Evil.' },
+];
+
+const factionCounts = Object.fromEntries(
+  factionMeta.map(f => [f.key, rolesData.filter(r => r.faction === f.key).length])
+);
+
+const factionDisplayNames = Object.fromEntries(rolesData.map(role => [role.faction, role.factionName]));
+
+// Role preview marquee: split the Standard set's portraits across a handful
+// of rows, alternating scroll direction/speed per row (odd rows slow left,
+// even rows fast right). Each row's image list is duplicated so the CSS
+// animation can loop seamlessly from translateX(0) to translateX(-50%).
+const standardPortraits = rolesData.filter((r) => r.set === 'Standard' && r.portraitUrl).map((r) => r.portraitUrl);
+const MOSAIC_ROW_COUNT = 3;
+const mosaicRows = Array.from({ length: MOSAIC_ROW_COUNT }, (_, i) => {
+  const images = standardPortraits.filter((_, idx) => idx % MOSAIC_ROW_COUNT === i);
+  const rowNumber = i + 1;
+  return {
+    images: [...images, ...images],
+    direction: rowNumber % 2 === 1 ? 'left' : 'right',
+    duration: rowNumber % 2 === 1 ? 90 + i * 6 : 80 + i * 5,
+  };
+});
+
+const reviews = [
+  { quote: "It's tough to consider what may be the game of the decade, but this game truly deserves it. It sits among the great works of human creation with inventions such as the micro conductor, the sistine chapel, and the spork. The dead sea scrolls surely have a lost chapter entailing the holy creation of this game. Whispers have even come out about Gandhi endorsing this game before his death. Never in my short life have I seen such splendor. In the words of Oppenheimer, 'Now I am become werewolf, destroyer of worlds.'", author: 'Plague Ryder', rating: '★★★★★' },
+  { quote: "Werewolves Revenge quite literally made my life ten times better. Past the AMAZING game that I have never gotten bored of, Werewolves has such a wonderful inclusive community that genuinely brings light to my life. The dev and the rest of the community do such a brilliant job keeping games a safe space for everyone, and I have met so many kind people on here that I am happy to call friends on this game. \n\n 1,000,000,000,000,000,000,000,000% recommend!!!", author: 'LuckyMango', rating: '★★★★★' },
+  { quote: "The game and the community built within it were both made with loving hands by the dev of this game. I have games that I will cycle through as I get bored of them, but this is one I will play until it closes. I am actively trying to get friends to download this game as it is a very unique experience. If you're hesitant about downloading because you a person who doesn't have friends that game with you, join up because I promise you that you will make them along the way here.", author: 'SoF Logan', rating: '★★★★★' },
+];
+
+const steps = [
+  { n: 'I', title: 'Night Falls', text: 'Werewolves and other secret factions meet in secret to plot, scheme, and choose a victim.', image: '/images/phases/night-falls.webp' },
+  { n: 'II', title: 'Dawn Breaks', text: "The Town wakes to discover the night's events. Bodies are found, clues surface, suspicion spreads.", image: '/images/phases/dawn-breaks.webp' },
+  { n: 'III', title: 'Discuss & Deduce', text: 'Use Proximity Voice Chat to discuss openly or plot in private, but beware of enemies listening in from the shadows.', image: '/images/phases/discuss-deduce.webp' },
+  { n: 'IV', title: 'The Town Votes', text: 'The Town votes on who to interrogate, then who to execute before the day ends.', image: '/images/phases/the-vote.webp' },
+];
+
+const videoGameSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  name: "Werewolves Revenge",
+  description: "An immersive, player-driven social deduction game for 8–16 players with 300+ roles and proximity voice chat.",
+  genre: "Social Deduction",
+  applicationCategory: "Game",
+  operatingSystem: "Windows",
+  url: "https://store.steampowered.com/app/1867320/Werewolves_Revenge/",
+  image: "https://werewolvesrevenge.com/images/og-image.jpg",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Werewolves Revenge | Free To Play" jsonLd={videoGameSchema}>
+  <div class="chaos-zone">
+
+  <!-- HERO -->
+  <section class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0 opacity-50 animate-[slowZoom_25s_ease-in-out_infinite]" style={`background-image: url('${heroBg}'); background-size: cover; background-position: center;`}></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/30 to-zinc-950"></div>
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_black_90%)]"></div>
+    <div class="absolute inset-0 z-0 vignette-frame"></div>
+
+    <div class="relative z-10 text-center px-4 flex flex-col items-center pt-12">
+      <h1 class="mb-4">
+        <img src="/images/WerewolvesRevenge.png" alt="Werewolves Revenge" class="w-full max-w-md md:max-w-2xl mx-auto drop-shadow-2xl" />
+      </h1>
+
+      <button id="chaosTrigger" type="button" class="flex items-center gap-3 mb-14 bg-zinc-900/80 backdrop-blur-md border border-[#97774A]/30 px-4 py-2 rounded-full shadow-lg cursor-pointer">
+        <span class="text-emerald-400 font-bold text-sm tracking-wide">VERY POSITIVE (95%)</span>
+        <span class="text-zinc-400 text-xs font-bold uppercase tracking-widest px-2 border-l border-[#97774A]/30">Steam Reviews</span>
+      </button>
+
+      <p class="text-xl text-zinc-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md" style="font-family: 'Beaufort', serif;">
+        An immersive, player-driven social deduction game for 8–16 players.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white uppercase tracking-[0.2em] transition-all duration-300 bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] hover:-translate-y-1 overflow-hidden">
+          <span class="relative z-10 text-2xl">Play For Free</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
+        </a>
+        <a href="/roles" class="inline-flex items-center justify-center px-10 py-5 font-bold text-[#97774A]/90 uppercase tracking-[0.2em] text-sm border border-[#97774A]/40 rounded-sm hover:border-[#97774A]/60 hover:text-white transition-colors">
+          Browse The Roles
+        </a>
+      </div>
+    </div>
+
+    <a href="#tale" class="absolute bottom-8 z-10 flex flex-col items-center gap-2 text-zinc-500 hover:text-[#97774A]/80 transition-colors animate-bounce">
+      <span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="bg-zinc-950 border-y border-[#97774A]/30 relative z-20">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="stat-item transition-transform duration-300 hover:-translate-y-1 cursor-default">
+        <p class="text-3xl md:text-4xl font-black text-white transition-colors duration-300" style="font-family: 'Beaufort', serif;">{rolesData.length}+</p>
+        <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mt-1">Unique Roles</p>
+      </div>
+      <div class="stat-item transition-transform duration-300 hover:-translate-y-1 cursor-default">
+        <p class="text-3xl md:text-4xl font-black text-white transition-colors duration-300" style="font-family: 'Beaufort', serif;">{factionMeta.length}</p>
+        <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mt-1">Factions</p>
+      </div>
+      <div class="stat-item transition-transform duration-300 hover:-translate-y-1 cursor-default">
+        <p class="text-3xl md:text-4xl font-black text-white transition-colors duration-300" style="font-family: 'Beaufort', serif;">8–16</p>
+        <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mt-1">Players Per Game</p>
+      </div>
+      <div class="stat-item transition-transform duration-300 hover:-translate-y-1 cursor-default">
+        <p class="text-3xl md:text-4xl font-black text-white transition-colors duration-300" style="font-family: 'Beaufort', serif;">88</p>
+        <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mt-1">Achievements</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="bg-zinc-950 w-full relative z-20">
+
+    <!-- THE TALE (About) -->
+    <section id="tale" class="max-w-6xl mx-auto px-6 py-28">
+      <div class="ornate-divider mb-10">
+        <span></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+
+      <div class="grid md:grid-cols-[1fr_1fr] gap-16 items-start">
+        <div class="relative border-l border-[#97774A]/30 pl-8 md:pl-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-8 leading-tight" style="font-family: 'Beaufort', serif;">A Village Under Threat</h2>
+          <p class="text-lg text-zinc-400 leading-relaxed mb-6">
+            <span class="drop-cap">W</span>erewolves Revenge is an immersive social deduction game that recreates the magic of tabletop classics like Blood on the Clocktower and Werewolf.
+          </p>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Werewolves meet in a secret cave each night, plotting their strategy and choosing a player to murder. Once the sun rises, the Town learns of the night's events. Players must then deduce and discuss, ultimately voting to execute a player at the end of each day.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-[#97774A]/10 via-transparent to-red-700/10 blur-2xl rounded-full"></div>
+          <div class="relative aspect-video rounded-sm overflow-hidden border border-[#97774A]/30 shadow-2xl">
+            <img src="/images/game.webp" alt="Werewolves Revenge gameplay" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 border border-[#97774A]/10 pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMEPLAY LOOP -->
+    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-28 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(151,119,74,0.08),_transparent_60%)]"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <div class="ornate-divider mb-6 justify-center">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+            <span></span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">Day / Night Cycle</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          {steps.map((step) => (
+            <div class="phase-card group relative aspect-[4/3] rounded-sm overflow-hidden border border-[#97774A]/30">
+              <img
+                src={step.image}
+                alt={step.title}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(0,0,0,0.65),_transparent_55%)]"></div>
+              <div class="absolute inset-0 flex flex-col justify-between p-7">
+                <span class="text-5xl font-black text-[#97774A] [text-shadow:0_2px_6px_rgba(0,0,0,0.9),0_0_20px_rgba(0,0,0,0.6)]" style="font-family: 'Beaufort', serif;">{step.n}</span>
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2" style="font-family: 'Beaufort', serif;">{step.title}</h3>
+                  <p class="text-zinc-300 text-sm leading-relaxed">{step.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FACTIONS -->
+    <section class="max-w-7xl mx-auto px-6 py-28">
+      <div class="text-center mb-16">
+        <div class="ornate-divider mb-6 justify-center">
+          <span></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+          <span></span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">{factionMeta.length} unique factions</h2>
+      </div>
+      <div class="grid sm:grid-cols-6 gap-8 pt-3">
+        {factionMeta.map((faction, i) => {
+          const factionHex = factionsById[faction.key]?.color ?? '#71717a';
+          const spanClass = i < 2 ? 'sm:col-span-3' : 'sm:col-span-2';
+          return (
+            <a
+              href="/roles"
+              class={`banner-card group relative flex bg-zinc-900 border border-zinc-800 overflow-visible transition-all duration-300 hover:-translate-y-1 ${spanClass}`}
+              style={`--faction: ${factionHex};`}
+            >
+              <div class="banner-tab"></div>
+              <div class="faction-tile-tint absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="relative z-10 flex flex-col flex-1 p-8">
+                <div class="flex items-center justify-between gap-4 mb-3">
+                  <p class="faction-text flex items-center gap-3 text-3xl md:text-4xl font-black" style="font-family: 'Beaufort', serif;">
+                    {factionsById[faction.key]?.iconUrl && (
+                      <span class="faction-icon" style={`background-color: var(--faction); --faction-icon: url('${factionsById[faction.key].iconUrl}')`}></span>
+                    )}
+                    {factionDisplayNames[faction.key] ?? faction.key}
+                  </p>
+                  <span class="faction-text faction-border shrink-0 text-xs font-bold uppercase tracking-widest border rounded-full px-3 py-1">
+                    {factionCounts[faction.key] ?? 0} Roles
+                  </span>
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-6">{faction.blurb}</p>
+
+                <div class="mt-auto pt-5 border-t border-zinc-800">
+                  <span class="faction-text text-xs font-bold uppercase tracking-widest block mb-1.5">Win Condition</span>
+                  <p class="text-zinc-500 text-sm leading-relaxed">{faction.winCondition}</p>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-28">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <div class="ornate-divider mb-6 justify-center">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+            <span></span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">Built With Love</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <div class="bg-zinc-950/60 border border-[#97774A]/30 p-10 hover:border-red-700/50 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-sm bg-red-600/10 border border-red-700/30 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4.9V17L12 22l-9-5.1V6.9z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4" style="font-family: 'Beaufort', serif;">{rolesData.length}+ Roles &amp; {factionMeta.length} Factions</h3>
+            <p class="text-zinc-400 leading-relaxed mb-4">
+              Every game is filled with action and twists. Distinct factions battle for power, each with their own goals and win conditions.
+            </p>
+            <p class="text-zinc-500 text-sm">Over 30 keywords keep interactions simple, intuitive, and easy to learn.</p>
+          </div>
+
+          <div class="bg-zinc-950/60 border border-[#97774A]/30 p-10 hover:border-red-700/50 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-sm bg-red-600/10 border border-red-700/30 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4" style="font-family: 'Beaufort', serif;">Unmatched Immersion</h3>
+            <p class="text-zinc-400 leading-relaxed mb-4">
+              Use Proximity Voice Chat to plot in private, but beware of enemies listening from the shadows. Track the truth — or forge the perfect alibi — in your Personal Notebook.
+            </p>
+            <p class="text-zinc-500 text-sm">Explore several maps with unique layouts in both first and third-person.</p>
+          </div>
+
+          <div class="bg-zinc-950/60 border border-[#97774A]/30 p-10 hover:border-red-700/50 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-sm bg-red-600/10 border border-red-700/30 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4" style="font-family: 'Beaufort', serif;">Deep Customization</h3>
+            <p class="text-zinc-400 leading-relaxed">
+              Express yourself with a deep character customization system, allowing for hundreds of items to be mixed and matched. Combine multiple player titles to show off your accolades in a unique way.
+            </p>
+          </div>
+
+          <div class="bg-zinc-950/60 border border-[#97774A]/30 p-10 hover:border-red-700/50 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-sm bg-red-600/10 border border-red-700/30 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4" style="font-family: 'Beaufort', serif;">Community Driven</h3>
+            <p class="text-zinc-400 leading-relaxed">
+              Werewolves Revenge is a passion project that exists because of our incredible and welcoming community. Every game is run by a Host who creates a weird and wonderful experience for all other players.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Roles (alternating infinite-scroll marquee rows) -->
+    <section class="relative py-28 roles-mosaic-section">
+      <div class="max-w-2xl mx-auto px-6 text-center mb-14">
+        <div class="ornate-divider mb-6 justify-center">
+          <span></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+          <span></span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6" style="font-family: 'Beaufort', serif;">Who Will You Deceive?</h2>
+        <p class="text-zinc-300 mb-10">
+          From cunning villagers to bloodthirsty Werewolves, {rolesData.length}+ roles wait to be played. No two games are ever quite the same.
+        </p>
+        <a href="/roles" class="inline-flex items-center justify-center px-10 py-5 font-bold text-white uppercase tracking-[0.2em] text-sm border border-[#97774A]/50 rounded-sm hover:border-[#97774A]/80 hover:bg-zinc-900/60 transition-colors">
+          View All Roles
+        </a>
+      </div>
+
+      <div class="relative overflow-hidden">
+        <div class="flex flex-col roles-marquee-stack">
+          {mosaicRows.map((row) => (
+            <div class="marquee-row">
+              <div
+                class={`marquee-track marquee-${row.direction}`}
+                style={`--marquee-duration: ${row.duration}s;`}
+              >
+                {row.images.map((src) => (
+                  <div class="marquee-cell">
+                    <img src={src} alt="" class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="absolute inset-0 roles-mosaic-fade pointer-events-none"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIES (Reviews) -->
+    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-28">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <div class="ornate-divider mb-6 justify-center">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+            <span></span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">Steam Reviews</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {reviews.map(r => (
+            <div class="relative bg-zinc-950/60 border border-[#97774A]/30 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#97774A]/60 hover:shadow-[0_12px_30px_-10px_rgba(151,119,74,0.35)]">
+              <svg class="absolute top-6 right-6 w-8 h-8 text-[#97774A]/20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7c-3 0-5 2.5-5 6s2 6 5 6 5-2.5 5-6c0-3-1.5-5-3.5-5.5C9 6 9.5 4 12 3L10 1C7.5 2 7 4.5 7 7zm11 0c-3 0-5 2.5-5 6s2 6 5 6 5-2.5 5-6c0-3-1.5-5-3.5-5.5C20 6 20.5 4 23 3L21 1c-2.5 1-3 3.5-3 6z"/></svg>
+              <p class="text-emerald-400 mb-4 tracking-wider">{r.rating}</p>
+              <p class="text-zinc-300 leading-relaxed mb-6 italic relative z-10 whitespace-pre-line">&ldquo;{r.quote}&rdquo;</p>
+              <p class="text-[#97774A]/60 text-xs uppercase tracking-widest font-bold">{r.author}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM REQUIREMENTS -->
+    <section class="max-w-7xl mx-auto px-6 py-28">
+      <div class="bg-zinc-900/50 border border-[#97774A]/30 p-10 md:p-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-red-900/10 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]"></div>
+
+        <h2 class="text-3xl font-black text-white uppercase tracking-wider mb-3 relative z-10" style="font-family: 'Beaufort', serif;">System Requirements</h2>
+        <p class="text-zinc-500 text-sm mb-12 relative z-10 italic">Don't worry, it'll run on a potato.</p>
+
+        <div class="grid md:grid-cols-2 gap-16 relative z-10">
+          <div>
+            <h3 class="font-bold text-red-500 tracking-widest uppercase mb-6 border-b border-[#97774A]/30 pb-4">Minimum</h3>
+            <ul class="space-y-4 text-zinc-400">
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">OS:</span> Windows 7</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Processor:</span> i5-3470</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Memory:</span> 4 GB RAM</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Graphics:</span> GTX 1050</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Network:</span> Broadband Internet</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Storage:</span> 3 GB available space</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-red-500 tracking-widest uppercase mb-6 border-b border-[#97774A]/30 pb-4">Recommended</h3>
+            <ul class="space-y-4 text-zinc-400">
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">OS:</span> Windows 11</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Processor:</span> i5-7700k</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Memory:</span> 8 GB RAM</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Graphics:</span> GTX 1650</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Network:</span> Broadband Internet</li>
+              <li class="flex items-start"><span class="w-24 text-zinc-500 font-medium">Storage:</span> 3 GB available space</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="relative max-w-7xl mx-auto px-6 pb-28">
+      <div class="relative overflow-hidden border border-[#97774A]/30">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-950 via-zinc-950 to-zinc-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.15),_transparent_60%)]"></div>
+        <div class="absolute inset-3 border border-[#97774A]/10 pointer-events-none"></div>
+        <div class="relative z-10 px-8 md:px-16 py-20 text-center">
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-6" style="font-family: 'Beaufort', serif;">Gather Your Village</h2>
+          <p class="text-zinc-400 text-lg max-w-xl mx-auto mb-10">Free to play. No purchase required. Just you, your friends, and the dark.</p>
+          <a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white uppercase tracking-[0.2em] transition-all duration-300 bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] hover:-translate-y-1 overflow-hidden">
+            <span class="relative z-10 text-2xl">Play For Free</span>
+            <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
+          </a>
+          <div class="flex justify-center gap-6 mt-8 text-zinc-500 text-sm font-semibold uppercase tracking-widest">
+            <span>Completely Free</span>
+            <span>•</span>
+            <span>Community Driven</span>
+            <span>•</span>
+            <span>Made with love</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  </div>
 </Layout>
+
+<style is:global>
+  @keyframes slowZoom {
+    0% { transform: scale(1.05) translate(0, 0); }
+    50% { transform: scale(1.18) translate(-1.5%, -1%); }
+    100% { transform: scale(1.05) translate(0, 0); }
+  }
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes flourishPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-1.5rem, 1.5rem); }
+  }
+
+  .ornate-divider svg {
+    animation: flourishPulse 4s ease-in-out infinite;
+  }
+
+  .stat-item:hover p:first-child {
+    color: #ef4444;
+  }
+
+  /* CHAOS MODE EASTER EGG — toggled by clicking #chaosTrigger, see script below */
+  @keyframes chaosHue {
+    0% { filter: hue-rotate(0deg) saturate(2.2) brightness(1.1); }
+    100% { filter: hue-rotate(360deg) saturate(2.2) brightness(1.1); }
+  }
+  @keyframes chaosBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes chaosWiggle {
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+  }
+
+  .chaos-zone.is-active {
+    position: relative;
+    background: linear-gradient(120deg, #ff00cc, #9d00ff, #ff66cc, #6a00ff, #ff00cc);
+    background-size: 400% 400%;
+    animation: chaosHue 6s linear infinite, chaosBg 10s ease-in-out infinite;
+  }
+
+  .chaos-zone.is-active h1,
+  .chaos-zone.is-active h2,
+  .chaos-zone.is-active h3,
+  .chaos-zone.is-active h4 {
+    animation: chaosWiggle 1.5s ease-in-out infinite;
+  }
+
+  .vignette-frame {
+    box-shadow: inset 0 0 200px 60px rgba(0, 0, 0, 0.85);
+  }
+
+  .drop-cap {
+    float: left;
+    font-family: 'Beaufort', serif;
+    font-size: 3.5rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    color: #97774A;
+  }
+
+  .banner-card {
+    margin-top: 0.75rem;
+  }
+
+  .faction-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    -webkit-mask: var(--faction-icon) no-repeat center / contain;
+    mask: var(--faction-icon) no-repeat center / contain;
+  }
+
+  .banner-tab {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.75rem;
+    width: 2.25rem;
+    height: 1.5rem;
+    background: var(--faction);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+    z-index: 5;
+  }
+
+  /*
+   * Role preview marquee: alternating rows of role portraits that scroll
+   * continuously, odd rows slow to the left, even rows fast to the right.
+   * Each row's image list is rendered twice back-to-back so animating from
+   * translateX(0) to translateX(-50%) loops seamlessly.
+   */
+
+  .roles-marquee-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .marquee-row {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0.75rem;
+    width: max-content;
+  }
+
+  .marquee-cell {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .marquee-left {
+    animation: marqueeLeft var(--marquee-duration) linear infinite;
+  }
+
+  .marquee-right {
+    animation: marqueeRight var(--marquee-duration) linear infinite;
+  }
+
+  @keyframes marqueeLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marqueeRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .roles-mosaic-fade {
+    background: linear-gradient(to bottom, #09090b 0%, transparent 22%, transparent 78%, #09090b 100%);
+  }
+
+  .roles-mosaic-section {
+    background-color: #09090b;
+  }
+</style>
+
+<script>
+  document.getElementById('chaosTrigger')?.addEventListener('click', () => {
+    document.querySelector('.chaos-zone')?.classList.toggle('is-active');
+  });
+</script>
