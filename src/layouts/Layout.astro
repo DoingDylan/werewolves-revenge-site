@@ -45,7 +45,7 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title === 'Werewolves Revenge' ? title : `${title} | Werewolves Revenge`}</title>
 		<meta name="description" content={description} />
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		<link rel="canonical" href={canonicalURL} />
@@ -89,6 +89,31 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 		</nav>
 
 		<slot />
+
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<nav class="footer-nav" aria-label="Footer navigation">
+					<a href="/roles">Roles</a>
+					<a href="/how-to-play">How To Play</a>
+					<a href="/news">News</a>
+				</nav>
+
+				<div class="footer-external">
+					<a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="footer-ext-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.772 0 3.138-1.868 3.138-4.566 0-2.387-1.715-4.057-4.163-4.057-2.838 0-4.503 2.128-4.503 4.327 0 .857.33 1.776.741 2.278a.3.3 0 0 1 .069.286c-.076.313-.244.995-.277 1.134-.044.183-.145.222-.334.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+						Steam
+					</a>
+					<a href="https://discord.gg/4SBsnnVjgD" target="_blank" rel="noopener" class="footer-ext-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+						Discord
+					</a>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>© {new Date().getFullYear()} Werewolves Revenge. All rights reserved.</p>
+			</div>
+		</footer>
 	</body>
 </html>
 
@@ -218,5 +243,116 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 
 	.skip-link:focus {
 		top: 1rem;
+	}
+
+	.site-footer {
+		background: #080604;
+		border-top: 1px solid rgba(151, 119, 74, 0.25);
+		padding: 3.5rem 2rem 0;
+	}
+
+	.footer-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2.5rem 4rem;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding-bottom: 3rem;
+	}
+
+	.footer-brand {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.footer-logo {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-color: rgba(151, 119, 74, 0.7);
+		-webkit-mask: url('/images/WW.png') no-repeat center / contain;
+		mask: url('/images/WW.png') no-repeat center / contain;
+	}
+
+	.footer-tagline {
+		margin: 0;
+		font-family: 'Beaufort', serif;
+		font-size: 0.9rem;
+		font-weight: 700;
+		color: rgba(151, 119, 74, 0.5);
+		line-height: 1.5;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 2rem;
+		flex: 1;
+		min-width: 220px;
+		align-content: flex-start;
+	}
+
+	.footer-nav a {
+		color: #71717a;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		transition: color 0.2s ease;
+		white-space: nowrap;
+	}
+
+	.footer-nav a:hover {
+		color: #d4d4d8;
+	}
+
+	.footer-external {
+		display: flex;
+		flex-direction: row;
+		gap: 0.75rem;
+		align-items: flex-start;
+	}
+
+	.footer-ext-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #71717a;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		border: 1px solid rgba(151, 119, 74, 0.2);
+		padding: 0.5rem 1rem;
+		transition: color 0.2s ease, border-color 0.2s ease;
+		white-space: nowrap;
+	}
+
+	.footer-ext-btn:hover {
+		color: #ffffff;
+		border-color: rgba(151, 119, 74, 0.5);
+	}
+
+	.footer-bottom {
+		max-width: 1200px;
+		margin: 0 auto;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+		padding: 1.25rem 0;
+	}
+
+	.footer-bottom p {
+		margin: 0;
+		color: #3f3f46;
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: 0.03em;
+		text-align: center;
 	}
 </style>

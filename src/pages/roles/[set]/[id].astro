@@ -6,10 +6,26 @@ import factionsData from '../../../data/factions.json';
 import classesData from '../../../data/classes.json';
 
 export async function getStaticPaths() {
+  // Prev/Next cycles through roles within the same Set, alphabetically by
+  // name (matching how roles.json is already sorted), wrapping around at
+  // either end.
+  const rolesBySet = {};
+  for (const role of rolesData) {
+    (rolesBySet[role.set] ??= []).push(role);
+  }
+  for (const set in rolesBySet) {
+    rolesBySet[set].sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   return rolesData.map((role) => {
+    const setRoles = rolesBySet[role.set];
+    const index = setRoles.findIndex((r) => r.id === role.id);
+    const prevRole = setRoles[(index - 1 + setRoles.length) % setRoles.length];
+    const nextRole = setRoles[(index + 1) % setRoles.length];
+
     return {
       params: { set: role.set.toLowerCase(), id: role.id },
-      props: { role },
+      props: { role, prevRole, nextRole },
     };
   });
 }
@@ -17,7 +33,7 @@ export async function getStaticPaths() {
 const factionsById = Object.fromEntries(factionsData.map((f) => [f.id, f]));
 const classesById = Object.fromEntries(classesData.map((c) => [c.id, c]));
 
-const { role } = Astro.props;
+const { role, prevRole, nextRole } = Astro.props;
 const factionInfo = factionsById[role.faction];
 const factionHex = factionInfo?.color ?? '#71717a';
 const factionIconUrl = factionInfo?.iconUrl;
@@ -26,6 +42,19 @@ const classInfo = classesById[role.class];
 const classHex = classInfo?.color ?? '#71717a';
 const classIconUrl = classInfo?.iconUrl;
 const classStyle = `--class: ${classHex};`;
+
+// Picks black or white text for readable contrast against an arbitrary
+// resource color badge fill (resource colors range from pale blues to near-
+// black slates, so a fixed text color would be unreadable on some of them).
+function getContrastTextColor(hex) {
+  const clean = (hex || '').replace('#', '');
+  if (clean.length !== 6) return '#ffffff';
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.6 ? '#18181b' : '#ffffff';
+}
 
 const metaDescription = role.description
   ? role.description.slice(0, 155) + (role.description.length > 155 ? '…' : '')
@@ -38,10 +67,25 @@ const metaDescription = role.description
     <div class="absolute inset-0 faction-page-glow z-0 opacity-60"></div>
 
     <div class="max-w-6xl mx-auto px-6 pt-12 md:pt-24 relative z-10">
-      <nav class="mb-12">
+      <nav class="mb-12 flex items-center justify-between gap-4 flex-wrap">
         <a href="/roles" class="text-zinc-500 hover:text-white uppercase tracking-widest text-sm font-bold transition-colors flex items-center gap-2">
-          <span>&larr;</span> Back to All Roles
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to All Roles
         </a>
+
+        {prevRole && nextRole && (
+          <div class="flex items-center gap-3 text-sm font-bold uppercase tracking-widest">
+            <a href={`/roles/${role.set.toLowerCase()}/${prevRole.id}`} class="text-zinc-500 hover:text-white transition-colors flex items-center gap-2" aria-label={`Previous role: ${prevRole.name}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              {prevRole.name}
+            </a>
+            <span class="text-zinc-700">/</span>
+            <a href={`/roles/${role.set.toLowerCase()}/${nextRole.id}`} class="text-zinc-500 hover:text-white transition-colors flex items-center gap-2" aria-label={`Next role: ${nextRole.name}`}>
+              {nextRole.name}
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        )}
       </nav>
 
       <div class="grid md:grid-cols-[1fr_1fr] gap-6 lg:gap-12 items-start">
@@ -59,7 +103,9 @@ const metaDescription = role.description
         </div>
 
         <div class="py-6">
-          <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-5 drop-shadow-lg" style="font-family: 'Beaufort', serif;">{role.name}</h1>
+          <h1 class="text-4xl md:text-7xl font-black uppercase tracking-wide mb-5 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+            <span class="faction-text" style="font-size: 1.15em;">{role.name.charAt(0)}</span>{role.name.slice(1)}
+          </h1>
 
           <div class="flex flex-wrap gap-3 mb-6">
             <span class="badge-tooltip-wrap relative group">
@@ -138,22 +184,28 @@ const metaDescription = role.description
               <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2">Abilities</h2>
               <div class="space-y-4">
                 {role.abilities.map((ability) => (
-                  <div class="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm">
-                    {ability.iconUrl && (
-                      <img src={ability.iconUrl} alt={ability.name} class="w-16 h-16 object-contain shrink-0 rounded-xl" />
-                    )}
-                    <div class="flex-1">
-                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                  <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm">
+                    <div class="flex gap-4 items-center">
+                      {ability.iconUrl && (
+                        <img src={ability.iconUrl} alt={ability.name} class="w-16 h-16 object-contain shrink-0 rounded-xl" />
+                      )}
+                      <div class="flex-1">
                         <h3 class="text-lg font-bold text-white">{ability.name}</h3>
-                        <div class="flex gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
-                          {ability.abilityType && <span>{ability.abilityType}</span>}
+                        <div class="flex flex-wrap items-center gap-2 mt-1">
+                          {ability.abilityType && (
+                            <span class="text-zinc-400 text-base">{ability.abilityType}</span>
+                          )}
                           {ability.costValue != null && ability.costValue > 0 && (
-                            <span>&middot; {ability.costValue} {ability.costType}</span>
+                            ability.costType === 'Resource' && role.resource ? (
+                              <span class="text-sm font-bold px-2.5 py-0.5 rounded" style={`background-color: ${role.resource.color || '#71717a'}; color: ${getContrastTextColor(role.resource.color)};`}>{ability.costValue} {role.resource.name}</span>
+                            ) : (
+                              <span class="bg-zinc-800 text-zinc-200 text-sm font-bold px-2.5 py-0.5 rounded">{ability.costValue} {ability.costType}</span>
+                            )
                           )}
                         </div>
                       </div>
-                      <p class="text-lg text-zinc-300 leading-relaxed" set:html={ability.descriptionHtml || ability.description} />
                     </div>
+                    <p class="text-lg text-zinc-300 leading-relaxed mt-4 pt-4 border-t border-zinc-800" set:html={ability.descriptionHtml || ability.description} />
                   </div>
                 ))}
               </div>

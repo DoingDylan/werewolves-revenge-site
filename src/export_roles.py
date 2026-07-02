@@ -169,7 +169,7 @@ def export_roles_from_sets(keywords_data):
                 if not ability_asset:
                     print(f"    !! ability[{i}] on {role_id} resolved to None, skipping")
                     continue
-                abilities_data.append(exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon))
+                abilities_data.append(exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon, classes_registry, factions_registry))
 
             description = str(role_asset.get_editor_property("Description"))
 
@@ -182,7 +182,7 @@ def export_roles_from_sets(keywords_data):
                 "factionName": str(faction_obj.get_editor_property("Name")) if faction_obj else "Unknown",
                 "class": class_obj.get_name() if class_obj else "Unknown",
                 "description": description,
-                "descriptionHtml": convertIcons(description, keywords_by_icon),
+                "descriptionHtml": convertIcons(description, keywords_by_icon, classes_registry, factions_registry),
                 # Unreal's exporter only writes PNGs
                 # You must run `npm run optimize-images` to convert the pngs to webp
                 "imageUrl": f"/images/roles/{image_filename.replace('.png', '.webp')}",
@@ -369,7 +369,23 @@ def prettifyEnumName(name):
         for i, word in enumerate(words)
     )
 
-def convertIcons(text, keywords_by_icon):
+# Confirmed directly by the user (not inferred): what each RichTextBlock
+# text decorator tag means. "m"/"p"/"i" color text to match a Class, "w"/"l"
+# color it to match a Faction, "b" is plain bold with no color. Any other
+# tag name encountered just gets stripped to plain text (graceful fallback).
+DECORATOR_TAG_SOURCE = {
+    "m": ("class", "Manipulation"),
+    "p": ("class", "Protection"),
+    "i": ("class", "Investigation"),
+    "e": ("class", "Elimination"),
+    "w": ("faction", "Werewolf"),
+    "l": ("faction", "LesserEvil"),
+    "t": ("faction", "Town"),
+    "n": ("faction", "Neutral"),
+    "ev": ("faction", "Evil"),
+}
+
+def convertIcons(text, keywords_by_icon, classes_registry, factions_registry):
     """Converts `<img id="Name"/>` inline icon decorators in role/ability
     descriptions into a small masked/tinted icon <span> (see .kw-icon in
     global.css), using keywords_by_icon (built from the Keywords DataTable
@@ -377,42 +393,56 @@ def convertIcons(text, keywords_by_icon):
     this is the same data already exported to keywords.json, so the site's
     glossary and these inline icons can never disagree with each other.
 
-    This does NOT add any text styling (bold, color, etc) for other
-    decorators -- but it does strip them out (keeping their inner text)
-    before converting icons. This isn't a styling feature, it's a safety
-    requirement: descriptions also contain other Unreal RichTextBlock
-    decorators like "<b>text</>" or "<p>text</>", and some of those (like
-    "<b>") happen to be real HTML tags. Left as raw text, the browser parses
-    "<b>" as actual unclosed bold HTML (since "</>" isn't valid HTML and
-    doesn't close it), which bolds everything after it for the rest of the
-    page. Stripping all non-icon tags first avoids that regardless of which
-    decorator tag names happen to collide with real HTML elements.
+    Also bolds+colors the handful of text decorators in DECORATOR_TAG_SOURCE
+    above to match their Class/Faction (e.g. "<m>converting</>" -> bold,
+    colored to match the Manipulation class), looking the color up from
+    classes_registry/factions_registry (the same dicts export_roles_from_sets()
+    is already populating from Faction/Class assets as it goes, so these
+    colors can't drift out of sync with classes.json/factions.json either).
+
+    Any other/unrecognized decorator tag is just stripped to plain text.
+    This isn't only a styling choice -- some decorator tag names happen to be
+    real HTML tags ("<b>") that the browser would otherwise parse as actual
+    unclosed bold HTML (since "</>" isn't valid HTML and doesn't close it),
+    bolding everything after it for the rest of the page. Since every
+    recognized tag is converted to properly-closed output here, that danger
+    only remains for genuinely unrecognized tags, which is exactly what the
+    plain-text fallback avoids.
     """
     if not text:
         return text
 
-    # Strip any wrapping decorator -> keep inner text only. Closing tag can
-    # be the generic "</>" or repeat the opening tag name (e.g. "<b>x</b>").
-    text = re.sub(r"<(\w+)>(.*?)</\1?>", r"\2", text)
+    def replace_decorator(match):
+        icon_id, tag_name, inner = match.group(1), match.group(2), match.group(3)
 
-    # Strip any other stray/self-closing decorator that isn't the "<img
-    # .../>" icon syntax handled below.
-    text = re.sub(r"</?(?!img\b)\w+[^>]*>", "", text)
+        if icon_id is not None:
+            keyword = keywords_by_icon.get(icon_id.replace(" ", "").lower())
+            if not keyword:
+                print(f"    !! Unknown icon decorator id '{icon_id}'")
+                return ""
+            return (
+                f'<span class="kw-icon" style="--kw: {keyword["color"]}; '
+                f'--kw-icon: url(\'/images/keywords/{keyword["icon"]}.webp\')" '
+                f'role="img" aria-label="{icon_id}" title="{icon_id}"></span>'
+            )
 
-    def replace_icon(match):
-        name = match.group(1)
-        keyword = keywords_by_icon.get(name.replace(" ", "").lower())
-        if not keyword:
-            print(f"    !! Unknown icon decorator id '{name}'")
-            return ""
+        if tag_name == "b":
+            return f'<b>{inner}</b>'
 
-        return (
-            f'<span class="kw-icon" style="--kw: {keyword["color"]}; '
-            f'--kw-icon: url(\'/images/keywords/{keyword["icon"]}.webp\')" '
-            f'role="img" aria-label="{name}" title="{name}"></span>'
-        )
+        if tag_name == "st":
+            return f'<i>{inner}</i>'
 
-    return re.sub(r'<img\s+id="(\w+)"\s*/>', replace_icon, text)
+        source = DECORATOR_TAG_SOURCE.get(tag_name)
+        if source:
+            kind, name = source
+            registry = classes_registry if kind == "class" else factions_registry
+            entry = registry.get(name)
+            if entry:
+                return f'<span style="color: {entry["color"]}; font-weight: 700;">{inner}</span>'
+
+        return inner
+
+    return re.sub(r'<img\s+id="(\w+)"\s*/>|<(\w+)>(.*?)</\2?>', replace_decorator, text)
 
 def exportGroupOrResource(obj, img_export_dir):
     """Exports a Group or Resource data asset (both share the same Name/Description/Icon/Colour shape).
@@ -433,7 +463,7 @@ def exportGroupOrResource(obj, img_export_dir):
         "iconUrl": f"/images/roles/{icon_filename.replace('.png', '.webp')}",
     }
 
-def exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon):
+def exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon, classes_registry, factions_registry):
     """Exports a single Ability data asset to a plain dict, including its icon.
 
     NOTE: "Cost Type" reads fine directly via .name + prettifyEnumName().
@@ -470,7 +500,7 @@ def exportAbility(ability_asset, ability_img_export_dir, keywords_by_icon):
         "id": ability_asset.get_name(),
         "name": name,
         "description": description,
-        "descriptionHtml": convertIcons(description, keywords_by_icon),
+        "descriptionHtml": convertIcons(description, keywords_by_icon, classes_registry, factions_registry),
         "iconUrl": f"/images/abilities/{icon_filename.replace('.png', '.webp')}",
         "abilityType": ability_type,
         "costType": cost_type,

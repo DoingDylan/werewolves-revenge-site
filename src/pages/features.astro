@@ -1,38 +1,40 @@
 ---
 // src/pages/features.astro
 import Layout from '../layouts/Layout.astro';
-import rolesData from '../data/roles.json';
 
-const factionCount = new Set(rolesData.map((r) => r.faction)).size;
+// PLACEHOLDER content -- copy and images are temporary, just blocking out
+// the new layout: 3 alternating image+text rows (same style the page used
+// previously for "bigFeatures"), then 1 big main-feature banner, repeated
+// twice.
+const ROMAN = ['I', 'II', 'III'];
 
-const bigFeatures = [
+const featureGroups = [
   {
-    title: `${rolesData.length}+ Roles Across ${factionCount} Factions`,
-    text: "No two games play the same. Every role brings its own abilities, win condition, and way of deceiving — or saving — the village. Factions battle for fundamentally different goals, so the shape of every game shifts depending on who's in the lobby.",
-    cta: { label: 'Browse The Role Directory', href: '/roles' },
-    image: '/images/game.webp',
+    chapter: 'Chapter One',
+    side: [
+      { title: 'Side Feature A', text: 'Placeholder text for a smaller supporting feature, in the same alternating image+text row layout the page used before.', image: '/images/phases/dawn-breaks.webp' },
+      { title: 'Side Feature B', text: 'Placeholder text for a smaller supporting feature.', image: '/images/phases/discuss-deduce.webp' },
+      { title: 'Side Feature C', text: 'Placeholder text for a smaller supporting feature.', image: '/images/phases/the-vote.webp' },
+    ],
+    main: {
+      title: 'Main Feature One',
+      text: 'Placeholder copy for the first big feature banner. This is the large showcase that anchors the group, sitting below its three smaller supporting features.',
+      image: '/images/phases/night-falls.webp',
+    },
   },
   {
-    title: 'Proximity Voice Chat',
-    text: "Plot in private, but beware of enemies listening in from the shadows. Where you stand and who's nearby matters — every conversation is a risk, and every overheard whisper is a clue.",
-    cta: null,
-    image: '/images/phases/discuss-deduce.webp',
+    chapter: 'Chapter Two',
+    side: [
+      { title: 'Side Feature D', text: 'Placeholder text for a smaller supporting feature.', image: '/images/phases/night-falls.webp' },
+      { title: 'Side Feature E', text: 'Placeholder text for a smaller supporting feature.', image: '/images/phases/dawn-breaks.webp' },
+      { title: 'Side Feature F', text: 'Placeholder text for a smaller supporting feature.', image: '/images/phases/discuss-deduce.webp' },
+    ],
+    main: {
+      title: 'Main Feature Two',
+      text: 'Placeholder copy for the second big feature banner.',
+      image: '/images/phases/the-vote.webp',
+    },
   },
-  {
-    title: 'The Personal Notebook',
-    text: 'Track claims, suspicions, and votes as the game unfolds — or use it to forge the perfect alibi and deceive the Town. Memory alone won\'t cut it once accusations start flying.',
-    cta: null,
-    image: '/images/phases/the-vote.webp',
-  },
-];
-
-const grid = [
-  { title: 'Deep Customization', text: 'Hundreds of cosmetic items to mix and match, plus player titles you can combine to show off your accolades.' },
-  { title: 'Multiple Maps', text: 'Explore distinct maps with unique layouts, in both first and third-person.' },
-  { title: 'Community-Hosted Games', text: 'Every lobby is run by a real person, not a faceless matchmaker — making each game feel hand-crafted.', cta: { label: 'Join The Community', href: '/community' } },
-  { title: 'A Simple Keyword System', text: 'Over 30 recurring keywords keep complex interactions easy to learn at a glance.', cta: { label: 'Browse Keywords', href: '/keywords' } },
-  { title: '88 Achievements', text: 'Plenty of milestones to chase, from your first execution to surviving an entire game undetected.' },
-  { title: 'Free To Play', text: 'No purchase required, ever. Just you, your friends, and the truth — somewhere in the dark.' },
 ];
 ---
 
@@ -48,75 +50,153 @@ const grid = [
       <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
         Features
       </h1>
-      <p class="text-zinc-400 text-lg max-w-xl mx-auto">Everything that makes a night in the village worth fearing.</p>
+      <p class="text-zinc-400 text-lg max-w-xl mx-auto">Every page of the tome that tells you why the village fears the dark.</p>
     </div>
   </header>
 
-  <main id="main-content" class="bg-zinc-950 min-h-screen">
+  <main id="main-content" class="bg-zinc-950 min-h-screen py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(151,119,74,0.05),_transparent_70%)] z-0 pointer-events-none"></div>
 
-    <!-- BIG FEATURES, alternating layout -->
-    <div class="max-w-6xl mx-auto px-6 py-20 space-y-24">
-      {bigFeatures.map((feature, i) => (
-        <section class="grid md:grid-cols-2 gap-12 items-center">
-          <div class={i % 2 === 1 ? 'md:order-2' : ''}>
-            <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-6" style="font-family: 'Beaufort', serif;">{feature.title}</h2>
-            <p class="text-lg text-zinc-400 leading-relaxed mb-6">{feature.text}</p>
-            {feature.cta && (
-              <a href={feature.cta.href} class="inline-flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-sm hover:text-red-400 transition-colors">
-                {feature.cta.label}
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            )}
+    <div class="max-w-6xl mx-auto px-6 space-y-28 relative z-10">
+      {featureGroups.map((group, groupIndex) => (
+        <div class="space-y-20">
+
+          <div class="text-center">
+            <span class="chapter-label">{group.chapter}</span>
           </div>
-          <div class={`relative ${i % 2 === 1 ? 'md:order-1' : ''}`}>
-            <div class="absolute -inset-3 bg-gradient-to-br from-[#97774A]/10 via-transparent to-red-700/10 blur-2xl rounded-full"></div>
-            <div class="relative aspect-video rounded-sm overflow-hidden border border-[#97774A]/30 shadow-2xl">
-              <img src={feature.image} alt={feature.title} class="w-full h-full object-cover" loading="lazy" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+          {group.side.map((feature, i) => (
+            <section class="grid md:grid-cols-2 gap-12 items-center">
+              <div class={`relative ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                <span class="feature-roman" style="font-family: 'Beaufort', serif;">{ROMAN[i]}</span>
+                <h2 class="relative text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-6" style="font-family: 'Beaufort', serif;">{feature.title}</h2>
+                <p class="relative text-lg text-zinc-400 leading-relaxed">
+                  <span class="drop-cap">{feature.text.charAt(0)}</span>{feature.text.slice(1)}
+                </p>
+              </div>
+              <div class={`relative ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                <div class="absolute -inset-3 bg-gradient-to-br from-[#97774A]/15 via-transparent to-red-700/10 blur-2xl rounded-full"></div>
+                <div class="feature-frame relative aspect-video rounded-sm overflow-hidden border border-[#97774A]/40 shadow-2xl">
+                  <img src={feature.image} alt={feature.title} class="w-full h-full object-cover" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <span class="frame-corner frame-corner-tl"></span>
+                  <span class="frame-corner frame-corner-tr"></span>
+                  <span class="frame-corner frame-corner-bl"></span>
+                  <span class="frame-corner frame-corner-br"></span>
+                </div>
+              </div>
+            </section>
+          ))}
+
+          <div class="ornate-divider justify-center">
+            <span></span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+            <span></span>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+              <span class="main-feature-ribbon">★ Main Feature ★</span>
+            </div>
+            <div class="relative rounded-sm overflow-hidden border-2 border-[#97774A]/60 shadow-[0_0_60px_-10px_rgba(151,119,74,0.4)]">
+              <img src={group.main.image} alt={group.main.title} class="w-full aspect-[16/9] object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+              <div class="absolute inset-0 vignette-frame"></div>
+              <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-3 drop-shadow-lg" style="font-family: 'Beaufort', serif;">{group.main.title}</h2>
+                <p class="text-lg text-zinc-200 leading-relaxed drop-shadow-lg max-w-2xl">{group.main.text}</p>
+              </div>
+              <span class="frame-corner frame-corner-tl"></span>
+              <span class="frame-corner frame-corner-tr"></span>
+              <span class="frame-corner frame-corner-bl"></span>
+              <span class="frame-corner frame-corner-br"></span>
             </div>
           </div>
-        </section>
+
+        </div>
       ))}
     </div>
-
-    <!-- SECONDARY FEATURE GRID -->
-    <section class="bg-[#0c0a08] border-y border-[#97774A]/30 py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-14">
-          <h2 class="text-3xl font-black text-white uppercase tracking-tight" style="font-family: 'Beaufort', serif;">And There's More</h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {grid.map((item) => (
-            <div class="bg-zinc-900/50 border border-[#97774A]/30 rounded-sm p-7">
-              <h3 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">{item.title}</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-4">{item.text}</p>
-              {item.cta && (
-                <a href={item.cta.href} class="inline-flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-xs hover:text-red-400 transition-colors">
-                  {item.cta.label}
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="max-w-7xl mx-auto px-6 py-20">
-      <div class="relative overflow-hidden border border-[#97774A]/30">
-        <div class="absolute inset-0 bg-gradient-to-br from-red-950 via-zinc-950 to-zinc-950"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.15),_transparent_60%)]"></div>
-        <div class="relative z-10 px-8 md:px-16 py-16 text-center">
-          <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4" style="font-family: 'Beaufort', serif;">See It For Yourself</h2>
-          <p class="text-zinc-400 text-lg max-w-xl mx-auto mb-8">Free to play. No purchase required.</p>
-          <a href="https://store.steampowered.com/app/1867320/Werewolves_Revenge/" target="_blank" rel="noopener" class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white uppercase tracking-[0.2em] transition-all duration-300 bg-gradient-to-t from-red-900 to-red-600 hover:from-red-800 hover:to-red-500 border-t border-red-400/30 rounded-sm shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] hover:-translate-y-1 overflow-hidden">
-            <span class="relative z-10 text-xl">Play For Free</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
 </Layout>
+
+<style>
+  .chapter-label {
+    display: inline-block;
+    font-family: 'Beaufort', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #97774A;
+    border-top: 1px solid rgba(151, 119, 74, 0.4);
+    border-bottom: 1px solid rgba(151, 119, 74, 0.4);
+    padding: 0.4rem 1.5rem;
+  }
+
+  .feature-roman {
+    position: absolute;
+    top: -2.5rem;
+    left: -0.5rem;
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(151, 119, 74, 0.12);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .feature-frame {
+    position: relative;
+  }
+
+  .frame-corner {
+    position: absolute;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-color: #97774A;
+    z-index: 10;
+  }
+
+  .frame-corner-tl {
+    top: 0.5rem;
+    left: 0.5rem;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+
+  .frame-corner-tr {
+    top: 0.5rem;
+    right: 0.5rem;
+    border-top: 2px solid;
+    border-right: 2px solid;
+  }
+
+  .frame-corner-bl {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+  }
+
+  .frame-corner-br {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+
+  .main-feature-ribbon {
+    display: inline-block;
+    background: linear-gradient(to bottom, #b91c1c, #7f1d1d);
+    color: #fff;
+    font-family: 'Beaufort', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(151, 119, 74, 0.6);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+  }
+</style>
