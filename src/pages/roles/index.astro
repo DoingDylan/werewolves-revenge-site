@@ -82,15 +82,15 @@ const DEFAULT_SET = uniqueSets.includes('Standard') ? 'Standard' : uniqueSets[0]
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-6 pt-6 border-t border-[#97774A]/20">
-          <div class="flex-1 min-w-[260px]">
+        <div class="flex flex-col xl:flex-row gap-6 pt-6 border-t border-[#97774A]/20">
+          <div class="flex-1 min-w-0">
             <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mb-3">Faction</p>
-            <div id="factionFilterGroup" class="flex flex-nowrap gap-2 overflow-x-auto" data-active=""></div>
+            <div id="factionFilterGroup" class="filter-scroll flex flex-nowrap gap-2 overflow-x-auto" data-active=""></div>
           </div>
 
-          <div class="flex-1 min-w-[260px]">
+          <div class="flex-1 min-w-0">
             <p class="text-[#97774A] text-xs font-bold uppercase tracking-widest mb-3">Class</p>
-            <div id="classFilterGroup" class="flex flex-nowrap gap-2 overflow-x-auto" data-active="">
+            <div id="classFilterGroup" class="filter-scroll flex flex-nowrap gap-2 overflow-x-auto" data-active="">
               {uniqueClasses.map((cls) => (
                 <button type="button" class="filter-btn" data-value={cls} style={`--btn-color: ${classesById[cls]?.color ?? '#71717a'}; --btn-icon: url('${classesById[cls]?.iconUrl ?? ''}')`}>
                   {classesById[cls]?.iconUrl && <span class="filter-btn-icon"></span>}
@@ -138,6 +138,16 @@ const DEFAULT_SET = uniqueSets.includes('Standard') ? 'Standard' : uniqueSets[0]
 </Layout>
 
 <style is:global>
+  .filter-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
   .filter-btn {
     --btn-color: #71717a;
     display: inline-flex;

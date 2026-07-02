@@ -76,6 +76,10 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 			<a href="/" class={`brand ${path === '/' ? 'active' : ''}`} aria-label="Werewolves Revenge home">
 				<span class="brand-logo"></span>
 			</a>
+			<button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+				<svg class="icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+				<svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+			</button>
 			<div class="nav-links nav-links-primary">
 				<a href="/features" class={path === '/features' ? 'active' : ''}>Features</a>
 				<a href="/roles" class={path.startsWith('/roles') ? 'active' : ''}>Roles</a>
@@ -245,6 +249,71 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 		top: 1rem;
 	}
 
+	/* Hamburger button — hidden on desktop */
+	.nav-hamburger {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.35rem;
+		color: #a1a1aa;
+		margin-left: auto;
+		transition: color 0.2s ease;
+		flex-shrink: 0;
+	}
+	.nav-hamburger:hover { color: #fff; }
+	.icon-close { display: none; }
+
+	@media (max-width: 767px) {
+		.main-nav {
+			gap: 0;
+			padding: 0.85rem 1.25rem;
+			align-items: center;
+		}
+
+		.nav-hamburger {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.main-nav .nav-links {
+			display: none;
+			width: 100%;
+			flex-direction: column;
+			gap: 0;
+		}
+
+		.main-nav.is-open .nav-links {
+			display: flex;
+			border-top: 1px solid rgba(151, 119, 74, 0.15);
+			margin-top: 0.75rem;
+			padding-bottom: 0.5rem;
+		}
+
+		.main-nav.is-open .nav-links-secondary {
+			margin-left: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		.main-nav .nav-links a {
+			padding: 0.75rem 0;
+			font-size: 1rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+		}
+
+		.main-nav .nav-links a:last-child {
+			border-bottom: none;
+		}
+
+		.main-nav .nav-links-secondary a {
+			font-size: 0.95rem;
+		}
+
+		.main-nav.is-open .icon-open { display: none; }
+		.main-nav.is-open .icon-close { display: block; }
+	}
+
 	.site-footer {
 		background: #080604;
 		border-top: 1px solid rgba(151, 119, 74, 0.25);
@@ -355,4 +424,47 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 		letter-spacing: 0.03em;
 		text-align: center;
 	}
+
+	@media (max-width: 767px) {
+		.site-footer {
+			padding: 2.5rem 1.25rem 0;
+		}
+
+		.footer-inner {
+			flex-direction: column;
+			gap: 1.75rem;
+			padding-bottom: 2rem;
+		}
+
+		.footer-nav {
+			min-width: 0;
+			flex: none;
+			width: 100%;
+		}
+
+		.footer-external {
+			width: 100%;
+		}
+
+		.footer-ext-btn {
+			flex: 1;
+			justify-content: center;
+		}
+	}
 </style>
+
+<script>
+	const toggle = document.getElementById('navToggle');
+	const nav = document.querySelector('.main-nav');
+	toggle?.addEventListener('click', () => {
+		const isOpen = nav?.classList.toggle('is-open');
+		toggle.setAttribute('aria-expanded', String(!!isOpen));
+	});
+	// Close menu when a nav link is clicked (e.g. navigating to same-page anchor)
+	nav?.querySelectorAll('.nav-links a').forEach((a) => {
+		a.addEventListener('click', () => {
+			nav.classList.remove('is-open');
+			toggle?.setAttribute('aria-expanded', 'false');
+		});
+	});
+</script>
