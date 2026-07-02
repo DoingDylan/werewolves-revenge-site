@@ -1,0 +1,60 @@
+---
+// src/pages/privacy.astro
+import Layout from '../layouts/Layout.astro';
+
+const LAST_UPDATED = 'July 2, 2026';
+const CONTACT_EMAIL = 'werewolvesrevenge@gmail.com';
+---
+
+<Layout title="Privacy Policy" description="Werewolves Revenge privacy policy — what data this website collects (and what it doesn't)." noindex>
+  <header class="bg-zinc-950 pt-28 pb-12 px-6 border-b border-[#97774A]/30 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(151,119,74,0.08),_transparent_60%)] z-0"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="ornate-divider mb-6 justify-center">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+        <span></span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg" style="font-family: 'Beaufort', serif;">
+        Privacy Policy
+      </h1>
+      <p class="text-zinc-500 max-w-xl mx-auto">Last updated {LAST_UPDATED}</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="bg-zinc-950 min-h-screen py-12 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 space-y-10 text-zinc-400 leading-relaxed">
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">The Short Version</h2>
+        <p>This website (werewolvesrevenge.com) does not collect, store, or sell any personal data of its own. There are no accounts, no forms, no cookies used for tracking, and no analytics scripts running on this site.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">Hosting Logs</h2>
+        <p>Like virtually every website, this site is served through a hosting provider (Vercel) that automatically logs standard technical information for security and reliability purposes — things like IP address, browser type, and request timestamps. This is a normal part of running any website, isn't used to identify individuals, and isn't shared or sold.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">Steam</h2>
+        <p>Werewolves Revenge the game is distributed through Steam. Any account data, purchase history, or achievement tracking is handled entirely by Valve under <a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener" class="text-red-500 hover:text-red-400 underline">Steam's own privacy policy</a>. This website does not have access to your Steam account data.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">Discord</h2>
+        <p>The <a href="/community" class="text-red-500 hover:text-red-400 underline">Community</a> page displays public server information (name, member count) sourced from Discord's API. This lookup happens on our server when the page is generated — it doesn't use cookies or track your visit. Joining our Discord server is subject to <a href="https://discord.com/privacy" target="_blank" rel="noopener" class="text-red-500 hover:text-red-400 underline">Discord's own privacy policy</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">Changes To This Policy</h2>
+        <p>If this website ever starts collecting data it doesn't today — for example, adding analytics — this page will be updated first, and the date above will change.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3" style="font-family: 'Beaufort', serif;">Contact</h2>
+        <p>Questions about this policy can be sent to <a href={`mailto:${CONTACT_EMAIL}`} class="text-red-500 hover:text-red-400 underline">{CONTACT_EMAIL}</a>.</p>
+      </section>
+
+    </div>
+  </main>
+</Layout>

@@ -115,7 +115,7 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 			</div>
 
 			<div class="footer-bottom">
-				<p>© {new Date().getFullYear()} Werewolves Revenge. All rights reserved.</p>
+				<p>© {new Date().getFullYear()} Werewolves Revenge. All rights reserved. · <a href="/privacy">Privacy Policy</a></p>
 			</div>
 		</footer>
 	</body>
@@ -423,6 +423,16 @@ const schemaBlocks = [siteSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd :
 		font-weight: 500;
 		letter-spacing: 0.03em;
 		text-align: center;
+	}
+
+	.footer-bottom a {
+		color: #52525b;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.footer-bottom a:hover {
+		color: #a1a1aa;
 	}
 
 	@media (max-width: 767px) {

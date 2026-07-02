@@ -115,7 +115,7 @@ const DEFAULT_SET = uniqueSets.includes('Standard') ? 'Standard' : uniqueSets[0]
             <a
               href={`/roles/${role.set.toLowerCase()}/${role.id}`}
               class="role-card faction-card group relative block aspect-square bg-zinc-900 rounded border border-zinc-800 overflow-hidden transition-transform duration-300 hover:scale-150 hover:z-30"
-              style={`--faction: ${factionHex};`}
+              style={`--faction: ${factionHex}; ${role.set === DEFAULT_SET ? '' : 'display: none;'}`}
               data-set={role.set}
               data-name={role.name.toLowerCase()}
               data-faction={role.faction}
